@@ -244,7 +244,7 @@ $(document).ready(function(){
     }
 
     $('.button').on('click',function(){
-        new TWEEN.Tween( particleContainer.rotation).to( {x:particleContainer.rotation.x-(90*Math.PI/180), y: scene.rotation.y, z:scene.rotation.z}, 4000 )
+        new TWEEN.Tween( particleContainer.rotation).to( {x:particleContainer.rotation.x-(90*Math.PI/180), y: scene.rotation.y, z:scene.rotation.z}, 2000 )
             .easing( TWEEN.Easing.Exponential.InOut)
 //            .easing( TWEEN.Easing.Quartic.InOut )
             .start();
