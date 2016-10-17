@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* reset */
+* {-webkit-text-size-adjust:none; margin:0; padding:0;}
+html, body{height: 100%; width: 100%; color: #fff;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, input, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, audio, canvas, video {margin:0; padding:0; line-height:100%; }
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+table {border-collapse:collapse; border-spacing:0; border:0; width:100%;}
+ol, ul {list-style:none;}
+abbr[title] {border-bottom: 1px dotted; }
+img, fieldset {border:0;}
+img{vertical-align:middle;}
+hr{-moz-box-sizing: content-box; box-sizing: content-box; height: 0; display:none;}
+legend{width:0; height:0; line-height:0; position:absolute; top:-10000px; left:-10000px; overflow:hidden; visibility:hidden;}
+object {outline:none;}
+mark {background: #ff0; color: #000;}
+code, kbd, pre, samp {font-family:inherit; font-size: 1em;}
+pre {white-space: pre-wrap;}
+q {quotes: "\201C" "\201D" "\2018" "\2019";}
+small {font-size: 80%;}
+sub,
+sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+svg:not(:root) {overflow: hidden;}
+figure {margin: 0;}
+fieldset {padding: 0; border: 0; margin: 0;}
+legend {border: 0; padding: 0;}
+
+/* Form Controls */
+button, input[type=text],input[type=password], select, textarea {border-radius:0; vertical-align:middle; }
+textarea {border:0 none; resize: none;}
+input:-moz-placeholder,textarea:-moz-placeholder {color: #ababab;}
+input::-moz-placeholder,textarea::-moz-placeholder {color: #ababab;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #ababab;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #ababab;}
+
+/* Basic Hyperlink css begin */
+
+/*a, img, input {selector-dummy : expression(this.hideFocus=true); outline:none; background: transparent;}*/
+a{color:#555;text-decoration:none;}
+a:link, a:visited, a:active{color:#555; text-decoration: none;}
+a:hover{color:#555;}
+
+/* common */
+.ellipsis {white-space:nowrap; overflow:hidden; word-break:break-all; text-overflow:ellipsis; -o-text-overflow: ellipsis; /*-moz-binding: url('ellipsis.xml#ellipsis');*/ vertical-align:middle; display:inline-block;}
+.ellipsis_multiple2 {overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-wrap:break-wrod;}
+.ellipsis_multiple3 {overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; word-wrap:break-wrod;}
+.clearfix{zoom:1;}
+.clearfix:after{content:"";display:block; clear:both;}
+
+/* SKIP */
+.skip{display:block;}
+.skip dt{visibility:hidden; width:0; font-size:0; line-height:0;}
+.skip a{position:absolute; left:0; top:-10000em; z-index:9999; display:block; width:100%; background-color:navy; font-size:1.5em; font-weight:bold; color:yellow; text-align:center;}
+.skip a:hover, .skip a:active, .skip a:focus{top:0; height:38px; line-height:38px;}
+
+#fullpage{z-index: 10;}
+
+
+
+
+
+
+/* 웨이브 타이틀 */
+#canvasOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+/*    background: #000;*/
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hard-light;
+    z-index: 1;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 背景グラデーションの作成 */
+    background: linear-gradient(to bottom,
+        hsl(180, 80%, 40%),
+        hsl(240, 80%, 60%),
+        hsl(300, 80%, 40%));
+    background-size: 400% 400%;
+    animation: AnimationName 10s ease infinite;
+    mix-blend-mode:lighten;
+    opacity:1;
+    z-index: 0;
+
+}
+#canvasWave{z-index: 50; position:absolute; left: 0; top: 0; width: 100%; height: 100%;}
+#particles{position: fixed; z-index: 2;}
+.body {
+    /*    position: absolute;*/
+    /*
+    top: 0;
+    left: 0;
+    */
+    /*
+    width: 100%;
+    height: 100%;
+    */
+    /* 背景グラデーションの作成 */
+    background: linear-gradient(to bottom,
+        hsl(0, 0%, 20%),
+        hsl(0, 0%, 20%),
+        hsl(215, 100%, 25%));
+    background-size: 400% 400%;
+    animation: AnimationName 20s ease infinite;
+    mix-blend-mode: hard-light;
+    opacity:1
+}
+
+@keyframes AnimationName {
+    0% { background-position: 50% 0% }
+    50% { background-position: 50% 100%    }
+    100% { background-position: 50% 0% }
+}
+/* 웨이브 타이틀 */
+
+.global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}
+.button{position: fixed; z-index: 100; background-color: #f00;}
+.section{background-color:rgba(0,0,0,0.1);}
+.wrapper .split {
+    z-index: 205;
+    position: fixed;
+    top: 50%;
+    margin-top: -34px;
+    left: -200px;
+    right: -200px;
+    height: 34px;
+    background: linear-gradient(to top, rgba(44,38, 56, 0.7) 0%, rgba(44,38,56,0) 100%);
+}
+.section{position: relative;}
+.article .top{position: absolute; top: 30px; right: 30px; left: 30px; bottom: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden;}
+.article .bottom{position: absolute; bottom: 30px; right: 30px; left: 30px; top: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden;}

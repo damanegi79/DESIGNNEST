@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no,width=auto, initial-scale=1, maximum-scale=1, minimum-scale=1,minimal-ui" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="웹사이트 개발, 반응형 사이트 개발, 모바일 사이트 개발, 홈페이지 제작"/>
+        <meta name="keywords" content="웹퍼블리싱, 웹디자인, 홈페이지제작, 모바일 사이트, 반응형 사이트"/>
+
+        <title>Designnest</title>
+        <link rel="stylesheet" href="/css/designnest.css" />
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+        <script>
+            window.addEventListener("load", init);
+
+            function init() {
+                // Stageオブジェクトを作成します
+                var stage = new createjs.Stage("myCanvas");
+
+                // 円を作成します
+                var shape = new createjs.Shape();
+                shape.graphics.beginFill("#ff00ff"); // 赤色で描画するように設定
+                shape.graphics.beginStroke('#0000ff')
+                shape.graphics.setStrokeStyle(1)
+                shape.graphics.drawCircle(0, 0, 100); //半径 100px の円を描画
+                shape.graphics.drawRect(0, 0, 200,100); //半径 100px の円を描画
+                shape.graphics.drawRoundRect(0, 0, 100, 100, 10); //半径 100px の円を描画
+                shape.x = 100; // X 座標 200px の位置に配置
+                shape.y = 200; // Y 座標 200px の位置に配置
+                shape.alpha = 1;
+
+                stage.addChild(shape); // 表示リストに追加
+
+                // Stageの描画を更新します
+                stage.update();
+            }
+        </script>
+    </head>
+
+    <body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+    </body>
+</html>
