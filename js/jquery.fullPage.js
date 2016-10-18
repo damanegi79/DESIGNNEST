@@ -1110,7 +1110,7 @@
             if(FP.scrollHorizontally){
                 scrollSection = FP.scrollHorizontally.getScrollSection(type, scrollSection);
             }
-            
+
             if(scrollable.length > 0 ){
                 //is the scrollbar at the start/end of the scroll?
                 if(options.scrollOverflowHandler.isScrolled(check, scrollable)){
@@ -1396,7 +1396,7 @@
 
             //is the destination element bigger than the viewport?
             if(element.outerHeight() > windowsHeight){
-                //scrolling up? 
+                //scrolling up?
                 if(!isScrollingDown && !bigSectionsDestination || bigSectionsDestination === 'bottom' ){
                     position = sectionBottom;
                 }
@@ -1621,7 +1621,7 @@
 
             playMedia(v.element);
             v.element.addClass(COMPLETELY).siblings().removeClass(COMPLETELY);
-            
+
             canScroll = true;
 
             $.isFunction(v.callback) && v.callback.call(this);
@@ -1665,7 +1665,7 @@
                 if ( element.hasAttribute('data-autoplay') ){
                     playYoutube(element);
                 }
-                    
+
                 //in case the URL was not loaded yet. On page load we need time for the new URL (with the API string) to load.
                 element.onload = function() {
                     if ( element.hasAttribute('data-autoplay') ){
@@ -2003,7 +2003,7 @@
             }
 
             performHorizontalMove(slides, v, true);
-            
+
             if(options.interlockedSlides && FP.interlockedSlides){
                 FP.interlockedSlides.apply(v);
             }
@@ -2028,7 +2028,7 @@
             playMedia(v.destiny);
 
             //letting them slide again
-            slideMoving = false;     
+            slideMoving = false;
 
             if(FP.interlockedSlides){
                 FP.interlockedSlides.apply(v);
@@ -2037,7 +2037,7 @@
 
         /**
         * Performs the horizontal movement. (CSS3 or jQuery)
-        * 
+        *
         * @param fireCallback {Bool} - determines whether or not to fire the callback
         */
         function performHorizontalMove(slides, v, fireCallback){
@@ -2895,7 +2895,7 @@
         function showError(type, text){
             console && console[type] && console[type]('fullPage: ' + text);
         }
-        
+
     }; //end of $.fn.fullpage
 
     if(typeof IScroll !== 'undefined'){
@@ -2988,8 +2988,8 @@
          */
         isScrolled: function(type, scrollable) {
             var scroller = scrollable.data('iscrollInstance');
-            
-            //no scroller? 
+
+            //no scroller?
             if (!scroller) {
                 return true;
             }

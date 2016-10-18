@@ -156,6 +156,7 @@ html.fp-enabled,
     height: 100%;
     cursor: pointer;
     text-decoration: none;
+
 }
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span,
@@ -165,6 +166,7 @@ html.fp-enabled,
     width: 12px;
     margin: -6px 0 0 -6px;
     border-radius: 100%;
+    background-color:rgba(255,255,255, 0.8);
  }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
@@ -182,12 +184,14 @@ html.fp-enabled,
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
+    background-color:rgba(255,255,255, 0.8);
 }
 #fp-nav ul li:hover a span,
 .fp-slidesNav ul li:hover a span{
     width: 10px;
     height: 10px;
     margin: -5px 0px 0px -5px;
+    background-color:rgba(255,255,255, 0.8);
 }
 #fp-nav ul li .fp-tooltip {
     position: absolute;
