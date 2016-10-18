@@ -42,7 +42,7 @@ $(function ()
         var xx = 20*percentX;
         var yy = 2*percentY;
 
-        TweenMax.to($(".text"), 0.6, {x:xx, y:yy, textShadow: -(xx*0.5)+"px "+(-yy*2)+"px 5px rgba(0,0,0,0.8)"});
+//        TweenMax.to($(".text"), 0.6, {x:xx, y:yy, textShadow: -(xx*0.5)+"px "+(-yy*2)+"px 5px rgba(0,0,0,0.8)"});
 
         var angle = -getAngle(0, 0, pageX, pageY);
 

@@ -139,8 +139,8 @@ a:hover{color:#555;}
 .section{position: relative;}
 
 .article{overflow:hidden;}
-.article .top{position: absolute; top: 0px; right: 0px; left: 0px; bottom: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden;}
-.article .bottom{position: absolute; bottom: 0px; right: 0px; left: 0px; top: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden;}
+.article .top{position: absolute; top: 0px; right: 0px; left: 0px; bottom: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden; overflow: hidden;}
+.article .bottom{position: absolute; bottom: 0px; right: 0px; left: 0px; top: 50%; background-color: rgba(0,0,0,0.3); overflow: hidden; overflow: hidden;}
 .article:after{z-index: 205;
     content: "";
     display: block;
@@ -153,8 +153,8 @@ a:hover{color:#555;}
     background: linear-gradient(to top, rgba(44,38, 56, 0.7) 0%, rgba(44,38,56,0) 100%);}
 
 
-.article h1{bottom:-20px; text-align: center; width: 100%; position: absolute; font-size: 150px; line-height: 100%;}
-.article .sub_tit{top:-18px; text-align: center; width: 100%; position: absolute; font-size:80px; line-height: 100%;}
+.article h1{bottom:-30px; text-align: center; width: 100%; position: absolute; font-size: 150px; line-height: 100%;}
+.article .sub_tit{top:-10px; text-align: center; width: 100%; position: absolute; font-size:80px; line-height: 100%;}
 
 /* 3d wrap */
 
