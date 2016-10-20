@@ -1,4 +1,4 @@
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -37,7 +37,7 @@ h1 {
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Patterns - reusable parts of our design
 
@@ -62,9 +62,9 @@ Patterns - reusable parts of our design
   background-color: #4089a6;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main Components 
+Main Components
 
 -------------------------------- */
 body::after, body::before {
@@ -235,6 +235,9 @@ main p {
 .cd-about .cd-cover-layer {
   background-color: #283040;
 }
+.cd-about1 .cd-cover-layer {
+    background-color: #f00;
+}
 .page-is-changing .cd-cover-layer {
   opacity: 1;
   visibility: visible;
@@ -281,6 +284,13 @@ main p {
 }
 .cd-about .cd-loading-bar::before {
   background-color: #4089a6;
+}
+
+.cd-about1 .cd-loading-bar {
+    background-color: #283040;
+}
+.cd-about1 .cd-loading-bar::before {
+    background-color: #4089a6;
 }
 .cd-loading-bar::before {
   /* this is the progress bar inside the loading bar */
