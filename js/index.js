@@ -69,7 +69,7 @@ $(document).ready(function(){
         particleContainer = new THREE.Object3D();
         scene.add(particleContainer);
 
-        particleCount = 1000; /* Leagues under the sea */
+        particleCount = 500; /* Leagues under the sea */
 
         /*    Hope you took your motion sickness pills;
     We're about to get loopy.    */
@@ -88,20 +88,14 @@ $(document).ready(function(){
 
         parameters = [
             [
-                [1, 0, 0.8], 5
+                [1, 1, 1], 5
             ],
             [
-                [0.72, 0,0.5], 4
+                [1, 1,1], 4
             ],
             [
-                [0.69, 0,0.5], 3
+                [1, 1,1], 3
             ],
-//            [
-//                [0.72, 1, 0.3], 4
-//            ],
-            //            [
-            //                [0.80, 1, 0.5], 1
-            //            ]
         ];
         parameterCount = parameters.length;
 
@@ -118,7 +112,9 @@ $(document).ready(function(){
 //                transparent: true
 //            } );
             materials[i] = new THREE.PointCloudMaterial({
-                size: size
+                size: size,
+                map :THREE.ImageUtils.loadTexture("../img/particle.png"),
+                transparent: true
             });
 
             particles = new THREE.PointCloud(geometry, materials[i]);
@@ -244,7 +240,7 @@ $(document).ready(function(){
     }
 
     $('.button').on('click',function(){
-        new TWEEN.Tween( particleContainer.rotation).to( {x:particleContainer.rotation.x-(90*Math.PI/180), y: scene.rotation.y, z:scene.rotation.z}, 2000 )
+        new TWEEN.Tween( particleContainer.rotation).to( {x:particleContainer.rotation.x-(90*Math.PI/180), y:particleContainer.rotation.y+(50*Math.PI/180), z:scene.rotation.z}, 2000 )
             .easing( TWEEN.Easing.Exponential.InOut)
 //            .easing( TWEEN.Easing.Quartic.InOut )
             .start();

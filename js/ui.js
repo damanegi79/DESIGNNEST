@@ -7,6 +7,7 @@ $(function ()
     $(".article").bind("mouseover", function (  )
                          {
         TweenMax.to($(".article"), 0.6, {transform: "translateZ(0px)"});
+        TweenMax.to($(".article h1"), 0.6, {transform: "translateZ(5000px)"});
 //        TweenMax.to($(".text"), 0.6, {transform: "translateZ(50px)",textShadow: "10px 10px 5px rgba(0,0,0,1)"});
         TweenMax.to($(".shadow"), 0.6, {transform: "translateZ(50px)"});
         $(".article").bind("mousemove", moveCard);
