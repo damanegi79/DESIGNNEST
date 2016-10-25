@@ -23,11 +23,15 @@ $(function ()
 
     function moveCard( e )
     {
+        var sectionNum  = $('.section.active').index();
+        var winHeight = $(window).height()
+        var scrollY = sectionNum * winHeight;
+//        transform: translate3d(0px, -696.697px, 0px);
         var pageX = e.pageX - $(".article").offset().left;
         var pageY = e.pageY - $(".article").offset().top;
 
         pageX = pageX - ($(".article").width()/2);
-        pageY = pageY - ($(".article").height()/2);
+        pageY = pageY - ($(".article").height()/2)-scrollY;
 
         var percentX = pageX / ($(".article").width()/2);
         var percentY = pageY / ($(".article").height()/2);
@@ -45,7 +49,7 @@ $(function ()
 //        TweenMax.to($(".text"), 0.6, {x:xx, y:yy, textShadow: -(xx*0.5)+"px "+(-yy*2)+"px 5px rgba(0,0,0,0.8)"});
 
         var angle = -getAngle(0, 0, pageX, pageY);
-
+        console.log(scrollY)
 
         TweenMax.to($(".shadow"), 0, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)"})
 

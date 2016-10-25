@@ -57,6 +57,7 @@ html, body { overflow: hidden; }
   transform: translateY(20vh);
   -webkit-transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
+    opacity: 0.5
 }
 
 .background:before {
@@ -125,10 +126,17 @@ html, body { overflow: hidden; }
   font-size: 12vh;
   line-height: 1.4;
 }
+    .nav{position: fixed; z-index: 10; left: 20px; top: 20px;}
+    .nav a{color: #fff;}
 </style>
 </head>
 
 <body>
+<div class="nav">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+</div>
 <div class="container">
   <section class="background">
     <div class="content-wrapper">
@@ -149,8 +157,8 @@ html, body { overflow: hidden; }
     </div>
   </section>
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script> 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 var ticking = false;
 var isFirefox = /Firefox/i.test(navigator.userAgent);
@@ -208,6 +216,15 @@ function currentSlideTransition() {
     $currentSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
     ;
 }
+    $(".nav a").on("click",function(){
+        navNum = $(".nav a").index(this)
+        currentSlideNumber = navNum;
+//        var $previousSlide = $('.background').eq(currentSlideNumber);
+//        $previousSlide.css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
+        var $currentSlide = $('.background').eq(currentSlideNumber);
+        $currentSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css({'transform':'translateY(15vh)','zIndex':10});
+//        slideDurationTimeout(slideDurationSetting);
+    })
 
 </script>
 <script type="text/javascript">
