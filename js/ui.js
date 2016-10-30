@@ -7,9 +7,10 @@ $(function ()
     $(".article").bind("mouseover", function (  )
                          {
         TweenMax.to($(".article"), 0.6, {transform: "translateZ(0px)"});
-        TweenMax.to($(".article h1"), 0.6, {transform: "translateZ(5000px)"});
 //        TweenMax.to($(".text"), 0.6, {transform: "translateZ(50px)",textShadow: "10px 10px 5px rgba(0,0,0,1)"});
         TweenMax.to($(".shadow"), 0.6, {transform: "translateZ(50px)"});
+//        TweenMax.to($(".article h1"), 0.6, {transform: "translateZ(50px)"});
+        TweenMax.to($(".line"), 0.6, {left:"50px",right:"50px",bottom:"50px",top:"50px"});
         $(".article").bind("mousemove", moveCard);
     });
 
@@ -17,13 +18,20 @@ $(function ()
     $(".article").bind("mouseout", function (  )
                          {
         TweenMax.to($(".article"), 0.3, {transform: "translateZ(0)"});
-        TweenMax.to($(".shadow"), 0.3, {transform: "translateZ(0)",background:"linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%)"});
+        TweenMax.to($(".shadow"), 0.3, {transform: "translateZ(0)",background:"linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 60%)"});
+        TweenMax.to($(".line"), 0.3, {x:0, y:0,left:"0px",right:"0px",bottom:"0px",top:"0px"});
+        TweenMax.to($(".article h1"), 0.3, {x:0, y:0});
 //        TweenMax.to($(".text"), 0.6, {transform: "translateZ(0px)", textShadow:"0"});
+        //TweenMax.to($(".line"), 0.6, {transform: "translateZ(0px)"});
         $(".article").unbind("mousemove", moveCard);
     });
 
     function moveCard( e )
     {
+        if(motionFlag)
+        {
+            return;
+        }
         var sectionNum  = $('.section.active').index();
         var winHeight = $(window).height()
         var scrollY = sectionNum * winHeight;
@@ -43,6 +51,8 @@ $(function ()
         TweenMax.to($(".article"), 0.6, {rotationY:rotationY, rotationX:rotationX});
         TweenMax.to($(".shadow"), 0.6, {rotationY:rotationY, rotationX:rotationX});
 //        TweenMax.to($(".text"), 0.6, {rotationY:rotationY, rotationX:rotationX});
+        TweenMax.to($(".line"), 0.6, {x:rotationY*10, y:-rotationX*10});
+        TweenMax.to($(".article h1"), 0.6, {x:rotationY*10, y:-rotationX*10});
 
         var xx = 20*percentX;
         var yy = 2*percentY;
@@ -52,7 +62,7 @@ $(function ()
         var angle = -getAngle(0, 0, pageX, pageY);
         console.log(scrollY)
 
-        TweenMax.to($(".shadow"), 0, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)"})
+        TweenMax.to($(".shadow"), 0, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)"})
 
 
     }

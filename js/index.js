@@ -1,3 +1,7 @@
+var motionFlag = false;
+
+
+
 $(document).ready(function(){
     //(function() {
 
@@ -113,7 +117,7 @@ $(document).ready(function(){
 //            } );
             materials[i] = new THREE.PointCloudMaterial({
                 size: size,
-                map :THREE.ImageUtils.loadTexture("../img/particle.png"),
+                map :THREE.ImageUtils.loadTexture("img/particle.png"),
                 transparent: true
             });
 
@@ -244,7 +248,47 @@ $(document).ready(function(){
             .easing( TWEEN.Easing.Exponential.InOut)
 //            .easing( TWEEN.Easing.Quartic.InOut )
             .start();
-    })
+    });
+    
+    var timer;
+    
+    $('#fullpage').fullpage({
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+        sectionsColor: ['', '', ''],
+        scrollOverflow: true,
+        navigation: true,
+        onLeave : function (index, nextIndex, direction)
+        {
+            movePaticle(direction);
+            motionFlag = true;
+            clearTimeout(timer);
+            timer = setTimeout(function ()
+            {
+                motionFlag = false;
+            }, 1000);
+            TweenMax.to($(".article"), 0.6, {rotationY:0, rotationX:0});
+            TweenMax.to($(".shadow"), 0.6, {rotationY:0, rotationX:0});
+            TweenMax.to($(".line"), 0.6, {x:0, y:0,left:"0px",right:"0px",bottom:"0px",top:"0px"});
+            TweenMax.to($(".article h1"), 0.6, {x:0, y:0});
+//            TweenMax.to($(".shadow"), 0, {"background":"linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)"});
+        },
+        scrollOverflowOptions: {
+            click: true
+        }
+    });
+    
+    function movePaticle( dir )
+    {
+        var arrow = 1;
+        if(dir == "up") arrow = -1;
+        new TWEEN.Tween( particleContainer.position).to( {x:particleContainer.position.x, y:particleContainer.position.y+(500*arrow), z:scene.position.z}, 3000 )
+                .easing( TWEEN.Easing.Exponential.Out)
+    //            .easing( TWEEN.Easing.Quartic.InOut )
+                .start();
+    }
 
 
 });
+
+
+
