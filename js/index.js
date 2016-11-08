@@ -272,6 +272,17 @@ $(document).ready(function(){
             TweenMax.to($(".article h1"), 0.6, {x:0, y:0});
 //            TweenMax.to($(".shadow"), 0, {"background":"linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)"});
         },
+        afterLoad: function (index, nextIndex, direction)
+        {
+            TweenMax.from($(".article h1"), 2, {x:"0", y:"-50px",opacity:0,ease:Power3.easeOut})
+            var num = 0;
+            var section = $(".sub_tit li");
+            section.each(function ( i ){
+                num++
+                TweenMax.from($(this), 2, {x:"0", y:"20px",opacity:0,ease:Power3.easeOut, delay:1+(0.3*num)})
+
+            })            
+        },
         scrollOverflowOptions: {
             click: true
         }

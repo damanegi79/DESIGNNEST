@@ -56,6 +56,7 @@
 
         <script src="js/scrolloverflow.js"></script>
         <script src="js/jquery.fullPage.js"></script>
+        <script src="js/jquery.scrollme.js"></script>
 
         <script src="js/index.js"></script>
         <script type="text/javascript">
@@ -82,11 +83,11 @@
         <div class="menu_btn"><button>menu open</button></div>
         <div class="wrapper">
             <div class="contents">
-            <div id="fullpage" class="moveWrap">
+            <div id="fullpage" class="moveWrap scrollme">
                 <div class="section " id="section0">
                     <div class="article">
                         <div class="top">
-                            <h1>DESIGNNEST</h1>
+                            <h1 class="animateme" data-when="exit" data-from="0.5" data-to="0" data-opacity="0" data-translatex="-200" data-rotatez="90">DESIGNNEST</h1>
                         </div>
                         <div class="bottom">
                             <ul class="sub_tit">
@@ -98,6 +99,7 @@
                         </div>
                         <div class="shadow"></div>
                         <div class="line"></div>
+                        <div class="line_shadow"></div>
                         <svg class="arrows">
 							<path class="a1" d="M0 0 L30 32 L60 0"></path>
 							<path class="a2" d="M0 20 L30 52 L60 20"></path>
@@ -121,6 +123,7 @@
                         </div>
                         <div class="shadow"></div>
                         <div class="line"></div>
+                        <div class="line_shadow"></div>
                     </div>
                 </div>
                 <div class="section" id="section2">

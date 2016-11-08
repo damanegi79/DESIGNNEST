@@ -225,4 +225,5 @@ z-index: 30;}
 
 .menu_btn{position: fixed; left: 20px; top: 20px; color: #fff; z-index: 100;}
 .menu_btn button{background-color: transparent;}
-.line{border: 2px solid #fff; position: absolute; left:0px; top: 0px; right: 0px; bottom: 0px; transform:perspective(1000px) translateZ(0); z-index: 20; border-radius: 10px;}
+.line{border: 2px solid rgba(255,255,255,0.5); position: absolute; left:0px; top: 0px; right: 0px; bottom: 0px; transform:perspective(1000px) translateZ(0); z-index: 20; border-radius: 10px;}
+.line_shadow{border:1px solid rgba(0,0,0,0.5); position: absolute; left:0px; top: 0px; right: 0px; bottom: 0px; transform:perspective(1000px) translateZ(0); z-index: 10; border-radius: 10px;}
