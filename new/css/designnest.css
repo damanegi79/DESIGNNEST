@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import(reset.css);
+
+
+/* font */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Dosis:200,300,400,500,600,700,800);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* reset */
+* {-webkit-text-size-adjust:none; margin:0; padding:0;}
+
+
+/* layout */
+
+#menu{position:fixed; 0top:0; left:0; z-index: 70;}
+.section{background-color: #f4f4f4; outline: 3px solid #333;}
+#section2 .content {
+    top: 100%;
+    position: absolute;
+    left: 0;
+}

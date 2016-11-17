@@ -1,0 +1,199 @@
+/* font */
+/*<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Dosis:200,600" rel="stylesheet">*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Dosis:200,300,400,500,600,700,800);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+/* reset */
+* {
+  -webkit-text-size-adjust: none;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, input, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, audio, canvas, video {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+  outline: none !important; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+  width: 100%; }
+
+ol, ul {
+  list-style: none; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+img, fieldset {
+  border: 0; }
+
+img {
+  vertical-align: middle; }
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  display: none; }
+
+legend {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  overflow: hidden;
+  visibility: hidden; }
+
+object {
+  outline: none; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: inherit;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+/* Form Controls */
+button, input[type=text], input[type=password], select, textarea {
+  border-radius: 0;
+  vertical-align: middle; }
+
+textarea {
+  border: 0 none;
+  resize: none; }
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #ababab; }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #ababab; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #ababab; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ababab; }
+
+/* Basic Hyperlink css begin */
+/*a, img, input {selector-dummy : expression(this.hideFocus=true); outline:none; background: transparent;}*/
+a {
+  color: #555;
+  text-decoration: none; }
+
+a:link, a:visited, a:active {
+  color: #555;
+  text-decoration: none; }
+
+a:hover {
+  color: #555; }
+
+.positionLayout, .full-page, .full-page .section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+.wrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+.full-page {
+  overflow: hidden;
+  transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  will-change: transform; }
+  .full-page.move-top {
+    transform: translate3d(0px, -300px, 0px); }
+  .full-page .section {
+    transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; }
+    .full-page .section.top {
+      transform: translate3d(0px, -100%, 0px); }
+    .full-page .section.bottom {
+      transform: translate3d(0px, 100%, 0px); }
+
+.table {
+  display: table;
+  height: 100%;
+  table-layout: fixed;
+  margin: 0;
+  width: 100%; }
+  .table .cell {
+    display: table-cell;
+    vertical-align: middle; }
+
+.text-center {
+  text-align: center; }
+
+.section1 {
+  background-color: #f4f4f4; }
+
+.section2 {
+  background-color: #ccc; }
+
+.section3 {
+  background-color: #ddd; }
+
+.footer-section {
+  transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #000;
+  color: #fff;
+  transform: translate3d(0px, 100%, 0px); }
+  .footer-section.display {
+    transform: translate3d(0px, 0, 0px); }
+
+/*# sourceMappingURL=layout.css.map */
