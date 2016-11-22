@@ -11,11 +11,15 @@
         <link rel="stylesheet" href="css/designnest.css" />
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.pagepiling.min.js"></script>
+        <script src="js/SplitTextPlugin.js"></script>
         <script src="js/TweenMax.min.js"></script>
         <script src="js/ui.js" ></script>
     </head>
 
     <body>
+        <div id="intro">
+
+        </div>
         <ul id="menu">
             <li data-menuanchor="page1" class="active"><a href="#page1">Page 1</a></li>
             <li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
@@ -24,7 +28,23 @@
 
         <div id="pagepiling">
             <div class="section" id="section1">
-                <h1>pagePiling.js</h1>
+                <div class="intro_wrap">
+                    <div class="intro_contents">
+                        <div class="logo_content">
+                            <div id="logo_txt" class="title">
+                                <h1>
+                                    <span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span><span>N</span><span>E</span><span>S</span><span>T</span>
+                                </h1>
+                            </div>
+                            <p class="sub_title">Front Developement</p>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="btn">
+                    <button class="rotate">rotate</button>
+                    <button class="reset">reset</button>
+                </p>
             </div>
             <div class="section pp-scrollable" id="section2">
                 <div class="content">
@@ -42,6 +62,12 @@
                 </div>
             </div>
             <div class="section" id="section3">
+                <div class="intro">
+                    <h1>Just terrific!</h1>
+                    <p>Use the power of images</p>
+                </div>
+            </div>
+            <div class="section" id="section4">
                 <div class="intro">
                     <h1>Just terrific!</h1>
                     <p>Use the power of images</p>
