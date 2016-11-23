@@ -121,4 +121,5 @@ html, body {
 .pp-scrollable{
     overflow-y: scroll;
     height: 100%;
+    -webkit-overflow-scrolling :touch;
 }

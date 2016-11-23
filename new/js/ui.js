@@ -16,12 +16,7 @@ $(document).ready(function() {
             $('#intro').fadeOut(1000);
 //            intro()
             introText()
-            $('.rotate').click(function(){
-                introText();
-            })
-            $('.reset').click(function(){
-                introReset();
-            })
+
         },
         afterLoad: function(index, nextIndex, direction){
             console.log(index)
@@ -79,11 +74,11 @@ $(document).ready(function() {
         var tit = $(".intro_contents");
         var sub_tit = $(".sub_title");
         logo.to(tit, 1.5,{marginTop:0, opacity:1})
-        logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'})
+        logo.to(tit, 3.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) '})
         logo.from(sub_tit, 0.5, {opacity:0,transform:'perspective(1000px) rotateX(0deg) translateY(30px)',onComplete:axis})
         logoText();
-        
+
     }
     function logoText() {
         var split = new TimelineLite;
@@ -111,6 +106,6 @@ $(document).ready(function() {
         var rotationY = -15*percentX;
         var rotationX = 15*percentY;
         TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY, y:-rotationX});
- 
+
     }
 });
