@@ -110,5 +110,6 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .section h1{font-size: 40px;}
 .content .header{padding-top: 30px;}
 .content_box{max-width: 1200px; margin: auto; box-sizing: border-box; padding-left: 30px; padding-right: 30px;}
-.shape-bottom img{width: 100%; -webkit-transform: translateX(180deg);-webkit-transform: scale(-1, -1);     top: calc(100% - 2px);}
-.shape-bottom img path{fill:#333;}
+.shape-bottom{position: relative;}
+.shape-bottom img{width: 100%; -webkit-transform: scale(-1, -1);}
+.work_content.black{background-color: #000; color: #fff;}
