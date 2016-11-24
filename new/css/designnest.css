@@ -14,102 +14,134 @@
 html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 
 #intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff;}
-.intro_wrap{position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;}
-.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(20deg) rotateY(-10deg);position: relative; margin-top: -100px; opacity: 0;}
+#section1{}
+.intro_wrap{position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;overflow: hidden;}
+.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative; margin-top: -100px; opacity: 0;}
 .intro_contents .logo_content{display: table-cell; height: 100%; vertical-align: middle;}
 .intro_contents .logo_content .title{font-size: 100px; font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .intro_contents .logo_content .title span{position: relative;}
-.intro_contents .logo_content p.sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) rotateY(0deg); position: relative; margin-top: 20px;}
+.intro_contents .logo_content p.sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) rotateY(0deg); position: relative; margin-top: 20px; color: #666;}
 .intro_contents .logo_area {width:60%; margin: auto; text-align: center;}
-.intro_contents .logo_area .logo{width: 80px; display: inline-block;}
-.intro_contents .logo_area .logoText{margin-top:15px; width: 90%; margin-left: auto; margin-right: auto; max-width: 500px;}
-.scrollDown{position: absolute; bottom: 20px; z-index: 10; width: 100%; text-align: center;}
+.intro_contents .logo_area .logo{width: 80px; height: 80px; display: inline-block; }
+.intro_contents .logo_area .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;}
+.intro_contents .logo_area .logoText #svg_text{width: 100%; height: auto;}
+
+.scrollDown{ width: 25px; position: absolute; left: 50% ;margin-left: -12px; bottom: 20px; border: 1px solid #999; border-radius: 12.5px; display: none;}
 .scrollDown .ico_scroll{width: 25px; display: inline-block;}
-#ico_scroll path{}
+
+
+#logo_path path{stroke-width:3;}
+
 #scroll_body{fill:none;stroke:#999;stroke-miterlimit:10; stroke-width:2px;}
-#wheel{stroke:#999; animation: wheelScroll 2s linear infinite;fill:none;stroke-width:2px;}
+/*
+
 @keyframes wheelScroll {
     from{
-        -webkit-transform:  translateY(0px);
+        transform:  translateY(0px);
     }
     50%{
-        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
     }
     to{
-        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+*/
+#wheel{stroke:none; /* animation: wheelScroll 2s linear infinite; */ fill:#999;}
+
+@keyframes logoColor {
+    from{
+        fill:#fff;
+    }
+    to{
+        fill:#128dd4;
+        stroke:#128dd4;
     }
 }
 
+/*#path1 {animation: logoColor 1s linear forwards;}*/
 
 .default_color{color: #128dd4}
 
 .path{
-    fill:none;
-    stroke:#333;
+    fill: #fff;
+    stroke:#666;
     stroke-miterlimit:10;
     stroke-linecap:round;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     stroke-location:inside;
     stroke-width:1;
-    transition:All 1s ease;
-    -webkit-transition:All 1s ease;
-    -moz-transition:All 1s ease;
-    -o-transition:All 1s ease;
+
 }
-.path:hover{}
-#svg_logo path{stroke-width:3;}
-#path1{animation: dash 3s linear forwards;}
-#path2{animation: dash 2.5s linear forwards; animation-delay: 0.5s;}
-#path3{animation: dash 2s linear forwards; animation-delay: 1.0s;}
-#path4{animation: dash 1.5s linear forwards; animation-delay: 1.5s;}
-/*#svg_logo{animation: logomove 1.5s linear forwards; animation-delay: 3s; stroke:#f00;}*/
-#txt01{animation: dash 1.5s linear forwards; animation-delay:3s;}
-#txt02{animation: dash 1.5s linear forwards; animation-delay:3.2s;}
-#txt03{animation: dash 1.5s linear forwards; animation-delay:3.4s;}
-#txt04{animation: dash 1.5s linear forwards; animation-delay:3.6s;}
-#txt05{animation: dash 1.5s linear forwards; animation-delay:3.8s;}
-#txt06{animation: dash 1.5s linear forwards; animation-delay:4.0s;}
-#txt07{animation: dash 1.5s linear forwards; animation-delay:4.2s;}
-#txt08{animation: dash 1.5s linear forwards; animation-delay:4.2s;}
-#txt09{animation: dash 1.5s linear forwards; animation-delay:4.2s;}
-#txt10{animation: dash 1.5s linear forwards; animation-delay:4.2s;}
+
 @keyframes dash {
     from {
         fill-opacity: 0;
     }
-  40% {
-      fill: #fff;
-      fill-opacity: 1;
+    40% {
+        fill: #fff;
+        fill-opacity: 1;
     }
-  60% {
+    60% {
 
     }
-  80% {
-      fill-opacity: 0;
-      fill: #128dd4;
-      stroke-dashoffset:0;
-      stroke-opacity:1;
-      fill-opacity: 1;
+    80% {
+        fill: #128dd4;
+/*        stroke-dashoffset:0;*/
+        stroke-opacity:1;
+        fill-opacity: 1;
+    }
+
+    to {
+/*        stroke-dashoffset:0;*/
+        stroke-opacity:0;
+        fill-opacity: 1;
+        fill: #333;
+    }
+
+}
+#logo_vivid .path{
+    fill-opacity: 0;
+    transition: fill-opacity 3s;
+    animation: none !important;
+    fill:#f00;
 }
 
-  to {
-      stroke-dashoffset:0;
-      stroke-opacity:0;
-      fill-opacity: 1;
-      fill: #333;
-  }
-
+#logo_vivid.finished .path{
+    fill-opacity: 1;
+    animation: none !important;
+    fill:#f00;
 }
+
+#path1{animation: logoColor 3s linear forwards; animation-delay: 1.0s;}
+#path2{animation: dash 2.5s linear forwards; animation-delay: 1.5s;}
+#path3{animation: dash 2s linear forwards; animation-delay: 2.0s;}
+#path4{animation: dash 2.0s linear forwards; animation-delay: 2.5s;}
+#txt01{animation: dash 2.0s linear forwards; animation-delay:3s;}
+#txt02{animation: dash 2.0s linear forwards; animation-delay:3.2s;}
+#txt03{animation: dash 2.0s linear forwards; animation-delay:3.4s;}
+#txt04{animation: dash 2.0s linear forwards; animation-delay:3.6s;}
+#txt05{animation: dash 2.0s linear forwards; animation-delay:3.8s;}
+#txt06{animation: dash 2.0s linear forwards; animation-delay:4.0s;}
+#txt07{animation: dash 2.0s linear forwards; animation-delay:4.2s;}
+#txt08{animation: dash 2.0s linear forwards; animation-delay:4.2s;}
+#txt09{animation: dash 2.0s linear forwards; animation-delay:4.2s;}
+#txt10{animation: dash 2.0s linear forwards; animation-delay:4.2s;}
+
 
 
 
 #menu{position:fixed; 0top:0; left:0; z-index: 70;}
 .section{background-color: #fff;}
 #section1{overflow: hidden;}
-.section h1{font-size: 40px;}
-.content .header{padding-top: 30px;}
-.content_box{max-width: 1200px; margin: auto; box-sizing: border-box; padding-left: 30px; padding-right: 30px;}
-.shape-bottom{position: relative;}
-.shape-bottom img{width: 100%; -webkit-transform: scale(-1, -1);}
-.work_content.black{background-color: #000; color: #fff;}
+.section h1{font-size: 60px; text-transform: uppercase;}
+.section h2{font-size: 20px;}
+.content .header{}
+.content_box{max-width: 1200px; margin: auto; box-sizing: border-box; padding: 30px;}
+.shape{position:absolute; width: 100%; top: 0; width: 102%; left: 0; z-index: 2;}
+.shape.bottom{transform: scale(-1, -1); bottom: 0;}
+.mask{width: 100%;}
+
+.work_content{position: relative; margin-top: -1px;}
+.work_content.black{background-color: #111; color: #fff;}
