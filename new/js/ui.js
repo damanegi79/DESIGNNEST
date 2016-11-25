@@ -1,6 +1,8 @@
 /*
  * Plugin intialization
  */
+var motionFlag = false;
+
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
         menu: '#menu',
@@ -13,21 +15,38 @@ $(document).ready(function() {
         },
         afterRender: function(index, nextIndex, direction){
             $('#intro').fadeOut(1000);
-//            intro()
-            introText()
+            setTimeout(function(){
+                if($('#section1').hasClass('active')){
+                    introText()
+                    motionFlag = true;
+                    console.log(motionFlag)
+                }
+            },1000)
 
         },
         afterLoad: function(index, nextIndex, direction){
-            console.log(index)
-            console.log(nextIndex)
 
+            if (nextIndex == 1) {
+                if(motionFlag){
+                    console.log(motionFlag,nextIndex)
+                    return;
+                }
+                else {
+                    console.log(motionFlag,nextIndex)
+                    introText()
+                    motionFlag = true;
+
+                }
+
+            }
+            console.log(motionFlag,nextIndex)
         },
         onLeave: function (index, nextIndex, direction) {
             if (nextIndex == 1) {
-                intro()
+//                intro()
             }
             if (nextIndex == 2) {
-                outro()
+//                outro()
             }
 
             //fading out the txt of the leaving section
@@ -69,6 +88,7 @@ $(document).ready(function() {
 
     };
     function introText(){
+        text_ani()
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
         var sub_tit = $(".sub_title");
@@ -80,6 +100,7 @@ $(document).ready(function() {
                                         axis()
                                         scrollfn()
                                         $("#svg_logo").addClass('logoChg')
+                                        console.log('axis started')
                                     }
 
                                 })
@@ -95,10 +116,12 @@ $(document).ready(function() {
         TweenMax.to( tit, 2.5, {transform:'perspective(1000px) rotateX(15deg) rotateY(-20deg)'} );
     }
     function axis(){
+        if($('#section1').hasClass('active')){
+             $(".logo_content").bind("mousemove", moveLogo);
+         }
+//        $(".logo_content").bind("mouseover", function (){
 
-        $(".section").delay(500).bind("mouseover", function (){
-            $(".intro_contents").bind("mousemove", moveLogo);
-        });
+//        });
     }
     function scrollfn(){
         var scrollDown = $(".scrollDown")
@@ -109,25 +132,73 @@ $(document).ready(function() {
     }
     function moveLogo(e)
     {
-        var pageX = e.pageX - $(".section").offset().left;
-        var pageY = e.pageY - $(".section").offset().top;
-        pageX = pageX - ($(".section").width()/2);
-        pageY = pageY - ($(".section").height()/2); //-scrollY
-        var percentX = pageX / ($(".section").width()/2);
-        var percentY = pageY / ($(".section").height()/2);
+        var pageX = e.pageX - $(".intro_wrap").offset().left;
+        var pageY = e.pageY - $(".intro_wrap").offset().top;
+        pageX = pageX - ($(".intro_wrap").width()/2);
+        pageY = pageY - ($(".intro_wrap").height()/2); //-scrollY
+        var percentX = pageX / ($(".intro_wrap").width()/2);
+        var percentY = pageY / ($(".intro_wrap").height()/2);
         var rotationY = -15*percentX;
         var rotationX = 15*percentY;
         TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2});
-
+//        console.log(pageX,pageY,percentX,percentY)
+//        console.log('play')
     }
-    new Vivus('svg_logo',{duration: 200,type:'delayed'}, function (obj) {
-        obj.el.classList.add('finished');
-    });
-    setTimeout(function(){
-        new Vivus('svg_text', {duration: 200,type:'delayed'}, function (obj) {
+    function text_ani(){
 
-        })
-    },2000)
+
+        var svg = $('#svg_logo').getSVG();
+        var logopath = svg.find(".path");
+
+        var textsvg = $('#svg_text').getSVG();
+        var textpath = textsvg.find(".path");
+
+        new Vivus('svg_logo',{duration: 200,type:'delayed'}, function (obj) {
+            logopath.each(function(i){
+                var self = this
+                setTimeout(function(){
+                    var logo = new TimelineLite();
+                    logo.to(self, 0.3,{stroke:'none'})
+                },i*200)
+            })
+        });
+        setTimeout(function(){
+            new Vivus('svg_text', {duration: 200,type:'delayed'}, function (obj) {
+                textpath.each(function(i){
+                    var self = this
+                    setTimeout(function(){
+                        var textlogo = new TimelineLite();
+                        textlogo.to(self, 0.3,{stroke:'none'})
+                    },i*200)
+                })
+            })
+        },2000)
+
+
+        setTimeout(function(){
+            logopath.each(function(i){
+                var self = this
+                setTimeout(function(){
+                    var logo = new TimelineLite();
+                    logo.to(self, 0.5,{fill:'#128dd4'})
+                    logo.to(self, 0.5,{fill:'#222'})
+                    logo.to(self, 0.1,{stroke:'none'})
+                },i*200)
+            })
+        },3000)
+        setTimeout(function(){
+            textpath.each(function(i){
+                var self = this
+                setTimeout(function(){
+                    var textlogo = new TimelineLite();
+                    textlogo.to(self, 1.0,{fill:'#128dd4'})
+                    textlogo.to(self, 1.0,{fill:'#222'})
+                    textlogo.to(self, 0.1,{stroke:'none'})
+                },i*200)
+            })
+            TweenMax.to(logopath.eq(0), 4, {fill:'#128dd4'} );
+        },4000)
+    }
 
 
 });
