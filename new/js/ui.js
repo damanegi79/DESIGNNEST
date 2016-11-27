@@ -226,7 +226,7 @@ $(document).ready(function() {
         
     }
     function deviceAxis(){
-        $(".work_content_wrap").bind("mouseenter", function (){
+        $(".work_content_wrap").bind("mouseover", function (){
             $(".work_content_wrap").bind("mousemove", moveAxis);
 //            $(".work_info").bind("mousemove", moveAxis);
 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
