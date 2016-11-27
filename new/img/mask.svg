@@ -2,5 +2,5 @@
     <defs>
         <link href="../css/designnest.css" type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml"/>
     </defs>
-    <path class="mask" fill="#fff" fill-rule="" clip-rule="" d="M0 0h483.973v.63L0 50.795V0z"/>
+    <path class="mask" fill="#222" fill-rule="" clip-rule="" d="M0 0h483.973v.63L0 50.795V0z"/>
 </svg>

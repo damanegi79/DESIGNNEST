@@ -10,12 +10,14 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
         <link rel="stylesheet" href="css/designnest.css" />
         <script src="js/jquery-3.1.0.min.js"></script>
+<!--        <script src="js/jquery-migrate-3.0.0.min.js"></script>-->
         <script src="js/jquery.pagepiling.min.js"></script>
         <script src="js/SplitTextPlugin.js"></script>
         <script src="js/TweenMax.min.js"></script>
         <script src="js/vivus.js"></script>
         <script src="js/pathformer.js"></script>
         <script src="js/jquery.svg.es5.js"></script>
+        <script src="js/jquery.inview.min.js"></script>
         <script src="js/ui.js" ></script>
     </head>
 
@@ -35,10 +37,10 @@
                     <div class="intro_contents">
                         <div class="logo_content">
                             <div class="logo_area">
-                                <div class="logo"><object id="svg_logo" class="svg_logo" data="img/logo.svg" type="image/svg+xml"></object></div>
+                                <div class="logo"><object id="svg_logo" class="svg_logo" data="img/logo_svg.svg" type="image/svg+xml"></object></div>
                                 <div class="logoText"><object id="svg_text" class="svg_text" data="img/designnest.svg" type="image/svg+xml"></object></div>
                             </div>
-                            <p class="sub_title">Front Developement</p>
+                            <p class="sub_title">interactive agency</p>
                         </div>
                     </div>
 
@@ -48,47 +50,87 @@
             <div class="section pp-scrollable" id="section2">
                 <div class="content">
                     <div class="header">
-                        <hgroup>
-                            <h1>Lastest Work</h1>
+                       <div class="header_content">
+                            <hgroup>
+                                <h1>Lastest Work</h1>
 
-                            <h2 class="subTitle">Pile your sections one over another and access them scrolling or by URL!</h2>
-                        </hgroup>
-                    </div>
-                    <article class="work_content black">
-
-                        <div class="content_box">
-                        <p>Eos ex tale consul phaedrum. Ex mel enim delectus. An stet vide copiosae mei. Ne ferri oportere accusamus sit, eum an stet solet. Ex maiestatis dissentiet eum. An pro recteque intellegam, eum convenire contentiones te. Cum id nobis mediocritatem. Brute dicta putent no vel. Pro ad verear eripuit vituperatoribus. Vim ad utamur accusata recteque, an cum iriure scriptorem. Ei suas democritum sed, ceteros omittam eos et. Case eius ne vix, duo ne autem saperet insolens, mel posse aperiam labores no. Alienum accusamus an est. Qui iudicabit intellegat percipitur in, est in agam fugit assueverit. Pro cu mazim oporteat, soluta vituperata instructior mei ea, an vix sonet vocent laboramus. Vis vocent ocurreret ad. Congue causae iisque no mei, vim fastidii platonem iracundia ei, detraxit sadipscing usu eu. Est ei sonet tempor dicunt. In tota regione blandit sea, at nec numquam dissentias, eu sit sapientem evertitur. Suas mediocrem incorrupte vel ei, intellegebat reprehendunt eum ad.</p>
-                        <p>Probo latine iudicabit ad quo, nec adhuc nonumy adipiscing ea. Pro labore recusabo at. Tamquam electram constituam ut vel, assum omnes te ius. An mea illum petentium salutatus, vix et erat sapientem comprehensam. Movet tacimates ut mei, id sea minim graeco antiopam, te solet melius tibique his. Dicam graecis volumus has te. Amet affert menandri ex has. Per ei malis legendos principes, et duo movet deterruisset. Et cum possim vivendo, no mea animal saperet disputando. Ex legere facilisis mei. Quo primis everti disputando at, nam ut quis copiosae. Salutatus forensibus in qui. Ut usu zril referrentur, consequat vulputate intellegat sed cu. Est at imperdiet reprehendunt. Singulis mnesarchum contentiones eos an, ex mea stet vocibus. Recteque inciderint nec et. Eam at putent disputando, ad summo aperiri philosophia quo, natum mundi malorum te cum. Id modus aliquid definitiones est.</p>
-                        <p>Ex sint percipitur pro, dolor mentitum sea an. Vel simul alienum ex, vim debitis antiopam id. Ponderum luptatum te eum. Idque dicant theophrastus ea pri. Eum hinc choro ut, et qui habemus iracundia similique. Mei numquam platonem definitiones id. Per at nusquam vivendum suscipiantur, te mei nibh offendit singulis. Aperiri recusabo persequeris duo cu. Ex justo rationibus complectitur cum. Ad mucius salutatus mnesarchum mei, et dicit probatus similique qui. Malis vivendum consequuntur id sed. Vix ei fuisset perpetua, partem audire pericula nec no. Partem putant philosophia id est. Et vel nibh munere, vis numquam nusquam forensibus ad, in mazim mundi vitae eam. Ea usu exerci audire intellegam. Sit iuvaret corrumpit laboramus cu, autem mazim ea sed, sit tacimates elaboraret ut.</p>
-
+                                <h2 class="subTitle">Pile your sections one over another and access them scrolling or by URL!</h2>
+                            </hgroup>
                         </div>
-                        <p class="shape clearfix"><img src="img/mask.svg" alt=""></p>
-                        <p class="shape bottom clearfix"><img src="img/mask.svg" alt=""></object></p>
+                    </div>
+                    <article class="work_content_wrap">
+                        <div class="work_content">
+                            <div class="container">
+                                <div class="work_article">
+                                   <div class="work_img_area">
+                                        <div class="device_origin">
+                                            <div class="device device-pos-1" data-role="moveTarget-1">
+                                                <img id="img_device1" class="svg_device_color" src="img/iphone-black.svg" alt="">
+                                            </div>
+                                            <div class="device device-pos-2" data-role="moveTarget-2">
+                                                <img id="img_device2" class="svg_device_color" src="img/iphone-black.svg" alt="">
+                                            </div>
+                                            <div class="device device-pos-3" data-role="moveTarget-3">
+                                                <object id="svg_device" class="" data="img/iphone_frame.svg" type="image/svg+xml"></object>
+                                                <img id="img_device3" class="svg_device_color" src="img/iphone-black.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work_info">
+                                        <p class="logo"><img src="img/project/img_logo_emart.png" alt=""></p>
+                                        <h2>이마트 레지스트리</h2>
+                                        <p class="sub_title">이마트 앱 전용으로 레지스트리라는 명칭으로 서비스 되는 상품선물 서비스</p>
+                                        <dl>
+                                            <dt>업무 분야</dt>
+                                            <dd>Mobile Web Publishing</dd>
+                                            <dd>Front UI Developement</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>타겟 디바이스</dt>
+                                            <dd>Mobile, Tablet</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>사용 기술</dt>
+                                            <dd>HTML, CSS, JAVASCRIPT, JQUERY, SVG, PLUGIN ETC..</dd>
+                                        </dl>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <p class="shape clearfix"><img src="img/mask.svg" alt=""></p>
+                            <p class="shape bottom clearfix"><img src="img/mask.svg" alt=""></p>
+                            <div class="bg"></div>
+                        </div>
                     </article>
-                    <article class="work_content">
+                    <article class="work_content_wrap black">
+                        <div class="work_content">
+                            <div class="container">
+                                <p>Eos ex tale consul phaedrum. Ex mel enim delectus. An stet vide copiosae mei. Ne ferri oportere accusamus sit, eum an stet solet. Ex maiestatis dissentiet eum. An pro recteque intellegam, eum convenire contentiones te. Cum id nobis mediocritatem. Brute dicta putent no vel. Pro ad verear eripuit vituperatoribus. Vim ad utamur accusata recteque, an cum iriure scriptorem. Ei suas democritum sed, ceteros omittam eos et. Case eius ne vix, duo ne autem saperet insolens, mel posse aperiam labores no. Alienum accusamus an est. Qui iudicabit intellegat percipitur in, est in agam fugit assueverit. Pro cu mazim oporteat, soluta vituperata instructior mei ea, an vix sonet vocent laboramus. Vis vocent ocurreret ad. Congue causae iisque no mei, vim fastidii platonem iracundia ei, detraxit sadipscing usu eu. Est ei sonet tempor dicunt. In tota regione blandit sea, at nec numquam dissentias, eu sit sapientem evertitur. Suas mediocrem incorrupte vel ei, intellegebat reprehendunt eum ad.</p>
+                                <p>Probo latine iudicabit ad quo, nec adhuc nonumy adipiscing ea. Pro labore recusabo at. Tamquam electram constituam ut vel, assum omnes te ius. An mea illum petentium salutatus, vix et erat sapientem comprehensam. Movet tacimates ut mei, id sea minim graeco antiopam, te solet melius tibique his. Dicam graecis volumus has te. Amet affert menandri ex has. Per ei malis legendos principes, et duo movet deterruisset. Et cum possim vivendo, no mea animal saperet disputando. Ex legere facilisis mei. Quo primis everti disputando at, nam ut quis copiosae. Salutatus forensibus in qui. Ut usu zril referrentur, consequat vulputate intellegat sed cu. Est at imperdiet reprehendunt. Singulis mnesarchum contentiones eos an, ex mea stet vocibus. Recteque inciderint nec et. Eam at putent disputando, ad summo aperiri philosophia quo, natum mundi malorum te cum. Id modus aliquid definitiones est.</p>
+                                <p>Ex sint percipitur pro, dolor mentitum sea an. Vel simul alienum ex, vim debitis antiopam id. Ponderum luptatum te eum. Idque dicant theophrastus ea pri. Eum hinc choro ut, et qui habemus iracundia similique. Mei numquam platonem definitiones id. Per at nusquam vivendum suscipiantur, te mei nibh offendit singulis. Aperiri recusabo persequeris duo cu. Ex justo rationibus complectitur cum. Ad mucius salutatus mnesarchum mei, et dicit probatus similique qui. Malis vivendum consequuntur id sed. Vix ei fuisset perpetua, partem audire pericula nec no. Partem putant philosophia id est. Et vel nibh munere, vis numquam nusquam forensibus ad, in mazim mundi vitae eam. Ea usu exerci audire intellegam. Sit iuvaret corrumpit laboramus cu, autem mazim ea sed, sit tacimates elaboraret ut.</p>
 
-                        <div class="content_box">
-                            <p>Eos ex tale consul phaedrum. Ex mel enim delectus. An stet vide copiosae mei. Ne ferri oportere accusamus sit, eum an stet solet. Ex maiestatis dissentiet eum. An pro recteque intellegam, eum convenire contentiones te. Cum id nobis mediocritatem. Brute dicta putent no vel. Pro ad verear eripuit vituperatoribus. Vim ad utamur accusata recteque, an cum iriure scriptorem. Ei suas democritum sed, ceteros omittam eos et. Case eius ne vix, duo ne autem saperet insolens, mel posse aperiam labores no. Alienum accusamus an est. Qui iudicabit intellegat percipitur in, est in agam fugit assueverit. Pro cu mazim oporteat, soluta vituperata instructior mei ea, an vix sonet vocent laboramus. Vis vocent ocurreret ad. Congue causae iisque no mei, vim fastidii platonem iracundia ei, detraxit sadipscing usu eu. Est ei sonet tempor dicunt. In tota regione blandit sea, at nec numquam dissentias, eu sit sapientem evertitur. Suas mediocrem incorrupte vel ei, intellegebat reprehendunt eum ad.</p>
-                            <p>Probo latine iudicabit ad quo, nec adhuc nonumy adipiscing ea. Pro labore recusabo at. Tamquam electram constituam ut vel, assum omnes te ius. An mea illum petentium salutatus, vix et erat sapientem comprehensam. Movet tacimates ut mei, id sea minim graeco antiopam, te solet melius tibique his. Dicam graecis volumus has te. Amet affert menandri ex has. Per ei malis legendos principes, et duo movet deterruisset. Et cum possim vivendo, no mea animal saperet disputando. Ex legere facilisis mei. Quo primis everti disputando at, nam ut quis copiosae. Salutatus forensibus in qui. Ut usu zril referrentur, consequat vulputate intellegat sed cu. Est at imperdiet reprehendunt. Singulis mnesarchum contentiones eos an, ex mea stet vocibus. Recteque inciderint nec et. Eam at putent disputando, ad summo aperiri philosophia quo, natum mundi malorum te cum. Id modus aliquid definitiones est.</p>
-                            <p>Ex sint percipitur pro, dolor mentitum sea an. Vel simul alienum ex, vim debitis antiopam id. Ponderum luptatum te eum. Idque dicant theophrastus ea pri. Eum hinc choro ut, et qui habemus iracundia similique. Mei numquam platonem definitiones id. Per at nusquam vivendum suscipiantur, te mei nibh offendit singulis. Aperiri recusabo persequeris duo cu. Ex justo rationibus complectitur cum. Ad mucius salutatus mnesarchum mei, et dicit probatus similique qui. Malis vivendum consequuntur id sed. Vix ei fuisset perpetua, partem audire pericula nec no. Partem putant philosophia id est. Et vel nibh munere, vis numquam nusquam forensibus ad, in mazim mundi vitae eam. Ea usu exerci audire intellegam. Sit iuvaret corrumpit laboramus cu, autem mazim ea sed, sit tacimates elaboraret ut.</p>
-
+                            </div>
                         </div>
                     </article>
                     <div class="page">
 
-            </div>
+                    </div>
                 </div>
             </div>
             <div class="section" id="section3">
-                <div class="intro">
-                    <h1>OUR SERVICE</h1>
-                    <p>Use the power of images</p>
+                <div class="content_box">
+                    <div class="intro">
+                        <h1>OUR SERVICE</h1>
+                        <p>Use the power of images</p>
+                    </div>
                 </div>
             </div>
             <div class="section" id="section4">
-                <div class="intro">
-                    <h1>Just terrific!</h1>
-                    <p>Use the power of images</p>
+                <div class="content_box">
+                    <div class="intro">
+                        <h1>Just terrific!</h1>
+                        <p>Use the power of images</p>
+                    </div>
                 </div>
             </div>
         </div>

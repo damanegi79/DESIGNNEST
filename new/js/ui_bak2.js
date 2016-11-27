@@ -4,12 +4,6 @@
 var motionFlag = false;
 
 $(document).ready(function() {
-    var startPage = 1;
-    if(window.location.hash)
-    {
-        startPage = window.location.hash.substr(window.location.hash.length-1, window.location.hash.length);
-    }
-    
     $('#pagepiling').pagepiling({
         menu: '#menu',
         anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -21,17 +15,13 @@ $(document).ready(function() {
         },
         afterRender: function(index, nextIndex, direction){
 //            $('#intro').fadeOut(1000);
-            
-            
             setTimeout(function(){
-                if(startPage==1)
-                {
+                if($('#section1').hasClass('active')){
                     introText()
                     motionFlag = true;
+                    console.log(motionFlag)
                 }
-                 $('#pagepiling').pagepiling.moveTo(startPage);
-            },100)
-            
+            },1000)
 
         },
         afterLoad: function(index, nextIndex, direction){
@@ -206,63 +196,21 @@ $(document).ready(function() {
         },4000)
     }
     function svgDevice(){
-        $('.work_article').on('inview', function(event, isInView) {
-            if (isInView) {
-                new Vivus('svg_device',{duration:200,type:'oneByOne'},function(){
-                    TweenMax.to($('#img_device3'), 1.5, {opacity:1});
-                    TweenMax.to($('#img_device2'), 0, {opacity:1,delay:1})
-                    TweenMax.to($('#img_device2'), 0.3, {marginTop:'-10px',marginLeft:'-90%',delay:1.5});
-                    TweenMax.to($('#img_device1'), 0, {opacity:1,delay:1})
-                    TweenMax.to($('#img_device1'), 0.3, {marginTop:'-30px',marginLeft:'115%', delay:1.5, onComplete:function(){
-                            deviceAxis()
-                        }
-                    });
-                })
-            } else {
-                console.log('out')
-            }
-        });
-        
+        new Vivus('svg_device',{duration:200,type:'oneByOne'},function(){
+            TweenMax.to($('#img_device3'), 1.5, {opacity:1});
+            TweenMax.to($('#img_device2'), 0, {opacity:1,delay:1})
+            TweenMax.to($('#img_device2'), 0.3, {marginTop:'-10px',marginLeft:'-90%',delay:1.5});
+            TweenMax.to($('#img_device1'), 0, {opacity:1,delay:1})
+            TweenMax.to($('#img_device1'), 0.3, {marginTop:'-30px',marginLeft:'115%', delay:1.5, onComplete:function(){
+                    deviceAxis()
+                }
+            });
+            
+        })
         
     }
     function deviceAxis(){
-        $(".work_content_wrap").bind("mouseenter", function (){
-            $(".work_content_wrap").bind("mousemove", moveAxis);
-//            $(".work_info").bind("mousemove", moveAxis);
-//            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
-            console.log('in')
-        });
-
-
-        $(".work_content_wrap").bind("mouseleave", function (){
-            TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
-            TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
-            TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
-//            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(0px)"});
-            $(".work_content_wrap").unbind("mousemove", moveAxis);
-//            $(".work_info").unbind("mousemove", moveAxis);
-            console.log('out')
-        });
         
-    }
-    
-    function moveAxis(e){
-        var pageX = e.pageX - $(".work_img_area").offset().left;
-        var pageY = e.pageY - $(".work_img_area").offset().top;
-        pageX = pageX - ($(".work_img_area").width()/2);
-        pageY = pageY - ($(".work_img_area").height()/2);
-        var percentX = pageX / ($(".work_img_area").width()/2);
-        var percentY = pageY / ($(".work_img_area").height()/2);
-        var rotationY = -10*percentX;
-        var rotationX = 10*percentY;
-        var xx = -10*percentX;
-        var yy = -10*percentY;
-        TweenMax.to($('[data-role="moveTarget-1"]'), 0.6, {x:xx,y:yy});
-        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*1.5});
-        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*3});
-//        TweenMax.to($('.work_info'), 0.6, {rotationY:rotationY, rotationX:rotationX});
-
     }
 
 });
-

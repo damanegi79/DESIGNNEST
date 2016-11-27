@@ -200,11 +200,19 @@
                 $('#pp-nav').css('margin-top', '-' + ($('#pp-nav').height()/2) + 'px');
                 $('#pp-nav').find('li').eq($('.pp-section.active').index('.pp-section')).find('a').addClass('active');
             }
-
+            
+            
             $(window).on('load', function() {
                 scrollToAnchor();
             });
-
+            
+            window.addEventListener("load", function ()
+            {
+                alert("!@!@");
+            });
+           
+            
+           
             $.isFunction( options.afterRender ) && options.afterRender.call( this);
         });
 
