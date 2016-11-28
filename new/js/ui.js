@@ -9,7 +9,7 @@ $(document).ready(function() {
     {
         startPage = window.location.hash.substr(window.location.hash.length-1, window.location.hash.length);
     }
-    
+
     $('#pagepiling').pagepiling({
         menu: '#menu',
         anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -20,9 +20,7 @@ $(document).ready(function() {
             'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
         },
         afterRender: function(index, nextIndex, direction){
-//            $('#intro').fadeOut(1000);
-            
-            
+            $('#intro').fadeOut(1000);
             setTimeout(function(){
                 if(startPage==1)
                 {
@@ -31,7 +29,7 @@ $(document).ready(function() {
                 }
                  $('#pagepiling').pagepiling.moveTo(startPage);
             },100)
-            
+
 
         },
         afterLoad: function(index, nextIndex, direction){
@@ -49,7 +47,7 @@ $(document).ready(function() {
                 }
 
             }
-            
+
             if (nextIndex == 2) {
                 svgDevice();
 
@@ -72,7 +70,7 @@ $(document).ready(function() {
 
             //reaching our last section? The one with our normal site?
             if (nextIndex == 2) {
-                
+
                 $('#arrow').hide();
 
                 //fading out navigation bullets
@@ -112,6 +110,7 @@ $(document).ready(function() {
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3.5)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) '})
         logo.from(sub_tit, 0.5, {opacity:0,transform:'perspective(1000px) rotateX(0deg) translateY(30px)',onComplete:function(){
+                mob_gyro()
                 axis()
                 scrollfn()
             }
@@ -130,9 +129,10 @@ $(document).ready(function() {
     }
     function axis(){
         if($('#section1').hasClass('active')){
-             $(".logo_content").bind("mousemove", moveLogo);
+//            gyro();
+            $(".logo_content").bind("mousemove", moveLogo);
          } else {
-            $(".logo_content").unbind("mousemove", moveLogo);
+             $(".logo_content").unbind("mousemove", moveLogo);
          }
     }
     function scrollfn(){
@@ -142,6 +142,7 @@ $(document).ready(function() {
             TweenMax.to( wheel, 1, {transform: 'translateY(20px)',repeat:-1, yoyo:true} );
         }} );
     }
+
     function moveLogo(e)
     {
         var pageX = e.pageX - $(".intro_wrap").offset().left;
@@ -153,7 +154,30 @@ $(document).ready(function() {
         var rotationY = -15*percentX;
         var rotationX = 15*percentY;
         TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2});
+
+
     }
+    function mob_gyro(){
+    window.addEventListener('deviceorientation', handleOrientation);
+    function handleOrientation(event) {
+        var x = event.beta // In degree in the range [-180,180]
+        var y = event.gamma // In degree in the range [-90,90]
+        if (x >  50) { x =  50};
+        if (x < 10) { x = 10};
+        if (y >  30) { y =  30};
+        if (y < -30) { y = -30};
+        var rotationX = x
+        var rotationY = y
+        var moveY = rotationX;
+        var moveX = rotationY;
+        TweenMax.to($(".intro_contents"), 0.6, {rotationX:(moveY-30)*0.8,rotationY:-moveX, x:moveX ,y:(moveY-20)*1.5}); //rotationY:rotationY,
+        $(".console input.input01").val('y:'+moveY)
+        $(".console input.input02").val('x:'+moveX)
+    }
+    }
+
+
+
     function text_ani(){
         var svg = $('#svg_logo').getSVG();
         var logopath = svg.find(".path");
@@ -213,7 +237,7 @@ $(document).ready(function() {
                     TweenMax.to($('#img_device2'), 0, {opacity:1,delay:1})
                     TweenMax.to($('#img_device2'), 0.3, {marginTop:'-10px',marginLeft:'-90%',delay:1.5});
                     TweenMax.to($('#img_device1'), 0, {opacity:1,delay:1})
-                    TweenMax.to($('#img_device1'), 0.3, {marginTop:'-30px',marginLeft:'115%', delay:1.5, onComplete:function(){
+                    TweenMax.to($('#img_device1'), 0.3, {marginTop:'-30px',marginLeft:'110%', delay:1.5, onComplete:function(){
                             deviceAxis()
                         }
                     });
@@ -222,19 +246,26 @@ $(document).ready(function() {
                 console.log('out')
             }
         });
-        
-        
+
+
     }
+
+
     function deviceAxis(){
+        var motionDeviceAxis = false;
         $(".work_content_wrap").bind("mouseover", function (){
-            $(".work_content_wrap").bind("mousemove", moveAxis);
-//            $(".work_info").bind("mousemove", moveAxis);
-//            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
-            console.log('in')
+            if(!motionDeviceAxis){
+                motionDeviceAxis = true;
+                $(".work_content_wrap").bind("mousemove", moveAxis);
+                //            $(".work_info").bind("mousemove", moveAxis);
+                //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
+                console.log('in')
+            }
         });
 
 
         $(".work_content_wrap").bind("mouseleave", function (){
+            motionDeviceAxis = false;
             TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
             TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
             TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
@@ -243,9 +274,9 @@ $(document).ready(function() {
 //            $(".work_info").unbind("mousemove", moveAxis);
             console.log('out')
         });
-        
+
     }
-    
+
     function moveAxis(e){
         var pageX = e.pageX - $(".work_img_area").offset().left;
         var pageY = e.pageY - $(".work_img_area").offset().top;
