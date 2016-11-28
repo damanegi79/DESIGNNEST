@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000.13 2025.62">
     <defs>
         <style>
-            path, rect, circle, polygon{stroke:#222; fill:none;stroke-width:5;stroke-dashoffset: 10000;stroke-dasharray: 10000;}
+            path, rect, circle, polygon{stroke:#666; fill:none;stroke-width:3;stroke-dashoffset: 10000;stroke-dasharray: 10000;}
             .body{fill:#333;}
             .btn_home{stroke-width:10}
             .holl{fill:#000;}

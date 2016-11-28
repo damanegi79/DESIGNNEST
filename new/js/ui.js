@@ -233,11 +233,12 @@ $(document).ready(function() {
         $('.work_article').on('inview', function(event, isInView) {
             if (isInView) {
                 new Vivus('svg_device',{duration:200,type:'oneByOne'},function(){
-                    TweenMax.to($('#img_device3'), 1.5, {opacity:1});
-                    TweenMax.to($('#img_device2'), 0, {opacity:1,delay:1})
-                    TweenMax.to($('#img_device2'), 0.3, {marginTop:'-10px',marginLeft:'-90%',delay:1.5});
-                    TweenMax.to($('#img_device1'), 0, {opacity:1,delay:1})
-                    TweenMax.to($('#img_device1'), 0.3, {marginTop:'-30px',marginLeft:'110%', delay:1.5, onComplete:function(){
+                    TweenMax.to($('#img_device3,.img3'), 1.5, {opacity:1});
+                    TweenMax.to($('#svg_device'), 1.5, {opacity:0});
+//                    TweenMax.to($('#img_device2,.img2'), 0, {opacity:1,delay:1})
+                    TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:1.5});
+//                    TweenMax.to($('#img_device1,.img1'), 0, {opacity:1,delay:1})
+                    TweenMax.to($('.device-pos-1'), 0.3, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:1.5, onComplete:function(){
                             deviceAxis()
                         }
                     });
