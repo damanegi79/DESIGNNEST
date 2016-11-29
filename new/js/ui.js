@@ -170,22 +170,24 @@ $(document).ready(function() {
 
     }
     function mob_gyro(){
-    window.addEventListener('deviceorientation', handleOrientation);
-    function handleOrientation(event) {
-        var x = event.beta // In degree in the range [-180,180]
-        var y = event.gamma // In degree in the range [-90,90]
-        if (x >  50) { x =  50};
-        if (x < 10) { x = 10};
-        if (y >  30) { y =  30};
-        if (y < -30) { y = -30};
-        var rotationX = x
-        var rotationY = y
-        var moveY = rotationX;
-        var moveX = rotationY;
-        TweenMax.to($(".intro_contents"), 0.6, {rotationX:(moveY-30)*0.8,rotationY:-moveX, x:moveX ,y:(moveY-20)*1.5}); //rotationY:rotationY,
-        $(".console input.input01").val('y:'+moveY)
-        $(".console input.input02").val('x:'+moveX)
-    }
+        window.addEventListener('deviceorientation', handleOrientation);
+      
+        
+        function handleOrientation(event) {
+            var x = event.beta // In degree in the range [-180,180]
+            var y = event.gamma // In degree in the range [-90,90]
+            if (x >  50) { x =  50};
+            if (x < 10) { x = 10};
+            if (y >  30) { y =  30};
+            if (y < -30) { y = -30};
+            var rotationX = x
+            var rotationY = y
+            var moveY = rotationX;
+            var moveX = rotationY;
+            TweenMax.to($(".intro_contents"), 0.6, {rotationX:(moveY-30)*0.8,rotationY:-moveX, x:moveX ,y:(moveY-20)*1.5}); //rotationY:rotationY,
+            $(".console input.input01").val('y:'+moveY)
+            $(".console input.input02").val('x:'+moveX)
+        }
     }
 
 
@@ -307,8 +309,8 @@ $(document).ready(function() {
         var xx = -10*percentX;
         var yy = -10*percentY;
         TweenMax.to($('[data-role="moveTarget-1"]'), 0.6, {x:xx,y:yy});
-        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*1.5});
-        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*3});
+        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*2.5});
+        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*4});
 //        TweenMax.to($('.work_info'), 0.6, {rotationY:rotationY, rotationX:rotationX});
 
     }

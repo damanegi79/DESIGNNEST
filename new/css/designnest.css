@@ -124,7 +124,7 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .content .header_content{max-width: 1200px; margin: auto; box-sizing: border-box; padding:60px 30px 0 30px; position: relative;}
 
 
-.shape{position:absolute; width: 100%; top: 0; left: 0; z-index:50; border: 1px solid #ff0;}
+.shape{position:absolute; width: 100%; top: 0; left: 0; z-index:50;}
 .shape img{margin-top: -1px; width: 100%; transform: scale(-1, 1);}
 .shape.bottom{ bottom: 0; transform: scale(1, -1); top: auto;}
 .shape.bottom img{margin-bottom: -1px;}
