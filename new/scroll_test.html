@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no,width=auto, initial-scale=1, maximum-scale=1, minimum-scale=1,minimal-ui" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="웹사이트 개발, 반응형 사이트 개발, 모바일 사이트 개발, 홈페이지 제작"/>
+        <meta name="keywords" content="웹퍼블리싱, 웹디자인, 홈페이지제작, 모바일 사이트, 반응형 사이트"/>
+        <title>Designnest</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+        <link rel="stylesheet" href="css/designnest.css" />
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/TweenMax.min.js"></script>
+
+        <script src="js/ScrollMagic.js"></script>
+        <script src="js/animation.gsap.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+        <style>
+            .test_block{border: 1px solid #000; height: 200px; top: 200px; left:600px; position: absolute; width: 200px;}
+            .trigger{position: absolute; right: 0; width: 100px; border: 1px solid #000; top: 10%;}
+            .block02{width: 100px; height: 100px; background-color: #f00;margin-left: 700px; position: relative;}
+            .active{background-color: #00f;}
+        </style>
+        <script>
+            $(document).ready(function() {
+                var controller = new ScrollMagic.Controller();
+                var tween = TweenMax.to("#block02", 0.5, {left: -100,backgroundColor:"rgba(0,0,0,0.5)",ease:Linear.easeNone})
+                new ScrollMagic.Scene({triggerElement: "#block02"}) //,duration:200
+//                    .setClassToggle("#block02", "active") // add class toggle
+                    .setTween(tween)
+                    .addIndicators() // add indicators (requires plugin)
+                    .addTo(controller);
+            })
+
+        </script>
+    </head>
+
+    <body>
+       <p class="trigger">trigger</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div id="test_block" class="test_block"></div>
+        <div id="block02" class="block02"></div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+</html>

@@ -162,7 +162,7 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .work_article .work_info dd{font-size: 18px;}
 
 @media (max-width:767px){
-    .work_article{height: auto;}
+    .work_article{height: auto; padding: 0;}
     .work_article .work_img_area{position:relative; width: 100%;outline: 1px solid #f00;}
     .work_article .work_img_area .device_origin{position:relative; border: 1px solid #f00; top:auto; margin-top: 0px; left: auto; text-align: center; width: 45%; margin: auto;}
     .work_article .work_img_area .device_origin .device-pos-3{}
@@ -171,3 +171,7 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
     .work_article .work_img_area .device-pos-3{width:100%; z-index:3; position: relative;}
     .work_article .work_info{position:relative; height:auto; top: 50%; margin-top:auto; padding: 20px; box-sizing: border-box; color: #fff; outline: 1px solid #f00; width: auto;}
 }
+
+
+
+.test_block{width: 100px; height: 100px; background-color: #f00; margin-left: 10%; position:absolute; top:100px; z-index: 1000;}

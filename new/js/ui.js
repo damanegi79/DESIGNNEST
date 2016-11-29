@@ -27,8 +27,16 @@ $(document).ready(function() {
                     introText()
                     motionFlag = true;
                 }
+                if(startPage==2)
+                {
+
+                    if (scrollFunction==true){
+                        scrollTest();
+                    }
+                }
                  $('#pagepiling').pagepiling.moveTo(startPage);
             },100)
+
 
 
         },
@@ -44,12 +52,16 @@ $(document).ready(function() {
                     introText()
                     motionFlag = true;
 
+
                 }
 
             }
 
             if (nextIndex == 2) {
                 svgDevice();
+                if (scrollFunction==true){
+                    scrollTest();
+                }
 
             }
         },
@@ -230,19 +242,24 @@ $(document).ready(function() {
         },4000)
     }
     function svgDevice(){
+
+
         $('.work_article').on('inview', function(event, isInView) {
             if (isInView) {
-                new Vivus('svg_device',{duration:200,type:'oneByOne'},function(){
+                new Vivus('svg_device',{duration:200,start: 'autostart',type:'oneByOne', forceRender: false},function(){
+                    deviceAxis()
                     TweenMax.to($('#img_device3,.img3'), 1.5, {opacity:1});
                     TweenMax.to($('#svg_device'), 1.5, {opacity:0});
-//                    TweenMax.to($('#img_device2,.img2'), 0, {opacity:1,delay:1})
+                    //                    TweenMax.to($('#img_device2,.img2'), 0, {opacity:1,delay:1})
                     TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:1.5});
-//                    TweenMax.to($('#img_device1,.img1'), 0, {opacity:1,delay:1})
+                    //                    TweenMax.to($('#img_device1,.img1'), 0, {opacity:1,delay:1})
                     TweenMax.to($('.device-pos-1'), 0.3, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:1.5, onComplete:function(){
-                            deviceAxis()
-                        }
+
+                                                        }
                     });
+
                 })
+                console.log('play')
             } else {
                 console.log('out')
             }
@@ -254,10 +271,10 @@ $(document).ready(function() {
 
     function deviceAxis(){
         var motionDeviceAxis = false;
-        $(".work_content_wrap").bind("mouseover", function (){
+        $(".project-01").bind("mouseover", function (){
             if(!motionDeviceAxis){
                 motionDeviceAxis = true;
-                $(".work_content_wrap").bind("mousemove", moveAxis);
+                $(".project-01").bind("mousemove", moveAxis);
                 //            $(".work_info").bind("mousemove", moveAxis);
                 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
                 console.log('in')
@@ -265,13 +282,13 @@ $(document).ready(function() {
         });
 
 
-        $(".work_content_wrap").bind("mouseleave", function (){
+        $(".project-01").bind("mouseleave", function (){
             motionDeviceAxis = false;
             TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
             TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
             TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(0px)"});
-            $(".work_content_wrap").unbind("mousemove", moveAxis);
+            $(".project-01").unbind("mousemove", moveAxis);
 //            $(".work_info").unbind("mousemove", moveAxis);
             console.log('out')
         });
@@ -295,6 +312,22 @@ $(document).ready(function() {
 //        TweenMax.to($('.work_info'), 0.6, {rotationY:rotationY, rotationX:rotationX});
 
     }
-
+    $("#section2").scroll(function(){
+//        console.log($("#section2").scrollTop())
+    })
 });
 
+/* Scroll Magic Test */
+var scrollFunction = true;
+
+function scrollTest(){
+    scrollFunction = false;
+    var controller = new ScrollMagic.Controller();
+    var tween = TweenMax.to(".test_block", 2, {left: 200,backgroundColor:"rgba(0,0,0,0.5)",ease:Linear.easeNone,rotationZ: 360, marginTop:100})
+    new ScrollMagic.Scene({triggerElement: ".test_block",offset:0}) //,duration:100
+        //                    .setClassToggle("#test_block", "active") // add class toggle
+//        .setPin(".project-01")
+        .setTween(tween)
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller)
+}
