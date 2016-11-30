@@ -202,9 +202,9 @@ $(window).load(function() {
                 var self = this
                 setTimeout(function(){
                     var logo = new TimelineLite();
-                    logo.to(self, 0.2,{stroke:'none'})
+                    logo.to(self, 0.2,{stroke:'none',delay:1})
                 },i*200)
-            },1000)
+            })
         });
         setTimeout(function(){
             new Vivus('svg_text', {duration: 200,type:'oneByOne'}, function (obj) {
@@ -238,14 +238,15 @@ $(window).load(function() {
                     textlogo.to(self, 1.0,{fill:'#222'})
                 },i*200)
             })
-            TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4', delay:3});
-            TweenMax.to(textpath.eq(5), 0.5, {x:'136%', delay:2});
-            TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4', delay:3});
+            TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4', delay:2});
+            TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%', delay:2});
+//            TweenMax.to(textpath.eq(5), 0.5, { delay:2});
             TweenMax.to(textpath.eq(6), 0.5, {x:'-136%', delay:2,onComplete:function(){
-            mob_gyro()
+                mob_gyro()
                 axis()
                 scrollfn()
-            }});
+                }
+            });
         },5000)
     }
     function svgDevice(){
