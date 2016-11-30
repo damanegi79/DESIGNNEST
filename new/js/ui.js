@@ -117,6 +117,8 @@ $(document).ready(function() {
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
         var sub_tit = $(".sub_title");
+        logo.to($('.logo_area'), 1.0,{marginTop:0, opacity:1})
+        logo.to(tit, 1.0,{marginTop:0, opacity:1})
         logo.to(tit, 1.0,{marginTop:0, opacity:1})
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)'},1)
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3.5)
@@ -171,20 +173,20 @@ $(document).ready(function() {
     }
     function mob_gyro(){
         window.addEventListener('deviceorientation', handleOrientation);
-      
-        
+
+
         function handleOrientation(event) {
             var x = event.beta // In degree in the range [-180,180]
             var y = event.gamma // In degree in the range [-90,90]
-            if (x >  50) { x =  50};
-            if (x < 10) { x = 10};
+            if (x >  30) { x =  30};
+            if (x < -30) { x = -30};
             if (y >  30) { y =  30};
             if (y < -30) { y = -30};
             var rotationX = x
             var rotationY = y
             var moveY = rotationX;
             var moveX = rotationY;
-            TweenMax.to($(".intro_contents"), 0.6, {rotationX:(moveY-30)*0.8,rotationY:-moveX, x:moveX ,y:(moveY-20)*1.5}); //rotationY:rotationY,
+            TweenMax.to($(".intro_contents"), 0.6, {rotationY:-moveX, x:moveX ,y:-moveY*1.5}); //rotationX:(moveY-30)*0.8,
             $(".console input.input01").val('y:'+moveY)
             $(".console input.input02").val('x:'+moveX)
         }
@@ -325,7 +327,7 @@ $(document).ready(function() {
             TweenMax.to($('.device_origin'),0.6,{y:-(sectionScroll-header)*0.5})
         }
     })
-    
+
     var zoom = false;
     $(".img_zoom").on('click',function(){
         var target = $(this).parent().parent()
@@ -338,8 +340,8 @@ $(document).ready(function() {
             $(this).removeClass('active')
             zoom=false;
         }
-        
-        
+
+
     })
 
 });

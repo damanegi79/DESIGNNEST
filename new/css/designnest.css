@@ -20,12 +20,12 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 #intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff; display: none;}
 #section1{}
 .intro_wrap{position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;overflow: hidden;}
-.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative; margin-top: -100px; opacity: 0;transform-origin: 50% 50%;}
+.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative;  opacity: 0;transform-origin: 50% 50%;}
 .intro_contents .logo_content{display: table-cell; height: 100%; vertical-align: middle;}
 .intro_contents .logo_content .title{font-size: 100px; font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .intro_contents .logo_content .title span{position: relative;}
-.intro_contents .logo_content p.sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) rotateY(0deg); position: relative; margin-top: 20px; color: #666; text-transform: uppercase;}
-.intro_contents .logo_area {width:60%; margin: auto; text-align: center;}
+.intro_contents .logo_content .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) rotateY(0deg); position: relative; margin-top: 20px; color: #666; text-transform: uppercase;}
+.intro_contents .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #666; padding: 20px; border-radius: 5px;}
 .intro_contents .logo_area .logo{width: 100px; height: 100px; display: inline-block; }
 .intro_contents .logo_area .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;}
 .intro_contents .logo_area .logoText #svg_text{width: 100%; height: auto;}
@@ -172,6 +172,7 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
     .work_article .work_img_area .device-pos-2{width:80%; z-index: 2; top: 10%; left: 25%;}
     .work_article .work_img_area .device-pos-3{width:100%; z-index:3; position: relative;}
     .work_article .work_info{position:relative; height:auto; top: 50%; margin-top:auto; padding: 20px; box-sizing: border-box; color: #fff; outline: 1px solid #f00; width: auto;}
+    .intro_contents .logo_content .sub_title{font-size: 20px; margin-top: 10px;}
 }
 
 
