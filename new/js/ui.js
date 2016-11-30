@@ -124,9 +124,7 @@ $(window).load(function() {
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3.5)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) '})
         logo.from(sub_tit, 0.5, {opacity:0,transform:'perspective(1000px) rotateX(0deg) translateY(30px)',onComplete:function(){
-                mob_gyro()
-                axis()
-                scrollfn()
+                
             }
 
         })
@@ -243,8 +241,12 @@ $(window).load(function() {
             TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4', delay:3});
             TweenMax.to(textpath.eq(5), 0.5, {x:'136%', delay:2});
             TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4', delay:3});
-            TweenMax.to(textpath.eq(6), 0.5, {x:'-136%', delay:2});
-        },6000)
+            TweenMax.to(textpath.eq(6), 0.5, {x:'-136%', delay:2,onComplete:function(){
+            mob_gyro()
+                axis()
+                scrollfn()
+            }});
+        },5000)
     }
     function svgDevice(){
 
