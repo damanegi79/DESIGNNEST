@@ -30,9 +30,7 @@ $(window).load(function() {
                 if(startPage==2)
                 {
 
-                    if (scrollFunction==true){
-                        scrollTest();
-                    }
+
                 }
                  $('#pagepiling').pagepiling.moveTo(startPage);
             },100)
@@ -59,9 +57,6 @@ $(window).load(function() {
 
             if (nextIndex == 2) {
                 svgDevice();
-                if (scrollFunction==true){
-                    scrollTest();
-                }
 
             }
         },
@@ -117,14 +112,12 @@ $(window).load(function() {
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
         var sub_tit = $(".sub_title");
-        logo.to($('.logo_area'), 1.0,{marginTop:0, opacity:1})
-        logo.to(tit, 1.0,{marginTop:0, opacity:1})
         logo.to(tit, 1.0,{marginTop:0, opacity:1})
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)'},1)
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3.5)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) '})
         logo.from(sub_tit, 0.5, {opacity:0,transform:'perspective(1000px) rotateX(0deg) translateY(30px)',onComplete:function(){
-                
+
             }
 
         })
@@ -230,23 +223,29 @@ $(window).load(function() {
             })
         },3500)
         setTimeout(function(){
+            console.log('start')
             textpath.each(function(i){
                 var self = this
                 setTimeout(function(){
                     var textlogo = new TimelineLite();
                     textlogo.to(self, 1.0,{fill:'#128dd4'})
-                    textlogo.to(self, 1.0,{fill:'#222'})
+                    textlogo.to(self, 1.0,{fill:'#222',onComplete:function(){
+                        TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4'});
+                        TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%'});
+                        //            TweenMax.to(textpath.eq(5), 0.5, { delay:2});
+                        TweenMax.to(textpath.eq(6), 0.5, {x:'-136%', onComplete:function(){
+                            console.log('asdasd')
+                            scrollfn()
+                        }
+                                                         });
+                    }})
                 },i*200)
             })
-            TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4', delay:2});
-            TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%', delay:2});
-//            TweenMax.to(textpath.eq(5), 0.5, { delay:2});
-            TweenMax.to(textpath.eq(6), 0.5, {x:'-136%', delay:2,onComplete:function(){
+            setTimeout(function(){
                 mob_gyro()
                 axis()
-                scrollfn()
-                }
-            });
+
+            },2000)
         },5000)
     }
     function svgDevice(){
@@ -352,7 +351,6 @@ $(window).load(function() {
 
 /* Scroll Magic Test */
 var scrollFunction = true;
-
 function scrollTest(){
 //    scrollFunction = false;
 //    var controller = new ScrollMagic.Controller();
