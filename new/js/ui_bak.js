@@ -4,6 +4,7 @@ var motionFlag = false;
 
 $(window).load(function() {
 
+    alert('asdasd')
     var startPage = 1;
     if(window.location.hash)
     {
@@ -321,10 +322,12 @@ $(window).load(function() {
             TweenMax.to(logopath,1.0,({fill:'#fff'}))
         })
         $('.menuOpen button').on('click',function(){
+            console.log('open')
             TweenMax.to(menuOpen,1.0,({left:'-100px',ease: Power4.easeInOut}))
             TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
-            TweenMax.to(menu,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut, onComplete:function(){
-                TweenMax.to(menuClose,0.5,({right:'10px',ease: Power4.easeInOut}))
+            TweenMax.to(menu,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut, afterFunction(){
+
+                TweenMax.to(menuClose,1.0,({right:'10px',ease: Power4.easeInOut,delay:0.5}))
                 if(startPage==1)
                 {
                     $(".logo_content").unbind("mousemove", moveLogo);
@@ -332,15 +335,13 @@ $(window).load(function() {
 
                 }
 
-            }
-                }
-            ))
+            }}))
         })
         $('.menuClose button').on('click',function(){
             TweenMax.to(menuClose,1.0,({right:'-100px',ease: Power4.easeInOut}))
             TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
-            TweenMax.to(menu,1.0,({transform:'translateX(-100vw)',ease: Power4.easeInOut, onComplete:function(){
-                TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut}))
+            TweenMax.to(menu,1.0,({transform:'translateX(-100vw)',ease: Power4.easeInOut, afterFunction(){
+                TweenMax.to(menuOpen,1.0,({left:'30px',ease: Power4.easeInOut,delay:0.5}))
                 if(startPage==1)
                 {
                     $(".logo_content").bind("mousemove", moveLogo);
@@ -351,25 +352,18 @@ $(window).load(function() {
             }}))
         })
     }
-
-    function text_ani01(){
-        var titlogo = $('#svg_logo')
-        var svg = titlogo.getSVG();
-        var logopath = svg.find('path');
-        TweenMax.to(logopath, 2.6, {fill:'f00'});
-    }
-//    function menuStats(nextIndex){
-//        var stats = new TimelineLite();
-//        var menuOpen = $('.menuOpen');
-//        var statsTxt = $('.menuOpen .stats');
+    function menuStats(nextIndex){
+        var stats = new TimelineLite();
+        var menuOpen = $('.menuOpen');
+        var statsTxt = $('.menuOpen .stats');
 //        var textInfo = $.pagepiling.index
-//        console.log('index = ' + nextIndex)
-//
-//        stats.to(menuOpen, 1.0,{left:'-100px',ease: Power4.easeInOut})
-//            .to(menuOpen, 1.0,{left:'10px',ease: Power4.easeInOut,afterFunction(){
-//                statsTxt.text(nextIndex)
-//            }})
-//    }
+        console.log('index = ' + nextIndex)
+
+        stats.to(menuOpen, 1.0,{left:'-100px',ease: Power4.easeInOut})
+            .to(menuOpen, 1.0,{left:'10px',ease: Power4.easeInOut,afterFunction(){
+                statsTxt.text(nextIndex)
+            }})
+    }
 
 });
 
