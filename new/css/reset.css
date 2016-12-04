@@ -16,12 +16,13 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    font-size:14px;
     font: inherit;
     vertical-align: baseline;
     line-height: 120%;
 }
 /* HTML5 display-role reset for older browsers */
+ul,li,dl,dt,dd{list-style: none;}
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -44,6 +45,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+a{color:#333;text-decoration:none;}
+a:link, a:visited, a:active{color:#333; text-decoration: none;}
+a:hover{color:#333;}
 .clearfix{zoom:1;}
 .clearfix:after{content:"";display:block; clear:both;}

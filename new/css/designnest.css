@@ -3,7 +3,7 @@
 
 /* font */
 
-@import url(http://fonts.googleapis.com/css?family=Dosis:200,400,600,800);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Dosis:200,400,600,800);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 /*
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Dosis:200,300,400,500,600,700,800);
@@ -17,7 +17,7 @@
 /* layout */
 html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 
-#intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff; display: none;}
+#intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff;}
 #section1{}
 .intro_wrap{position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;overflow: hidden;}
 .intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative;  opacity: 0;transform-origin: 50% 50%;}
@@ -187,8 +187,77 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 #wrapper{position:fixed; background-color: #f00; width: 100%; height: 100%; left: 0; top: 0;}
 
 .menuClose{position: fixed; right: -100px; top:30px; z-index:200; transform: perspective( 1000px )}
-#menu_wrap{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index:110; background-color:rgba(0,0,0,0.5); color: #fff; font-size: 60px; text-align: center; line-height: 100vh; transform:perspective( 1000px ) translateX(-100vw);}
+#menu_wrap{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index:110; background-color:#333; color: #fff; font-size: 60px; text-align: center; line-height: 100vh; transform:perspective( 1000px ) translateX(-100vw); box-sizing: border-box;}
+.menu_container{position: absolute; left:20px; top: 20px; bottom: 20px; right: 20px; background-color: #128dd4;transform:perspective( 1000px ) translateX(-100vw);}
+.menu_contents{position: absolute; left: 0; top: 0; width:100%; height: 100%; background:#fff; transform:perspective( 1000px ) translateX(-100vw); color: #333; font-size: 14px; box-sizing: border-box; text-align: left; border: 2px solid #128dd4}
+.menu_contents h1{font-size: 50px;}
+.menu_contents .gnb{font-size:26px; position: relative; display:table-cell; vertical-align: middle; width: 33.33;}
+.menu_contents .bar{height:1px; width: 80px; background-color: #333; margin-bottom: 10px;}
+.menu_contents .gnb li{margin:10px 0;}
+.menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%;}
+.menu_contents .gnb li a span{transition:All 0.5s ease; transform:translateZ(13px); display: block; transform-origin:center bottom; height: 30px;}
+.menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#128dd4 ;}
+.menu_contents .gnb li.menu01 a:after{content: "메인/최근 작업"}
+.menu_contents .gnb li.menu02 a:after{content: "서비스 항목"}
+.menu_contents .gnb li.menu03 a:after{content: "포트폴리오"}
+.menu_contents .gnb li.menu04 a:after{content: "웹사이트 제작"}
+.menu_contents .gnb li.menu05 a:after{content: "문의하기"}
+.menu_contents .gnb li a:hover span{transform:rotateX(90deg) translateZ(26px);}
+.menu_contents .gnb li a:hover:after{transform: rotateX(0deg) translateZ(26px);}
+
+
+.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:11px;}
 .menuOpen button,.menuClose button{background: none; border: none; cursor: pointer;}
+.top_content{position: relative; top: 0; left: 0; width: 100%; height: 60%; display: table;}
+.top_content:after{content: ""; clear: both;}
+.top_content header{ display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box; }
+.top_content header ul{padding-left: 5px; margin-top: 10px;}
+.top_content header li{font-size: 12px; line-height: 140%;}
+
+.top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle;}
+.top_content .contact .get{font-size: 20px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
+.top_content .contact .text{font-size: 14px; line-height: 140%;}
+.top_content .contact .text span{color:#128dd4}
+.top_content .contact .mail {margin-top: 20px;}
+.top_content .contact .mail a{display: inline-block; height: 40px; line-height: 40px;}
+.top_content .contact .mail a:after{content: "Master@designnest.net"}
+
+a.link{ position: relative;}
+a.link span{position:relative; background-color: #fff; display: block; height: 40px; line-height: 40px; text-align: center; padding: 0 25px;transform: perspective( 100px );transition: All 0.5s ease; z-index: 1; box-sizing: border-box; border:1px solid #333;}
+a.link:after{content: ""; display:block; height: 100%; width:100%; background-color:#128dd4; color: #fff; position: absolute; left: 0; top: 0; text-align: center;  overflow: hidden; transition: All 0.5s ease; box-sizing: border-box;transform: perspective( 100px ) rotateY(180deg); z-index: 0; border:1px solid #333;}
+a.link:hover:after{transform:rotateY(0deg); z-index: 1; }
+a.link:hover span{transform:rotateY(-180deg); z-index: 0;}
+
+.bottom_quick{position:absolute; bottom: 0; left: 0; width: 100%; height: 40%; display: table;}
+.bottom_quick:after{content: ""; clear: both;}
+.bottom_quick .bottom_con{ width: 33.3333334%; height: 100%;display: table-cell; position: relative; vertical-align: middle; overflow: hidden; font-family: Lato; font-weight: 300;}
+.bottom_quick .bottom_con a{}
+/*.bottom_quick .bottom_con a:hover{ background-size: 110%;}*/
+.bottom_quick .bottom_con a .text{padding: 20px; box-sizing: border-box; position: relative; z-index: 1;}
+.bottom_quick .bottom_con a .background{position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 0;}
+.bottom_quick .bottom_con a .background img{width: 100%;}
+
+.bottom_quick .bottom_con a .background{}
+.bottom_quick .bottom_con a .background img {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all 1.5s ease-in-out;
+    transform: scale(1) rotateZ(0deg);
+
+}
+.bottom_quick .bottom_con a:hover .background img {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.05) rotateZ(2deg);
+}
+.bottom_quick .bottom_con a .background span{position: absolute; left: 0; top: 0; width: 100%; height: 100%;background:linear-gradient(to right, rgba(244,244,244,1) 0%,rgba(255,255,255,0.01) 100%);}
+.bottom_quick .bottom_con a p{font-size: 12px; font-weight: 100; color: #000;}
+.bottom_quick .bottom_con a .summery{}
+.bottom_quick .bottom_con a .title{font-size: 30px; font-weight: 100;}
+.bottom_quick .bottom_con a .text{-webkit-transition: all 1.5s ease-in-out; transform-origin: left center}
+.bottom_quick .bottom_con a:hover .text{transform: scale(1.1);}
 
 .menuOpen{position: fixed; left:-100px; top:30px; z-index:200; transform: perspective( 1000px ); height: 60px; background-color: rgba(0,0,0,0.5); border-radius: 30px; width: 100px;}
 .menuOpen .menu{display: inline-block; width:60px; height:60px; border-radius: 50%; background-color:#333;transform: perspective( 1000px );transition:All 0.5s ease;}

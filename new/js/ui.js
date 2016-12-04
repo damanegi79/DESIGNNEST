@@ -199,9 +199,9 @@ $(window).load(function() {
                 },i*200)
             })
             setTimeout(function(){
-//                mob_gyro()
-//                axis()
-//                scrollfn()
+                mob_gyro()
+                axis()
+                scrollfn()
             },2000)
         },5000)
     }
@@ -307,12 +307,15 @@ $(window).load(function() {
 
     function menu(){
         var content = $('#wrapper')
-        var menu = $('#menu_wrap')
+        var menuWrap = $('#menu_wrap')
         var menuOpen = $('.menuOpen')
         var menuClose = $('.menuClose')
         var menuLogo = $("#menuLogo")
         var svg = menuLogo.getSVG();
         var logopath = svg.find('path');
+        var menuContainer = $('.menu_container')
+        var content = $('.menu_contents');
+
         TweenMax.to(menuOpen,1.0,({left:'30px',ease: Power4.easeInOut,delay:0}))
 
         $(".menuOpen button").hover(function(){
@@ -322,32 +325,24 @@ $(window).load(function() {
         })
         $('.menuOpen button').on('click',function(){
             TweenMax.to(menuOpen,1.0,({left:'-100px',ease: Power4.easeInOut}))
-            TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
-            TweenMax.to(menu,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut, onComplete:function(){
+//            TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
+            TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut, onComplete:function(){
                 TweenMax.to(menuClose,0.5,({right:'10px',ease: Power4.easeInOut}))
-                if(startPage==1)
-                {
-                    $(".logo_content").unbind("mousemove", moveLogo);
-                    $(".logo_content").unbind(mob_gyro);
+            }}))
+            TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2}))
 
-                }
-
-            }
-                }
-            ))
+            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4}))
         })
         $('.menuClose button').on('click',function(){
             TweenMax.to(menuClose,1.0,({right:'-100px',ease: Power4.easeInOut}))
-            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
-            TweenMax.to(menu,1.0,({transform:'translateX(-100vw)',ease: Power4.easeInOut, onComplete:function(){
+//            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
+            TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
+            TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2}))
+            TweenMax.to(menuWrap,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
                 TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut}))
-                if(startPage==1)
-                {
-                    $(".logo_content").bind("mousemove", moveLogo);
-                    $(".logo_content").bind(mob_gyro);
-                    console.log('start move')
-                }
-
+                TweenMax.to(menuWrap,0,({transform:'translateX(-100vw)'}))
+                TweenMax.to(menuContainer,0,({transform:'translateX(-100vw)'}))
+                TweenMax.to(content,0,({transform:'translateX(-100vw)'}))
             }}))
         })
     }
