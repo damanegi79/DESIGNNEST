@@ -8,7 +8,7 @@ $(document).ready(function() {
         cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
         cursorborder: "1px solid #fff", // css definition for cursor border
         cursorborderradius: "5px", // border radius in pixel for cursor
-        scrollspeed: 150,
+        scrollspeed: 200,
         mousescrollstep: 80,
     });
     scrollTest()

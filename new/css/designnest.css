@@ -264,6 +264,6 @@ a.link:hover:after{transform: translateY(0%)}
 
 
 /* service */
-#transition_wrapper{position: relative; overflow-x: hidden; background-color: #ff0;}
-#transition_wrapper .content_list{max-width: 1000px; padding-top: 10%; padding-bottom: 10%; margin: auto; outline: 1px solid #000;}
-#transition_wrapper .content_list .itemList{width: 100%; height: 400px; outline:1px solid #f00; background-color: rgba(0,0,0,0.5); margin-bottom: 20px;transform: perspective( 1000px ); transform-origin: center middle;}
+#transition_wrapper{position: relative; overflow-x: hidden;}
+#transition_wrapper .content_list{max-width: 1000px; padding-top: 10%; padding-bottom: 10%; margin: auto;}
+#transition_wrapper .content_list .itemList{width: 100%; height: 400px; background-color: rgba(0,0,0,0.5); margin-bottom: 20px;transform: perspective( 1000px ); transform-origin: center middle;}
