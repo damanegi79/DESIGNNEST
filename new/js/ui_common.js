@@ -7,6 +7,13 @@ $(window).load(function() {
     menu();
 
     $('#intro').fadeOut(1000);
+//    $('.bottom_quick .bottom_con a').hover(function(){
+//
+//        TweenMax.to($(this).find('img'),1.5,({opacity:1,transform:'scale(1.05)',filter:'grayscale(0)'}))
+//
+//    },function(){
+//        TweenMax.to($(this).find('img'),1.5,({opacity:0.7,transform:'scale(1)',filter:'grayscale(100%)'}))
+//    })
 })
 
 function chkAgent(){
