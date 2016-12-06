@@ -24,8 +24,12 @@ function scrollTest(){
 //    var tween = console.log('in')
     $('.itemList').each(function(){
         var thisList = this;
-//        console.log($('.item-02').position().top)
-        var tween = TweenMax.from(this, 2, {transform:'rotateX(-40deg) scale(0.8)',opacity:0.5,ease:Linear.easeNone})
+        var itemInfo = $(thisList).find('.item_info')
+        var itemThumb = $(thisList).find('.item_thumb')
+        var tween = TweenMax.from(this, 2, {transform:'rotateX(-40deg) scale(0.8)',opacity:1,ease:Linear.easeNone,onComplete:function(){
+            TweenMax.to(itemInfo, 1, ({transform:'translateY(0px)',opacity:1, ease:Power1.easeOut}))
+            TweenMax.to(itemThumb, 1, ({transform:'translateX(0px)', ease:Power1.easeOut}))
+        }})
         new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter',duration:450}) //,duration:100
             .setTween(tween)
             .addIndicators()
@@ -34,18 +38,18 @@ function scrollTest(){
     $('.itemList').each(function(){
         var thisList = this;
         //        console.log($('.item-02').position().top)
-        var tween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)',opacity:0.5, ease:Linear.easeNone})
+        var tween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)',opacity:1, ease:Linear.easeNone})
         new ScrollMagic.Scene({triggerElement:this, offset:-100, triggerHook: 'onLeave',duration:450}) //,duration:100
             .setTween(tween)
             .addIndicators()
             .addTo(controller)
     })
-    $('.itemList').on("mouseover",function(){
-        var bg = $(this).find('.bg img')
-        var tween = TweenMax.to(bg, 3, {transform:'scale(1.1)', ease: Power1.easeOut})
-    })
-    $('.itemList').on("mouseleave",function(){
-        var bg = $(this).find('.bg img')
-        var tween = TweenMax.to(bg, 3, {transform:'scale(1)', ease: Power1.easeOut})
-    })
+//    $('.itemList').on("mouseover",function(){
+//        var bg = $(this).find('.bg img')
+//        var tween = TweenMax.to(bg, 5, {transform:'scale(1.1)', ease: Power1.easeOut})
+//    })
+//    $('.itemList').on("mouseleave",function(){
+//        var bg = $(this).find('.bg img')
+//        var tween = TweenMax.to(bg, 5, {transform:'scale(1)', ease: Power1.easeOut})
+//    })
 }

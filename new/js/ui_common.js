@@ -1,20 +1,31 @@
 "use strict";
 
-//$(document).ready(function() {
-//    $(".pp-scrollable").niceScroll({
-//        cursorcolor: "#424242", // change cursor color in hex
-//        cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
-//        cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
-//        cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
-//        cursorborder: "1px solid #fff", // css definition for cursor border
-//        cursorborderradius: "5px", // border radius in pixel for cursor
-//        scrollspeed: 60,
-//    });
-//})
+$(document).ready(function() {
+    chkAgent()
+})
 $(window).load(function() {
     menu();
+
     $('#intro').fadeOut(1000);
 })
+
+function chkAgent(){
+    var agent = navigator.userAgent.toLowerCase();
+    if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+        var caution = $('.browserCaution');
+        TweenMax.to(caution,0,({display:'block',delay:1, onComplete:function(){
+            TweenMax.to(caution,0.5,({bottom:'0px'}))
+        }}))
+    }
+    else {
+
+    }
+    $('.browserCaution .close button').on('click',function(){
+        TweenMax.to(caution,0.5,({bottom:'-150px',onComplete:function(){
+            TweenMax.to(caution,0,({display:'none'}))
+        }}))
+    })
+}
 
 function menu(){
     console.log('asdasd')

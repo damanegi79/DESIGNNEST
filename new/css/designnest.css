@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(font-awesome.min.css);
 
 
 /* font */
@@ -263,11 +264,34 @@ a.link:hover:after{transform: translateY(0%)}
 .fill_logo{fill:#f00 !important;}
 /*.menuOpen .menu:hover #menuLogo svg path{background-color: #f00;fill:#f00;}*/
 
+/* caution */
+.browserCaution{position: fixed; bottom: -150px; left: 0; right: 0; padding: 30px 0; text-align: center; background-color: #222; color: #fff; z-index: 1500; font-weight: 400; line-height: 180%; font-size:16px; display: none;}
+.browserCaution .close{position: absolute; right: 10px; top: 10px;}
+.browserCaution .close i{color: #fff;}
+.browserCaution .close button:hover i{color:#128dd4;}
+.browserCaution b{font-weight: 600; color: #128dd4;}
+button{background: none; border: none; cursor: pointer;}
 
 /* service */
 #transition_wrapper{position: relative; overflow-x: hidden;}
 .content_list{max-width: 1000px; padding-top: 10%; padding-bottom: 10%; margin: auto;}
-.content_list .itemList{width: 100%; height: 450px; background-color: rgba(0,0,0,0.5); margin-bottom: 40px;transform: perspective( 1000px ); transform-origin: center middle; position: relative; z-index: 10;}
-.content_list .itemList .bg{position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 10;}
+.content_list .itemList{width: 100%; height: 450px; background-color:#ff0; margin-bottom:20px;transform: perspective( 1000px ); transform-origin: center middle; position: relative; z-index: 10;}
+.content_list .itemList .bg{position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 1;}
 .content_list .itemList .bg img{width: 100%;}
-.content_list .itemList:before{content: ""; display: block; position:absolute; width: 100%; height: 100%; left: 10px; top: 10px; background-color: #0965a6; z-index:1;}
+.content_list .itemList:before{content: ""; display: block; position:absolute; width: 100%; height: 100%; left: 10px; top: 10px; background-color: #0965a6; z-index:0;}
+.content_list .itemList .content{position: relative; z-index: 10; width: 100%; height: 100%; box-sizing: border-box;background-color: rgba(0,0,0,0.7); padding:50px 30px 0 50px;overflow: hidden;}
+.item_info{ color: #fff; opacity:0;transform:translateY(-30px)}
+.item_info .logo img{height: 40px;}
+.item_info h2{font-size: 26px; font-weight: 600; margin-top:10px;}
+.item_info .summery{margin-top: 15px; font-weight:400;}
+.item_info dl{font-size: 14px; font-weight:400;margin-top: 15px;}
+.item_info dl dt{margin-bottom: 5px;}
+.item_thumb{ position: absolute; right: 0; top: 0; bottom: 0; overflow: hidden; width: 60%; transform:translateX(300px);}
+.item_thumb .mobile{width:200px; position: absolute; right: 100px;top:5%;}
+.item_thumb .mobile .device{}
+.item_thumb .mobile .device img{width: 100%;}
+.item_thumb .mobile .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:25%;}
+.item_thumb .mobile .imgArea img{width: 100%;}
+
+.motion{transform:perspective( 1000px ); transition:All 0.5s ease; width: 100px; height: 200px; background-color: #f00; position: relative; display: block;}
+.motion:hover{transform:perspective( 1000px ) rotateX(180deg); background-color: #ff0;}
