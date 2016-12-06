@@ -276,11 +276,13 @@ button{background: none; border: none; cursor: pointer;}
 #transition_wrapper{position: relative; overflow-x: hidden;}
 .content_list{max-width: 1000px; padding-top: 10%; padding-bottom: 10%; margin: auto;}
 .content_list .itemList{width: 100%; height: 450px; background-color:#ff0; margin-bottom:40px;transform: perspective( 1000px ); transform-origin: center middle; position: relative; z-index: 100;}
+/*.content_list .itemList *{pointer-events: none;}*/
+
 .content_list .itemList .bg{position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 1;}
 .content_list .itemList .bg img{width: 100%;}
 .content_list .itemList:before{content: ""; display: block; position:absolute; width: 100%; height: 100%; left: 10px; top: 10px; background-color: #0965a6; z-index:0;}
 .content_list .itemList .content{position: relative; z-index: 10; width: 100%; height: 100%; box-sizing: border-box;background-color: rgba(0,0,0,0.7); padding:50px 30px 0 50px;overflow: hidden;}
-.item_info{ color: #fff; opacity:0;transform:translateY(-30px)}
+.item_info{ color: #fff; transform:translateY(-30px)}
 .item_info .logo img{height: 40px;}
 .item_info h2{font-size: 26px; font-weight: 600; margin-top:10px;}
 .item_info .summery{margin-top: 15px; font-weight:400;}
@@ -288,13 +290,13 @@ button{background: none; border: none; cursor: pointer;}
 .item_info dl dt{margin-bottom: 5px;}
 .item_info dl dd{line-height: 140%;}
 .item_thumb{ position: absolute; right: 0; top: 0; bottom: 0; overflow: hidden; width: 60%; }
-.item_thumb .mobile{width:150px; position: absolute; left:70px;bottom:20px; transform:perspective( 1000px ) translateX(600px); z-index: 10;}
+.item_thumb .mobile{width:150px; position: absolute; left:70px;bottom:20px; transform:perspective( 1000px ); z-index: 10;} /* translateX(600px) */
 .item_thumb .mobile .device{}
 .item_thumb .mobile .device img{width: 100%;}
 .item_thumb .mobile .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:25%;}
 .item_thumb .mobile .imgArea img{width: 100%;}
 
-.item_thumb .pc{ width: 600px; right: -120px; bottom:30px; position: absolute; transform:perspective( 1000px ) translateX(600px);}
+.item_thumb .pc{ width: 600px; right: -120px; bottom:30px; position: absolute; transform:perspective( 1000px );} /* translateX(600px) */
 .item_thumb .pc .device img{ width: 100%;}
 .item_thumb .pc .imgArea{position: absolute; left:74px; top:25px; overflow: hidden; width: 450px; height:280px;}
 .item_thumb .pc .imgArea img{ width: 100%;}
