@@ -25,9 +25,9 @@ function scroll3d(){
         var tween = TweenMax.from(this, 2, {transform:'rotateX(-40deg) scale(0.8)',opacity:1,ease:Linear.easeNone,onComplete:function(){
             TweenMax.to(itemInfo, 1, ({transform:'translateY(0px)',opacity:1, ease:Power1.easeOut}))
             TweenMax.to(itemPc, 1, ({transform:'translateX(0px)', ease:Power1.easeOut}))
-            TweenMax.to(itemMobile, 1, ({transform:'translateX(0px)', ease:Power1.easeOut,delay:0.5,onComplete:function(){
+            TweenMax.to(itemMobile, 0, ({transform:'translateX(0px)', ease:Power1.easeOut,onComplete:function(){
                 $(thisList).addClass('active')
-                $(thisList).bind("mouseover",function(){
+                $(thisList).bind("mouseenter",function(){
 //                    if($(this).hasClass('active')){
                         console.log('in')
                         $(this).bind("mousemove",moveFolio)
@@ -38,9 +38,10 @@ function scroll3d(){
                         TweenMax.to($(thisList).find('[data-role="moveTarget-1"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
                         TweenMax.to($(thisList).find('[data-role="moveTarget-2"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
                         TweenMax.to($(thisList).find('[data-role="moveTarget-3"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                    }
                         console.log('out')
                         $(this).unbind("mousemove",moveFolio)
-                    }
+
                 })
             }}))
 //
