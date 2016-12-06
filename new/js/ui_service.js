@@ -27,7 +27,7 @@ function scroll3d(){
             TweenMax.to(itemPc, 1, ({transform:'translateX(0px)', ease:Power1.easeOut}))
             TweenMax.to(itemMobile, 1, ({transform:'translateX(0px)', ease:Power1.easeOut,delay:0.5,onComplete:function(){
                 $(thisList).addClass('active')
-                $(thisList).one("mouseenter",function(){
+                $(thisList).bind("mouseenter",function(){
                     if($(this).hasClass('active')){
                         console.log('in')
                         $(this).bind("mousemove",moveFolio)
