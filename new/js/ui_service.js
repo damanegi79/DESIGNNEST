@@ -11,45 +11,92 @@ $(document).ready(function() {
         scrollspeed: 100,
         mousescrollstep: 80,
     });
-    scrollTest()
+    scroll3d()
+//    axisPortfolio()
 })
 
-
-/* Scroll Magic Test */
-//var scrollFunction = true;
-function scrollTest(){
-//    scrollFunction = false;
+function scroll3d(){
     var controller = new ScrollMagic.Controller();
-
-//    var tween = console.log('in')
     $('.itemList').each(function(){
         var thisList = this;
         var itemInfo = $(thisList).find('.item_info')
-        var itemThumb = $(thisList).find('.item_thumb')
+        var itemMobile = $(thisList).find('.mobile')
+        var itemPc = $(thisList).find('.pc')
         var tween = TweenMax.from(this, 2, {transform:'rotateX(-40deg) scale(0.8)',opacity:1,ease:Linear.easeNone,onComplete:function(){
             TweenMax.to(itemInfo, 1, ({transform:'translateY(0px)',opacity:1, ease:Power1.easeOut}))
-            TweenMax.to(itemThumb, 1, ({transform:'translateX(0px)', ease:Power1.easeOut}))
+            TweenMax.to(itemPc, 1, ({transform:'translateX(0px)', ease:Power1.easeOut}))
+            TweenMax.to(itemMobile, 1, ({transform:'translateX(0px)', ease:Power1.easeOut,delay:0.5,onComplete:function(){
+                $(thisList).addClass('active')
+                $(thisList).one("mouseenter",function(){
+                    if($(this).hasClass('active')){
+                        console.log('in')
+                        $(this).bind("mousemove",moveFolio)
+                    }
+                })
+                $(thisList).bind("mouseleave",function(){
+                    if($(this).hasClass('active')){
+                        TweenMax.to($(thisList).find('[data-role="moveTarget-1"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                        TweenMax.to($(thisList).find('[data-role="moveTarget-2"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                        TweenMax.to($(thisList).find('[data-role="moveTarget-3"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                        console.log('out')
+                        $(this).unbind("mousemove",moveFolio)
+                    }
+                })
+            }}))
+//
+
+
         }})
-        new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter',duration:450}) //,duration:100
+        new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter',duration:350}) //,duration:100
             .setTween(tween)
-            .addIndicators()
             .addTo(controller)
+
     })
     $('.itemList').each(function(){
         var thisList = this;
         //        console.log($('.item-02').position().top)
         var tween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)',opacity:1, ease:Linear.easeNone})
-        new ScrollMagic.Scene({triggerElement:this, offset:-100, triggerHook: 'onLeave',duration:450}) //,duration:100
+        new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:450}) //,duration:100
             .setTween(tween)
-            .addIndicators()
             .addTo(controller)
+
     })
-//    $('.itemList').on("mouseover",function(){
-//        var bg = $(this).find('.bg img')
-//        var tween = TweenMax.to(bg, 5, {transform:'scale(1.1)', ease: Power1.easeOut})
-//    })
-//    $('.itemList').on("mouseleave",function(){
-//        var bg = $(this).find('.bg img')
-//        var tween = TweenMax.to(bg, 5, {transform:'scale(1)', ease: Power1.easeOut})
-//    })
+
+
+
+
+}
+function axisPortfolio(){
+    $('.itemList').each(function(){
+        var thisList = this;
+        $(this).bind("mouseenter",function(){
+            if($(this).hasClass('active')){
+                console.log('have')
+                $(this).bind("mousemove",moveFolio)
+            }
+        })
+        $(this).bind("mouseleave",function(){
+            if($(this).hasClass('active')){
+                TweenMax.to($(this).find('[data-role="moveTarget-1"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                TweenMax.to($(this).find('[data-role="moveTarget-2"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                TweenMax.to($(this).find('[data-role="moveTarget-3"]'), 0.5, {transform: "translateZ(0)",x:0, y:0});
+                console.log('out')
+                $(this).unbind("mousemove",moveFolio)
+            }
+        })
+    })
+
+}
+function moveFolio(e){
+    var pageX = e.pageX - $(this).offset().left;
+    var pageY = e.pageY - $(this).offset().top;
+    pageX = pageX - ($(this).width()/2);
+    pageY = pageY - ($(this).height()/2);
+    var percentX = pageX / ($(this).width()/2);
+    var percentY = pageY / ($(this).height()/2);
+    var xx = -10*percentX;
+    var yy = -10*percentY;
+    TweenMax.to($(this).find('[data-role="moveTarget-1"]'), 0.2, {x:xx,y:yy*0.5});
+    TweenMax.to($(this).find('[data-role="moveTarget-2"]'), 0.2, {x:xx*2,y:yy*1.5});
+    TweenMax.to($(this).find('[data-role="moveTarget-3"]'), 0.2, {x:xx*4,y:yy*2.5});
 }
