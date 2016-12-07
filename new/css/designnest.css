@@ -207,13 +207,13 @@ html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200; wi
 .menu_contents .gnb li a:hover:after{transform: rotateX(0deg) translateZ(26px);}
 
 
-.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:11px;}
+.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:12px; color: #888; font-weight: 100;}
 .menuOpen button,.menuClose button{background: none; border: none; cursor: pointer;}
 .top_content{position: relative; top: 0; left: 0; width: 100%; height: 60%; display: table;}
 .top_content:after{content: ""; clear: both;}
-.top_content header{ display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box; }
+.top_content header{ display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box;}
 .top_content header ul{padding-left: 5px; margin-top: 10px;}
-.top_content header li{font-size: 12px; line-height: 140%;}
+.top_content header li{font-size: 12px; line-height: 140%; color: #888;}
 
 .top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;}
 .top_content .contact .get{font-size: 20px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
@@ -272,9 +272,54 @@ a.link:hover:after{transform: translateY(0%)}
 .browserCaution b{font-weight: 600; color: #128dd4;}
 button{background: none; border: none; cursor: pointer;}
 
+/* mouse */
+.scroll-suggest {
+    position: absolute;
+    left: 50%;
+    bottom:30px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+z-index: 10;}
+.icon-mouse-dark {overflow:hidden; display: inline-block; width: 20px; height: 32px; border:2px solid #666; border-radius: 10px; box-sizing: border-box;}
+.scroll-suggest .icon-mouse-dark {position: relative; -webkit-animation: pulseDelay 5s infinite; animation: pulseDelay 5s infinite;}
+.scroll-suggest .icon-mouse-dark span {
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    left: calc(50% - 1px);
+    top: 8px;
+    overflow: hidden;}
+.scroll-suggest .icon-mouse-dark span i {
+    position: absolute;
+    background-color: #666;
+    display: block;
+    width: 2px;
+    height: 5px;
+    top: 0;
+    left: 0;}
+.scroll-suggest .icon-mouse-dark span i:first-child {
+    -webkit-animation: scrollWheel 1s infinite;
+    animation: scrollWheel 1s infinite;
+}
+.scroll-suggest .icon-mouse-dark span i:last-child {
+    -webkit-animation: scrollWheelSecond 1s infinite;
+    animation: scrollWheelSecond 1s infinite;
+    -webkit-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);}
+
+@keyframes scrollWheel{from{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}to{-webkit-transform:translateY(10px);transform:translateY(10px);opacity:0}}
+@keyframes scrollWheelSecond{from{-webkit-transform:translateY(-100%);transform:translateY(-100%);opacity:0}to{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 /* service */
-#transition_wrapper{position: relative; overflow-x: hidden;}
-.content_list{max-width: 1000px; padding-top: 10%; padding-bottom: 10%; margin: auto;}
+#transition_wrapper{position: relative; overflow-x: hidden;background-color: #222;}
+#transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; margin-bottom:20px; overflow: hidden; position: relative;  }
+#transition_wrapper .header h1{font-size: 60px; margin-top: 20px;}
+#transition_wrapper .header .summery{ font-size: 14px; font-weight:300; line-height:160%; color: #999;}
+#transition_wrapper .header .header_con{display: table-cell; vertical-align: middle;}
+#transition_wrapper .header .header_con .contents{max-width: 1200px; margin: auto; transform: perspective( 1000px ); transform-origin: center bottom;}
+.content_list{max-width: 1000px; padding-top: 5%; padding-bottom: 5%; margin: auto;}
 .content_list .itemList{width: 100%; height: 450px; background-color:#ff0; margin-bottom:40px;transform: perspective( 1000px ); transform-origin: center middle; position: relative; z-index: 100;}
 /*.content_list .itemList *{pointer-events: none;}*/
 
@@ -303,3 +348,4 @@ button{background: none; border: none; cursor: pointer;}
 
 .motion{transform:perspective( 1000px ); transition:All 0.5s ease; width: 100px; height: 200px; background-color: #f00; position: relative; display: block;}
 .motion:hover{transform:perspective( 1000px ) rotateX(180deg); background-color: #ff0;}
+.global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}

@@ -2,18 +2,32 @@
 
 $(document).ready(function() {
     $("body").niceScroll({
-        cursorcolor: "#424242", // change cursor color in hex
+        cursorcolor: "rgba(0,0,0,0.5)", // change cursor color in hex
         cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
         cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
-        cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
-        cursorborder: "1px solid #fff", // css definition for cursor border
+        cursorwidth: "10px", // cursor width in pixel (you can also write "5px")
+        cursorborder: "none", // css definition for cursor border
         cursorborderradius: "5px", // border radius in pixel for cursor
-        scrollspeed: 100,
-        mousescrollstep: 80,
+        scrollspeed: 150,
+        mousescrollstep:80,
+        autohidemode: false,
     });
     scroll3d()
+    headerMotion()
 //    axisPortfolio()
 })
+
+function headerMotion(){
+    var controller = new ScrollMagic.Controller();
+    var header = $('#transition_wrapper .header .contents')
+    var headerTween = TweenMax.to(header, 2, {transform:'translateY(50vh) scale(0.7)',opacity:0.5})
+    var header_scene = new ScrollMagic.Scene({triggerElement:header, offset:0, triggerHook: 'onLeave', duration:'100%'}).setTween(headerTween)
+
+
+    controller.addScene([
+        header_scene
+    ]);
+}
 
 function scroll3d(){
     var controller = new ScrollMagic.Controller();
@@ -22,11 +36,8 @@ function scroll3d(){
         var itemInfo = $(thisList).find('.item_info')
         var itemMobile = $(thisList).find('.mobile')
         var itemPc = $(thisList).find('.pc')
-//        var tween = TweenMax.from(this, 2, {transform:'rotateX(-40deg) scale(0.8)',opacity:1,ease:Linear.easeNone,onComplete:function(){
-//            TweenMax.to(itemInfo, 1, ({transform:'translateY(0px)',opacity:1, ease:Power1.easeOut,onComplete:function(){
-//                $(thisList).addClass('active')
-//            }}))
-//        }})
+
+
         var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)'})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)'})
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)'})
@@ -34,10 +45,9 @@ function scroll3d(){
             $(thisList).addClass('active')
             console.log('has active')
         }})
-
         var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(listTween)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:150, triggerHook: 'onEnter',duration:450}).setTween(infoTween)
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter',duration:450}).setTween(mobileTween)
+        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(infoTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(mobileTween)
         var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(pcTween)
 
         controller.addScene([
@@ -53,7 +63,7 @@ function scroll3d(){
 
         var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)'})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)'})
-        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-250px)'})
+        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)'})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(-100px)',onStart:function(){
             $(thisList).removeClass('active')
             console.log('del active')
@@ -61,9 +71,9 @@ function scroll3d(){
 
 
         var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:450}).setTween(listTween)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:-100, triggerHook: 'onLeave',duration:450}).setTween(infoTween)
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:-100, triggerHook: 'onLeave',duration:450}).setTween(mobileTween)
-        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:-60, triggerHook: 'onLeave',duration:450}).setTween(pcTween)
+        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:450}).setTween(infoTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:450}).setTween(mobileTween)
+        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:450}).setTween(pcTween)
 
         controller.addScene([
             list_scene,info_scene,mobile_scene,pc_scene
