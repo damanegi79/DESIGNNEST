@@ -147,8 +147,8 @@ function service(){
         var responsive04 = $(thisList).find('.device04')
         var responsive05 = $(thisList).find('.device05')
 
-        var responsiveTween01 = TweenMax.from(responsive01, 2, {transform:"translateY(-300px)",opacity:1})
-        var responsiveTween02 = TweenMax.from(responsive02, 2, {transform:"translateY(-400px) translateX(-100px)",opacity:1})
+        var responsiveTween01 = TweenMax.from(responsive01, 2, {transform:"translateY(-350px)",opacity:1})
+        var responsiveTween02 = TweenMax.from(responsive02, 2, {transform:"translateY(-450px) translateX(-100px)",opacity:1})
         var responsiveTween03 = TweenMax.from(responsive03, 2, {transform:"rotateZ(30deg) scale(1.5) translateY(250px) translateX(-50px)",opacity:1})
         var responsiveTween04 = TweenMax.from(responsive04, 2, {transform:"translateY(300px) translateX(100px)",opacity:1})
         var responsiveTween05 = TweenMax.from(responsive05, 2, {transform:"translateX(300px)",opacity:1,onComplete:function(){
@@ -163,7 +163,7 @@ function service(){
 
         var mobileTween = new TimelineMax();
         mobileTween
-            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(30vh) translateX(450px) scale(4)",opacity:1,onStart:function(){
+            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(280px) translateX(450px) scale(4)",opacity:1,onStart:function(){
             $('.service_container.overWrap').addClass('over-view')
         }})
             .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)"})
