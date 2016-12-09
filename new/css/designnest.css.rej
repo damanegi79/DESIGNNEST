@@ -1,9 +1,0 @@
-diff a/new/css/designnest.css b/new/css/designnest.css    (rejected hunks)
-@@ -351,7 +351,6 @@
- .motion:hover{transform:perspective( 1000px ) rotateX(180deg); background-color: #ff0;}
- .global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}
-
-.sevice_wrap{}
-.sevice_wrap .service_container{min-height:70vh; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: url(../img/device/bg.svg) no-repeat 50% 50%; background-size: 100% auto;}
-.sevice_wrap .service_container.over-view{overflow: visible; z-index: 30;}
-
