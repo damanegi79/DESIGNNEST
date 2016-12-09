@@ -123,16 +123,18 @@ function service(){
         var itemTxt = $(thisList).find('.text_area b')
         var itemTxtarea = $(thisList).find('.text_area')
 //        var durationArea = $(thisList).find('.text_area')
-
+        var temListarea = $(thisList).find('.templateImg ul.list')
         var txtTween = TweenMax.to(itemTxt, 2, {color:'#128dd4'})
         var areaTween = TweenMax.to(itemTxtarea, 2, {transform:"translateX(0%)",opacity:1})
+        var itemListTween = TweenMax.to(temListarea, 2, {transform:"perspective( 1000px ) rotateX(10deg) rotateZ(-40deg) translateY(-500px)  translateX(200px) scale(1.2)"})
 
         var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, duration:100}).setTween(txtTween)
         var area_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:400}).setTween(areaTween)
+        var template_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:1000}).setTween(itemListTween)
 
 
         controller.addScene([
-            txt_scene,area_scene
+            txt_scene,area_scene,itemListTween,template_scene
         ]);
 
     })
