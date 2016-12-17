@@ -151,7 +151,7 @@ function service(){
         var responsiveTween02 = TweenMax.from(responsive02, 2, {transform:"translateY(-450px) translateX(-100px)",opacity:1})
         var responsiveTween03 = TweenMax.from(responsive03, 2, {transform:"rotateZ(30deg) scale(1.5) translateY(250px) translateX(-50px)",opacity:1})
         var responsiveTween04 = TweenMax.from(responsive04, 2, {transform:"translateY(300px) translateX(100px)",opacity:1})
-        var responsiveTween05 = TweenMax.from(responsive05, 2, {transform:"translateX(300px)",opacity:1,onComplete:function(){
+        var responsiveTween05 = TweenMax.from(responsive05, 2, {transform:"translateX(450px)",opacity:1,onComplete:function(){
 //            $('.service_container.overWrap').addClass('over-view')
         }})
 
@@ -163,13 +163,25 @@ function service(){
 
         var mobileTween = new TimelineMax();
         mobileTween
-            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(280px) translateX(450px) scale(4)",opacity:1,onStart:function(){
+            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(230px) translateX(500px) scale(4)",opacity:1,onStart:function(){
             $('.service_container.overWrap').addClass('over-view')
         }})
             .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)"})
             .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)"})
 
+<<<<<<< HEAD
         var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'100', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
+=======
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'0', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
+        
+        
+        var ui_img = $(thisList).find('.ui_img .ui');
+        var ui_text = $(thisList).find('.ui_img .text');
+        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1px) translateY(0px) translateX(0px)", opacity:1})
+        var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1px)", opacity:1})
+        var ui_scene = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:400}).setTween(uiTween)
+        var uiText_scene = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:200}).setTween(uiTextTween)
+>>>>>>> df440da95db80fb7c71fb332cf2d3371db663f86
 
         controller.addScene([
             txt_scene,
@@ -180,7 +192,9 @@ function service(){
             resoposive_scene03,
             resoposive_scene04,
             resoposive_scene05,
-            mobile_scene
+            mobile_scene,
+            ui_scene,
+            uiText_scene
         ]);
 
     })
