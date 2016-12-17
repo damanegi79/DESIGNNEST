@@ -316,7 +316,7 @@ z-index: 10;}
 #transition_wrapper{position: relative; overflow-x: hidden;background-color: #222;}
 #transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; overflow: hidden; position: relative;}
 #transition_wrapper .header h1{font-size: 60px; margin-top: 20px;}
-#transition_wrapper .header .summery{ font-size: 14px; font-weight:300; line-height:160%; color: #999;}
+#transition_wrapper .header .summery{ font-size: 16px; font-weight:300; line-height:160%; color: #999;}
 #transition_wrapper .header .header_con{display: table-cell; vertical-align: middle; overflow: hidden; height: 100%; overflow: hidden;}
 #transition_wrapper .header .header_con .contents{max-width: 1200px; margin: auto; transform: perspective( 1000px ); transform-origin:left top; position: relative; z-index: 10;}
 
@@ -352,7 +352,7 @@ z-index: 10;}
 .global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}
 
 
-.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: url(../img/device/bg.svg) no-repeat 50% 50%; background-size: 100% auto;}
+.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: linear-gradient(to right, #000000 0%,#111442 35%,#000000 100%); background-size: 100% auto;}
 .sevice_wrap .service_container.over-view{overflow: visible; z-index: 30;}
 .sevice_wrap .service_container.template{z-index: 50;}
 
@@ -370,9 +370,19 @@ z-index: 10;}
 
 .sevice_wrap .service_container:nth-child(even) .service_content{background-color: #fff; color: #333; }
 .sevice_wrap .service_container:nth-child(even) .service_content .summery{line-height: 160%; color: #666;}
+.service_content .pc_work{ width: 50%; position: absolute; right: 0; top:80px;}
+.service_content .pc_work img{width: 100%;}
+.service_content .pc_work .pc_img {display: inline-block; width:550px; margin-left: 100px;}
+
+.service_content .ui_area{ width: 50%; position: absolute; right: 0; top:0px; height:600px; outline: 1px dashed #666;}
+.service_content .ui_area img{ width: 100%;}
+.service_content .ui_area .ui_img {}
+.service_content .ui_area .ui_img .pc{width: 400px; position: absolute; left:200px; top: 50%; margin-top: -120px;}
+.service_content .ui_area .ui_img .ui{width:800px; position: absolute; left:-30px; top: 50%;margin-top: -140px; transform:perspective( 1000px ) scale(0.4) translateY(-50px) translateX(80px);}
+.service_content .ui_area .ui_img .text{width:300px; position: absolute; left:250px; top: 50%;margin-top: -20px;font-weight:400; text-align: center; font-size: 30px; transform:perspective( 1000px ) scale(0); opacity: 0}
 
 
-.cardArea{ width: 50%; position: absolute; right: 0; top: 0; height: 100%; outline: 1px dashed #666;}
+.cardArea{ width: 50%; position: absolute; right: 0; top: 0; height: 100%; }
 .cardArea .card{width:360px; height: 200px; background-color:#f00; border-radius: 8px; position:absolute; left:calc(50% - 180px); top: calc(50% - 100px); cursor:pointer; transform:perspective( 1000px ); z-index: 10; overflow: hidden; }
 .cardArea .card .logo{width:70px; position:absolute; left: 35px; top:calc(50% - 35px);}
 .cardArea .card .title{font-size:45px; letter-spacing: -1px; position: absolute; left: 123px; top:calc(50% - 42px);}
