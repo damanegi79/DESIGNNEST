@@ -352,7 +352,7 @@ z-index: 10;}
 .global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}
 
 
-.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: url(../img/device/bg.svg) no-repeat 50% 50%; background-size: 100% auto;}
+.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: url(../img/device/bg.svg) no-repeat 50% 50%; background-size:cover;}
 .sevice_wrap .service_container.over-view{overflow: visible; z-index: 30;}
 .sevice_wrap .service_container.template{z-index: 50;}
 
@@ -402,3 +402,7 @@ z-index: 10;}
 .res_device .device03 .mobile02{position: absolute; left: 0; top: 0;}
 
 #footer{text-align: center; height:100px;}
+
+.pc_work{position: absolute; right: 0; top: 0; height: 100%; width: 50%;}
+.pc_work .img_pc{position: absolute; top:0; right: 20%; transform:perspective( 1000px ) scale(1.2); top: 50%; margin-top: -160px;}
+.pc_work .img_pc img{ width: 100%;}

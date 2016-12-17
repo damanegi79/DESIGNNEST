@@ -169,7 +169,7 @@ function service(){
             .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)"})
             .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)"})
 
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'0', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'100', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
 
         controller.addScene([
             txt_scene,
