@@ -54,17 +54,17 @@ function menu(){
         TweenMax.to(logopath,1.0,({fill:'#fff'}))
     })
     $('.menuOpen button').on('click',function(){
-        TweenMax.to(menuOpen,1.0,({left:'-100px',ease: Power4.easeInOut}))
+        TweenMax.to(menuOpen,1.0,({left:'-200px',ease: Power4.easeInOut}))
         //            TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
-        TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut, onComplete:function(){
-            TweenMax.to(menuClose,0.5,({right:'10px',ease: Power4.easeInOut}))
-        }}))
+        TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2}))
 
-        TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4}))
+        TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
+            TweenMax.to(menuClose,0.3,({transform:'translateX(0)',ease: Power4.easeInOut}))
+        }}))
     })
     $('.menuClose button').on('click',function(){
-        TweenMax.to(menuClose,1.0,({right:'-100px',ease: Power4.easeInOut}))
+        TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut}))
         //            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
         TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2}))

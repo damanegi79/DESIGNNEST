@@ -139,7 +139,7 @@ function service(){
 
         var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, duration:100}).setTween(txtTween)
         var area_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:400}).setTween(areaTween)
-        var template_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:1000}).setTween(itemListTween)
+        var template_scene = new ScrollMagic.Scene({triggerElement:this, offset:200, triggerHook: 'onEnter', duration:1000}).setTween(itemListTween)
 
         var responsive01 = $(thisList).find('.device01')
         var responsive02 = $(thisList).find('.device02')
@@ -169,23 +169,34 @@ function service(){
             .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)"})
             .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)"})
 
-<<<<<<< HEAD
+
         var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'100', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
-=======
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'0', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
-        
-        
+
+
         var ui_img = $(thisList).find('.ui_img .ui');
         var ui_text = $(thisList).find('.ui_img .text');
-        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1px) translateY(0px) translateX(0px)", opacity:1})
-        var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1px)", opacity:1})
+        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1.2) translateY(-10px) translateX(0px)", opacity:1})
+        var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1)", opacity:1})
         var ui_scene = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:400}).setTween(uiTween)
         var uiText_scene = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:200}).setTween(uiTextTween)
->>>>>>> df440da95db80fb7c71fb332cf2d3371db663f86
+
+
+        var pc_img01 = $(thisList).find('.pc_img .img_con.con01');
+        var pc_img02 = $(thisList).find('.pc_img .img_con.con02');
+        var pc_img03 = $(thisList).find('.pc_img .img_con.con03');
+
+        var pcTween01 = TweenMax.to(pc_img03, 2, {transform:"scale(1) translateY(-100px) translateX(-200px) scale(1)", opacity:1})
+        var pcTween02 = TweenMax.to(pc_img02, 2, {transform:"scale(1) translateY(-50px) translateX(-100px) scale(1)", opacity:1})
+        var pcTween03 = TweenMax.to(pc_img01, 2, {transform:"scale(1) translateY(-20px) translateX(-50px)", opacity:1})
+
+        var pc_scene01 = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:300}).setTween(pcTween01)
+        var pc_scene02 = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:300}).setTween(pcTween02)
+        var pc_scene03 = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:300}).setTween(pcTween03)
+
 
         controller.addScene([
             txt_scene,
-            area_scene,
+//            area_scene,
             template_scene,
             resoposive_scene01,
             resoposive_scene02,
@@ -194,7 +205,10 @@ function service(){
             resoposive_scene05,
             mobile_scene,
             ui_scene,
-            uiText_scene
+            uiText_scene,
+            pc_scene01,
+            pc_scene02,
+//            pc_scene03
         ]);
 
     })
