@@ -4,10 +4,11 @@ $(document).ready(function() {
     chkAgent()
     $('#nav ul li a').on('click',function(){
         var pagelocation = $(this).attr('href').substring(1)
-        console.log(pagelocation)
+        console.log(pagelocation + ' load complete!!')
         $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
+            $(window).scrollTop(0)
             setTimeout(function(){
-                init();
+//                init();
             },1000)
         });
         $('.menuOpen .stats').text(pagelocation)
@@ -19,12 +20,30 @@ $(document).ready(function() {
 
 $(window).on('hashchange', function() {
     var pagelocation = location.hash.substring(1)
-    console.log(pagelocation)
+//    console.log(pagelocation)
     $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
         setTimeout(function(){
-            init();
+//            init();
         },1000)
     });
+});
+
+$(document).ready(function() {
+    var pagelocation = location.hash.substring(1)
+    //    console.log(pagelocation)
+    if(pagelocation==''){
+        $("#ajaxContainer").load('/pages/home.html #ajaxContents',function(){
+            setTimeout(function(){
+                //            init();
+            },1000)
+        });
+    } else {
+        $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
+            setTimeout(function(){
+                //            init();
+            },1000)
+        });
+    }
 });
 
 $(window).load(function() {
