@@ -2,7 +2,31 @@
 
 $(document).ready(function() {
     chkAgent()
+    $('#nav ul li a').on('click',function(){
+        var pagelocation = $(this).attr('href').substring(1)
+        console.log(pagelocation)
+        $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
+            setTimeout(function(){
+                init();
+            },1000)
+        });
+        $('.menuOpen .stats').text(pagelocation)
+        location.hash = pagelocation ;
+        return false;
+    })
+
 })
+
+$(window).on('hashchange', function() {
+    var pagelocation = location.hash.substring(1)
+    console.log(pagelocation)
+    $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
+        setTimeout(function(){
+            init();
+        },1000)
+    });
+});
+
 $(window).load(function() {
     menu();
     $('#intro').fadeOut(1000);
@@ -16,18 +40,13 @@ function chkAgent(){
             TweenMax.to(caution,0.5,({bottom:'0px'}))
         }}))
     }
-    else {
-
-    }
     $('.browserCaution .close button').on('click',function(){
         TweenMax.to(caution,0.5,({bottom:'-150px',onComplete:function(){
             TweenMax.to(caution,0,({display:'none'}))
         }}))
     })
 }
-
 function menu(){
-    console.log('asdasd')
     var content = $('#wrapper')
     var menuWrap = $('#menu_wrap')
     var menuOpen = $('.menuOpen')
@@ -47,15 +66,13 @@ function menu(){
     })
     $('.menuOpen button').on('click',function(){
         TweenMax.to(menuOpen,1.0,({left:'-200px',ease: Power4.easeInOut}))
-        //            TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2}))
-
         TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
             TweenMax.to(menuClose,0.3,({transform:'translateX(0)',ease: Power4.easeInOut}))
         }}))
     })
-    $('.menuClose button').on('click',function(){
+    $('.menuClose button, #nav ul li a').on('click',function(){
         TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut}))
         //            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
         TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
@@ -68,16 +85,3 @@ function menu(){
         }}))
     })
 }
-
-
-/* Scroll Magic Test */
-//var scrollFunction = true;
-//function scrollTest(){
-//    scrollFunction = false;
-//    var controller = new ScrollMagic.Controller();
-//    var tween = TweenMax.to(".test_block", 2, {left: 200,backgroundColor:"rgba(0,0,0,0.5)",ease:Linear.easeNone,rotationZ: 360, marginTop:100})
-//    new ScrollMagic.Scene({triggerElement: ".test_block",offset:0}) //,duration:100
-//        .setTween(tween)
-//        .addIndicators()
-//        .addTo(controller)
-//}

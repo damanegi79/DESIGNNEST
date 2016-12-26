@@ -1,6 +1,32 @@
 "use strict";
 
-$(window).load(function() {
+function init(){
+    scroll()
+    scroll3d()
+    headerMotion()
+    service()
+    axisCard()
+}
+
+//$(window).load(function() {
+//    $("body").niceScroll({
+//        cursorcolor: "rgba(0,0,0,0.5)", // change cursor color in hex
+//        cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
+//        cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
+//        cursorwidth: "10px", // cursor width in pixel (you can also write "5px")
+//        cursorborder: "none", // css definition for cursor border
+//        cursorborderradius: "5px", // border radius in pixel for cursor
+//        scrollspeed: 150,
+//        mousescrollstep:80,
+//        autohidemode: false,
+//    });
+//    scroll3d()
+//    headerMotion()
+//    service()
+//    axisCard()
+//})
+
+function scroll(){
     $("body").niceScroll({
         cursorcolor: "rgba(0,0,0,0.5)", // change cursor color in hex
         cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
@@ -12,11 +38,7 @@ $(window).load(function() {
         mousescrollstep:80,
         autohidemode: false,
     });
-    scroll3d()
-    headerMotion()
-    service()
-    axisCard()
-})
+}
 
 function headerMotion(){
     var controller = new ScrollMagic.Controller();
