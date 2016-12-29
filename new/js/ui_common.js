@@ -1,4 +1,6 @@
 "use strict";
+
+
 (function ($){
     var nest = nest || function (){
     var pageAr = ["home", "service", "portfolio", "developement", "contact"];
@@ -13,36 +15,31 @@
         var html = "";
 //        console.log(currentPage)
         var url = currentPage.replace("#", "");
-        console.log(url)
+        console.log('url is = '+url)
         $.get("/pages/"+url+".html?"+(Math.random()*999999999), function ( data ){
-
             var page = $(data);
-            console.log(page)
             if(firstFlag)
             {
                 $("#ajaxContainer").append(page);
                 if(nest[url]) nest[url].init();
                 firstFlag = false;
                 oldPage = currentPage;
-                TweenMax.to($('#ajaxContents'), 0.8, {transform:'translateX(0)', force3D:true, ease:Cubic.easeInOut});
-//                if(url != "home")
-//                {
-//                    console.log('home_view')
-//                    page.append(footer);
-//                }
+//                TweenMax.to($('#ajaxContents'), 0.8, {transform:'translateX(0)', force3D:true, ease:Cubic.easeInOut});
             }
             else
             {
 
-                var outPage = $("#ajaxContents").size();
-                console.log(outPage)
+                var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
-                console.log(arrow)
-                TweenMax.to(outPage, 1.5, {x:-($(window).width())*arrow,delay:1, force3D:true, onComplete:motionEnd});
-                TweenMax.to($("#ajaxContents"), 0, {x:($(window).width()*0.5)*arrow, opacity:0});
-                TweenMax.to($("#ajaxContents"), 1.5, {x:0, opacity:1, force3D:true, delay:2.5});
+                TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power4.easeIn, zIndex:1, onComplete:motionEnd});
+
                 $("#ajaxContainer").append(page);
-                console.log('append end')
+
+                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
+                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power4.easeIn,onComplete:function(){
+                    $(window).scrollTop(0)
+                }});
+
 //                if(url != "home")
 //                {
 //                    page.append(footer.clone());
@@ -50,11 +47,13 @@
 //
                 function motionEnd()
                 {
-//                    if(url != "home") nest[url].init();
+                    console.log('motion end'+ url)
+
+                    if(url != "home") nest[url].init();
                     var oldUrl = oldPage.replace("#", "");
                     outPage.remove();
                     oldPage = currentPage;
-//                    if(nest[oldUrl]) nest[oldUrl].dispos();
+                    if(nest[oldUrl]) nest[oldUrl].dispos();
 
                 }
                 if(url=="home") setTimeout(function (){nest[url].init();}, 100);
@@ -76,8 +75,10 @@
     $(function (){
         currentPage = location.hash;
         if(currentPage == "") currentPage = "#home";
+        console.log('currentpage = '+currentPage)
         $(window).on("hashchange", function ( e ){
             currentPage = location.hash;
+            if(currentPage == "") currentPage = "#home";
             loadPage();
         });
         loadPage();
@@ -86,15 +87,65 @@
 }
 
     nest.home = (function (){
-        console.log('home class start')
         return {
             init : function (){
+                console.log('home class start')
                 introText()
-                //    motionFlag = true;
-                console.log(motionFlag)
+//                motionFlag = true;
                 svgDevice()
                 mobileZoom()
                 scrollbg()
+            },
+            dispos : function ()
+            {
+                console.log('home dispos')
+            }
+        }
+    })();
+
+    nest.service = (function (){
+
+        return {
+            init : function (){
+//                scroll()
+//                scroll3d()
+                headerMotion()
+                service()
+                axisCard()
+                console.log('service class start')
+            },
+            dispos : function ()
+            {
+                console.log('service dispos')
+            }
+        }
+    })();
+
+    nest.portfolio = (function (){
+
+        return {
+            init : function (){
+                headerMotion()
+                scroll3d()
+                console.log('portfolio class start')
+            },
+            dispos : function ()
+            {
+                console.log('portfolio dispos')
+            }
+        }
+    })();
+
+    nest.contact = (function (){
+
+        return {
+            init : function (){
+                capcha()
+                console.log('contact class start')
+            },
+            dispos : function ()
+            {
+                console.log('contact dispos')
             }
         }
     })();
@@ -104,6 +155,9 @@
 })(jQuery);
 
 var nest = new nest();
+
+
+
 
 
 //$(window).on('hashchange', function() {

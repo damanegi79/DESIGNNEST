@@ -1,7 +1,7 @@
 "use strict";
-$(document).ready(function() {
-    init()
-})
+//$(document).ready(function() {
+//    init()
+//})
 
 function init(){
     scroll()
@@ -238,3 +238,13 @@ function service(){
 
     })
  }
+
+function capcha(){
+//    callback()
+    var onloadCallback = function() {
+//        alert("grecaptcha is ready!");
+        grecaptcha.render('recaptcha', {
+            'sitekey' : '6LdBDxAUAAAAAOLoTuFczPbAoQf3b9skbRUsFA4T'
+        });
+    };
+};

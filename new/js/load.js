@@ -76,8 +76,8 @@
                     var outPage = $("#content>article");
                     var arrow = getMotionArrow(url);
                     TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3)*arrow, ease:Cubic.easeInOut, force3D:true, onComplete:motionEnd});
-                    TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
-                    TweenMax.to(page, 0.8, {x:0, opacity:1, force3D:true, ease:Cubic.easeInOut});
+//                    TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
+//                    TweenMax.to(page, 0.8, {x:0, opacity:1, force3D:true, ease:Cubic.easeInOut});
                     $("#content").append(page);
                     if(url != "home")
                     {

@@ -1,6 +1,6 @@
 "use strict";
 
-var motionFlag = false;
+//var motionFlag = false;
 
 //$(window).load(function() {
 //    init()
@@ -17,15 +17,14 @@ var motionFlag = false;
 //    }
 //})
 
-function init(){
-    console.log('load home')
-    introText()
-//    motionFlag = true;
-    console.log(motionFlag)
-    svgDevice()
-    mobileZoom()
-    scrollbg()
-}
+//function init(){
+//    console.log('load home')
+//    introText()
+////    motionFlag = true;
+//    svgDevice()
+//    mobileZoom()
+//    scrollbg()
+//}
 
 function headerMotion(){
     var controller = new ScrollMagic.Controller();
@@ -54,12 +53,7 @@ function headerMotion(){
     function axis(){
         if($('.intro_wrap').mouseover()){
             $(".logo_content").bind("mousemove", moveLogo);
-            console.log('logo move!!')
         }
-//        if($('.intro_contents').mouseleave()) {
-//            $(".logo_content").unbind("mousemove", moveLogo);
-//            console.log('logo move stop!!')
-//        }
     }
     function scrollfn(){
         var scrollDown = $(".scrollDown")
@@ -103,33 +97,39 @@ function headerMotion(){
 
 
     function text_ani(){
-        var svg = $('#svg_logo').getSVG();
-        var logopath = svg.find('path');
-        var textsvg = $('#svg_text').getSVG();
-        var textpath = textsvg.find("path");
-        new Vivus('svg_logo',{duration: 200,type:'delayed'}, function (obj) {
-            logopath.each(function(i){
-                var self = this
-                setTimeout(function(){
-                    var logo = new TimelineLite();
-                    logo.to(self, 0.2,{stroke:'none',delay:1})
-                },i*200)
-            })
+
+
+
+
+
+
+
+
+        new Vivus('svg_logo',{duration: 200,type:'oneByOne'}, function (obj) {
+//            logopath.each(function(i){
+//                var self = this
+//                setTimeout(function(){
+//                    var logo = new TimelineLite();
+//                    logo.to(self, 0.2,{stroke:'none',delay:1})
+//                },i*200)
+//            })
         });
         setTimeout(function(){
-            new Vivus('svg_text', {duration: 200,type:'oneByOne'}, function (obj) {
-                textpath.each(function(i){
-                    var self = this
-                    setTimeout(function(){
-                        var textlogo = new TimelineLite();
-                        textlogo.to(self, 0.2,{stroke:'none'})
-                    },i*200)
-                })
+            new Vivus('svg_text', {duration: 300,type:'delayed', forceRender: false}, function (obj) {
+//                textpath.each(function(i){
+//                    var self = this
+//                    setTimeout(function(){
+//                        var textlogo = new TimelineLite();
+//                        textlogo.to(self, 0.2,{stroke:'none'})
+//                    },i*200)
+//                })
             })
-        },3000)
+        })
 
 
         setTimeout(function(){
+            var svg = $('#svg_logo').getSVG();
+            var logopath = svg.find('path');
             logopath.each(function(i){
                 var self = this
                 setTimeout(function(){
@@ -140,6 +140,11 @@ function headerMotion(){
             })
         },3500)
         setTimeout(function(){
+            var svg = $('#svg_logo').getSVG();
+            var logopath = svg.find('path');
+            var textsvg = $('#svg_text').getSVG();
+            var textpath = textsvg.find("path");
+            console.log('path = ' +textpath.size())
             textpath.each(function(i){
                 var self = this
                 setTimeout(function(){
@@ -163,7 +168,6 @@ function headerMotion(){
 
 
 //        $('.work_article').on('inview', function(event, isInView) {
-            console.log('emart view')
 //            if (isInView) {
                 new Vivus('svg_device',{duration:200,type:'oneByOne', forceRender: false},function(){ //,start: 'autostart'
                     deviceAxis()
@@ -177,9 +181,7 @@ function headerMotion(){
                     });
 
                 })
-                console.log('play')
 //            } else {
-                console.log('out')
 //            }
 //        });
 
