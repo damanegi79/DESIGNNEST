@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 (function ($){
     var nest = nest || function (){
     var pageAr = ["home", "service", "portfolio", "developement", "contact"];
@@ -13,7 +14,6 @@
         chkAgent()
 
         var html = "";
-//        console.log(currentPage)
         var url = currentPage.replace("#", "");
         console.log('url is = '+url)
         $.get("/pages/"+url+".html?"+(Math.random()*999999999), function ( data ){
@@ -24,7 +24,7 @@
                 if(nest[url]) nest[url].init();
                 firstFlag = false;
                 oldPage = currentPage;
-//                TweenMax.to($('#ajaxContents'), 0.8, {transform:'translateX(0)', force3D:true, ease:Cubic.easeInOut});
+                $('.menuOpen .stats').text(url)
             }
             else
             {
@@ -32,23 +32,14 @@
                 var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
                 TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power4.easeIn, zIndex:1, onComplete:motionEnd});
-
                 $("#ajaxContainer").append(page);
-
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power4.easeIn,onComplete:function(){
                     $(window).scrollTop(0)
                 }});
-
-//                if(url != "home")
-//                {
-//                    page.append(footer.clone());
-//                }
-//
+                $('.menuOpen .stats').text(url)
                 function motionEnd()
                 {
-                    console.log('motion end'+ url)
-
                     if(url != "home") nest[url].init();
                     var oldUrl = oldPage.replace("#", "");
                     outPage.remove();
@@ -107,8 +98,7 @@
 
         return {
             init : function (){
-//                scroll()
-//                scroll3d()
+                scroll()
                 headerMotion()
                 service()
                 axisCard()
@@ -125,6 +115,7 @@
 
         return {
             init : function (){
+                scroll()
                 headerMotion()
                 scroll3d()
                 console.log('portfolio class start')
@@ -155,38 +146,6 @@
 })(jQuery);
 
 var nest = new nest();
-
-
-
-
-
-//$(window).on('hashchange', function() {
-//    var pagelocation = location.hash.substring(1)
-////    console.log(pagelocation)
-//    $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
-//        setTimeout(function(){
-////            init();
-//        },1000)
-//    });
-//});
-
-//$(document).ready(function() {
-//    var pagelocation = location.hash.substring(1)
-//    //    console.log(pagelocation)
-//    if(pagelocation==''){
-//        $("#ajaxContainer").load('/pages/home.html #ajaxContents',function(){
-//            setTimeout(function(){
-//                //            init();
-//            },1000)
-//        });
-//    } else {
-//        $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
-//            setTimeout(function(){
-//                //            init();
-//            },1000)
-//        });
-//    }
-//});
 
 $(window).load(function() {
     menu();
@@ -235,7 +194,6 @@ function menu(){
     })
     $('.menuClose button, #nav ul li a').on('click',function(){
         TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut}))
-        //            TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
         TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
