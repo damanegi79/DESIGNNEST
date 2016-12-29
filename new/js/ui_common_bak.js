@@ -9,40 +9,31 @@
 
     function loadPage() {
         chkAgent()
-
         var html = "";
-//        console.log(currentPage)
         var url = currentPage.replace("#", "");
-        console.log(url)
-        $.get("/pages/"+url+".html?"+(Math.random()*999999999), function ( data ){
-
+        $.get("/html/"+url+".html?"+(Math.random()*999999999), function ( data )
+              {
             var page = $(data);
-            console.log(page)
             if(firstFlag)
             {
                 $("#ajaxContainer").append(page);
                 if(nest[url]) nest[url].init();
                 firstFlag = false;
                 oldPage = currentPage;
-                TweenMax.to($('#ajaxContents'), 0.8, {transform:'translateX(0)', force3D:true, ease:Cubic.easeInOut});
-//                if(url != "home")
-//                {
-//                    console.log('home_view')
+                if(url != "home")
+                {
+                    console.log('home_view')
 //                    page.append(footer);
-//                }
+                }
             }
             else
             {
-
-                var outPage = $("#ajaxContents").size();
-                console.log(outPage)
+                var outPage = $("#ajaxContainer>#ajaxContents");
                 var arrow = getMotionArrow(url);
-                console.log(arrow)
-                TweenMax.to(outPage, 1.5, {x:-($(window).width())*arrow,delay:1, force3D:true, onComplete:motionEnd});
-                TweenMax.to($("#ajaxContents"), 0, {x:($(window).width()*0.5)*arrow, opacity:0});
-                TweenMax.to($("#ajaxContents"), 1.5, {x:0, opacity:1, force3D:true, delay:2.5});
+                TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3)*arrow, ease:Cubic.easeInOut, force3D:true, onComplete:motionEnd});
+//                TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
+//                TweenMax.to(page, 0.8, {x:0, opacity:1, force3D:true, ease:Cubic.easeInOut});
                 $("#ajaxContainer").append(page);
-                console.log('append end')
 //                if(url != "home")
 //                {
 //                    page.append(footer.clone());
@@ -50,11 +41,11 @@
 //
                 function motionEnd()
                 {
-//                    if(url != "home") nest[url].init();
+                    if(url != "home") nest[url].init();
                     var oldUrl = oldPage.replace("#", "");
                     outPage.remove();
                     oldPage = currentPage;
-//                    if(nest[oldUrl]) nest[oldUrl].dispos();
+                    if(nest[oldUrl]) nest[oldUrl].dispos();
 
                 }
                 if(url=="home") setTimeout(function (){nest[url].init();}, 100);
@@ -63,7 +54,52 @@
             currentUrl = url;
 
         });
+        $('#nav ul li a').on('click',function(){
+            var pagelocation = $(this).attr('href').substring(1)
+            $.get("/pages/"+pagelocation+".html" , function ( data ){
+                var page = $(data);
+    //            var pageContent = page.find('#ajaxContents').html();
+                console.log(page)
+                if(firstFlag)
+                {
+                    $("#ajaxContainer").append(page);
+                    TweenMax.to($("#ajaxContainer"),0.5,({transform:'translateX(0)',ease: Power4.easeInOut,delay:1}))
+                        setTimeout(function(){
+                            init();
+                        },1000)
+                    firstFlag = false;
+                    oldPage = currentPage;
 
+                }else{
+                    var outPage = $("#ajaxContainer>#ajaxContents");
+    //                var arrow = getMotionArrow(url);
+                    TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3), ease:Cubic.easeInOut, force3D:true, onComplete:motionEnd});
+    //                TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
+    //                TweenMax.to(page, 0.8, {x:0, opacity:1, force3D:true, ease:Cubic.easeInOut});
+                    $("#ajaxContainer").append(page);
+                    function motionEnd(){
+    //                    if(url != "home") velika[url].init();
+    //                    var oldUrl = oldPage.replace("#", "");
+                        outPage.remove();
+                        oldPage = currentPage;
+    //                    if(velika[oldUrl]) velika[oldUrl].dispos();
+                    }
+    //                if(url=="home") setTimeout(function (){velika[url].init();}, 100);
+                }
+                currentUrl = pagelocation;
+            })
+    //        console.log(pagelocation + ' load complete!!')
+    //        $("#ajaxContainer").load('/pages/'+pagelocation+'.html #ajaxContents',function(){
+    //            $(window).scrollTop(0)
+    //            TweenMax.to($("#ajaxContainer"),0.5,({transform:'translateX(0)',ease: Power4.easeInOut,delay:1}))
+    //            setTimeout(function(){
+    ////                init();
+    //            },1000)
+    //        });
+    //        $('.menuOpen .stats').text(pagelocation)
+    //        location.hash = pagelocation ;
+    //        return false;
+        })
     function getMotionArrow( url )
     {
         var prevIdx = pageAr.indexOf(currentUrl);
@@ -75,28 +111,21 @@
 
     $(function (){
         currentPage = location.hash;
+        console.log(currentPage)
+
         if(currentPage == "") currentPage = "#home";
         $(window).on("hashchange", function ( e ){
             currentPage = location.hash;
             loadPage();
         });
-        loadPage();
+
     });
 
 }
 
     nest.home = (function (){
         console.log('home class start')
-        return {
-            init : function (){
-                introText()
-                //    motionFlag = true;
-                console.log(motionFlag)
-                svgDevice()
-                mobileZoom()
-                scrollbg()
-            }
-        }
+//        init();
     })();
 
     window.nest = nest;

@@ -475,3 +475,7 @@ z-index: 10;}
 .contact_img li.img09{width:28vw; margin-top:-26vh; left: auto; right: -10vw}
 .contact_img li.img10{width:20vw; left: -8vh; top: auto; bottom: -15vh}
 .contact_img li.img11{width:15vw; left:-3vw; top: auto; bottom: -8vh}
+
+
+#ajaxContainer{position: relative;}
+#ajaxContents{position:absolute;transform: perspective( 1000px ) translateX(0vw); width: 100%; height: 100%;}
