@@ -31,12 +31,10 @@
 
                 var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
-                TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power4.easeIn, zIndex:1, onComplete:motionEnd});
+                TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
                 $("#ajaxContainer").append(page);
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
-                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power4.easeIn,onComplete:function(){
-                    $(window).scrollTop(0)
-                }});
+                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power2.easeIn});
                 $('.menuOpen .stats').text(url)
                 function motionEnd()
                 {
@@ -89,6 +87,7 @@
             },
             dispos : function ()
             {
+                disposeMain();
                 console.log('home dispos')
             }
         }
@@ -98,7 +97,7 @@
 
         return {
             init : function (){
-                scroll()
+//                scroll()
                 headerMotion()
                 service()
                 axisCard()
@@ -115,7 +114,7 @@
 
         return {
             init : function (){
-                scroll()
+//                scroll()
                 headerMotion()
                 scroll3d()
                 console.log('portfolio class start')
@@ -127,11 +126,25 @@
         }
     })();
 
+    nest.developement = (function (){
+
+        return {
+            init : function (){
+//                scroll()
+                headerMotion()
+                console.log('developement class start')
+            },
+            dispos : function ()
+            {
+                console.log('developement dispos')
+            }
+        }
+    })();
+
     nest.contact = (function (){
 
         return {
             init : function (){
-                capcha()
                 console.log('contact class start')
             },
             dispos : function ()
@@ -177,30 +190,30 @@ function menu(){
     var menuContainer = $('.menu_container')
     var content = $('.menu_contents');
 
-    TweenMax.to(menuOpen,1.0,({left:'30px',ease: Power4.easeInOut,delay:0}))
+    TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut,delay:0,force3D:true}))
 
     $(".menuOpen button").hover(function(){
-        TweenMax.to(logopath,1.0,({fill:'#128dd4'}))
+        TweenMax.to(logopath,1.0,({fill:'#128dd4',force3D:true}))
     },function(){
-        TweenMax.to(logopath,1.0,({fill:'#fff'}))
+        TweenMax.to(logopath,1.0,({fill:'#fff',force3D:true}))
     })
     $('.menuOpen button').on('click',function(){
-        TweenMax.to(menuOpen,1.0,({left:'-200px',ease: Power4.easeInOut}))
-        TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut}))
-        TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2}))
-        TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
-            TweenMax.to(menuClose,0.3,({transform:'translateX(0)',ease: Power4.easeInOut}))
+        TweenMax.to(menuOpen,0.5,({left:'-200px',ease: Power4.easeInOut,force3D:true}))
+        TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,force3D:true}))
+        TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
+        TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4,force3D:true, onComplete:function(){
+            TweenMax.to(menuClose,0.3,({transform:'translateX(0)',force3D:true,ease: Power4.easeInOut}))
         }}))
     })
     $('.menuClose button, #nav ul li a').on('click',function(){
-        TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut}))
-        TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut}))
-        TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2}))
-        TweenMax.to(menuWrap,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.4, onComplete:function(){
-            TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut}))
-            TweenMax.to(menuWrap,0,({transform:'translateX(-100vw)'}))
-            TweenMax.to(menuContainer,0,({transform:'translateX(-100vw)'}))
-            TweenMax.to(content,0,({transform:'translateX(-100vw)'}))
+        TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut,force3D:true}))
+        TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,force3D:true}))
+        TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
+        TweenMax.to(menuWrap,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.4,force3D:true, onComplete:function(){
+            TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut,force3D:true}))
+            TweenMax.to(menuWrap,0,({transform:'translateX(-100vw)',force3D:true}))
+            TweenMax.to(menuContainer,0,({transform:'translateX(-100vw)',force3D:true}))
+            TweenMax.to(content,0,({transform:'translateX(-100vw)',force3D:true}))
         }}))
     })
 }

@@ -15,20 +15,22 @@
 //    scrollbg()
 //}
 
+var timer1;
+var timer2;
 
 function introText(){
     text_ani()
     var logo = new TimelineLite();
     var tit = $(".intro_contents");
     var sub_tit = $(".logo_area .sub_title");
-    logo.to(tit, 1.0,{marginTop:0, opacity:1})
-    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)'},1)
-    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)'},3.5)
-    logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',onComplete:function(){
+    logo.to(tit, 1.0,{marginTop:0, opacity:1,force3D:true})
+    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
+    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
+    logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
         mob_gyro()
         axis()
     }})
-    logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)'})
+    logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
 }
 function axis(){
     if($('.intro_wrap').mouseover()){
@@ -39,7 +41,7 @@ function scrollfn(){
     var scrollDown = $(".scrollDown")
     var wheel = $(".scrollDown .ico_scroll");
     TweenMax.to( scrollDown, 1, {opacity:1,onComplete:function(){
-        TweenMax.to( wheel, 1, {transform: 'translateY(20px)',repeat:-1, yoyo:true} );
+        TweenMax.to( wheel, 1, {transform: 'translateY(20px)',repeat:-1, yoyo:true,force3D:true} );
     }} );
 }
 
@@ -52,7 +54,7 @@ function moveLogo(e){
     var percentY = pageY / ($(".intro_wrap").height()/2);
     var rotationY = -15*percentX;
     var rotationX = 15*percentY;
-    TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2});
+    TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2,force3D:true});
     console.log(pageX,pageY)
 }
 function mob_gyro(){
@@ -68,7 +70,7 @@ function mob_gyro(){
         var rotationY = y
         var moveY = rotationX;
         var moveX = rotationY;
-        TweenMax.to($(".intro_contents"), 0.6, {rotationY:-moveX, x:moveX ,y:-moveY*1.5}); //rotationX:(moveY-30)*0.8,
+        TweenMax.to($(".intro_contents"), 0.6, {rotationY:-moveX, x:moveX ,y:-moveY*1.5,force3D:true}); //rotationX:(moveY-30)*0.8,
         $(".console input.input01").val('y:'+moveY)
         $(".console input.input02").val('x:'+moveX)
     }
@@ -89,7 +91,7 @@ function text_ani(){
     new Vivus('svg_text', {duration: 300,type:'delayed', forceRender: false}, function (obj) {
 
     })
-    setTimeout(function(){
+    timer1 = setTimeout(function(){
         var svg = $('#svg_logo').getSVG();
         var logopath = svg.find('path');
         logopath.each(function(i){
@@ -101,7 +103,7 @@ function text_ani(){
             },i*200)
         })
     },3500)
-    setTimeout(function(){
+    timer2 = setTimeout(function(){
         var svg = $('#svg_logo').getSVG();
         var logopath = svg.find('path');
         var textsvg = $('#svg_text').getSVG();
@@ -128,10 +130,10 @@ function text_ani(){
 function svgDevice(){
     new Vivus('svg_device',{duration:200,type:'oneByOne', forceRender: false},function(){ //,start: 'autostart'
         deviceAxis()
-        TweenMax.to($('#img_device3,.img3'), 0.5, {opacity:1});
-        TweenMax.to($('#svg_device'), 0.5, {opacity:0});
-        TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:0.5});
-        TweenMax.to($('.device-pos-1'), 0.3, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:0.5, onComplete:function(){
+        TweenMax.to($('#img_device3,.img3'), 0.5, {opacity:1,force3D:true});
+        TweenMax.to($('#svg_device'), 0.5, {opacity:0,force3D:true});
+        TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:0.5,force3D:true});
+        TweenMax.to($('.device-pos-1'), 0.3, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:0.5,force3D:true, onComplete:function(){
             }
         });
 
@@ -154,9 +156,9 @@ function deviceAxis(){
 
         $(".project-01").bind("mouseleave", function (){
             motionDeviceAxis = false;
-            TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
-            TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
-            TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0});
+            TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(0px)"});
             $(".project-01").unbind("mousemove", moveAxis);
 //            $(".work_info").unbind("mousemove", moveAxis);
@@ -176,9 +178,9 @@ function moveAxis(e){
         var rotationX = 10*percentY;
         var xx = -10*percentX;
         var yy = -10*percentY;
-        TweenMax.to($('[data-role="moveTarget-1"]'), 0.6, {x:xx,y:yy});
-        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*2.5});
-        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*4});
+        TweenMax.to($('[data-role="moveTarget-1"]'), 0.6, {x:xx,y:yy,force3D:true});
+        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*2.5,force3D:true});
+        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*4,force3D:true});
 //        TweenMax.to($('.work_info'), 0.6, {rotationY:rotationY, rotationX:rotationX});
 
     }
@@ -188,12 +190,12 @@ function mobileZoom(){
     $(".img_zoom").on('click',function(){
         var target = $(this).parent().parent()
         if(zoom==false){
-            TweenMax.to(target,0.6,{scale:1.5})
+            TweenMax.to(target,0.6,{scale:1.5,force3D:true})
             $(this).addClass('active')
             zoom=true;
             return false;
         }else if(zoom==true){
-            TweenMax.to(target,0.6,{scale:1})
+            TweenMax.to(target,0.6,{scale:1,force3D:true})
             $(this).removeClass('active')
             zoom=false;
             return false;
@@ -205,10 +207,16 @@ function scrollbg(){
     $('.work_content').each(function(){
         var thisList = this;
         var itemBg = $(thisList).find('.bg')
-        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(-20vh)'})
+        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(-20vh)',force3D:true})
         var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'-200', triggerHook: 'onLeave',duration:450}).setTween(bgTween)
         controller.addScene([
             bg_scene
         ]);
     })
+}
+
+function disposeMain()
+{
+    clearInterval(timer1);
+    clearInterval(timer2);
 }

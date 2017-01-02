@@ -13,6 +13,7 @@
                     <div class="contents">
                         <div class="con_left form">
                             <h2>GET in TOUCH</h2>
+                            <form action="javascript:alert(grecaptcha.getResponse(widgetId1));">
                             <ul class="clearfix">
                                 <li><label for="">제목</label> <input type="text"></li>
                                 <li><label for="">업체명</label> <input type="text"></li>
@@ -22,10 +23,22 @@
                                 <li class="comment"><label for="">내용</label> <textarea name="" id="" cols="30" rows="6"></textarea></li>
                             </ul>
                             <div class="capcha">
-                                <div id="recaptcha" class="g-recaptcha" data-sitekey="6LeZcA8UAAAAABelCrjsOIRyQwIRns13Pd31sUmO" data-theme='dark'></div>
-                                <p class="confirm"><button type="submit" value="Submit">보내기</button></p>
+<!--                                <div id="recaptcha" class="g-recaptcha" data-sitekey="6LeZcA8UAAAAABelCrjsOIRyQwIRns13Pd31sUmO" data-theme='dark'></div>-->
+                                <div id="recaptcha" class="g-recaptcha"></div>
+                                <p class="confirm"><button type="submit" value="getResponse">보내기</button></p>
                             </div>
-
+                            </form>
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                                    async defer>
+                            </script>
+                            <script>
+                                var onloadCallback = function() {
+                                    grecaptcha.render('recaptcha', {
+                                        'sitekey' : '6LdBDxAUAAAAAOLoTuFczPbAoQf3b9skbRUsFA4T',
+                                        'theme' : 'dark'
+                                    });
+                                };
+                            </script>
                         </div>
                         <div class="con_right">
                             <h2>무엇을 도와드릴수 있나요?</h2>

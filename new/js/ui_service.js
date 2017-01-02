@@ -46,7 +46,7 @@ function scroll(){
 function headerMotion(){
     var controller = new ScrollMagic.Controller();
     var header = $('#transition_wrapper .header .contents')
-    var headerTween = TweenMax.to(header, 2, {transform:'translateY(30vh) scale(0.8)',opacity:0.5})
+    var headerTween = TweenMax.to(header, 2, {transform:'translateY(30vh) scale(0.8)',force3D:true,opacity:0.5})
     var header_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave', duration:'100%'}).setTween(headerTween)
     controller.addScene([
         header_scene
@@ -60,10 +60,10 @@ function scroll3d(){
         var itemInfo = $(thisList).find('.item_info')
         var itemMobile = $(thisList).find('.mobile')
         var itemPc = $(thisList).find('.pc')
-        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)'})
-        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)'})
-        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)'})
-        var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(0px)',onComplete:function(){
+        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true})
+        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)', force3D:true})
+        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)', force3D:true})
+        var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(0px)', force3D:true,onComplete:function(){
             $(thisList).addClass('active')
             console.log('has active')
         }})
@@ -83,10 +83,10 @@ function scroll3d(){
         var itemMobile = $(thisList).find('.mobile')
         var itemPc = $(thisList).find('.pc')
 
-        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)'})
-        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)'})
-        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)'})
-        var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(-100px)',onStart:function(){
+        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.8)',force3D:true})
+        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)',force3D:true})
+        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)',force3D:true})
+        var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(-100px)',force3D:true,onStart:function(){
             $(thisList).removeClass('active')
             console.log('del active')
         }})
@@ -105,15 +105,17 @@ function axisCard(){
         var thisList = this;
         $(this).bind("mouseenter",function(){
                 $(this).bind("mousemove",moveFolio)
-                TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1.2) translateY(0px)",x:0, y:0});
-                TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(30px)",x:0, y:0, marginTop:'-70px', boxShadow:'0 0 20px rgba(0,0,0,1)'});
-                TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1.05) translateY(0px)",x:0, y:0});
+                TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1.2) translateY(0px)",force3D:true,x:0, y:0});
+            TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(30px)",force3D:true,x:0, y:0, marginTop:'-70px', boxShadow:'0 0 20px rgba(0,0,0,1)'});
+            TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
+            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1.05) translateY(20px) translateX(20px)",force3D:true,x:0, y:0,opacity:0.2,textShadow:'0, 0, 1px rgba(0,0,0,1)'});
         })
         $(this).bind("mouseleave",function(){
-            TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1) translateY(0px)",x:0, y:0});
-            TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(0px)",x:0, y:0, marginTop:'-100px', boxShadow:'0 0 0 rgba(0,0,0,0.5)'});
-            TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1) translateY(0px)",x:0, y:0});
-            TweenMax.to($(this).find(".shine"), 1, {"background":"linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%)"})
+            TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
+            TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0, marginTop:'-100px', boxShadow:'0 0 0 rgba(0,0,0,0.5)'});
+            TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
+            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1) translateY(0px) translateX(0px)",force3D:true,x:0, y:0,opacity:0});
+            TweenMax.to($(this).find(".shine"), 1, {"background":"linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%)",force3D:true})
                 $(this).unbind("mousemove",moveFolio)
         })
     })
@@ -130,10 +132,11 @@ function moveFolio(e){
     var rotationY = -5*percentX;
     var rotationX = 5*percentY;
     var angle = -getAngle(0, 0, pageX, pageY);
-    TweenMax.to($(this).find(".shine"), 0, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)"})
-    TweenMax.to($(this).find('.card'), 0.6, {rotationY:-rotationY*5, rotationX:-rotationX*5});
-    TweenMax.to($(this).find('.shadow'), 0.6, {rotationY:-rotationY*5, rotationX:-rotationX*5, x:xx, y:-yy});
-    TweenMax.to($(this).find('.txtArea'), 0.6, {x:-xx, y:yy});
+    TweenMax.to($(this).find(".shine"), 0, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)",force3D:true})
+    TweenMax.to($(this).find('.card'), 0.6, {rotationY:-rotationY*5, rotationX:-rotationX*5,force3D:true});
+    TweenMax.to($(this).find('.shadow'), 0.6, {rotationY:-rotationY*5, rotationX:-rotationX*5, x:xx, y:-yy,force3D:true});
+    TweenMax.to($(this).find('.txtArea'), 0.6, {x:-xx*2, y:yy,force3D:true});
+    TweenMax.to($(this).find('.shadowTxt'), 0.6, {x:-xx/2, y:yy/2,force3D:true});
 }
 
 function getAngle  (x1, y1, x2, y2){
@@ -157,9 +160,9 @@ function service(){
 //        var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:200, duration:100}).setTween(txtTween)
 //        var area_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:400}).setTween(areaTween)
 
-        var txtTween = TweenMax.to(itemTxt, 2, {color:'#128dd4'})
-        var areaTween = TweenMax.to(itemTxtarea, 2, {transform:"translateX(0%)",opacity:1})
-        var itemListTween = TweenMax.to(itemListarea, 2, {transform:"perspective( 1000px ) rotateX(10deg) rotateZ(-40deg) translateY(-500px)  translateX(200px) scale(1.2)"})
+        var txtTween = TweenMax.to(itemTxt, 2, {color:'#128dd4',force3D:true})
+        var areaTween = TweenMax.to(itemTxtarea, 2, {transform:"translateX(0%)",opacity:1,force3D:true})
+        var itemListTween = TweenMax.to(itemListarea, 2, {transform:"perspective( 1000px ) rotateX(10deg) rotateZ(-40deg) translateY(-500px)  translateX(200px) scale(1.2)",force3D:true})
 
 
         var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, duration:100}).setTween(txtTween)
@@ -172,11 +175,11 @@ function service(){
         var responsive04 = $(thisList).find('.device04')
         var responsive05 = $(thisList).find('.device05')
 
-        var responsiveTween01 = TweenMax.from(responsive01, 2, {transform:"translateY(-350px)",opacity:1})
-        var responsiveTween02 = TweenMax.from(responsive02, 2, {transform:"translateY(-450px) translateX(-100px)",opacity:1})
-        var responsiveTween03 = TweenMax.from(responsive03, 2, {transform:"rotateZ(30deg) scale(1.5) translateY(250px) translateX(-50px)",opacity:1})
-        var responsiveTween04 = TweenMax.from(responsive04, 2, {transform:"translateY(300px) translateX(100px)",opacity:1})
-        var responsiveTween05 = TweenMax.from(responsive05, 2, {transform:"translateX(450px)",opacity:1,onComplete:function(){
+        var responsiveTween01 = TweenMax.from(responsive01, 2, {transform:"translateY(-350px)",opacity:1,force3D:true})
+        var responsiveTween02 = TweenMax.from(responsive02, 2, {transform:"translateY(-450px) translateX(-100px)",opacity:1,force3D:true})
+        var responsiveTween03 = TweenMax.from(responsive03, 2, {transform:"rotateZ(30deg) scale(1.5) translateY(250px) translateX(-50px)",opacity:1,force3D:true})
+        var responsiveTween04 = TweenMax.from(responsive04, 2, {transform:"translateY(300px) translateX(100px)",opacity:1,force3D:true})
+        var responsiveTween05 = TweenMax.from(responsive05, 2, {transform:"translateX(450px)",force3D:true,opacity:1,onComplete:function(){
 //            $('.service_container.overWrap').addClass('over-view')
         }})
 
@@ -188,11 +191,11 @@ function service(){
 
         var mobileTween = new TimelineMax();
         mobileTween
-            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(230px) translateX(500px) scale(4)",opacity:1,onStart:function(){
+            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(230px) translateX(500px) scale(4)",force3D:true,opacity:1,onStart:function(){
             $('.service_container.overWrap').addClass('over-view')
         }})
-            .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)"})
-            .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)"})
+            .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)",force3D:true})
+            .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)",force3D:true})
 
 
         var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'100', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
@@ -200,8 +203,8 @@ function service(){
 
         var ui_img = $(thisList).find('.ui_img .ui');
         var ui_text = $(thisList).find('.ui_img .text');
-        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1.2) translateY(-10px) translateX(0px)", opacity:1})
-        var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1)", opacity:1})
+        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1.2) translateY(-10px) translateX(0px)", opacity:1,force3D:true})
+        var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1)", opacity:1,force3D:true})
         var ui_scene = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:400}).setTween(uiTween)
         var uiText_scene = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:200}).setTween(uiTextTween)
 
@@ -210,9 +213,9 @@ function service(){
         var pc_img02 = $(thisList).find('.pc_img .img_con.con02');
         var pc_img03 = $(thisList).find('.pc_img .img_con.con03');
 
-        var pcTween01 = TweenMax.to(pc_img03, 2, {transform:"scale(1) translateY(-100px) translateX(-200px) scale(1)", opacity:1})
-        var pcTween02 = TweenMax.to(pc_img02, 2, {transform:"scale(1) translateY(-50px) translateX(-100px) scale(1)", opacity:1})
-        var pcTween03 = TweenMax.to(pc_img01, 2, {transform:"scale(1) translateY(-20px) translateX(-50px)", opacity:1})
+        var pcTween01 = TweenMax.to(pc_img03, 2, {transform:"scale(1) translateY(-100px) translateX(-200px) scale(1)", opacity:1,force3D:true})
+        var pcTween02 = TweenMax.to(pc_img02, 2, {transform:"scale(1) translateY(-50px) translateX(-100px) scale(1)", opacity:1,force3D:true})
+        var pcTween03 = TweenMax.to(pc_img01, 2, {transform:"scale(1) translateY(-20px) translateX(-50px)", opacity:1,force3D:true})
 
         var pc_scene01 = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:300}).setTween(pcTween01)
         var pc_scene02 = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:300}).setTween(pcTween02)
@@ -238,13 +241,3 @@ function service(){
 
     })
  }
-
-function capcha(){
-//    callback()
-    var onloadCallback = function() {
-//        alert("grecaptcha is ready!");
-        grecaptcha.render('recaptcha', {
-            'sitekey' : '6LdBDxAUAAAAAOLoTuFczPbAoQf3b9skbRUsFA4T'
-        });
-    };
-};
