@@ -31,11 +31,15 @@
 
                 var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
+                $("#ajaxContainer").addClass('fixed')
                 TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
                 $("#ajaxContainer").append(page);
+                
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
+//                $("#ajaxContents").scrollTop(0)
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power2.easeIn});
                 $('.menuOpen .stats').text(url)
+                
                 function motionEnd()
                 {
                     if(url != "home") nest[url].init();
@@ -43,6 +47,7 @@
                     outPage.remove();
                     oldPage = currentPage;
                     if(nest[oldUrl]) nest[oldUrl].dispos();
+                    $("#ajaxContainer").removeClass('fixed')   
 
                 }
                 if(url=="home") setTimeout(function (){nest[url].init();}, 100);
@@ -94,7 +99,8 @@
     })();
 
     nest.service = (function (){
-
+        
+        
         return {
             init : function (){
 //                scroll()
