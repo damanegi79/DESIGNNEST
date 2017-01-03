@@ -448,6 +448,8 @@ z-index: 10;}
 .contact_form .con_right ul.helpList {margin-bottom: 30px;}
 .contact_form .con_right ul li{line-height: 160%;}
 .contact_form .con_right ul li span{text-decoration: line-through;}
+.contact_form .con_right ul li button{background-color: #fff; font-size: 12px; display: inline-block; border-radius: 3px; height: 20px; line-height: 22px; padding: 0 10px; margin-left: 10px; transition: all 0.5s; color: #333;}
+.contact_form .con_right ul li button:hover{background-color: #128dd4; color: #fff;}
 .contact_form h2{font-size: 20px; margin-bottom: 20px;}
 .contact_form h2:after{content: ""; display: block; width: 100%; height: 1px; background: linear-gradient(to right, rgba(102,102,102,1) 0%, rgba(102,102,102,0) 100%); margin-top: 10px;}
 .contact_form .helpList{font-size: 16px;}
@@ -488,19 +490,30 @@ z-index: 10;}
 #ajaxContainer.fixed{overflow: hidden;}
 #ajaxContents{position:absolute;transform: perspective( 1000px ) translateX(0vw); width: 100%; height: 100%;}
 
-.article_box{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; margin-bottom: 20px;}
+.article_box{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; margin-bottom: 20px; background-color: #fff}
 .article_box:after{content: ""; clear: both; display: block;}
 
 .dev_contents{background-color: #f4f4f4;}
 .dev_contents .devCon{max-width: 1200px; margin: auto; position: relative; z-index: 10; padding: 50px 0;}
 .dev_contents .devCon h2{font-size:26px; font-weight: 400; position: relative; margin-bottom: 20px;}
 .dev_contents .devCon .slogan{ width: 50%; box-sizing: border-box; height: 100%;float: right;}
-.dev_contents .devCon .slogan p{font-size: 20px;  line-height: 160%; font-weight:400; color: #666;  text-align:center;}
-.dev_contents .devCon .slogan p i{font-weight: 200; margin: 0 10px;}
-.dev_contents .devCon .slogan p.user {font-size: 60px; padding-top: 60px;}
-.dev_contents .devCon .slogan .slogan_con{}
+.dev_contents .devCon .slogan.left{float: left;}
+.slogan_con p{font-size: 20px;  line-height: 160%; font-weight:400; color: #666;  text-align:center;}
+.slogan_con p i{font-weight: 200; margin: 0 10px;}
+.slogan_con p.user {font-size: 60px; padding-top: 30px;}
 .dev_contents .devCon .devTxt{line-height: 160%; color: #333; font-weight: 300; font-size: 16px;}
 .dev_contents .bg_box{position: relative;}
 .dev_contents .devImg {width: 50%; float:left; display: block;}
 .dev_contents .devImg img{width: 100%; float: left;}
 .dev_contents .btn_link{display: inline-block; border: 1px solid #333; height: 30px; line-height: 30px; padding: 0 10px;}
+.dev_contents .devCon .article_box.left .devImg{float:right;}
+.dev_contents .devCon .article_box.left .slogan{float: left;}
+.bg_block{position: relative; overflow: hidden; padding: 50px 0;}
+.bg_block .bg{position: absolute; width: 100%; height: auto; left: 0; top: 0; background-color: #000;}
+.bg_block .bg img{width: 100%; opacity: 0.5}
+.bg_block .introBox{text-align: center;}
+.bg_block .introBox .devTxt{display: inline-block;}
+.bg_block .introBox .devTxt a{color: #fff; border-color:#fff;}
+.dev_contents .devCon.contact {padding-top: 0;}
+.dev_contents .devCon.contact .devTxt{text-align: center;}
+.dev_contents .devCon.contact .devTxt a{color: #fff; background-color: #333; font-size: 20px; height: 40px; line-height: 40px; padding: 0 20px;}
