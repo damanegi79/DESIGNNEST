@@ -151,10 +151,12 @@
 
         return {
             init : function (){
+                $("#ajaxContainer").addClass('fixed')
                 console.log('contact class start')
             },
             dispos : function ()
             {
+                $("#ajaxContainer").removeClass('fixed')
                 console.log('contact dispos')
             }
         }
