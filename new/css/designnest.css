@@ -193,11 +193,11 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 #menu_wrap{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index:110; background-color:#333; color: #fff; font-size: 60px; text-align: center; line-height: 100vh; transform:perspective( 1000px ) translateX(-100vw); box-sizing: border-box;}
 .menu_container{position: absolute; left:20px; top: 20px; bottom: 20px; right: 20px; background-color: #128dd4;transform:perspective( 1000px ) translateX(-100vw);}
 .menu_contents{position: absolute; left: 0; top: 0; width:100%; height: 100%; background:#fff; transform:perspective( 1000px ) translateX(-100vw); color: #333; font-size: 16px; box-sizing: border-box; text-align: left; border: 2px solid #128dd4}
-.menu_contents h1{font-size: 50px;}
-.menu_contents .gnb{font-size:26px; position: relative; display:table-cell; vertical-align: middle; width: 33.33;}
+.menu_contents h1{font-size: 60px;}
+.menu_contents .gnb{font-size:30px; position: relative; display:table-cell; vertical-align: middle; width: 33.33;}
 .menu_contents .bar{height:1px; width:15%; background-color: #333; margin-bottom: 10px;}
-.menu_contents .gnb li{margin:10px 0;}
-.menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%;}
+.menu_contents .gnb li{margin:15px 0;}
+.menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%; }
 .menu_contents .gnb li a span{transition:All 0.5s ease; transform:translateZ(13px); display: block; transform-origin:center bottom; height: 30px;}
 .menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#128dd4 ;}
 .menu_contents .gnb li.menu01 a:after{content: "메인/최근 작업"}
@@ -207,7 +207,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents .gnb li.menu05 a:after{content: "문의하기"}
 .menu_contents .gnb li a:hover span{transform:rotateX(90deg) translateZ(26px);}
 .menu_contents .gnb li a:hover:after{transform: rotateX(0deg) translateZ(26px);}
-.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:12px; color: #888; font-weight: 100;}
+.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:14px; color: #888; font-weight: 100;}
 
 .menuOpen button{background: none; border: none; cursor: pointer;}
 .menuOpen{position: fixed; left:-100px; top:30px; z-index:200; transform: perspective( 1000px ); height: 40px; background-color: rgba(0,0,0,0.5); border-radius: 20px;}
@@ -223,13 +223,13 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
 .top_content{position: relative; top: 0; left: 0; width: 100%; height: 60%; display: table;}
 .top_content:after{content: ""; clear: both;}
-.top_content header{ display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box;}
+.top_content header{display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box;}
 .top_content header ul{padding-left: 5px; margin-top: 10px;}
-.top_content header li{font-size: 12px; line-height: 140%; color: #888;}
+.top_content header li{font-size: 16px; line-height: 140%; color: #000; font-weight:400;}
 
 .top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;}
-.top_content .contact .get{font-size: 20px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
-.top_content .contact .text{line-height: 140%;}
+.top_content .contact .get{font-size:18px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
+.top_content .contact .text{line-height: 140%; font-size:18px}
 .top_content .contact .text span{color:#128dd4}
 .top_content .contact .mail {margin-top: 20px;}
 .top_content .contact .mail a{display: inline-block; height: 40px; line-height: 40px;}
@@ -448,8 +448,9 @@ z-index: 10;}
 .contact_form .con_right ul.helpList {margin-bottom: 30px;}
 .contact_form .con_right ul li{line-height: 160%;}
 .contact_form .con_right ul li span{text-decoration: line-through;}
-.contact_form .con_right ul li button{background-color: #fff; font-size: 12px; display: inline-block; border-radius: 3px; height: 20px; line-height: 22px; padding: 0 10px; margin-left: 10px; transition: all 0.5s; color: #333;}
+.contact_form .con_right ul li button{background-color: #fff; font-size: 12px; display: inline-block; border-radius: 3px; height: 20px; line-height: 22px; padding: 0 10px; margin-left: 10px; transition: all 0.5s; color: #333; font-weight: 600;}
 .contact_form .con_right ul li button:hover{background-color: #128dd4; color: #fff;}
+.contact_form .con_right ul li b{font-weight:500;}
 .contact_form h2{font-size: 20px; margin-bottom: 20px;}
 .contact_form h2:after{content: ""; display: block; width: 100%; height: 1px; background: linear-gradient(to right, rgba(102,102,102,1) 0%, rgba(102,102,102,0) 100%); margin-top: 10px;}
 .contact_form .helpList{font-size: 16px;}
@@ -494,18 +495,19 @@ z-index: 10;}
 .article_box:after{content: ""; clear: both; display: block;}
 
 .dev_contents{background-color: #f4f4f4;}
-.dev_contents .devCon{max-width: 1200px; margin: auto; position: relative; z-index: 10; padding: 50px 0;}
+.dev_contents .devCon{max-width: 1200px; margin: auto; position: relative; z-index: 10; padding: 80px 0;}
 .dev_contents .devCon h2{font-size:26px; font-weight: 400; position: relative; margin-bottom: 20px;}
 .dev_contents .devCon .slogan{ width: 50%; box-sizing: border-box; height: 100%;float: right;}
 .dev_contents .devCon .slogan.left{float: left;}
-.slogan_con p{font-size: 20px;  line-height: 160%; font-weight:400; color: #666;  text-align:center;}
+.slogan_con p{font-size: 20px;  line-height: 160%; font-weight:400; color: #333;  text-align:center;}
 .slogan_con p i{font-weight: 200; margin: 0 10px;}
-.slogan_con p.user {font-size: 60px; padding-top: 30px;}
-.dev_contents .devCon .devTxt{line-height: 160%; color: #333; font-weight: 300; font-size: 16px;}
+.slogan_con p.user {font-size: 60px; padding-top: 40px;}
+.slogan_con p.user i{color: #666;}
+.dev_contents .devCon .devTxt{line-height: 160%; color: #000; font-weight: 300; font-size: 16px;}
 .dev_contents .bg_box{position: relative;}
 .dev_contents .devImg {width: 50%; float:left; display: block;}
 .dev_contents .devImg img{width: 100%; float: left;}
-.dev_contents .btn_link{display: inline-block; border: 1px solid #333; height: 30px; line-height: 30px; padding: 0 10px;}
+.dev_contents .btn_link{display: inline-block; border: 1px solid #333; height: 46px; line-height: 46px; padding: 0 20px;}
 .dev_contents .devCon .article_box.left .devImg{float:right;}
 .dev_contents .devCon .article_box.left .slogan{float: left;}
 .bg_block{position: relative; overflow: hidden; padding: 50px 0;}
@@ -513,7 +515,9 @@ z-index: 10;}
 .bg_block .bg img{width: 100%; opacity: 0.5}
 .bg_block .introBox{text-align: center;}
 .bg_block .introBox .devTxt{display: inline-block;}
-.bg_block .introBox .devTxt a{color: #fff; border-color:#fff;}
+.bg_block .introBox .devTxt a{color: #fff; border-color:#fff; margin: 0 20px; background: rgba(0,0,0,0.3)}
 .dev_contents .devCon.contact {padding-top: 0;}
 .dev_contents .devCon.contact .devTxt{text-align: center;}
-.dev_contents .devCon.contact .devTxt a{color: #fff; background-color: #333; font-size: 20px; height: 40px; line-height: 40px; padding: 0 20px;}
+.dev_contents .devCon.contact .devTxt a.btn_link{color: #fff; background-color: #333; font-size: 18px; height: 40px; line-height: 40px; padding: 0 40px;}
+.side_block{position: relative; overflow: hidden; padding:0px 0; background-color: #fff;}
+.side_block .article_box{background-color: #f4f4f4;}

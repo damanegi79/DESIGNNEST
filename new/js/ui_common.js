@@ -152,7 +152,7 @@
         return {
             init : function (){
                 $("#ajaxContainer").addClass('fixed')
-                copyToClipboard(element)
+                copyToClipboard()
                 console.log('contact class start')
             },
             dispos : function ()
@@ -232,6 +232,5 @@ function copyToClipboard(element) {
     $("body").append($temp);
     $temp.val($(element).text()).select();
     document.execCommand("copy");
-    alert('이메일 주소')
     $temp.remove();
 }
