@@ -525,6 +525,7 @@ z-index: 10;}
 .bg_block .introBox{text-align: center;}
 .bg_block .introBox .devTxt{display: inline-block;}
 .bg_block .introBox .devTxt a{color: #fff; border-color:#fff; margin: 0 20px; background: rgba(0,0,0,0.3)}
+.bg_block .devCon{padding: 0; padding-top: 50px;}
 .dev_contents .devCon.contact {padding-top: 0;}
 .dev_contents .devCon.contact .devTxt{text-align: center;}
 .dev_contents .devCon.contact .devTxt a.btn_link{color: #fff; background-color: #333; font-size: 18px; height: 40px; line-height: 40px; padding: 0 40px;}
@@ -543,3 +544,16 @@ z-index: 10;}
 .infoText li:last-child .devTxt{right: -10px;}
 
 .side_block .infoText li .devTxt{background-color: #f4f4f4;box-shadow: 2px 0 2px rgba(0,0,0,0.2);}
+
+
+.desktopInfo{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; margin-bottom: 20px;}
+.desktopInfo:after{content: ""; clear: both; display: block;}
+.desktopInfo .desktopArea{ width: 60%; float: right; position: relative;}
+.desktopInfo .desktopArea img{width: 100%;}
+.desktopInfo .desktopArea .infoImg{ position: absolute; right: 20px; top: 20px; bottom: 50px; left: 20px;}
+.desktopInfo .infoText{position: absolute; left: 0; top:60px; width: 47%; }
+.desktopInfo .infoText .devTxt{background: #f4f4f4; padding: 30px; position: relative; box-shadow:3px 3px 3px rgba(0,0,0,0.3);}
+.desktopInfo .infoText .devTxt p{ line-height: 160%;}
+.desktopInfo .infoText .devTxt p b{font-weight: 400;}
+.desktopInfo .infoText .title{font-size: 24px; font-weight: 400; margin-bottom: 10px; font-style: italic;}
+/*.desktopInfo .infoText .devTxt:after{content: ''; display: block; background: url(../img/device/arrow@2x.png) no-repeat; background-size: 100% 190px; height: 100% 100%; position: absolute; width: 100px; height: 190px; right: -100px; top: -5px;}*/
