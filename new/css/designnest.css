@@ -553,6 +553,7 @@ z-index: 10;}
 .desktopInfo .desktopArea .infoImg{ position: absolute; right: 20px; top: 20px; bottom: 50px; left: 20px;}
 .desktopInfo .infoText{position: absolute; left: 0; top:60px; width: 47%; }
 .desktopInfo .infoText .devTxt{background: #f4f4f4; padding: 30px; position: relative; box-shadow:3px 3px 3px rgba(0,0,0,0.3);}
+.desktopInfo .infoText.white .devTxt{background: #fff;}
 .desktopInfo .infoText .devTxt p{ line-height: 160%;}
 .desktopInfo .infoText .devTxt p b{font-weight: 400;}
 .desktopInfo .infoText .title{font-size: 24px; font-weight: 400; margin-bottom: 10px; font-style: italic;}
