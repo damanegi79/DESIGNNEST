@@ -1,6 +1,7 @@
 @import url(reset.css);
 @import url(font-awesome.min.css);
 @import url(themify-icons.css);
+@import url(fontello.css);
 
 
 
@@ -557,7 +558,7 @@ z-index: 10;}
 .desktopInfo .desktopArea{ width: 60%; float: right; position: relative;}
 .desktopInfo .desktopArea img{width: 100%;}
 .desktopInfo .desktopArea .infoImg{ position: absolute; right: 20px; top: 20px; bottom: 50px; left: 20px;}
-.desktopInfo .infoText{position: absolute; left: 0; top:60px; width: 47%; }
+.desktopInfo .infoText{position: absolute; left: 0; top:60px; width: 48%; }
 .desktopInfo .infoText .devTxt{background:; padding: 30px; position: relative; box-shadow:3px 3px 3px rgba(0,0,0,0.3); border-radius: 3px; border: 1px solid #999; background-color: #fff;}
 
 .desktopInfo .infoText .devTxt p{ line-height: 160%;}
@@ -574,10 +575,10 @@ z-index: 10;}
 .desktopInfo.info01 .devTxt p.slo{font-size: 18px;  line-height: 160%; font-weight:400; color: #333;  text-align:center;padding-left: 0;}
 .desktopInfo.info01 .devTxt p.title{padding-left: 0;}
 .desktopInfo.info01 .devTxt p em{display: inline-block; width: 8px; margin-left: -8px;}
-.desktopInfo.info01 .devTxt.pos01{position: absolute; left: 0px; top: 40px; transform: rotateZ(-10deg); z-index: 15;}
-.desktopInfo.info01 .devTxt.pos02{position: absolute; left:340px ; top:80px; transform: rotateZ(10deg); z-index: 10;}
-.desktopInfo.info01 .devTxt.pos03{position: absolute; left:70px; top:300px; z-index: 10;  transform: rotateZ(-5deg);  z-index: 5;}
-.desktopInfo.info01 .devTxt.pos04{position:absolute; left:350px; top:500px;   transform: rotateZ(3deg);}
+.desktopInfo.info01 .devTxt.pos01{position: absolute; left:500px ; top:80px; transform: rotateZ(10deg); z-index: 10;}
+.desktopInfo.info01 .devTxt.pos02{position: absolute; left: 0px; top:0px; transform:; z-index: 15;}
+.desktopInfo.info01 .devTxt.pos03{position: absolute; left:70px; top:250px; z-index: 10;  transform:;  z-index: 5;}
+.desktopInfo.info01 .devTxt.pos04{position:absolute; left:350px; top:500px;   transform: rotateZ(0deg);}
 .desktopInfo.info01 .devTxt p.user {font-size: 40px; text-align: center; padding: 0; padding-bottom: 5px; line-height: 100%;}
 /*font-size: 18px;*/
 
@@ -588,7 +589,7 @@ z-index: 10;}
 .dev_step li p{display: block; display: table; width: 100%;}
 .dev_step li b{display:block; text-align: center; margin-bottom: 20px; font-weight: 400; font-size: 18px;}
 .dev_step li span{display:block; vertical-align: middle; height:100px; padding: 0 70px; margin-top: 20px; line-height: 160%;}
-.dev_step li:after{content: "\e649"; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 100px; font-size: 40px;}
+.dev_step li:after{content: "\e649"; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 100px; font-size: 40px; color: #999;}
 .dev_step li:nth-child(3n+3):after{display: none;}
 /*.dev_step li:after{content: "\f054"; display: block; text-align: center; font-family:'FontAwesome'; position: absolute; width: 30px; right: -15px; top:100px; font-size: 40px;}*/
 .dev_step li em{display: inline-block; text-align: center; width: 80px; height: 80px; border-radius: 50%; border: 2px solid #333;}
@@ -598,3 +599,23 @@ z-index: 10;}
 .devCon.caution div{ margin-bottom: 20px;}
 .devCon.caution div p{display: inline-block; border-bottom: 1px solid #999;position: relative; padding-right: 20px; line-height:160%;}
 .devCon.caution i{font-size: 40px; bottom:-4px; right: -36px; position: absolute; color: #999;}
+
+.clientList {position: relative;}
+.clientList .bg{text-align: right;}
+.clientList .bg img{width: 100%;}
+.desktopInfo.info01 .clientList .bg img{ width: 100%;}
+.txt_client {padding-top: 220px; position: relative; padding-bottom: 220px;}
+.txt_client li{ float: left; width:200px; text-align: center; position: relative;}
+.txt_client li .ico{width: 140px; height: 140px; box-shadow:5px 5px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; transition:all 1s ease;}
+.txt_client li .bottom{width: 140px; height: 140px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 20px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left: 50%; top:30px; margin-left: -70px; z-index: 1; background-color: #999;background-color: #128dd4;}
+.txt_client li .devTxt{position: absolute; top:280px; text-align: left; width: 250px;}
+.txt_client li .devTxt:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 50%; top: 0px;transform: perspective(1000px) rotateZ(180deg) scale(0.5); margin-left: -65px; top:-70px}
+
+.txt_client li:nth-child(2n+1) .bottom{ top: -30px;}
+.txt_client li:nth-child(2n+1) .devTxt{ bottom: auto; top: -180px;}
+.txt_client li:nth-child(2n+1) .devTxt:after{top:60px; transform: perspective(1000px) rotateZ(0deg)  scale(0.5)}
+.txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px;}
+.txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px;}
+.txt_client li:hover .ico{transform: perspective(1000px) translateY(-30px) rotateZ(45deg) scale(1.01);  box-shadow: none; border-radius: 20px;color: #128dd4;}
+.txt_client li:nth-child(2n+2):hover .ico{transform: perspective(1000px) translateY(30px) rotateZ(45deg) scale(1.01)}
+/*.txt_client li:hover .bottom{ background-color: #128dd4;}*/
