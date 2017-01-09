@@ -538,7 +538,7 @@ z-index: 10;}
 .dev_contents .devCon.contact .devTxt a.btn_link{color: #fff; background-color: #333; font-size: 18px; height: 40px; line-height: 40px; padding: 0 40px;}
 .side_block{position: relative; overflow: hidden; padding:0px 0; background-color: #fff;}
 .side_block .article_box{background-color: #f4f4f4;}
-.devTxt .num{display: inline-block; width: 50px; height: 50px; border-radius: 50%; margin-right: 20px; text-align: center; line-height:50px; font-weight:600; font-size:30px;  color: #333; font-family:'Noto Sans KR', sans-serif; vertical-align:bottom; box-shadow: 1px 1px 3px rgba(0,0,0,0.5)}
+
 .tempList_block{ text-align: center; position:relative; z-index: 10;}
 .tempList_block img{max-width: 100%;}
 
@@ -555,19 +555,17 @@ z-index: 10;}
 
 .desktopInfo{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; margin: 50px 0;}
 .desktopInfo:after{content: ""; clear: both; display: block;}
-.desktopInfo .desktopArea{ width: 60%; float: right; position: relative;}
+.desktopInfo .desktopArea{ width: 60%; float: right; position: relative; z-index: 5;}
 .desktopInfo .desktopArea img{width: 100%;}
 .desktopInfo .desktopArea .infoImg{ position: absolute; right: 20px; top: 20px; bottom: 50px; left: 20px;}
-.desktopInfo .infoText{position: absolute; left: 0; top:60px; width: 48%; }
-.desktopInfo .infoText .devTxt{background:; padding: 30px; position: relative; box-shadow:3px 3px 3px rgba(0,0,0,0.3); border-radius: 3px; border: 1px solid #999; background-color: #fff;}
-
+.desktopInfo .infoText{position: absolute; left: 0; top:80px; width: 48%; }
+.desktopInfo .infoText .devTxt{padding: 30px; position: relative; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); border-radius: 10px; background-color: #fff; z-index: 10; transform: perspective(1000px) }
 .desktopInfo .infoText .devTxt p{ line-height: 160%;}
-
 .desktopInfo .infoText .devTxt p b{font-weight: 400;}
-.desktopInfo .infoText .title{font-size: 24px; font-weight: 400; margin-bottom: 10px; font-style: italic;}
-/*.desktopInfo .infoText .devTxt:after{content: ''; display: block; background: url(../img/device/arrow@2x.png) no-repeat; background-size: 100% 190px; height: 100% 100%; position: absolute; width: 100px; height: 190px; right: -100px; top: -5px;}*/
-.desktopInfo .infoText.white .devTxt{background:rgba(255,255,255,1);}
-.desktopInfo.info01 .infoText{ width: auto; top: 0; width: 100%; height: 100%;}
+.desktopInfo .infoText .title{font-size: 34px; font-weight: 400; margin-bottom: 10px; font-style: italic;color: #128dd4;}
+.desktopInfo .infoText .bg{ width: 100%; height: 250px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; display: inline-block; position: absolute; left:0px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top:0; margin-top: -30px; margin-left: -40px;transform: perspective(1000px) }
+
+/*.desktopInfo.info01 .infoText{ width: auto; top: 0; width: 100%; height: 100%;}*/
 .desktopInfo.info01 .desktopArea{right: -150px; width:70%;}
 .desktopInfo.info01 .devTxt{display: inline-block; position: relative; transform: perspective(1000px); border: 1px solid #999;}
 
@@ -575,10 +573,12 @@ z-index: 10;}
 .desktopInfo.info01 .devTxt p.slo{font-size: 18px;  line-height: 160%; font-weight:400; color: #333;  text-align:center;padding-left: 0;}
 .desktopInfo.info01 .devTxt p.title{padding-left: 0;}
 .desktopInfo.info01 .devTxt p em{display: inline-block; width: 8px; margin-left: -8px;}
+/*
 .desktopInfo.info01 .devTxt.pos01{position: absolute; left:500px ; top:80px; transform: rotateZ(10deg); z-index: 10;}
 .desktopInfo.info01 .devTxt.pos02{position: absolute; left: 0px; top:0px; transform:; z-index: 15;}
 .desktopInfo.info01 .devTxt.pos03{position: absolute; left:70px; top:250px; z-index: 10;  transform:;  z-index: 5;}
 .desktopInfo.info01 .devTxt.pos04{position:absolute; left:350px; top:500px;   transform: rotateZ(0deg);}
+*/
 .desktopInfo.info01 .devTxt p.user {font-size: 40px; text-align: center; padding: 0; padding-bottom: 5px; line-height: 100%;}
 /*font-size: 18px;*/
 
@@ -587,18 +587,31 @@ z-index: 10;}
 .dev_step ul{width: 1230px; position: relative; left: -15px;}
 .dev_step li{display: inline-block; width:33.3333%; text-align: center; float: left; padding: 0 15px; box-sizing: border-box;  margin-top: 30px; position: relative;}
 .dev_step li p{display: block; display: table; width: 100%;}
-.dev_step li b{display:block; text-align: center; margin-bottom: 20px; font-weight: 400; font-size: 18px;}
-.dev_step li span{display:block; vertical-align: middle; height:100px; padding: 0 70px; margin-top: 20px; line-height: 160%;}
-.dev_step li:after{content: "\e649"; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 100px; font-size: 40px; color: #999;}
+.dev_step li b.tit{display:block; text-align: center; margin-bottom:40px; font-weight: 400; font-size: 18px; }
+.dev_step li span.num{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
+.dev_step li span.text{display:block; vertical-align: middle; height:100px; padding: 0 50px 0 90px; margin-top:50px; line-height: 160%; text-align: left; position: relative; }
+.dev_step li span.text b{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4; position: absolute; text-align: right; width: 30px; left:55px; top: -5px;}
+.dev_step li span.bottom{width: 80px; height: 80px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:50%; top:60px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; margin-left: -40px;}
+.dev_step li:after{content: ""; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 70px; font-size: 40px; color: #999; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; transform: perspective(1000px) rotateZ(-90deg) scale(0.5);}
 .dev_step li:nth-child(3n+3):after{display: none;}
-/*.dev_step li:after{content: "\f054"; display: block; text-align: center; font-family:'FontAwesome'; position: absolute; width: 30px; right: -15px; top:100px; font-size: 40px;}*/
-.dev_step li em{display: inline-block; text-align: center; width: 80px; height: 80px; border-radius: 50%; border: 2px solid #333;}
-.dev_step li em i{font-size: 40px; color:#333; line-height: 80px;}
+.dev_step li:nth-child(1) em{ top: 15px; left: 15px;}
+.dev_step li:nth-child(2) em{top: 15px;}
+.dev_step li:nth-child(3) em{ top: 15px; left: -15px;}
+.dev_step li:nth-child(4) em{top: -15px; left: 15px;}
+.dev_step li:nth-child(5) em{top: -15px;}
+.dev_step li:nth-child(6) em{top: -15px; left: -15px;}
+
+
+
+.dev_step li em{width: 80px; height: 80px;  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); z-index: 10; background-color: #fff; margin: auto; position: relative; z-index: 10;}
+.dev_step li em i{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px; font-size: 30px; display: inline-block;}
+
 .devCon.white{background-color: #fff;}
 .devCon.caution{padding-top: 0;}
 .devCon.caution div{ margin-bottom: 20px;}
-.devCon.caution div p{display: inline-block; border-bottom: 1px solid #999;position: relative; padding-right: 20px; line-height:160%;}
-.devCon.caution i{font-size: 40px; bottom:-4px; right: -36px; position: absolute; color: #999;}
+.devCon.caution div p{display: inline-block; border-bottom: 1px solid #128dd4;position: relative; padding-right: 20px; line-height:160%; margin-left: 30px; padding-left:15px;}
+.devCon.caution div p span{display:inline-block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4; text-align:center; width: 30px; margin-left: -30px; position: relative; top: 8px;}
+.devCon.caution i{font-size: 40px; bottom:-4px; right: -36px; position: absolute; color:#128dd4;}
 
 .clientList {position: relative;}
 .clientList .bg{text-align: right;}
@@ -606,16 +619,45 @@ z-index: 10;}
 .desktopInfo.info01 .clientList .bg img{ width: 100%;}
 .txt_client {padding-top: 220px; position: relative; padding-bottom: 220px;}
 .txt_client li{ float: left; width:200px; text-align: center; position: relative;}
-.txt_client li .ico{width: 140px; height: 140px; box-shadow:5px 5px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; transition:all 1s ease;}
+.txt_client li .ico{width: 140px; height: 140px; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; transition:all 1s ease;}
 .txt_client li .bottom{width: 140px; height: 140px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 20px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left: 50%; top:30px; margin-left: -70px; z-index: 1; background-color: #999;background-color: #128dd4;}
 .txt_client li .devTxt{position: absolute; top:280px; text-align: left; width: 250px;}
 .txt_client li .devTxt:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 50%; top: 0px;transform: perspective(1000px) rotateZ(180deg) scale(0.5); margin-left: -65px; top:-70px}
-
 .txt_client li:nth-child(2n+1) .bottom{ top: -30px;}
 .txt_client li:nth-child(2n+1) .devTxt{ bottom: auto; top: -180px;}
 .txt_client li:nth-child(2n+1) .devTxt:after{top:60px; transform: perspective(1000px) rotateZ(0deg)  scale(0.5)}
-.txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px;}
-.txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px;}
-.txt_client li:hover .ico{transform: perspective(1000px) translateY(-30px) rotateZ(45deg) scale(1.01);  box-shadow: none; border-radius: 20px;color: #128dd4;}
+.txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px; transition:all 1s ease}
+.txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px; color: #128dd4;}
+.txt_client li:hover .ico{transform: perspective(1000px) translateY(-30px) rotateZ(45deg) scale(1.01);  box-shadow: none; border-radius: 20px;}
+.txt_client li:hover .ico i{transform: perspective(1000px) rotateZ(0deg);color: #128dd4;}
+.txt_client li:nth-child(2n+1):hover .ico i{transform: perspective(1000px) rotateZ(-90deg);}
 .txt_client li:nth-child(2n+2):hover .ico{transform: perspective(1000px) translateY(30px) rotateZ(45deg) scale(1.01)}
 /*.txt_client li:hover .bottom{ background-color: #128dd4;}*/
+
+.dev_service{}
+.dev_service .service_img{width: 100%;}
+.dev_service .service_img .bg{display: inline-block; width:65%; float: right;}
+.dev_service .service_img .bg img{ width: 100%;}
+.dev_service .service_img .text_box{float: left; width:35%; text-align: center; padding-top:120px;}
+.dev_service .service_img .text_box .slo{font-size: 18px;  line-height: 160%; font-weight:400; color: #333;  text-align:center;padding-left: 0;}
+.dev_service .service_img .text_box .user {font-size: 60px; text-align: center; padding: 0; padding-bottom: 10px; line-height: 100%;}
+
+.dev_service .text_dev_service {padding: 50px 0 50px 0;}
+.dev_service .text_dev_service li{ width: 50%; float: left; position: relative; box-sizing: border-box; padding-left: 140px;  padding-right:50px; display: table; height: 120px; margin-bottom: 10px;}
+.dev_service .text_dev_service li .block{width: 80px; height: 80px;  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); position: absolute; left: 0; top: 50%; margin-top: -40px; z-index: 10; background-color: #fff;}
+.dev_service .text_dev_service li .block p{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px;}
+.dev_service .text_dev_service li .block p i{font-size:30px; position: relative; top: 10px;}
+
+.dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top: 50%; margin-top: -40px;}
+
+
+.dev_service .text_dev_service li p.text{color: #000; font-weight: 300; line-height: 160%; display: table-cell; height:120px; vertical-align: middle;}
+/*.dev_service .text_dev_service li p.text:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 100px; top: 50%; margin-top: -25px;transform: perspective(1000px) rotateZ(90deg) scale(0.5);}*/
+.dev_service .text_dev_service li p.text span{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
+/*
+.dev_service .text_dev_service li p em{display: block; text-align: center; padding-top: 40px; padding-bottom: 20px;}
+.dev_service .text_dev_service li p em i{font-size: 50px;}
+*/
+/*.dev_service .text_dev_service li:nth-child(2n+1) .block{margin-top: 0px;}*/
+.dev_service .text_dev_service li:nth-child(2n+2) p.text{}
+.dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
