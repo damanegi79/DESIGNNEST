@@ -378,11 +378,12 @@ z-index: 10;}
 /*.service_container:nth-child(even) .article .text_area{transform:perspective( 1000px ) translateX(100%);}*/
 .service_content .article .text_area .summery{line-height: 160%; color: #f4f4f4; font-weight: 300}
 .service_content .article .text_area .summery b{display: inline-block;}
-.service_content .article .text_area .subtite{margin-bottom: 20px; color: #999;}
+.service_content .article .text_area .subtite{margin-bottom: 20px; color: #fff; font-weight:400; font-size: 18px;}
 
 .sevice_wrap .service_container:nth-child(even) .service_content{background-color: #fff; color: #333; }
 .sevice_wrap .service_container:nth-child(even) .service_content .article h2:before{background-color: #333;}
 .sevice_wrap .service_container:nth-child(even) .service_content .summery{line-height: 160%; color: #666;}
+.sevice_wrap .service_container:nth-child(even) .service_content .subtite{color: #333;}
 .service_content .pc_work{ width: 50%; position: absolute; right: 0; top:120px;}
 .service_content .pc_work img{width: 100%;}
 .service_content .pc_work .pc_img {display: inline-block; width:550px; margin-left: 100px; position: relative;}
@@ -563,7 +564,7 @@ z-index: 10;}
 .desktopInfo .infoText .devTxt p{ line-height: 160%;}
 .desktopInfo .infoText .devTxt p b{font-weight: 400;}
 .desktopInfo .infoText .title{font-size: 34px; font-weight: 400; margin-bottom: 10px; font-style: italic;color: #128dd4;}
-.desktopInfo .infoText .bg{ width: 100%; height: 250px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; display: inline-block; position: absolute; left:0px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top:0; margin-top: -30px; margin-left: -40px;transform: perspective(1000px) }
+.desktopInfo .infoText .bg{ width:100%; height: 100%; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; display: inline-block; position: absolute; left:0px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top:0; transform: perspective(1000px) translateX(-30px) translateY(-30px)scale(0.8); transform-origin: left top;}
 
 
 
@@ -574,7 +575,7 @@ z-index: 10;}
 .dev_step li span.num{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
 .dev_step li span.text{display:block; vertical-align: middle; height:100px; padding: 0 50px 0 90px; margin-top:50px; line-height: 160%; text-align: left; position: relative; }
 .dev_step li span.text b{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4; position: absolute; text-align: right; width: 30px; left:55px; top: -5px;}
-.dev_step li span.bottom{width: 80px; height: 80px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:50%; top:60px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; margin-left: -40px;}
+.dev_step li span.bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:50%; top:60px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; margin-left: -40px;}
 .dev_step li:after{content: ""; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 70px; font-size: 40px; color: #999; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; transform: perspective(1000px) rotateZ(-90deg) scale(0.5);}
 .dev_step li:nth-child(3n+3):after{display: none;}
 .dev_step li:nth-child(1) em{ top: 15px; left: 15px;}
@@ -631,7 +632,7 @@ z-index: 10;}
 .dev_service .text_dev_service li .block p{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px;}
 .dev_service .text_dev_service li .block p i{font-size:30px; position: relative; top: 10px;}
 
-.dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top: 50%; margin-top: -40px;}
+.dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top: 50%; margin-top: -40px;}
 
 
 .dev_service .text_dev_service li p.text{color: #000; font-weight: 300; line-height: 160%; display: table-cell; height:120px; vertical-align: middle;}

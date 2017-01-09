@@ -163,7 +163,7 @@ function service(){
         var itemListTween = TweenMax.to(itemListarea, 2, {transform:"perspective( 1000px ) rotateX(10deg) rotateZ(-40deg) translateY(-500px)  translateX(200px) scale(1.2)",force3D:true})
 
 
-        var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, duration:100}).setTween(txtTween)
+        var txt_scene = new ScrollMagic.Scene({triggerElement:this, offset:250, duration:100}).setTween(txtTween)
         var area_scene = new ScrollMagic.Scene({triggerElement:this, offset:100, triggerHook: 'onEnter', duration:400}).setTween(areaTween)
         var template_scene = new ScrollMagic.Scene({triggerElement:this, offset:200, triggerHook: 'onEnter', duration:1000}).setTween(itemListTween)
 
@@ -189,14 +189,14 @@ function service(){
 
         var mobileTween = new TimelineMax();
         mobileTween
-            .to(responsive03, 2, {transform:"rotateZ(30deg) translateY(230px) translateX(500px) scale(4)",force3D:true,opacity:1,onStart:function(){
+            .to(responsive03, 2, {transform:"rotateZ(0deg) translateY(450px) translateX(300px) scale(5)",force3D:true,opacity:1,onStart:function(){
             $('.service_container.overWrap').addClass('over-view')
         }})
-            .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(5deg)  translateY(30px) translateX(-40px) scale(0.9)",force3D:true})
-            .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(15deg) translateY(55px) translateX(-70px) scale(0.7)",force3D:true})
+            .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(0deg)  translateY(5px) translateX(-40px) scale(0.9)",force3D:true})
+            .to(responsive03.find('.mobile01'), 1, {transform:"rotateZ(10deg) translateY(23px) translateX(-85px) scale(0.8)",force3D:true})
 
 
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'100', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:'.overWrap', offset:'0', triggerHook: 'onLeave', duration:450}).setTween(mobileTween)
 
 
         var ui_img = $(thisList).find('.ui_img .ui');
