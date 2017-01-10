@@ -235,3 +235,4 @@ function copyToClipboard(element) {
     document.execCommand("copy");
     $temp.remove();
 }
+

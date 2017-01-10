@@ -139,13 +139,14 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 #latestWork .header{box-sizing: border-box; background-color: #222; color: #fff;}
 #latestWork .header_content{max-width: 1200px; margin: auto; box-sizing: border-box; padding:60px 0px; position: relative;}
 #latestWork .header_content h1{font-size: 60px;}
-#latestWork .header_content .summery{ font-size: 16px; font-weight:400; line-height:160%; color: #666;}
+#latestWork .header_content .summery{ font-size: 16px; font-weight:400; line-height:160%; color: #999;}
 
 
 .work_content_wrap{position: relative; overflow: hidden; width: 100%;}
 .work_content_wrap.black{background-color: #222; color: #fff;}
-.work_content_wrap .bg{position: absolute; z-index: 0; left: 0; top: 0; width: 100%;}
-.work_content_wrap .bg img{ width: 100%;}
+.work_content_wrap .bg{position: absolute; z-index: 0; left: 0; top: 0; width: 100%; filter:blur(0px);}
+
+.work_content_wrap .bg img{ width: 100%; position: relative; top: -100px;}
 .work_content_wrap .work_content{ position: relative; z-index: 10;}
 .content_box{max-width: 1200px; margin: auto; box-sizing: border-box; padding:30px 30px; position: relative;}
 .container{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; min-height:100vh; vertical-align: middle;}
@@ -153,7 +154,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article{width:100%;  position: relative; z-index: 20; height: 100vh; box-sizing: border-box;}
 .work_article:after{content: ""; clear: both;}
 
-.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%;outline: 1px solid #f00;} /*  outline: 1px solid #f00; */
+.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%;} /*  outline: 1px solid #f00; */
 .work_article .work_img_area.pos-right{left:auto; right:0;}
 .work_article .work_img_area .device_origin{position: absolute; top: 50%; margin-top: -200px; left:35%; width:250px;}
 
@@ -168,17 +169,23 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article .work_img_area .device-pos-3 .img_zoom.active:hover{cursor:zoom-out;}
 .work_article .work_img_area .device .img_area{position: absolute; z-index: 10; left:6%; top:11.5%; right:6%;}
 
+.work_content_wrap.emart{background-color: #fdf1f1;}
 
 
-.work_article .work_info{background-color:rgba(0,0,0,0.5); width: 40%; right: 0; position: absolute; height:360px; top: 50%; margin-top:-180px; padding: 20px; box-sizing: border-box; color: #fff; transform: perspective( 1000px );}
+.work_article .work_info{width: 40%; right: 0; position: absolute; height:360px; top: 50%; margin-top:-180px; padding: 30px; box-sizing: border-box; color: #fff; transform: perspective( 1000px );}
 .work_article .work_info.pos-left{right: auto; left: 0;}
 .work_article .work_info .logo img{height: 20px; width: auto;}
+.work_article .work_info *{position: relative; z-index: 10;}
 .work_article .work_info h2{font-weight: 600; font-size: 30px; padding: 10px 0 5px;}
-.work_article .work_info h2 .small{font-size: 20px; font-weight: 200;}
-.work_article .work_info .work_sub_title{font-size:18px;}
-.work_article .work_info dl{font-weight: 200;}
+.work_article .work_info h2 .small{font-size: 20px; font-weight: 400;}
+.work_article .work_info .work_sub_title{font-size:18px; font-weight: 400; padding-bottom: 10px;}
+.work_article .work_info dl{font-weight:400;}
 .work_article .work_info dt{font-size: 18px;margin-top: 10px; margin-bottom: 5px;}
 .work_article .work_info dd{font-size: 16px;}
+.work_article .work_info .info_bg{position: absolute; width: 100%; height: 100%; left: 0; top:0; z-index: 1; border: 1px solid #fff;}
+
+.work_article .work_info.black{color: #000;}
+.work_article .work_info.black .info_bg{border-color: #333;}
 
 @media (max-width:767px){
     .work_article{height: auto; padding: 0;}
@@ -652,3 +659,19 @@ z-index: 10;}
 /*.dev_service .text_dev_service li:nth-child(2n+1) .block{margin-top: 0px;}*/
 .dev_service .text_dev_service li:nth-child(2n+2) p.text{}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
+
+
+.frost-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.2);
+  transition: all .5s cubic-bezier(0.5, -0.5, 0.3, 1.4);
+}
+.frost {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  transition: all .5s cubic-bezier(0.5, -0.5, 0.3, 1.4);
+}
