@@ -11,7 +11,7 @@
     var currentUrl = "";
 
     function loadPage() {
-        chkAgent()
+       
 
         var html = "";
         var url = currentPage.replace("#", "");
@@ -136,8 +136,8 @@
 
         return {
             init : function (){
-//                scroll()
                 headerMotion()
+                develope()
                 console.log('developement class start')
             },
             dispos : function ()
@@ -171,6 +171,7 @@ var nest = new nest();
 
 $(window).load(function() {
     menu();
+    chkAgent()
     $('#intro').fadeOut(1000);
 })
 

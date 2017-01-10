@@ -419,9 +419,12 @@ z-index: 10;}
 
 
 .templateImg{position:absolute; right: 0; top:0; height: 100%; width: 50%;}
-.templateImg ul.list{width:500px; right: 0; position: absolute; transform:perspective( 1000px ) rotateX(30deg) rotateZ(-30deg) translateY(-300px) scale(1);}
+.templateImg .list{width:500px; right: 0; position: absolute; transform:perspective( 1000px ) rotateX(30deg) rotateZ(-30deg) translateY(-300px) scale(1);}
 .templateImg ul li{width:33.333%; float: left; height: 250px;padding:5px; box-sizing: border-box;}
 .templateImg ul li .img{ background-color: rgba(0,0,0,0.3); position: relative; width:100%; height: 100%;}
+.templateImg .list img{ width: 100%;}
+.templateImg .list img.template{z-index: 10; position: relative;}
+.templateImg .list .back{position: absolute; left: 0; top: 0; width: 100%; z-index:1; opacity: 0.5; transform: perspective(1000px) translateX(-30px) translateY(-30px) translateZ(-0px) rotateZ(0deg)scale(0.8); transform-origin: left bottom;filter: blur(3px); filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');}
 
 .res_device{position: absolute; right: 0; top: 0; height: 100%; width: 50%;}
 .res_device p {position: absolute; left: 50%; top: 50%; transform:perspective( 1000px ) translateX(0) translateY(0) scale(1);}
@@ -459,6 +462,8 @@ z-index: 10;}
 .contact_form .con_right ul li button{background-color: #fff; font-size: 12px; display: inline-block; border-radius: 3px; height: 20px; line-height: 22px; padding: 0 10px; margin-left: 10px; transition: all 0.5s; color: #333; font-weight: 600;}
 .contact_form .con_right ul li button:hover{background-color: #128dd4; color: #fff;}
 .contact_form .con_right ul li b{font-weight:500;}
+.contact_form .con_right ul li.caution{font-size: 12px; margin-top: 10px;}
+.contact_form .con_right ul li.caution i{font-size: 14px; vertical-align:middle; position: relative; top: -1px; margin-right: 3px;}
 .contact_form h2{font-size: 20px; margin-bottom: 20px;}
 .contact_form h2:after{content: ""; display: block; width: 100%; height: 1px; background: linear-gradient(to right, rgba(102,102,102,1) 0%, rgba(102,102,102,0) 100%); margin-top: 10px;}
 .contact_form .helpList{font-size: 16px;}
@@ -603,7 +608,7 @@ z-index: 10;}
 .desktopInfo.info01 .clientList .bg img{ width: 100%;}
 .txt_client {padding-top: 220px; position: relative; padding-bottom: 220px;}
 .txt_client li{ float: left; width:200px; text-align: center; position: relative;}
-.txt_client li .ico{width: 140px; height: 140px; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; transition:all 1s ease;}
+.txt_client li .ico{width: 140px; height: 140px; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(0px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; border: 1px solid #fff;}
 .txt_client li .bottom{width: 140px; height: 140px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 20px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left: 50%; top:30px; margin-left: -70px; z-index: 1; background-color: #999;background-color: #128dd4;}
 .txt_client li .devTxt{position: absolute; top:280px; text-align: left; width: 250px;}
 .txt_client li .devTxt:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 50%; top: 0px;transform: perspective(1000px) rotateZ(180deg) scale(0.5); margin-left: -65px; top:-70px}
@@ -612,11 +617,13 @@ z-index: 10;}
 .txt_client li:nth-child(2n+1) .devTxt:after{top:60px; transform: perspective(1000px) rotateZ(0deg)  scale(0.5)}
 .txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px; transition:all 1s ease}
 .txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px; color: #128dd4;}
+/*
 .txt_client li:hover .ico{transform: perspective(1000px) translateY(-30px) rotateZ(45deg) scale(1.01);  box-shadow: none; border-radius: 20px;}
 .txt_client li:hover .ico i{transform: perspective(1000px) rotateZ(0deg);color: #128dd4;}
 .txt_client li:nth-child(2n+1):hover .ico i{transform: perspective(1000px) rotateZ(-90deg);}
 .txt_client li:nth-child(2n+2):hover .ico{transform: perspective(1000px) translateY(30px) rotateZ(45deg) scale(1.01)}
-/*.txt_client li:hover .bottom{ background-color: #128dd4;}*/
+*/
+
 
 .dev_service{}
 .dev_service .service_img{width: 100%;}
@@ -628,7 +635,7 @@ z-index: 10;}
 
 .dev_service .text_dev_service {padding: 50px 0 50px 0;}
 .dev_service .text_dev_service li{ width: 50%; float: left; position: relative; box-sizing: border-box; padding-left: 140px;  padding-right:50px; display: table; height: 120px; margin-bottom: 10px;}
-.dev_service .text_dev_service li .block{width: 80px; height: 80px;  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); position: absolute; left: 0; top: 50%; margin-top: -40px; z-index: 10; background-color: #fff;}
+.dev_service .text_dev_service li .block{width: 80px; height: 80px;  border-radius: 10px; transform:rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); position: absolute; left: 0; top: 50%; margin-top: -40px; z-index: 10; background-color: #fff; overflow: hidden; border: 1px solid #fff;}
 .dev_service .text_dev_service li .block p{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px;}
 .dev_service .text_dev_service li .block p i{font-size:30px; position: relative; top: 10px;}
 
