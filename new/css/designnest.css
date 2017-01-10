@@ -154,7 +154,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article{width:100%;  position: relative; z-index: 20; height: 100vh; box-sizing: border-box;}
 .work_article:after{content: ""; clear: both;}
 
-.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%;} /*  outline: 1px solid #f00; */
+.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%; outline: 1px solid #f00;} /*  outline: 1px solid #f00; */
 .work_article .work_img_area.pos-right{left:auto; right:0;}
 .work_article .work_img_area .device_origin{position: absolute; top: 50%; margin-top: -200px; left:35%; width:250px;}
 
@@ -624,13 +624,6 @@ z-index: 10;}
 .txt_client li:nth-child(2n+1) .devTxt:after{top:60px; transform: perspective(1000px) rotateZ(0deg)  scale(0.5)}
 .txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px; transition:all 1s ease}
 .txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px; color: #128dd4;}
-/*
-.txt_client li:hover .ico{transform: perspective(1000px) translateY(-30px) rotateZ(45deg) scale(1.01);  box-shadow: none; border-radius: 20px;}
-.txt_client li:hover .ico i{transform: perspective(1000px) rotateZ(0deg);color: #128dd4;}
-.txt_client li:nth-child(2n+1):hover .ico i{transform: perspective(1000px) rotateZ(-90deg);}
-.txt_client li:nth-child(2n+2):hover .ico{transform: perspective(1000px) translateY(30px) rotateZ(45deg) scale(1.01)}
-*/
-
 
 .dev_service{}
 .dev_service .service_img{width: 100%;}
@@ -639,39 +632,20 @@ z-index: 10;}
 .dev_service .service_img .text_box{float: left; width:35%; text-align: center; padding-top:100px;}
 .dev_service .service_img .text_box .slo{font-size: 18px;  line-height: 160%; font-weight:400; color: #333;  text-align:center;padding-left: 0;}
 .dev_service .service_img .text_box .user {font-size: 60px; text-align: center; padding: 0; padding-bottom: 10px; line-height: 100%;}
-
 .dev_service .text_dev_service {padding: 50px 0 50px 0;}
 .dev_service .text_dev_service li{ width: 50%; float: left; position: relative; box-sizing: border-box; padding-left: 140px;  padding-right:50px; display: table; height: 120px; margin-bottom: 10px;}
 .dev_service .text_dev_service li .block{width: 80px; height: 80px;  border-radius: 10px; transform:rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); position: absolute; left: 0; top: 50%; margin-top: -40px; z-index: 10; background-color: #fff; overflow: hidden; border: 1px solid #fff;}
 .dev_service .text_dev_service li .block p{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px;}
 .dev_service .text_dev_service li .block p i{font-size:30px; position: relative; top: 10px;}
-
 .dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top: 50%; margin-top: -40px;}
-
-
 .dev_service .text_dev_service li p.text{color: #000; font-weight: 300; line-height: 160%; display: table-cell; height:120px; vertical-align: middle;}
-/*.dev_service .text_dev_service li p.text:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 100px; top: 50%; margin-top: -25px;transform: perspective(1000px) rotateZ(90deg) scale(0.5);}*/
 .dev_service .text_dev_service li p.text span{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
-/*
-.dev_service .text_dev_service li p em{display: block; text-align: center; padding-top: 40px; padding-bottom: 20px;}
-.dev_service .text_dev_service li p em i{font-size: 50px;}
-*/
-/*.dev_service .text_dev_service li:nth-child(2n+1) .block{margin-top: 0px;}*/
 .dev_service .text_dev_service li:nth-child(2n+2) p.text{}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
 
-
-.frost-layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,.2);
-  transition: all .5s cubic-bezier(0.5, -0.5, 0.3, 1.4);
-}
-.frost {
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
-  transition: all .5s cubic-bezier(0.5, -0.5, 0.3, 1.4);
-}
+/* latest */
+.samsung_imgArea {position: absolute; left: 0; top: 0; height: 100%; width: 100%; outline: 1px solid #f00;}
+.samsung_imgArea img{ width: 100%;}
+.samsung_imgArea .pcArea{ width: 75%; position: absolute; right: -27%; bottom:8%;}
+.samsung_imgArea .tabArea{ width:25%; position: absolute;left:20%; bottom: 5%;}
+.samsung_imgArea .mobileArea{ width:15%; position: absolute;  left:42%; bottom:1%;}
