@@ -209,13 +209,13 @@ function scrollbg(){
         var itemBg = $(thisList).find('.bg')
         var info = $(thisList).find('.work_info')
         
-        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(25px)'})
-        var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(20vh)',force3D:'true',filter: 'blur(25px)'})
-        var infoTween = TweenMax.from(info, 2, {transform:'translateY(400px)',force3D:'true'})
+        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(15px)'})
+        var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(25vh)',force3D:'true',filter: 'blur(15px)'})
+        var infoTween = TweenMax.from(info, 2, {transform:'translateY(300px)',force3D:'true'})
         
         
         var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'center',duration:350}).setTween(bgTween)
-        var bg_sceneOut = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'onLeave',duration:350}).setTween(bgTweenOut)
+        var bg_sceneOut = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'onLeave',duration:450}).setTween(bgTweenOut)
         var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:'100', triggerHook: 'center',duration:350}).setTween(infoTween)
         controller.addScene([
             bg_scene,
