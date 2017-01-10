@@ -154,7 +154,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article{width:100%;  position: relative; z-index: 20; height: 100vh; box-sizing: border-box;}
 .work_article:after{content: ""; clear: both;}
 
-.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%; outline: 1px solid #f00;} /*  outline: 1px solid #f00; */
+.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%; } /*  outline: 1px solid #f00; */
 .work_article .work_img_area.pos-right{left:auto; right:0;}
 .work_article .work_img_area .device_origin{position: absolute; top: 50%; margin-top: -200px; left:35%; width:250px;}
 
@@ -178,10 +178,10 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article .work_info *{position: relative; z-index: 10;}
 .work_article .work_info h2{font-weight: 600; font-size: 30px; padding: 10px 0 5px;}
 .work_article .work_info h2 .small{font-size: 20px; font-weight: 400;}
-.work_article .work_info .work_sub_title{font-size:18px; font-weight: 400; padding-bottom: 10px;}
+.work_article .work_info .work_sub_title{font-size:18px; font-weight: 400; padding-bottom: 10px; line-height: 140%;}
 .work_article .work_info dl{font-weight:400;}
 .work_article .work_info dt{font-size: 18px;margin-top: 10px; margin-bottom: 5px;}
-.work_article .work_info dd{font-size: 16px;}
+.work_article .work_info dd{font-size: 14px;}
 .work_article .work_info .info_bg{position: absolute; width: 100%; height: 100%; left: 0; top:0; z-index: 1; border: 1px solid #fff;}
 
 .work_article .work_info.black{color: #000;}
@@ -644,7 +644,7 @@ z-index: 10;}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
 
 /* latest */
-.samsung_imgArea {position: absolute; left: 0; top: 0; height: 100%; width: 100%; outline: 1px solid #f00;}
+.samsung_imgArea {position: absolute; left: 0; top: 0; height: 100%; width: 100%;}
 .samsung_imgArea img{ width: 100%;}
 .samsung_imgArea .pcArea{ width: 75%; position: absolute; right: -27%; bottom:8%;}
 .samsung_imgArea .tabArea{ width:25%; position: absolute;left:20%; bottom: 5%;}
