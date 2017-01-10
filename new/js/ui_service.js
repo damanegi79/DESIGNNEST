@@ -106,13 +106,13 @@ function axisCard(){
                 TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1.2) translateY(0px)",force3D:true,x:0, y:0});
             TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(30px)",force3D:true,x:0, y:0, marginTop:'-70px', boxShadow:'0 0 20px rgba(0,0,0,1)'});
             TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
-            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1.05) translateY(20px) translateX(20px)",force3D:true,x:0, y:0,opacity:0.2,textShadow:'0, 0, 1px rgba(0,0,0,1)'});
+            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1) translateY(20px) translateX(20px)",force3D:true,x:0, y:0,opacity:0.4,filter: 'blur(1px)'});
         })
         $(this).bind("mouseleave",function(){
             TweenMax.to($(this).find('.card'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
             TweenMax.to($(this).find('.shadow'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0, marginTop:'-100px', boxShadow:'0 0 0 rgba(0,0,0,0.5)'});
             TweenMax.to($(this).find('.txtArea'), 0.5, {transform: "scale(1) translateY(0px)",force3D:true,x:0, y:0});
-            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1) translateY(0px) translateX(0px)",force3D:true,x:0, y:0,opacity:0});
+            TweenMax.to($(this).find('.shadowTxt'), 0.5, {transform: "scale(1) translateY(0px) translateX(0px)",force3D:true,x:0, y:0,opacity:0,filter: 'blur(0px)'});
             TweenMax.to($(this).find(".shine"), 1, {"background":"linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%)",force3D:true})
                 $(this).unbind("mousemove",moveFolio)
         })
