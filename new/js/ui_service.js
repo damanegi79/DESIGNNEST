@@ -62,7 +62,7 @@ function scroll3d(){
         var itemPc = $(thisList).find('.pc')
         var itemTab = $(thisList).find('.tablet')
 
-        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true})
+        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true,filter:'blur(3px) grayscale(1)'})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)', force3D:true})
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)', force3D:true})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(0px)', force3D:true,onComplete:function(){
@@ -88,7 +88,7 @@ function scroll3d(){
         var itemPc = $(thisList).find('.pc')
         var itemTab = $(thisList).find('.tablet')
 
-        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true})
+        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true,filter:'blur(3px) grayscale(1)'})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)',force3D:true})
 
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-300px)',force3D:true})
