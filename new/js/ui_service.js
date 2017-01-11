@@ -60,19 +60,24 @@ function scroll3d(){
         var itemInfo = $(thisList).find('.item_info')
         var itemMobile = $(thisList).find('.mobile')
         var itemPc = $(thisList).find('.pc')
+        var itemTab = $(thisList).find('.tablet')
+
         var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)', force3D:true})
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)', force3D:true})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(0px)', force3D:true,onComplete:function(){
             $(thisList).addClass('active')
         }})
+        var tabTween = TweenMax.from(itemTab, 2, {transform:'translateY(200px)',force3D:true})
+
         var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(listTween)
         var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(infoTween)
         var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(mobileTween)
         var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(pcTween)
+        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(tabTween)
 
         controller.addScene([
-            list_scene,info_scene,mobile_scene,pc_scene
+            list_scene,info_scene,mobile_scene,pc_scene,tab_scene
         ]);
 
     })
@@ -81,20 +86,25 @@ function scroll3d(){
         var itemInfo = $(thisList).find('.item_info')
         var itemMobile = $(thisList).find('.mobile')
         var itemPc = $(thisList).find('.pc')
+        var itemTab = $(thisList).find('.tablet')
 
         var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)',force3D:true})
-        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)',force3D:true})
+
+        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-300px)',force3D:true})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(-100px)',force3D:true,onStart:function(){
             $(thisList).removeClass('active')
         }})
+        var tabTween = TweenMax.to(itemTab, 2, {transform:'translateY(-200px)',force3D:true})
+
         var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(listTween)
         var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(infoTween)
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(mobileTween)
-        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(pcTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:-90, triggerHook: 'onLeave',duration:350}).setTween(mobileTween)
+        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:-30, triggerHook: 'onLeave',duration:350}).setTween(pcTween)
+        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:-60, triggerHook: 'onLeave',duration:350}).setTween(tabTween)
 
         controller.addScene([
-            list_scene,info_scene,mobile_scene,pc_scene
+            list_scene,info_scene,mobile_scene,pc_scene,tab_scene
         ]);
     })
 }
@@ -240,19 +250,19 @@ function service(){
 
 function develope(){
     var controller = new ScrollMagic.Controller();
-    
+
     var introIco = $('.text_dev_service .block')
     var introTween = TweenMax.from(introIco, 1, {transform: 'rotateZ(45deg)',marginLeft:'19px', border:'1px solid #128dd4', boxShadow:'none',ease: Power4.easeInOut}) // translateX(13px) translateY(-14px)
     var intro_scene = new ScrollMagic.Scene({triggerElement:'.text_dev_service', offset:0}).setTween(introTween)
 
     var client = $('.txt_client li:even .ico')
     var client1 = $('.txt_client li:odd .ico')
-    var clientTween = TweenMax.from(client, 1.5, {transform: 'rotateZ(45deg)',marginTop:'-30px', border:'1px solid #128dd4', boxShadow:'none',ease: Power4.easeInOut}) 
-    var clientTween1 = TweenMax.from(client1, 1.5, {transform: 'rotateZ(45deg)',marginTop:'28px', border:'1px solid #128dd4', boxShadow:'none',ease: Power4.easeInOut}) 
+    var clientTween = TweenMax.from(client, 1.5, {transform: 'rotateZ(45deg)',marginTop:'-30px', border:'1px solid #128dd4', boxShadow:'none',ease: Power4.easeInOut})
+    var clientTween1 = TweenMax.from(client1, 1.5, {transform: 'rotateZ(45deg)',marginTop:'28px', border:'1px solid #128dd4', boxShadow:'none',ease: Power4.easeInOut})
     var client_scene = new ScrollMagic.Scene({triggerElement:'.txt_client .bottom', offset:0}).setTween(clientTween)
     var client_scene1 = new ScrollMagic.Scene({triggerElement:'.txt_client .bottom', offset:0}).setTween(clientTween1)
-    
-    
+
+
     controller.addScene([
         intro_scene,
         client_scene,

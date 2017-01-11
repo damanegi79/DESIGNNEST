@@ -168,6 +168,8 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article .work_img_area .device .img_area{position: absolute; z-index: 10; left:6%; top:11.5%; right:6%;}
 
 .work_content_wrap.emart{background-color: #fdf1f1;}
+.work_content_wrap.kotra{background-color: #98c6ea;}
+.work_content_wrap.oakley{background-color: #000;}
 
 
 .work_article .work_info{width: 40%; right: 0; position: absolute; height:360px; top: 50%; margin-top:-180px; padding: 30px; box-sizing: border-box; color: #fff; transform: perspective( 1000px );}
@@ -359,21 +361,23 @@ z-index: 10;}
 .item_thumb .mobile{width:130px; position: absolute; left:32%;bottom:10px; transform:perspective( 1000px ) translateY(600px); z-index: 50;}
 .item_thumb .mobile .device{}
 .item_thumb .mobile .device img{width: 100%;}
-.item_thumb .mobile .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:25%;}
+.item_thumb .mobile .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:25%; height: 87%;}
 .item_thumb .mobile .imgArea img{width: 100%;}
 
 .item_thumb .tablet{width:220px; position: absolute; left:40%; bottom:10px; transform:perspective( 1000px ) translateY(0px); z-index: 30;}
 .item_thumb .tablet .device{}
 .item_thumb .tablet .device img{width: 100%;}
-.item_thumb .tablet .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:12%;}
+.item_thumb .tablet .imgArea{position: absolute; left: 0; top: 0; right: 0; text-align: center; box-sizing: border-box; padding-left:7%; padding-right: 7%; padding-top:12%; height: 90%;}
 .item_thumb .tablet .imgArea img{width: 100%;}
 
 .item_thumb .pc{ width: 700px; right: -50px; top:30px; position: absolute; transform:perspective( 1000px ) translateY(200px); z-index: 20;} /* translateX(600px) */
 .item_thumb .pc .device img{ width: 100%;}
 .item_thumb .pc .imgArea{position: absolute; left:0; top:0; overflow: hidden; padding-left: 12%; padding-right: 12%; padding-top: 4%; box-sizing: border-box; width: 100%; height: 89%; }
 
-.item_thumb .imgArea .over{position: relative; height: 100%; overflow: hidden; border: 1px solid #f00;}
+.item_thumb .imgArea .over{position: relative; height: 100%; overflow: hidden;}
 .item_thumb .imgArea img{ width: 100%;}
+
+.item_thumb.nf .mobile{width:180px;}
 
 
 .motion{transform:perspective( 1000px ); transition:All 0.5s ease; width: 100px; height: 200px; background-color: #f00; position: relative; display: block;}
@@ -674,8 +678,8 @@ z-index: 10;}
 .project_img_area .devie-block.type-mobile .img_block{padding:21.5% 5.5% 0 5.5%; height:88.5%;}
 .project_img_area .devie-block.type-tablet .img_block{padding:14% 5% 0 5%; height:90%;}
 
-.project_img_area.samsung .devie-block.type-desktop{bottom:8%; width: 75%;left: -27%;}
-.project_img_area.samsung .devie-block.type-tablet{bottom:3%; width:30%; right: -20%;}
+.project_img_area.samsung .devie-block.type-desktop{bottom:5%; width: 75%;left: -27%;}
+.project_img_area.samsung .devie-block.type-tablet{bottom:3%; width:30%; right: -10%;}
 .project_img_area.samsung .devie-block.type-mobile{bottom:4%; width:18%; left: 40%;}
 
 .project_img_area.kotra .devie-block.type-desktop{bottom:10%; width: 75%; right: -27%;}
