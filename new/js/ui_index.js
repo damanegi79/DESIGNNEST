@@ -143,10 +143,10 @@ function svgDevice(){
 
 function deviceAxis(){
         var motionDeviceAxis = false;
-        $(".project-01").bind("mouseover", function (){
+        $(".work_content_wrap.emart").bind("mouseover", function (){
             if(!motionDeviceAxis){
                 motionDeviceAxis = true;
-                $(".project-01").bind("mousemove", moveAxis);
+                $(".work_content_wrap.emart").bind("mousemove", moveAxis);
                 //            $(".work_info").bind("mousemove", moveAxis);
                 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
                 console.log('in')
@@ -154,13 +154,13 @@ function deviceAxis(){
         });
 
 
-        $(".project-01").bind("mouseleave", function (){
+        $(".work_content_wrap.emart").bind("mouseleave", function (){
             motionDeviceAxis = false;
             TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
             TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
             TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
 //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(0px)"});
-            $(".project-01").unbind("mousemove", moveAxis);
+            $(".work_content_wrap.emart").unbind("mousemove", moveAxis);
 //            $(".work_info").unbind("mousemove", moveAxis);
             console.log('out')
         });
@@ -209,8 +209,8 @@ function scrollbg(){
         var itemBg = $(thisList).find('.bg')
         var info = $(thisList).find('.work_info')
         
-        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(15px)'})
-        var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(25vh)',force3D:'true',filter: 'blur(15px)'})
+        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(25px)'})
+        var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(25vh)',force3D:'true',filter: 'blur(25px)'})
         var infoTween = TweenMax.from(info, 2, {transform:'translateY(300px)',force3D:'true'})
         
         

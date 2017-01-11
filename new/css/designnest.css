@@ -130,13 +130,11 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
 
 
-.shape{position:absolute; width: 100%; top: 0; left: 0; z-index:50;}
-.shape img{margin-top: -1px; width: 100%; transform: scale(-1, 0.5); height: 100%; transform-origin: center top;}
-.shape.bottom{ bottom: 0; transform: scale(1, -1); top: auto;}
-.shape.bottom img{margin-bottom: -1px;}
-.mask{width: 100%;}
+.shape{position:absolute; width: 100%; top:100%; left: 0; z-index:50;}
+.shape img{width: 100%; float: left; vertical-align: top; float: left;}
 
-#latestWork .header{box-sizing: border-box; background-color: #222; color: #fff;}
+
+#latestWork .header{box-sizing: border-box; background-color: #222; color: #fff; position: relative; z-index: 50;}
 #latestWork .header_content{max-width: 1200px; margin: auto; box-sizing: border-box; padding:60px 0px; position: relative;}
 #latestWork .header_content h1{font-size: 60px;}
 #latestWork .header_content .summery{ font-size: 16px; font-weight:400; line-height:160%; color: #999;}
@@ -656,8 +654,36 @@ z-index: 10;}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
 
 /* latest */
-.samsung_imgArea {position: absolute; left: 0; top: 0; height: 100%; width: 100%;}
-.samsung_imgArea img{ width: 100%;}
-.samsung_imgArea .pcArea{ width: 75%; position: absolute; right: -27%; bottom:8%;}
-.samsung_imgArea .tabArea{ width:25%; position: absolute;left:20%; bottom: 5%;}
-.samsung_imgArea .mobileArea{ width:15%; position: absolute;  left:42%; bottom:1%;}
+.project_img_area {position: absolute; left: 0; top: 0; height: 100%; width: 100%;}
+.project_img_area img{ width: 100%;}
+.project_img_area .pos-top{z-index: 50;}
+.project_img_area .pcArea-01{ width: 75%; position: absolute; right: -27%; bottom:8%;}
+.project_img_area .pcArea-02{ width: 75%; position: absolute; left: -27%; bottom:8%;}
+.project_img_area .tabArea-01{ width:25%; position: absolute;left:20%; bottom: 5%;}
+.project_img_area .tabArea-02{ width:25%; position: absolute;right:-10%; bottom: 5%;}
+.project_img_area .mobileArea-01{ width:15%; position: absolute;  left:42%; bottom:1%;}
+.project_img_area .mobileArea-02{ width:15%; position: absolute;  left:42%; bottom:1%;}
+.project_img_area .pcArea-kotra01{ width:75%; position: absolute;  right:-27%; bottom: 10%;}
+.project_img_area .pcArea-kotra02{ width:50%; position: absolute;  left:15%; bottom:5%;}
+
+.project_img_area .devie-block{position: absolute; width: 50%;}
+.project_img_area .devie-block .img-device{position: relative;}
+.project_img_area .devie-block .img_block{position:absolute; left: 0; top: 0; width: 100%; box-sizing: border-box; overflow: hidden;}
+.project_img_area .devie-block.type-notebook .img_block{padding:4% 12% 0 12%; height: 90%;}
+.project_img_area .devie-block.type-desktop .img_block{padding:3% 3% 0 3%; height:78%;}
+.project_img_area .devie-block.type-mobile .img_block{padding:21.5% 5.5% 0 5.5%; height:88.5%;}
+.project_img_area .devie-block.type-tablet .img_block{padding:14% 5% 0 5%; height:90%;}
+
+.project_img_area.samsung .devie-block.type-desktop{bottom:8%; width: 75%;left: -27%;}
+.project_img_area.samsung .devie-block.type-tablet{bottom:3%; width:30%; right: -20%;}
+.project_img_area.samsung .devie-block.type-mobile{bottom:4%; width:18%; left: 40%;}
+
+.project_img_area.kotra .devie-block.type-desktop{bottom:10%; width: 75%; right: -27%;}
+.project_img_area.kotra .devie-block.type-notebook{bottom:5%; width: 50%;left:15%;}
+.work_info .cha{position: absolute; width: 200px; left: -60px; top: -190px;}
+.work_info .cha img{ width: 100%;}
+
+.project_img_area.oakley .devie-block.type-notebook{bottom:12%; width: 80%; left: -35%;}
+.project_img_area.oakley .devie-block.type-desktop{bottom:12%; width: 80%; left: -35%;}
+.project_img_area.oakley .devie-block.type-mobile{bottom:12%; width:20%; left:35%;}
+.project_img_area.oakley .devie-block.type-tablet{bottom:5%; width:30%; right: -15%;}
