@@ -160,12 +160,12 @@ function scrollbg(){
         var thisList = this;
         var itemBg = $(thisList).find('.bg')
         var info = $(thisList).find('.work_info')
-        
+
         var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(25px)'})
         var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(25vh)',force3D:'true',filter: 'blur(25px)'})
         var infoTween = TweenMax.from(info, 2, {transform:'translateY(300px)',force3D:'true'})
-        
-        
+
+
         var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'300', duration:350}).setTween(bgTween)
         var bg_sceneOut = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'onLeave',duration:450}).setTween(bgTweenOut)
         var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:'100', duration:350}).setTween(infoTween)
@@ -199,14 +199,14 @@ function lateAxis(){
             var percentY = pageY / ($(".work_img_area").height()/2);
             var xx = -10*percentX;
             var yy = -10*percentY;
-            TweenMax.to($(this).find('[data-role="move-bg"]'), 1, {x:xx,force3D:true});
+//            TweenMax.to($(this).find('[data-role="move-bg"]'), 1, {x:xx,force3D:true});
             TweenMax.to($(this).find('[data-role="move-desktop"]'), 1, {x:xx*2,y:yy*1,force3D:true});
             TweenMax.to($(this).find('[data-role="move-notebook"]'), 1, {x:xx*4,y:yy*2,force3D:true});
             TweenMax.to($(this).find('[data-role="move-tablet"]'), 1, {x:xx*6,y:yy*3,force3D:true});
             TweenMax.to($(this).find('[data-role="move-mobile"]'), 1, {x:xx*8,y:yy*4,force3D:true});
         }
     })
-    
+
 }
 
 function disposeMain()

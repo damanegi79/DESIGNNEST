@@ -46,7 +46,7 @@
 function headerMotion(){
     var controller = new ScrollMagic.Controller();
     var header = $('#transition_wrapper .header .contents')
-    var headerTween = TweenMax.to(header, 2, {transform:'translateY(30vh) scale(0.8)',force3D:true,opacity:0.5})
+    var headerTween = TweenMax.to(header, 2, {transform:'translateY(200px) scale(0.8)',force3D:true,opacity:0.5})
     var header_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave', duration:'100%'}).setTween(headerTween)
     controller.addScene([
         header_scene

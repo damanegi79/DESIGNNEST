@@ -3,7 +3,7 @@
 
 
 (function ($){
-    
+
     var nest = nest || function (){
     var pageAr = ["home", "service", "portfolio", "developement", "contact"];
     var currentPage = "";
@@ -37,7 +37,7 @@
                 $("body").scrollTop(0)
                 $("body").getNiceScroll().resize()
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power2.easeIn});
-                
+
                 $('.menuOpen .stats').text(url)
 
                 function motionEnd()
@@ -208,7 +208,7 @@ function menu(){
     },function(){
         TweenMax.to(logopath,1.0,({fill:'#fff',force3D:true}))
     })
-    $('.menuOpen button, .contact .mail').on('click',function(){
+    $('.menuOpen button').on('click',function(){
         TweenMax.to(menuOpen,0.5,({left:'-200px',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
@@ -239,7 +239,7 @@ function copyToClipboard(element) {
 
 
 $(document).ready(function(){
-    scroll()
+//    scroll()
 })
 
 function scroll(){
@@ -257,20 +257,20 @@ function scroll(){
 }
 
 //$(function (){
-//	$("body").mousewheel(function (event, delta){
-//		if (event.preventDefault) event.preventDefault();
-//		else event.returnValue = false;
-//		
-//		var top = $("body").scrollTop();
-//		if(top == 0) top = $("html,body").scrollTop();
+//    $("body").mousewheel(function (event, delta){
+//        if (event.preventDefault) event.preventDefault();
+//        else event.returnValue = false;
 //
-//		if(delta < 0)
-//		{
-//			$("html,body").scrollTop(top+50);
-//		}
-//		else
-//		{
-//			$("html,body").scrollTop(top-50);
-//		}
-//	});
+//        var top = $("body").scrollTop();
+//        if(top == 0) top = $("html,body").scrollTop();
+//
+//        if(delta < 0)
+//        {
+//            $("html,body").scrollTop(top+50);
+//        }
+//        else
+//        {
+//            $("html,body").scrollTop(top-50);
+//        }
+//    });
 //});
