@@ -55,7 +55,6 @@ function moveLogo(e){
     var rotationY = -15*percentX;
     var rotationX = 15*percentY;
     TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2,force3D:true});
-    console.log(pageX,pageY)
 }
 function mob_gyro(){
     window.addEventListener('deviceorientation', handleOrientation);
@@ -71,8 +70,6 @@ function mob_gyro(){
         var moveY = rotationX;
         var moveX = rotationY;
         TweenMax.to($(".intro_contents"), 0.6, {rotationY:-moveX, x:moveX ,y:-moveY*1.5,force3D:true}); //rotationX:(moveY-30)*0.8,
-        $(".console input.input01").val('y:'+moveY)
-        $(".console input.input02").val('x:'+moveX)
     }
 }
 
@@ -108,7 +105,6 @@ function text_ani(){
         var logopath = svg.find('path');
         var textsvg = $('#svg_text').getSVG();
         var textpath = textsvg.find("path");
-        console.log('path = ' +textpath.size())
         textpath.each(function(i){
             var self = this
             setTimeout(function(){
@@ -129,7 +125,6 @@ function text_ani(){
 }
 function svgDevice(){
     new Vivus('svg_device',{duration:200,type:'oneByOne', forceRender: false},function(){ //,start: 'autostart'
-        deviceAxis()
         TweenMax.to($('#img_device3,.img3'), 0.5, {opacity:1,force3D:true});
         TweenMax.to($('#svg_device'), 0.5, {opacity:0,force3D:true});
         TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:0.5,force3D:true});
@@ -141,49 +136,6 @@ function svgDevice(){
 }
 
 
-function deviceAxis(){
-        var motionDeviceAxis = false;
-        $(".work_content_wrap.emart").bind("mouseover", function (){
-            if(!motionDeviceAxis){
-                motionDeviceAxis = true;
-                $(".work_content_wrap.emart").bind("mousemove", moveAxis);
-                //            $(".work_info").bind("mousemove", moveAxis);
-                //            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(50px)"});
-                console.log('in')
-            }
-        });
-
-
-        $(".work_content_wrap.emart").bind("mouseleave", function (){
-            motionDeviceAxis = false;
-            TweenMax.to($('[data-role="moveTarget-1"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            TweenMax.to($('[data-role="moveTarget-2"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            TweenMax.to($('[data-role="moveTarget-3"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-//            TweenMax.to($(".work_info"), 0.6, {transform: "translateZ(0px)"});
-            $(".work_content_wrap.emart").unbind("mousemove", moveAxis);
-//            $(".work_info").unbind("mousemove", moveAxis);
-            console.log('out')
-        });
-
-    }
-
-function moveAxis(e){
-        var pageX = e.pageX - $(".work_img_area").offset().left;
-        var pageY = e.pageY - $(".work_img_area").offset().top;
-        pageX = pageX - ($(".work_img_area").width()/2);
-        pageY = pageY - ($(".work_img_area").height()/2);
-        var percentX = pageX / ($(".work_img_area").width()/2);
-        var percentY = pageY / ($(".work_img_area").height()/2);
-        var rotationY = -10*percentX;
-        var rotationX = 10*percentY;
-        var xx = -10*percentX;
-        var yy = -10*percentY;
-        TweenMax.to($('[data-role="moveTarget-1"]'), 0.6, {x:xx,y:yy,force3D:true});
-        TweenMax.to($('[data-role="moveTarget-2"]'), 0.6, {x:xx*1.5,y:yy*2.5,force3D:true});
-        TweenMax.to($('[data-role="moveTarget-3"]'), 0.6, {x:xx*3,y:yy*4,force3D:true});
-//        TweenMax.to($('.work_info'), 0.6, {rotationY:rotationY, rotationX:rotationX});
-
-    }
 
 function mobileZoom(){
     var zoom = false;
@@ -214,15 +166,47 @@ function scrollbg(){
         var infoTween = TweenMax.from(info, 2, {transform:'translateY(300px)',force3D:'true'})
         
         
-        var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'center',duration:350}).setTween(bgTween)
+        var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'300', duration:350}).setTween(bgTween)
         var bg_sceneOut = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'onLeave',duration:450}).setTween(bgTweenOut)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:'100', triggerHook: 'center',duration:350}).setTween(infoTween)
+        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:'100', duration:350}).setTween(infoTween)
         controller.addScene([
             bg_scene,
             info_scene,
             bg_sceneOut
         ]);
     })
+}
+
+function lateAxis(){
+    $(".work_content_wrap").each(function(){
+        $(this).bind("mouseenter", function (){
+            $(this).bind("mousemove", lateMoveAxis);
+        });
+        $(this).bind("mouseleave", function (){
+//            TweenMax.to($(this).find('[data-role="move-bg"]'), 1.0, {transform: "translateZ(0)", force3D:true});
+            TweenMax.to($(this).find('[data-role="move-desktop"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-notebook"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-tablet"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-mobile"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
+            $(this).unbind("mousemove", lateMoveAxis);
+        });
+        function lateMoveAxis(e){
+            var pageX = e.pageX - $(this).offset().left;
+            var pageY = e.pageY - $(this).offset().top;
+            pageX = pageX - ($(this).width()/2);
+            pageY = pageY - ($(this).height()/2);
+            var percentX = pageX / ($(".work_img_area").width()/2);
+            var percentY = pageY / ($(".work_img_area").height()/2);
+            var xx = -10*percentX;
+            var yy = -10*percentY;
+            TweenMax.to($(this).find('[data-role="move-bg"]'), 1, {x:xx,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-desktop"]'), 1, {x:xx*2,y:yy*1,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-notebook"]'), 1, {x:xx*4,y:yy*2,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-tablet"]'), 1, {x:xx*6,y:yy*3,force3D:true});
+            TweenMax.to($(this).find('[data-role="move-mobile"]'), 1, {x:xx*8,y:yy*4,force3D:true});
+        }
+    })
+    
 }
 
 function disposeMain()

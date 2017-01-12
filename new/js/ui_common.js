@@ -3,16 +3,14 @@
 
 
 (function ($){
+    
     var nest = nest || function (){
     var pageAr = ["home", "service", "portfolio", "developement", "contact"];
     var currentPage = "";
     var oldPage = "";
     var firstFlag = true;
     var currentUrl = "";
-
     function loadPage() {
-       
-
         var html = "";
         var url = currentPage.replace("#", "");
         console.log('url is = '+url)
@@ -36,8 +34,10 @@
                 $("#ajaxContainer").append(page);
 
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
-//                $("#ajaxContents").scrollTop(0)
+                $("body").scrollTop(0)
+                $("body").getNiceScroll().resize()
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power2.easeIn});
+                
                 $('.menuOpen .stats').text(url)
 
                 function motionEnd()
@@ -69,13 +69,13 @@
     $(function (){
         currentPage = location.hash;
         if(currentPage == "") currentPage = "#home";
-        console.log('currentpage = '+currentPage)
         $(window).on("hashchange", function ( e ){
             currentPage = location.hash;
             if(currentPage == "") currentPage = "#home";
             loadPage();
         });
         loadPage();
+
     });
 
 }
@@ -89,6 +89,7 @@
                 svgDevice()
                 mobileZoom()
                 scrollbg()
+                lateAxis()
             },
             dispos : function ()
             {
@@ -207,7 +208,7 @@ function menu(){
     },function(){
         TweenMax.to(logopath,1.0,({fill:'#fff',force3D:true}))
     })
-    $('.menuOpen button').on('click',function(){
+    $('.menuOpen button, .contact .mail').on('click',function(){
         TweenMax.to(menuOpen,0.5,({left:'-200px',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
@@ -215,7 +216,7 @@ function menu(){
             TweenMax.to(menuClose,0.3,({transform:'translateX(0)',force3D:true,ease: Power4.easeInOut}))
         }}))
     })
-    $('.menuClose button, #nav ul li a').on('click',function(){
+    $('.menuClose button, #nav ul li a, .contact .mail').on('click',function(){
         TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
@@ -236,3 +237,40 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
+
+$(document).ready(function(){
+    scroll()
+})
+
+function scroll(){
+    $("html").niceScroll({
+        cursorcolor: "rgba(18,141,212,0.5)", // change cursor color in hex
+        cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
+        cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
+        cursorwidth: "8px", // cursor width in pixel (you can also write "5px")
+        cursorborder: "none", // css definition for cursor border
+        cursorborderradius: "8px", // border radius in pixel for cursor
+        scrollspeed: 100,
+        mousescrollstep:80,
+        autohidemode: false,
+    });
+}
+
+//$(function (){
+//	$("body").mousewheel(function (event, delta){
+//		if (event.preventDefault) event.preventDefault();
+//		else event.returnValue = false;
+//		
+//		var top = $("body").scrollTop();
+//		if(top == 0) top = $("html,body").scrollTop();
+//
+//		if(delta < 0)
+//		{
+//			$("html,body").scrollTop(top+50);
+//		}
+//		else
+//		{
+//			$("html,body").scrollTop(top-50);
+//		}
+//	});
+//});

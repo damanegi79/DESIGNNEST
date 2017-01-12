@@ -152,9 +152,9 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .work_article{width:100%;  position: relative; z-index: 20; height: 100vh; box-sizing: border-box;}
 .work_article:after{content: ""; clear: both;}
 
-.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 60%; } /*  outline: 1px solid #f00; */
+.work_article .work_img_area{position: absolute; left: 0; top: 0; height: 100%; width: 100%; } /*  outline: 1px solid #f00; */
 .work_article .work_img_area.pos-right{left:auto; right:0;}
-.work_article .work_img_area .device_origin{position: absolute; top: 50%; margin-top: -200px; left:35%; width:250px;}
+.work_article .work_img_area .device_origin{position: absolute; top: 50%; margin-top: -200px; left:10%; width:250px;}
 
 .work_article .work_img_area .device {position:absolute; transform: perspective( 1000px ); z-index: 60; }
 .work_article .work_img_area .device object,.work_img_area .device img{width: 100%;}
@@ -231,21 +231,23 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menuOpen .menu:hover{transform:rotate(-90deg);}
 .menuOpen .stats{color: #fff; font-weight:400; display: inline-block; line-height: 40px; padding: 0 20px 0 10px; text-transform: uppercase; }
 .fill_logo{fill:#f00 !important;}
-.menuClose{position:fixed; right:16px; top:30px; z-index:200; transform: perspective( 1000px ) translateX(200px);}
-.menuClose .closeBg{display: block; position: absolute; right: 0; top: 0; background-color:#128dd4;height: 20px; width: 100px;}
-.menuClose button{height: 20px; width: 100px; color: #fff; line-height: 20px; text-align: center; font-weight: 100; position:absolute; right: 0; top: 0; 'Dosis','Noto Sans KR', sans-serif; text-align: right; padding-right:5px;}
+.menuClose{position:fixed; right:20px; top:20px; z-index:200; transform: perspective( 1000px ) translateX(200px);}
+.menuClose .closeBg{height: 50px; width: 50px;background-color:#128dd4; display: block; position:absolute; right: 0; top: 0;}
+.menuClose button{height: 50px; width: 50px; color: #fff; line-height: 50px; text-align: center;  font-weight: 100; position:absolute;  font-size: 25px; text-align: center; right: 0; top: 0;transition:all 0.2s linear;}
+.menuClose button i{font-weight: 100;}
+.menuClose button:hover {transform:perspective(1000px) rotateZ(-90deg);}
 
 .top_content{position: relative; top: 0; left: 0; width: 100%; height: 60%; display: table;}
 .top_content:after{content: ""; clear: both;}
-.top_content header{display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 30px; height: 100%; vertical-align: middle; box-sizing: border-box;}
+.top_content header{display:table-cell; font-weight:200;width: 33.33%; box-sizing: border-box; padding-left: 50px; height: 100%; vertical-align: middle; box-sizing: border-box;}
 .top_content header ul{padding-left: 5px; margin-top: 10px;}
 .top_content header li{font-size: 16px; line-height: 140%; color: #000; font-weight:400;}
 
-.top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;}
+.top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;-webkit-font-smoothing: antialiased;}
 .top_content .contact .get{font-size:18px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
 .top_content .contact .text{line-height: 140%; font-size:18px}
 .top_content .contact .text span{color:#128dd4}
-.top_content .contact .mail {margin-top: 20px;}
+.top_content .contact .mail {margin-top: 20px; font-weight:400;}
 .top_content .contact .mail a{display: inline-block; height: 40px; line-height: 40px;}
 .top_content .contact .mail a:after{content: "Master@designnest.net"}
 
@@ -531,7 +533,7 @@ z-index: 10;}
 
 #ajaxContainer{position: relative; width: 100%; height: 100%;}
 #ajaxContainer.fixed{overflow: hidden;}
-#ajaxContents{position:absolute;transform: perspective( 1000px ) translateX(0vw); width: 100%; height: 100%;}
+#ajaxContents{position:absolute;transform: perspective( 1000px ) translateX(0vw); width: 100%;}
 
 .article_box{max-width: 1200px; margin: auto; box-sizing: border-box; position: relative; margin-bottom: 20px; background-color: #fff;}
 .article_box:after{content: ""; clear: both; display: block;}
@@ -678,24 +680,29 @@ z-index: 10;}
 .project_img_area .pcArea-kotra01{ width:75%; position: absolute;  right:-27%; bottom: 10%;}
 .project_img_area .pcArea-kotra02{ width:50%; position: absolute;  left:15%; bottom:5%;}
 
-.project_img_area .devie-block{position: absolute; width: 50%;}
+.project_img_area .devie-block{position: absolute; width: 50%;transform: perspective(1000px);}
 .project_img_area .devie-block .img-device{position: relative;}
 .project_img_area .devie-block .img_block{position:absolute; left: 0; top: 0; width: 100%; box-sizing: border-box; overflow: hidden;}
 .project_img_area .devie-block.type-notebook .img_block{padding:4% 12% 0 12%; height: 90%;}
 .project_img_area .devie-block.type-desktop .img_block{padding:3% 3% 0 3%; height:78%;}
 .project_img_area .devie-block.type-mobile .img_block{padding:21.5% 5.5% 0 5.5%; height:88.5%;}
 .project_img_area .devie-block.type-tablet .img_block{padding:14% 5% 0 5%; height:90%;}
-
+ 
 .project_img_area.samsung .devie-block.type-desktop{bottom:5%; width: 75%;left: -27%;}
 .project_img_area.samsung .devie-block.type-tablet{bottom:3%; width:30%; right: -10%;}
 .project_img_area.samsung .devie-block.type-mobile{bottom:4%; width:18%; left: 40%;}
 
 .project_img_area.kotra .devie-block.type-desktop{bottom:10%; width: 75%; right: -27%;}
 .project_img_area.kotra .devie-block.type-notebook{bottom:5%; width: 50%;left:15%;}
-.work_info .cha{position: absolute; width: 200px; left: -60px; top: -190px;}
+.work_info .cha{position: absolute; width: 150px; left: -60px; top: -143px;}
 .work_info .cha img{ width: 100%;}
 
 .project_img_area.oakley .devie-block.type-notebook{bottom:12%; width: 80%; left: -35%;}
 .project_img_area.oakley .devie-block.type-desktop{bottom:12%; width: 80%; left: -35%;}
 .project_img_area.oakley .devie-block.type-mobile{bottom:12%; width:20%; left:35%;}
 .project_img_area.oakley .devie-block.type-tablet{bottom:5%; width:30%; right: -15%;}
+
+.nicescroll-rails-vr {
+    display: block !important; z-index: 100 !important;
+ }
+/*.nicescroll-rails .nicescroll-cursors{background-color: #f00 !important;}*/
