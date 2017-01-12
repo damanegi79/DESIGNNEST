@@ -28,15 +28,16 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 #intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff;}
 #section1{}
 .intro_wrap{position:relative; width: 100%; height: 100vh; overflow: hidden;}
-.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative;  opacity: 0;transform-origin: 50% 50%;}
-.intro_contents .logo_content{display: table-cell; height: 100%; vertical-align: middle;}
+.intro_contents {color: #222; text-align: center; display: table; width: 100%; height: 100%; transform: perspective( 1000px ) rotateX(0deg) rotateY(0deg);position: relative;  opacity: 1;transform-origin: 50% 50%; position: relative; z-index: 10;}
+.intro_contents .logo_content{display: table-cell; height: 100%; vertical-align: middle; transform: perspective( 1000px ) translateY(-200px);position: relative; z-index: 10; }
 .intro_contents .logo_content .title{font-size: 100px; font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .intro_contents .logo_content .title span{position: relative;}
-.intro_contents .logo_content .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) translateY(30px); position: relative; margin-top: 20px; color: #666; text-transform: uppercase; opacity:0;}
-.intro_contents .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #666; padding:30px 20px; border-radius: 5px; background-color: #fff;}
+.intro_contents .logo_content .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) translateY(30px); position: relative; margin-top: 20px; color: #f4f4f4; text-transform: uppercase; opacity:0;}
+.intro_contents .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #666; padding:30px 20px; border-radius: 5px;}
 .intro_contents .logo_area .logo{width: 100px; height: 100px; display: inline-block; }
 .intro_contents .logo_area .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;}
 .intro_contents .logo_area .logoText #svg_text{width: 100%; height: auto;}
+.intro_wrap .shadow{position: absolute; width:60%; height:200px; top: 50%; background-color: #333; z-index: 1; box-shadow: 0px 0px 15px 15px rgba(51,51,51,1); border-radius:1px;transform: perspective(2000px) rotateX(0deg) translateY(300px) rotateY(0deg) scale(0.8); left: 20%; opacity:1; margin-top: 40px;}
 
 .console{position: fixed; z-index: 1200; font-size: 30px; background-color: #fff; left: 0; top:0;}
 
@@ -68,7 +69,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
 .path{
     fill:#fff;
-    stroke:#666;
+    stroke:#000;
     stroke-miterlimit:10;
 /*    stroke-linecap:round;*/
 /*    stroke-dasharray: 1000;*/
@@ -210,9 +211,9 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents h1{font-size: 60px; color: #128dd4; animation:logo 10s infinite;}
 
 @keyframes logo{
-0%   {color:#000;}
-50%  {color:#128dd4;}
-100%   {color:#000;}
+    0%   {color:#128dd4;}
+    50%  {color:#000;}
+    100%   {color:#128dd4;}
 }
 
 
@@ -236,6 +237,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menuOpen .menu{display: inline-block; width:40px; height:40px; border-radius: 50%; background-color:#333;transform: perspective( 1000px );transition:All 0.5s ease; float: left; }
 .menuOpen .menu button{width:40px; height:40px; margin: auto; display: block; position: absolute; z-index: 0; left: 0; top: 0;  z-index: 10;}
 .menuOpen .menu #menuLogo{width: 30px; height: 30px; margin-left: 5px; margin-top: 5px; transform: perspective( 1000px ); }
+.menuOpen .menu #menuLogo .path{fill:#fff !important;}
 .menuOpen .menu:hover{transform:rotate(-90deg);}
 .menuOpen .stats{color: #fff; font-weight:400; display: inline-block; line-height: 40px; padding: 0 20px 0 10px; text-transform: uppercase; }
 .fill_logo{fill:#f00 !important;}

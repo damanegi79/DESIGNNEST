@@ -21,9 +21,12 @@ var timer2;
 function introText(){
     text_ani()
     var logo = new TimelineLite();
+
     var tit = $(".intro_contents");
+    var logoCon = $(".intro_contents .logo_content");
     var sub_tit = $(".logo_area .sub_title");
-    logo.to(tit, 1.0,{marginTop:0, opacity:1,force3D:true})
+
+    logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0)'})
     logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
     logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
     logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
@@ -31,10 +34,19 @@ function introText(){
         axis()
     }})
     logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
+
+    var shadow_tween = new TimelineLite();
+    var shadow = $(".intro_wrap .shadow");
+    shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
+    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg) translateY(0px) scale(0.9)',force3D:true},1)
+    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg) translateY(0px) scale(0.9)',force3D:true},3.5)
+    shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true,onComplete:function(){
+//            axis()
+    }})
 }
 function axis(){
-    if($('.intro_wrap').mouseover()){
-        $(".logo_content").bind("mousemove", moveLogo);
+    if($('.intro_wrap').mouseenter()){
+        $(".intro_wrap").bind("mousemove", moveLogo);
     }
 }
 function scrollfn(){
@@ -52,9 +64,11 @@ function moveLogo(e){
     pageY = pageY - ($(".intro_wrap").height()/2); //-scrollY
     var percentX = pageX / ($(".intro_wrap").width()/2);
     var percentY = pageY / ($(".intro_wrap").height()/2);
-    var rotationY = -15*percentX;
-    var rotationX = 15*percentY;
-    TweenMax.to($(".intro_contents"), 0.6, {rotationY:rotationY, rotationX:rotationX,x:rotationY*2, y:-rotationX*2,force3D:true});
+    var xx = 20*percentX;
+    var yy = 20*percentY;
+    TweenMax.to($(".intro_contents"), 0.6, {rotationY:xx, rotationX:yy, force3D:true});
+    TweenMax.to($(".intro_wrap .shadow"), 0.6, {rotationY:xx*1.2, rotationX:yy, y:yy, x:xx*0.8, force3D:true});
+    console.log(percentX,percentY)
 }
 function mob_gyro(){
     window.addEventListener('deviceorientation', handleOrientation);
@@ -96,7 +110,7 @@ function text_ani(){
             setTimeout(function(){
                 var logo = new TimelineLite();
                 logo.to(self, 1.0,{fill:'#128dd4'})
-                logo.to(self, 1.0,{fill:'#222'})
+                logo.to(self, 1.0,{fill:'#fff'})
             },i*200)
         })
     },3500)
@@ -109,12 +123,11 @@ function text_ani(){
             var self = this
             setTimeout(function(){
                 var textlogo = new TimelineLite();
-                textlogo.to(self, 1.0,{fill:'#128dd4'})
-                textlogo.to(self, 1.0,{fill:'#222',onComplete:function(){
+                textlogo.to(self, 0.5,{fill:'#128dd4'})
+                textlogo.to(self, 0.5,{fill:'#fff',onComplete:function(){
                     TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4'});
-                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%'});
-                    //            TweenMax.to(textpath.eq(5), 0.5, { delay:2});
-                    TweenMax.to(textpath.eq(6), 0.5, {x:'-136%'});
+                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%',delay:2.5});
+                    TweenMax.to(textpath.eq(6), 0.5, {x:'-136%',delay:2.5});
                 }})
             },i*200)
         })
