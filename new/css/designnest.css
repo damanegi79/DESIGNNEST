@@ -60,12 +60,12 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
         fill:#fff;
     }
     to{
-        fill:#128dd4;
-        stroke:#128dd4;
+        fill:#0099ff;
+        stroke:#0099ff;
     }
 }
 
-.default_color{color: #128dd4}
+.default_color{color: #0099ff}
 
 .path{
     fill:#fff;
@@ -90,7 +90,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
     }
     80% {
-        fill: #128dd4;
+        fill: #0099ff;
 /*        stroke-dashoffset:0;*/
         stroke-opacity:1;
         fill-opacity: 1;
@@ -206,14 +206,14 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
 #wrapper{position:fixed; width: 100%; height: 100%; left: 0; top: 0;}
 #menu_wrap{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index:110; background-color:#333; color: #fff; font-size: 60px; text-align: center; line-height: 100vh; transform:perspective( 1000px ) translateX(-100vw); box-sizing: border-box;}
-.menu_container{position: absolute; left:20px; top: 20px; bottom: 20px; right: 20px; background-color: #128dd4;transform:perspective( 1000px ) translateX(-100vw);}
-.menu_contents{position: absolute; left: 0; top: 0; width:100%; height: 100%; background:#fff; transform:perspective( 1000px ) translateX(-100vw); color: #333; font-size: 16px; box-sizing: border-box; text-align: left; border: 2px solid #128dd4}
-.menu_contents h1{font-size: 60px; color: #128dd4; animation:logo 10s infinite;}
+.menu_container{position: absolute; left:20px; top: 20px; bottom: 20px; right: 20px; background-color: #0099ff;transform:perspective( 1000px ) translateX(-100vw);}
+.menu_contents{position: absolute; left: 0; top: 0; width:100%; height: 100%; background:#fff; transform:perspective( 1000px ) translateX(-100vw); color: #333; font-size: 16px; box-sizing: border-box; text-align: left; border: 2px solid #0099ff}
+.menu_contents h1{font-size: 60px; color: #0099ff; animation:logo 10s infinite;}
 
 @keyframes logo{
-    0%   {color:#128dd4;}
+    0%   {color:#0099ff;}
     50%  {color:#000;}
-    100%   {color:#128dd4;}
+    100%   {color:#0099ff;}
 }
 
 
@@ -222,7 +222,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents .gnb li{margin:15px 0;}
 .menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%; }
 .menu_contents .gnb li a span{transition:All 0.5s ease; transform:translateZ(13px); display: block; transform-origin:center bottom; height: 30px;}
-.menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#128dd4 ;}
+.menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#0099ff ;}
 .menu_contents .gnb li.menu01 a:after{content: "메인/최근 작업"}
 .menu_contents .gnb li.menu02 a:after{content: "서비스 항목"}
 .menu_contents .gnb li.menu03 a:after{content: "포트폴리오"}
@@ -242,7 +242,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menuOpen .stats{color: #fff; font-weight:400; display: inline-block; line-height: 40px; padding: 0 20px 0 10px; text-transform: uppercase; }
 .fill_logo{fill:#f00 !important;}
 .menuClose{position:fixed; right:20px; top:20px; z-index:200; transform: perspective( 1000px ) translateX(200px);}
-.menuClose .closeBg{height: 50px; width: 50px;background-color:#128dd4; display: block; position:absolute; right: 0; top: 0;}
+.menuClose .closeBg{height: 50px; width: 50px;background-color:#0099ff; display: block; position:absolute; right: 0; top: 0;}
 .menuClose button{height: 50px; width: 50px; color: #fff; line-height: 50px; text-align: center;  font-weight: 100; position:absolute;  font-size: 25px; text-align: center; right: 0; top: 0;transition:all 0.2s linear;}
 .menuClose button i{font-weight: 100;}
 .menuClose button:hover {transform:perspective(1000px) rotateZ(-90deg);}
@@ -256,13 +256,13 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;-webkit-font-smoothing: antialiased;}
 .top_content .contact .get{font-size:18px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
 .top_content .contact .text{line-height: 140%; font-size:18px}
-.top_content .contact .text span{color:#128dd4}
+.top_content .contact .text span{color:#0099ff}
 .top_content .contact .mail {margin-top: 20px; font-weight:400;}
 .top_content .contact .mail a{display: inline-block; height: 40px; line-height: 40px;}
 .top_content .contact .mail a:after{content: "Master@designnest.net"}
 
 a.link{ position: relative; border:1px solid #333; overflow: hidden;text-align: center; padding-left: 25px; padding-right: 25px;}
-a.link:after{content: ""; display:block; height:100%; width:100%; background-color:#128dd4; color: #fff; position: absolute; left: 0; bottom: 0; text-align: center;  overflow: hidden; transition: All 0.5s ease; transform: translateY(100%)}
+a.link:after{content: ""; display:block; height:100%; width:100%; background-color:#0099ff; color: #fff; position: absolute; left: 0; bottom: 0; text-align: center;  overflow: hidden; transition: All 0.5s ease; transform: translateY(100%)}
 a.link:hover:after{transform: translateY(0%)}
 
 
@@ -282,7 +282,7 @@ a.link:hover:after{transform: translateY(0%)}
 }
 .bottom_quick .bottom_con a:hover .background img {
     filter: grayscale(0);
-    transform: scale(1.25);
+    transform: scale(1.25); 
     opacity: 1;
 }
 /*
@@ -305,8 +305,8 @@ a.link:hover:after{transform: translateY(0%)}
 .browserCaution{position: fixed; bottom: -150px; left: 0; right: 0; padding: 30px 0; text-align: center; background-color: #222; color: #fff; z-index: 1500; font-weight: 400; line-height: 180%; font-size:16px; display: none;}
 .browserCaution .close{position: absolute; right: 10px; top: 10px;}
 .browserCaution .close i{color: #fff;}
-.browserCaution .close button:hover i{color:#128dd4;}
-.browserCaution b{font-weight: 600; color: #128dd4;}
+.browserCaution .close button:hover i{color:#0099ff;}
+.browserCaution b{font-weight: 600; color: #0099ff;}
 button{background: none; border: none; cursor: pointer;}
 
 /* mouse */
@@ -507,7 +507,7 @@ z-index: 10;}
 .contact_form .con_right ul li{line-height: 160%;}
 .contact_form .con_right ul li span{text-decoration: line-through;}
 .contact_form .con_right ul li button{background-color: #fff; font-size: 12px; display: inline-block; border-radius: 3px; height: 20px; line-height: 22px; padding: 0 10px; margin-left: 10px; transition: all 0.5s; color: #333; font-weight: 600;}
-.contact_form .con_right ul li button:hover{background-color: #128dd4; color: #fff;}
+.contact_form .con_right ul li button:hover{background-color: #0099ff; color: #fff;}
 .contact_form .con_right ul li b{font-weight:500;}
 .contact_form .con_right ul li.caution{font-size: 12px; margin-top: 10px;}
 .contact_form .con_right ul li.caution i{font-size: 14px; vertical-align:middle; position: relative; top: -1px; margin-right: 3px;}
@@ -621,8 +621,8 @@ z-index: 10;}
 .desktopInfo .infoText .devTxt{padding: 30px; position: relative; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); border-radius: 10px; background-color: #fff; z-index: 10; transform: perspective(1000px) }
 .desktopInfo .infoText .devTxt p{ line-height: 160%;}
 .desktopInfo .infoText .devTxt p b{font-weight: 400;}
-.desktopInfo .infoText .title{font-size: 34px; font-weight: 400; margin-bottom: 10px; font-style: italic;color: #128dd4;}
-.desktopInfo .infoText .bg{ width:100%; height: 100%; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; display: inline-block; position: absolute; left:0px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top:0; transform: perspective(1000px) translateX(-30px) translateY(-30px)scale(0.8); transform-origin: left top;}
+.desktopInfo .infoText .title{font-size: 34px; font-weight: 400; margin-bottom: 10px; font-style: italic;color: #0099ff;}
+.desktopInfo .infoText .bg{ width:100%; height: 100%; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 10px; display: inline-block; position: absolute; left:0px; top:0px; z-index: 1; background-color: #999;background-color: #0099ff; z-index: 1; top:0; transform: perspective(1000px) translateX(-30px) translateY(-30px)scale(0.8); transform-origin: left top;}
 
 
 
@@ -630,10 +630,10 @@ z-index: 10;}
 .dev_step li{display: inline-block; width:33.3333%; text-align: center; float: left; padding: 0 15px; box-sizing: border-box;  margin-top: 30px; position: relative;}
 .dev_step li p{display: block; display: table; width: 100%;}
 .dev_step li b.tit{display:block; text-align: center; margin-bottom:40px; font-weight: 400; font-size: 18px; }
-.dev_step li span.num{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
+.dev_step li span.num{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #0099ff;}
 .dev_step li span.text{display:block; vertical-align: middle; height:100px; padding: 0 50px 0 90px; margin-top:50px; line-height: 160%; text-align: left; position: relative; }
-.dev_step li span.text b{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4; position: absolute; text-align: right; width: 30px; left:55px; top: -5px;}
-.dev_step li span.bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:50%; top:60px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; margin-left: -40px;}
+.dev_step li span.text b{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #0099ff; position: absolute; text-align: right; width: 30px; left:55px; top: -5px;}
+.dev_step li span.bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:50%; top:60px; z-index: 1; background-color: #999;background-color: #0099ff; z-index: 1; margin-left: -40px;}
 .dev_step li:after{content: ""; display: block; text-align: center; font-family:'themify'; position: absolute; width: 30px; right: -15px; top: 70px; font-size: 40px; color: #999; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; transform: perspective(1000px) rotateZ(-90deg) scale(0.5);}
 .dev_step li:nth-child(3n+3):after{display: none;}
 .dev_step li:nth-child(1) em{ top: 15px; left: 15px;}
@@ -651,9 +651,9 @@ z-index: 10;}
 .devCon.white{background-color: #fff;}
 .devCon.caution{padding-top: 0;}
 .devCon.caution div{ margin-bottom: 20px;}
-.devCon.caution div p{display: inline-block; border-bottom: 1px solid #128dd4;position: relative; padding-right: 20px; line-height:160%; margin-left: 30px; padding-left:15px;}
-.devCon.caution div p span{display:inline-block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4; text-align:center; width: 30px; margin-left: -30px; position: relative; top: 8px;}
-.devCon.caution i{font-size: 40px; bottom:-4px; right: -36px; position: absolute; color:#128dd4;}
+.devCon.caution div p{display: inline-block; border-bottom: 1px solid #0099ff;position: relative; padding-right: 20px; line-height:160%; margin-left: 30px; padding-left:15px;}
+.devCon.caution div p span{display:inline-block; font-size: 56px; line-height: 100%; font-weight: 300; color: #0099ff; text-align:center; width: 30px; margin-left: -30px; position: relative; top: 8px;}
+.devCon.caution i{font-size: 40px; bottom:-4px; right: -36px; position: absolute; color:#0099ff;}
 
 .clientList {position: relative;}
 .clientList .bg{text-align: right;}
@@ -662,14 +662,14 @@ z-index: 10;}
 .txt_client {padding-top: 220px; position: relative; padding-bottom: 220px;}
 .txt_client li{ float: left; width:200px; text-align: center; position: relative;}
 .txt_client li .ico{width: 140px; height: 140px; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5);  border-radius: 10px; transform: perspective(0px) rotateZ(45deg); display: inline-block; position: relative; z-index: 10; background-color: #fff; display: table; margin-left: auto; margin-right: auto; border: 1px solid #fff;}
-.txt_client li .bottom{width: 140px; height: 140px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 20px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left: 50%; top:30px; margin-left: -70px; z-index: 1; background-color: #999;background-color: #128dd4;}
+.txt_client li .bottom{width: 140px; height: 140px; box-shadow:inset 5px 5px 5px 5px rgba(0,0,0,0.8);  border-radius: 20px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left: 50%; top:30px; margin-left: -70px; z-index: 1; background-color: #999;background-color: #0099ff;}
 .txt_client li .devTxt{position: absolute; top:280px; text-align: left; width: 250px;}
 .txt_client li .devTxt:after{content: ''; display: block; background: url(../img/dev/arrow.png) no-repeat; width: 80px; height: 50px; background-size: 80px 50px; position: absolute; left: 50%; top: 0px;transform: perspective(1000px) rotateZ(180deg) scale(0.5); margin-left: -65px; top:-70px}
 .txt_client li:nth-child(2n+1) .bottom{ top: -30px;}
 .txt_client li:nth-child(2n+1) .devTxt{ bottom: auto; top: -180px;}
 .txt_client li:nth-child(2n+1) .devTxt:after{top:60px; transform: perspective(1000px) rotateZ(0deg)  scale(0.5)}
 .txt_client li .ico i{display: table-cell; height: 140px; vertical-align: middle;  transform: perspective(1000px) rotateZ(-45deg); font-size: 30px; transition:all 1s ease}
-.txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px; color: #128dd4;}
+.txt_client li .devTxt span{position: absolute; display: block; font-size: 56px; left: -50px; top: -5px; line-height: 100%; font-weight: 300; text-align:right; width: 40px; color: #0099ff;}
 
 .dev_service{}
 .dev_service .service_img{width: 100%;}
@@ -683,9 +683,9 @@ z-index: 10;}
 .dev_service .text_dev_service li .block{width: 80px; height: 80px;  border-radius: 10px; transform:rotateZ(45deg); display: block; box-shadow:3px 3px 5px 5px rgba(0,0,0,0.5); position: absolute; left: 0; top: 50%; margin-top: -40px; z-index: 10; background-color: #fff; overflow: hidden; border: 1px solid #fff;}
 .dev_service .text_dev_service li .block p{transform: perspective(1000px) rotateZ(-45deg); text-align: center; height: 80px; line-height: 80px;}
 .dev_service .text_dev_service li .block p i{font-size:30px; position: relative; top: 10px;}
-.dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #128dd4; z-index: 1; top: 50%; margin-top: -40px;}
+.dev_service .text_dev_service li .bottom{width: 80px; height: 80px; box-shadow:inset 3px 3px 3px 3px rgba(0,0,0,0.8);  border-radius: 10px; transform: perspective(1000px) rotateZ(45deg); display: inline-block; position: absolute; left:20px; top:0px; z-index: 1; background-color: #999;background-color: #0099ff; z-index: 1; top: 50%; margin-top: -40px;}
 .dev_service .text_dev_service li p.text{color: #000; font-weight: 300; line-height: 160%; display: table-cell; height:120px; vertical-align: middle;}
-.dev_service .text_dev_service li p.text span{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #128dd4;}
+.dev_service .text_dev_service li p.text span{display: block; font-size: 56px; line-height: 100%; font-weight: 300; color: #0099ff;}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text{}
 .dev_service .text_dev_service li:nth-child(2n+2) p.text:after{}
 

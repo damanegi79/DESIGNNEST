@@ -204,7 +204,7 @@ function menu(){
     TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut,delay:0,force3D:true}))
 
     $(".menuOpen button").hover(function(){
-        TweenMax.to(logopath,1.0,({fill:'#128dd4',force3D:true}))
+        TweenMax.to(logopath,1.0,({fill:'#0099ff',force3D:true}))
     },function(){
         TweenMax.to(logopath,1.0,({fill:'#fff',force3D:true}))
     })
@@ -216,7 +216,7 @@ function menu(){
             TweenMax.to(menuClose,0.3,({transform:'translateX(0)',force3D:true,ease: Power4.easeInOut}))
         }}))
     })
-    $('.menuClose button, #nav ul li a, .contact .mail').on('click',function(){
+    $('.menuClose button, #nav ul li a, .contact .mail a').on('click',function(){
         TweenMax.to(menuClose,0.3,({transform:'translateX(200px)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(content,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
@@ -239,7 +239,7 @@ function copyToClipboard(element) {
 
 
 $(document).ready(function(){
-//    scroll()
+    scroll()
 })
 
 function scroll(){
@@ -251,7 +251,7 @@ function scroll(){
         cursorborder: "none", // css definition for cursor border
         cursorborderradius: "8px", // border radius in pixel for cursor
         scrollspeed: 100,
-        mousescrollstep:80,
+        mousescrollstep:100,
         autohidemode: false,
     });
 }

@@ -109,7 +109,7 @@ function text_ani(){
             var self = this
             setTimeout(function(){
                 var logo = new TimelineLite();
-                logo.to(self, 1.0,{fill:'#128dd4'})
+                logo.to(self, 1.0,{fill:'#0099ff'})
                 logo.to(self, 1.0,{fill:'#fff'})
             },i*200)
         })
@@ -123,10 +123,10 @@ function text_ani(){
             var self = this
             setTimeout(function(){
                 var textlogo = new TimelineLite();
-                textlogo.to(self, 0.5,{fill:'#128dd4'})
+                textlogo.to(self, 0.5,{fill:'#0099ff'})
                 textlogo.to(self, 0.5,{fill:'#fff',onComplete:function(){
-                    TweenMax.to(logopath.eq(4), 0.5, {fill:'#128dd4'});
-                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#128dd4',x:'136%',delay:2.5});
+                    TweenMax.to(logopath.eq(4), 0.5, {fill:'#0099ff'});
+                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#0099ff',x:'136%',delay:2.5});
                     TweenMax.to(textpath.eq(6), 0.5, {x:'-136%',delay:2.5});
                 }})
             },i*200)
