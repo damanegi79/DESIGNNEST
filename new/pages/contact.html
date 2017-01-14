@@ -13,11 +13,11 @@
                     <div class="contents">
                         <div class="con_left form">
                             <h2>GET in TOUCH</h2>
-                            <form action="javascript:alert(grecaptcha.getResponse(widgetId1));">
+                            <form action="sendmail.php" method="POST">
                             <ul class="clearfix">
                                 <li><label for="">제목</label> <input type="text"></li>
                                 <li><label for="">업체명</label> <input type="text"></li>
-                                <li class="colum2"><label for="">성함</label> <input type="text" name="name" minlength="2" required></li>
+                                <li class="colum2"><label for="">성함</label> <input type="text" name="name" minlength="2"></li>
                                 <li class="colum2"><label for="">연락처</label> <input type="tel"></li>
                                 <li><label for="">이메일</label> <input id="cemail" type="email" name="email"></li>
                                 <li class="comment"><label for="">내용</label> <textarea name="" id="" cols="30" rows="6"></textarea></li>
