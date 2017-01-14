@@ -2,31 +2,45 @@
 
 var timer1;
 var timer2;
-
+var introFlag = true;
 function introText(){
-
+    if(introFlag == true){
+        introFlag = false;
     $('.intro_wrap').one('inview', function(event, isInView) {
         text_ani()
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
         var logoCon = $(".intro_contents .logo_content");
         var sub_tit = $(".sub_title");
-        logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0)'})
+        logo.from(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(-200px)'})
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
             mob_gyro()
             axis()
+            scrollfn()
         }})
         logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
 
         var shadow_tween = new TimelineLite();
         var shadow = $(".intro_wrap .shadow");
-        shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
+        shadow_tween.from(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(-200px) scale(0.9)',force3D:true})
         shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
         shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
         shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
     })
+    }else{
+        var svg = $('#svg_logo').getSVG();
+        var logopath = svg.find('path');
+        var textsvg = $('#svg_text').getSVG();
+        var textpath = textsvg.find("path");
+        TweenMax.to(logopath.eq(4), 1.5, {fill:'#0099ff'});
+        TweenMax.to(textpath.eq(6), 1.5, {fill:'#0099ff'});
+        mob_gyro()
+        axis()
+        scrollfn()
+
+}
 }
 function axis(){
     if($('.intro_wrap').mouseenter()){
@@ -37,7 +51,7 @@ function scrollfn(){
     var scrollDown = $(".scrollDown")
     var wheel = $(".scrollDown .ico_scroll");
     TweenMax.to( scrollDown, 1, {opacity:1,onComplete:function(){
-        TweenMax.to( wheel, 1, {transform: 'translateY(20px)',repeat:-1, yoyo:true,force3D:true} );
+        TweenMax.to( wheel, 1.5, {transform: 'perspective(1000px) translateY(20px) scale(1)',repeat:-1, yoyo:true,force3D:true,opacity:0.5} );
     }} );
 }
 
@@ -115,9 +129,7 @@ function text_ani(){
                 }})
             },i*200)
         })
-        setTimeout(function(){
-            scrollfn()
-        },2000)
+
     },4000)
 }
 function svgDevice(){
