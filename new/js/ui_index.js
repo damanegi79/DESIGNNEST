@@ -4,28 +4,29 @@ var timer1;
 var timer2;
 
 function introText(){
-    text_ani()
-    var logo = new TimelineLite();
 
-    var tit = $(".intro_contents");
-    var logoCon = $(".intro_contents .logo_content");
-    var sub_tit = $(".sub_title");
+    $('.intro_wrap').on('inview', function(event, isInView) {
+        text_ani()
+        var logo = new TimelineLite();
+        var tit = $(".intro_contents");
+        var logoCon = $(".intro_contents .logo_content");
+        var sub_tit = $(".sub_title");
+        logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0)'})
+        logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
+        logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
+        logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
+            mob_gyro()
+            axis()
+        }})
+        logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
 
-    logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0)'})
-    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
-    logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
-    logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
-        mob_gyro()
-        axis()
-    }})
-    logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
-
-    var shadow_tween = new TimelineLite();
-    var shadow = $(".intro_wrap .shadow");
-    shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
-    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
-    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
-    shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
+        var shadow_tween = new TimelineLite();
+        var shadow = $(".intro_wrap .shadow");
+        shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
+        shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
+        shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
+        shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
+    })
 }
 function axis(){
     if($('.intro_wrap').mouseenter()){
