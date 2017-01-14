@@ -32,12 +32,18 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .intro_contents .logo_content{display: table-cell; height: 100%; vertical-align: middle; transform: perspective( 1000px ) translateY(-200px);position: relative; z-index: 10; }
 .intro_contents .logo_content .title{font-size: 100px; font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200;}
 .intro_contents .logo_content .title span{position: relative;}
-.intro_contents .logo_content .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) translateY(30px); position: relative; margin-top: 20px; color: #f4f4f4; text-transform: uppercase; opacity:0;}
-.intro_contents .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #666; padding:30px 20px; border-radius: 5px;}
+.intro_contents .logo_content .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) translateY(30px); position: relative; margin-top: 20px; color: #333; text-transform: uppercase; opacity:0;}
+.intro_contents .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #111; padding:30px 20px; border-radius: 5px;}
 .intro_contents .logo_area .logo{width: 100px; height: 100px; display: inline-block; }
 .intro_contents .logo_area .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;}
 .intro_contents .logo_area .logoText #svg_text{width: 100%; height: auto;}
-.intro_wrap .shadow{position: absolute; width:60%; height:200px; top: 50%; background-color: #333; z-index: 1; box-shadow: 0px 0px 15px 15px rgba(51,51,51,1); border-radius:1px;transform: perspective(2000px) rotateX(0deg) translateY(300px) rotateY(0deg) scale(0.8); left: 20%; opacity:1; margin-top: 40px;}
+
+.intro_wrap .shadow{position: absolute; width:60%; padding: 30px 20px; top: 40%; z-index: 1; border-radius:5px;transform: perspective(1000px) rotateX(0deg) translateY(-200px) rotateY(0deg) scale(0.9); left: 20%; margin-top: 0px; filter: blur(3px); text-align: center; box-sizing: border-box; overflow:hidden; opacity:0.5; background-color:rgba(0,0,0,0.04)}
+.intro_wrap .shadow .logo{width: 100px; height: 100px; display: inline-block; }
+.intro_wrap .shadow .logo img{width: 100%; opacity: 0.15}
+.intro_wrap .shadow .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;}
+.intro_wrap .shadow .logoText #svg_text{width: 100%; height: auto;}
+.intro_wrap .shadow .sub_title{font-size: 30px; line-height: 100%; transform: perspective( 1000px ) translateY(30px); position: relative; margin-top: 20px; color: #999; text-transform: uppercase; opacity:0;}
 
 .console{position: fixed; z-index: 1200; font-size: 30px; background-color: #fff; left: 0; top:0;}
 
@@ -282,7 +288,7 @@ a.link:hover:after{transform: translateY(0%)}
 }
 .bottom_quick .bottom_con a:hover .background img {
     filter: grayscale(0);
-    transform: scale(1.25); 
+    transform: scale(1.25);
     opacity: 1;
 }
 /*

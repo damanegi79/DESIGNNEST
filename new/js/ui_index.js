@@ -1,20 +1,5 @@
 "use strict";
 
-//var motionFlag = false;
-
-//$(window).load(function() {
-//    init()
-//})
-
-//function init(){
-//    console.log('load home')
-//    introText()
-////    motionFlag = true;
-//    svgDevice()
-//    mobileZoom()
-//    scrollbg()
-//}
-
 var timer1;
 var timer2;
 
@@ -24,7 +9,7 @@ function introText(){
 
     var tit = $(".intro_contents");
     var logoCon = $(".intro_contents .logo_content");
-    var sub_tit = $(".logo_area .sub_title");
+    var sub_tit = $(".sub_title");
 
     logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0)'})
     logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
@@ -38,11 +23,9 @@ function introText(){
     var shadow_tween = new TimelineLite();
     var shadow = $(".intro_wrap .shadow");
     shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
-    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg) translateY(0px) scale(0.9)',force3D:true},1)
-    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg) translateY(0px) scale(0.9)',force3D:true},3.5)
-    shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true,onComplete:function(){
-//            axis()
-    }})
+    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
+    shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
+    shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
 }
 function axis(){
     if($('.intro_wrap').mouseenter()){
@@ -66,9 +49,8 @@ function moveLogo(e){
     var percentY = pageY / ($(".intro_wrap").height()/2);
     var xx = 20*percentX;
     var yy = 20*percentY;
-    TweenMax.to($(".intro_contents"), 0.6, {rotationY:xx, rotationX:yy, force3D:true});
-    TweenMax.to($(".intro_wrap .shadow"), 0.6, {rotationY:xx*1.2, rotationX:yy, y:yy, x:xx*0.8, force3D:true});
-    console.log(percentX,percentY)
+    TweenMax.to($(".intro_contents"), 0.6, {rotationY:xx, rotationX:-yy, force3D:true});
+    TweenMax.to($(".intro_wrap .shadow"), 0.6, {rotationY:xx*1.2, rotationX:-yy*1.2, y:-yy*5, x:-xx*10, force3D:true});
 }
 function mob_gyro(){
     window.addEventListener('deviceorientation', handleOrientation);

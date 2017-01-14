@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620.78 598">
     <defs>
-        <link href="../css/designnest.css" type="text/css" rel="stylesheet"
-          xmlns="http://www.w3.org/1999/xhtml"/>
+        <link href="../css/designnest.css" type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml"/>
     </defs>
     <g id="logo_path" data-name="">
         <path id="path1" class="path" d="M405.37,87.44c119,0,215.41,96.44,215.41,215.41a214.57,214.57,0,0,1-21.1,93.09q.08-3.19.09-6.4c0-132-107-239.05-239.05-239.05a238,238,0,0,0-143.9,48.16A215.34,215.34,0,0,1,405.37,87.44Z"/>
