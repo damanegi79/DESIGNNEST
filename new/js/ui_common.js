@@ -3,6 +3,13 @@
 
 
 (function ($){
+    
+
+    
+
+
+
+
 
     var nest = nest || function (){
     var pageAr = ["home", "service", "portfolio", "developement", "contact"];
@@ -150,15 +157,104 @@
 
     nest.contact = (function (){
 
+        
+        //폼 세팅
+        function setFormChek ()
+        {
+            $.validator.addMethod("phone", function(phone_number, element) {
+				phone_number = phone_number.replace(/\s+/g, ""); 
+				return this.optional(element) || phone_number.length > 9 &&
+					phone_number.match(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/);
+			}, "Please specify a valid phone number");
+
+            $.validator.setDefaults(
+            {    
+                onkeyup:false,
+                onclick:false,
+                onfocusout:false,
+                rules: {
+                    title : {
+                        required:true,
+                    },
+                    comuser : {
+                        required:true,
+                    },
+                    senduser : {
+                        required:true,
+                    },
+                    phone : {
+                        required:true,
+                        minlength:10,
+                        phone : true,
+                    },
+                    email : {
+                        required: true,
+                        email: true
+                    },
+                    body : {
+                        required:true,
+                    }
+                },
+                messages : {
+                    title : {
+                        required:"제목을 입력하세요."
+                    },
+                    comuser : {
+                        required:"업체명을 입력하세요."
+                    },
+                    senduser : {
+                        required:"성함을 입력하세요."
+                    },
+                    phone : {
+                        required:"연락처를 입력하세요.",
+                        minlength:"- 없이 10~11자리 숫자를 입력하세요.",
+                        phone:"올바른 연락처 형식을 입력하세요."
+                    },
+                    email : {
+                        required:"이메일을 입력하세요.",
+                        email:"올바른 이메일형식을 입력하세요."
+                    },
+                    body : {
+                        required:"내용을 입력하세요."
+                    }
+                },
+                showErrors:function(errorMap, errorList)
+                {
+                    if(this.numberOfInvalids()) 
+                    {
+                        alert(errorList[0].message);
+                        $(errorList[0].element).focus();
+                    }
+                }
+            });
+            
+            $('#mailForm').validate({
+                
+                submitHandler : function (form)
+                {
+                    if($("#g-recaptcha-response").val() == "")
+                    {
+                        alert("자동등록방지에 체크해주세요.");
+                        $("#recaptcha").focus();
+                        return;
+                    }
+                    $('#mailForm').submit();
+                }
+            });
+        }
+
+
         return {
             init : function (){
                 $("#ajaxContainer").addClass('fixed')
                 copyToClipboard()
+                setFormChek();
                 console.log('contact class start')
             },
             dispos : function ()
             {
-                $("#ajaxContainer").removeClass('fixed')
+                $("#ajaxContainer").removeClass('fixed');
+                $("#sumbBtn").off("click");
                 console.log('contact dispos')
             }
         }
