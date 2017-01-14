@@ -7,12 +7,14 @@ function introText(){
     if(introFlag == true){
         introFlag = false;
     $('.intro_wrap').one('inview', function(event, isInView) {
-        text_ani()
+        
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
         var logoCon = $(".intro_contents .logo_content");
         var sub_tit = $(".sub_title");
-        logo.from(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(-200px)'})
+        logo.from(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(-200px)',onComplete:function(){
+            text_ani()
+        }})
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
         logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
         logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
@@ -34,8 +36,14 @@ function introText(){
         var logopath = svg.find('path');
         var textsvg = $('#svg_text').getSVG();
         var textpath = textsvg.find("path");
-        TweenMax.to(logopath.eq(4), 1.5, {fill:'#0099ff'});
-        TweenMax.to(textpath.eq(6), 1.5, {fill:'#0099ff'});
+        logopath.css({strokeDashoffset:0})
+        logopath.eq(4).css({fill:'#0099ff'})
+        textpath.css({strokeDashoffset:0})
+        textpath.eq(6).css({fill:'#0099ff'})
+        
+//        TweenMax.to(logopath, 0, {strokeDashoffset:0});
+//        TweenMax.to(logopath.eq(4), 0, {fill:'#0099ff'});
+//        TweenMax.to(textpath.eq(6), 1.5, {fill:'#0099ff'});
         mob_gyro()
         axis()
         scrollfn()
@@ -51,7 +59,7 @@ function scrollfn(){
     var scrollDown = $(".scrollDown")
     var wheel = $(".scrollDown .ico_scroll");
     TweenMax.to( scrollDown, 1, {opacity:1,onComplete:function(){
-        TweenMax.to( wheel, 1.5, {transform: 'perspective(1000px) translateY(20px) scale(1)',repeat:-1, yoyo:true,force3D:true,opacity:0.5} );
+        TweenMax.to( wheel, 1.5, {transform: 'perspective(1000px) translateY(20px)',repeat:-1, yoyo:true,force3D:true,opacity:0.5} );
     }} );
 }
 
@@ -87,7 +95,11 @@ function mob_gyro(){
 
 
 function text_ani(){
-    new Vivus('svg_logo',{duration: 200,type:'oneByOne'}, function (obj) {
+    var svg = $('#svg_logo').getSVG();
+    var logopath = svg.find('path');
+    var textsvg = $('#svg_text').getSVG();
+    var textpath = textsvg.find("path");
+    new Vivus('svg_logo',{duration: 200,type:'delayed'}, function (obj) {
 //            logopath.each(function(i){
 //                var self = this
 //                setTimeout(function(){
@@ -101,36 +113,33 @@ function text_ani(){
 
     })
     timer1 = setTimeout(function(){
-        var svg = $('#svg_logo').getSVG();
-        var logopath = svg.find('path');
         logopath.each(function(i){
             var self = this
             setTimeout(function(){
                 var logo = new TimelineLite();
                 logo.to(self, 1.0,{fill:'#0099ff'})
-                logo.to(self, 1.0,{fill:'#fff'})
+                logo.to(self, 1.0,{fill:'#fff',onComplete:function(){
+                    TweenMax.to(logopath.eq(4), 1, {fill:'#0099ff',delay:1});
+                }})
             },i*200)
         })
-    },3500)
+    },5000)
     timer2 = setTimeout(function(){
-        var svg = $('#svg_logo').getSVG();
-        var logopath = svg.find('path');
-        var textsvg = $('#svg_text').getSVG();
-        var textpath = textsvg.find("path");
         textpath.each(function(i){
             var self = this
             setTimeout(function(){
                 var textlogo = new TimelineLite();
                 textlogo.to(self, 0.5,{fill:'#0099ff'})
                 textlogo.to(self, 0.5,{fill:'#fff',onComplete:function(){
-                    TweenMax.to(logopath.eq(4), 0.5, {fill:'#0099ff'});
-                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#0099ff',x:'136%',delay:2.5});
-                    TweenMax.to(textpath.eq(6), 0.5, {x:'-136%',delay:2.5});
+//                    TweenMax.to(logopath.eq(4), 0.5, {fill:'#0099ff'});
+                    TweenMax.to(textpath.eq(5), 0.5, {fill:'#0099ff',x:'136%',delay:1.5});
+                    TweenMax.to(textpath.eq(6), 0.5, {x:'-136%',delay:1.5});
                 }})
             },i*200)
         })
 
-    },4000)
+    },3200)
+    
 }
 function svgDevice(){
     new Vivus('svg_device',{duration:200,type:'oneByOne', forceRender: false},function(){ //,start: 'autostart'
