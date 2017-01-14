@@ -13,19 +13,20 @@
                     <div class="contents">
                         <div class="con_left form">
                             <h2>GET in TOUCH</h2>
-                            <form action="sendmail.php" method="POST">
+                            <form id="mailForm" action="sendmail.php" method="POST">
                             <ul class="clearfix">
-                                <li><label for="">제목</label> <input type="text"></li>
-                                <li><label for="">업체명</label> <input type="text"></li>
-                                <li class="colum2"><label for="">성함</label> <input type="text" name="name" minlength="2"></li>
-                                <li class="colum2"><label for="">연락처</label> <input type="tel"></li>
-                                <li><label for="">이메일</label> <input id="cemail" type="email" name="email"></li>
-                                <li class="comment"><label for="">내용</label> <textarea name="" id="" cols="30" rows="6"></textarea></li>
+                                <li><label for="">제목</label> <input id="title" name="title" type="text"></li>
+                                <li><label for="">업체명</label> <input id="comuser" name="comuser" type="text"></li>
+                                <li class="colum2"><label for="">성함</label> <input id="senduser" name="senduser" type="text" minlength="2"></li>
+                                <li class="colum2"><label for="">연락처</label> <input id="phone" name="phone" type="tel" maxlength="11"></li>
+                                <li><label for="">이메일</label> <input id="email" name="email" type="text"></li>
+                                <li class="comment"><label for="">내용</label> <textarea id="body" name="body" cols="30" rows="6"></textarea></li>
                             </ul>
                             <div class="capcha">
 <!--                                <div id="recaptcha" class="g-recaptcha" data-sitekey="6LeZcA8UAAAAABelCrjsOIRyQwIRns13Pd31sUmO" data-theme='dark'></div>-->
                                 <div id="recaptcha" class="g-recaptcha"></div>
-                                <p class="confirm"><button type="submit" value="getResponse">보내기</button></p>
+                                <p class="confirm"><button id="sumbBtn" type="submit" value="getResponse">보내기</button></p>
+                                <input type="hidden" id="robot"></input>
                             </div>
                             </form>
                             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
