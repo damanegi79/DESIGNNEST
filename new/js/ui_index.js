@@ -5,7 +5,7 @@ var timer2;
 
 function introText(){
 
-    $('.intro_wrap').on('inview', function(event, isInView) {
+    $('.intro_wrap').one('inview', function(event, isInView) {
         text_ani()
         var logo = new TimelineLite();
         var tit = $(".intro_contents");
@@ -209,4 +209,5 @@ function disposeMain()
 {
     clearInterval(timer1);
     clearInterval(timer2);
+    $('.intro_wrap').off('inview');
 }
