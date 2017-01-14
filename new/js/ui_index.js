@@ -81,6 +81,7 @@ function text_ani(){
 //                    logo.to(self, 0.2,{stroke:'none',delay:1})
 //                },i*200)
 //            })
+
     });
     new Vivus('svg_text', {duration: 300,type:'delayed', forceRender: false}, function (obj) {
 
