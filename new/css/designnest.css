@@ -518,6 +518,7 @@ z-index: 10;}
 
 .contact_img li{position: absolute; left: 50%; top: 50%;transform: perspective( 1000px );}
 .contact_img li img{width: 100%;}
+.contact_img li img:hover{}
 .contact_img li.img01{width:35vw; margin-top: -60vh; margin-left: -10vw; transform: rotateZ(15deg); z-index: 10;}
 .contact_img li.img02{width:15vw; margin-top: -60vh; margin-left: 30vw; transform: rotateZ(15deg); z-index: 10;}
 .contact_img li.img03{width:15vw; left: auto; right:10vw; top: auto; bottom: -20vh;}
@@ -712,5 +713,10 @@ z-index: 10;}
     display: block !important; z-index: 100 !important;
  }
 /*.nicescroll-rails .nicescroll-cursors{background-color: #f00 !important;}*/
-.counter{margin-top: 10px;}
-.counter>div{background: none;}
+.counter{ position: absolute; right: 0; bottom: 0;}
+.counter>div{background: none !important; display: inline-block; width:auto !important; position: relative  !important; text-align: right; padding-right:10px !important;}
+.counter>div>div{left:0px !important; position: relative !important;}
+.counter>div>div:after{content: 'online'; display: inline-block; color: #000; font-size: 16px; margin-left: 5px;}
+.counter>div>div:before{content: '\E809'; display: inline-block; color: #000; font-size: 16px; font-family: 'fontello'; display: inline-block; margin-right: 5px; width: 20px;}
+.counter>div>div>div{ position: relative !important; display: inline-block;}
+.counter>div:hover>div:before{content: '\E80C'}

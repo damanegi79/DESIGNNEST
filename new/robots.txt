@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /
+User-agent: Yeti
+Allow: /
+User-agent: NaverBot
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: DAUMOA
+Allow: /
+User-agent: ZumBot
+Allow: /
