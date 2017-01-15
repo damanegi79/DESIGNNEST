@@ -20,6 +20,7 @@
                 firstFlag = false;
                 oldPage = currentPage;
                 $('.menuOpen .stats').text(url)
+                $('#intro').fadeOut(1000);
             }
             else
             {
@@ -70,6 +71,7 @@
             currentPage = location.hash;
             if(currentPage == "") currentPage = "#home";
             loadPage();
+            
         });
         loadPage();
 
@@ -249,7 +251,11 @@ var nest = new nest();
 $(window).load(function() {
     menu();
     chkAgent()
-    $('#intro').fadeOut(1000);
+    
+    $('.bottom_quick a').on('click',function(){
+        alert('준비중입니다.')
+        return false;
+    })
 })
 
 function chkAgent(){
@@ -286,6 +292,7 @@ function menu(){
     })
     $('.menuOpen button').on('click',function(){
         TweenMax.to(menuOpen,0.5,({left:'-200px',ease: Power4.easeInOut,force3D:true}))
+        TweenMax.to(menuWrap,0,({display:'block',transform:'translateX(-100vw)'}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,force3D:true}))
         TweenMax.to(menuContainer,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
         TweenMax.to(content,1.0,({transform:'translateX(0vw)',ease: Power4.easeInOut,delay:0.4,force3D:true, onComplete:function(){
@@ -298,7 +305,7 @@ function menu(){
         TweenMax.to(menuContainer,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.2,force3D:true}))
         TweenMax.to(menuWrap,1.0,({transform:'translateX(100vw)',ease: Power4.easeInOut,delay:0.4,force3D:true, onComplete:function(){
             TweenMax.to(menuOpen,0.5,({left:'30px',ease: Power4.easeInOut,force3D:true}))
-            TweenMax.to(menuWrap,0,({transform:'translateX(-100vw)',force3D:true}))
+            TweenMax.to(menuWrap,0,({transform:'translateX(-100vw)',force3D:true,display:'none'}))
             TweenMax.to(menuContainer,0,({transform:'translateX(-100vw)',force3D:true}))
             TweenMax.to(content,0,({transform:'translateX(-100vw)',force3D:true}))
         }}))
@@ -766,3 +773,4 @@ function develope(){
         client_scene1
     ]);
 }
+
