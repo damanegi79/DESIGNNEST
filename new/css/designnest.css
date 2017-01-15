@@ -204,7 +204,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents .gnb{font-size:30px; position: relative; display:table-cell; vertical-align: middle; width: 33.33;}
 .menu_contents .bar{height:1px; width:15%; background-color: #333; margin-bottom: 10px;}
 .menu_contents .gnb li{margin:15px 0;}
-.menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%; }
+.menu_contents .gnb li a{display: inline-block; position: relative; transform:perspective( 1000px ); line-height: 100%; color: #000;}
 .menu_contents .gnb li a span{transition:All 0.5s ease; transform:translateZ(13px); display: block; transform-origin:center bottom; height: 30px;}
 .menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#0099ff ;}
 .menu_contents .gnb li.menu01 a:after{content: "메인/최근 작업"}
@@ -214,7 +214,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents .gnb li.menu05 a:after{content: "문의하기"}
 .menu_contents .gnb li a:hover span{transform:rotateX(90deg) translateZ(26px);}
 .menu_contents .gnb li a:hover:after{transform: rotateX(0deg) translateZ(26px);}
-.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:14px; color: #888; font-weight: 100;}
+.menu_contents .copyright{position: absolute; left:66.666%; bottom: 20px; text-transform: uppercase; font-size:14px; color: #000; font-weight: 100;}
 
 .menuOpen button{background: none; border: none; cursor: pointer;}
 .menuOpen{position: fixed; left:-200px; top:30px; z-index:200; transform: perspective( 1000px ); height: 40px; background-color: rgba(0,0,0,0.5); border-radius: 20px;}
@@ -239,7 +239,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 
 .top_content .contact{width: 33.33%; display: table-cell; height: 100%; vertical-align: middle; font-weight: 300;-webkit-font-smoothing: antialiased;}
 .top_content .contact .get{font-size:18px; font-weight: 200; margin-bottom: 10px; font-style: italic;}
-.top_content .contact .text{line-height: 140%; font-size:18px}
+.top_content .contact .text{line-height: 140%; font-size:18px; color: #000;}
 .top_content .contact .text span{color:#0099ff}
 .top_content .contact .mail {margin-top: 20px; font-weight:400;}
 .top_content .contact .mail a{display: inline-block; height: 40px; line-height: 40px;}
@@ -334,10 +334,10 @@ z-index: 10;}
 @keyframes scrollWheel{from{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}to{-webkit-transform:translateY(10px);transform:translateY(10px);opacity:0}}
 @keyframes scrollWheelSecond{from{-webkit-transform:translateY(-100%);transform:translateY(-100%);opacity:0}to{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 /* service */
-#transition_wrapper{position: relative; overflow-x: hidden;background-color: #222;}
+#transition_wrapper{position: relative; overflow-x: hidden;background-color: #000;}
 #transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; overflow: hidden; position: relative;}
-#transition_wrapper .header h1{font-size: 60px; margin-bottom: 10px; line-height: 100%;}
-#transition_wrapper .header .summery{ font-size: 18px; font-weight:400; line-height:160%; color: #666;}
+#transition_wrapper .header h1{font-size: 60px; margin-bottom: 10px; line-height: 100%; color: #000;}
+#transition_wrapper .header .summery{ font-size: 16px; font-weight:400; line-height:160%; color: #333;}
 #transition_wrapper .header .header_con{display: table-cell; vertical-align: middle; overflow: hidden; height: 100%; overflow: hidden;}
 #transition_wrapper .header .header_con .contents{max-width: 1200px; margin: auto; transform: perspective( 1000px ); transform-origin:left top; position: relative; z-index: 10;}
 
@@ -394,8 +394,8 @@ z-index: 10;}
 .motion:hover{transform:perspective( 1000px ) rotateX(180deg); background-color: #ff0;}
 .global_bg{z-index: 0; position: fixed; left: 0; top: 0; right: 0; bottom: 0;}
 
-
-.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: linear-gradient(to right, #000000 0%,#111442 35%,#000000 100%); background-size: 100% auto;}
+/*.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background: linear-gradient(to right, #000000 0%,#111442 35%,#000000 100%); background-size: 100% auto;}*/
+.sevice_wrap .service_container{min-height:600px; display: table; width: 100%; overflow: hidden; position: relative; z-index: 10;background:#000; background-size: 100% auto;}
 .sevice_wrap .service_container.over-view{overflow: visible; z-index: 30;}
 .sevice_wrap .service_container.template{z-index: 50;}
 
@@ -403,7 +403,7 @@ z-index: 10;}
 .service_content{display: table-cell; vertical-align: middle; position: relative; margin-left: auto; margin-right: auto; color: #fff; }
 .service_content .article{max-width: 1200px; margin: auto; position: relative;}
 .service_content .article h2:before{position:relative; display:block; background-color: #fff; content: ""; height:1px; left: 0; top: 0; width: 67px; margin-bottom:10px; margin-left: 2px;}
-.service_content .article h2{font-size:26px; font-weight: 400; margin-bottom:5px; position: relative;}
+.service_content .article h2{font-size:26px; font-weight: 400; margin-bottom:5px; position: relative; color: #fff;}
 .service_content .article h2 em{font-size: 16px;}
 .service_content .article .text_area{ width: 40%;}
 /*.service_container:nth-child(even) .article .text_area{transform:perspective( 1000px ) translateX(100%);}*/
@@ -412,8 +412,9 @@ z-index: 10;}
 .service_content .article .text_area .subtite{margin-bottom: 20px; color: #fff; font-weight:400; font-size: 18px;}
 
 .sevice_wrap .service_container:nth-child(even) .service_content{background-color: #fff; color: #333; }
-.sevice_wrap .service_container:nth-child(even) .service_content .article h2:before{background-color: #333;}
-.sevice_wrap .service_container:nth-child(even) .service_content .summery{line-height: 160%; color: #666;}
+.sevice_wrap .service_container:nth-child(even) .service_content .article h2{color: #000;}
+.sevice_wrap .service_container:nth-child(even) .service_content .article h2:before{background-color: #333; color: #000;}
+.sevice_wrap .service_container:nth-child(even) .service_content .summery{line-height: 160%; color: #333;}
 .sevice_wrap .service_container:nth-child(even) .service_content .subtite{color: #333;}
 .service_content .pc_work{ width: 50%; position: absolute; right: 0; top:120px;}
 .service_content .pc_work img{width: 100%;}
@@ -549,7 +550,7 @@ z-index: 10;}
 .dev_contents .black_bg *{color: #fff !important;}
 */
 
-.dev_contents .devCon h2{font-size:26px; font-weight: 400; position: relative; margin-bottom: 40px;}
+.dev_contents .devCon h2{font-size:26px; font-weight: 400; position: relative; margin-bottom: 40px; color: #000;}
 .dev_contents .devCon .slogan{ width: 50%; box-sizing: border-box; height: 100%; position: absolute; left: 0; top: 0;}
 .dev_contents .devCon .slogan.left{float: left;}
 .slogan_con {display: table; width: 100%; height: 100%;}
