@@ -714,7 +714,7 @@ z-index: 10;}
     display: block !important; z-index: 100 !important;
  }
 /*.nicescroll-rails .nicescroll-cursors{background-color: #f00 !important;}*/
-.counter{ position: absolute; right: 0; bottom: 0;}
+.counter{ position: absolute; right: 0; bottom: 0; opacity: 0;}
 .counter>div{background: none !important; display: inline-block; width:auto !important; position: relative  !important; text-align: right; padding-right:10px !important;}
 .counter>div>div{left:0px !important; position: relative !important;}
 .counter>div>div:after{content: 'online'; display: inline-block; color: #000; font-size: 16px; margin-left: 5px;}
