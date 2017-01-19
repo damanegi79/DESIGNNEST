@@ -123,7 +123,7 @@ function Main () {
       pool.push( particles.shift() );
 
     particle = pool.length ? pool.pop() : new Particle();
-    particle.init( x, y, random( 2, 20 ) );
+    particle.init( x, y, random( 5, 30 ) );
 
     particle.wander = random( 5.0, 10.0 );
     particle.color = _currentColor;
