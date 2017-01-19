@@ -130,7 +130,7 @@ function Main () {
     particle.drag = random( 0.5, 0.99 );
 
     theta = random( TWO_PI );
-    force = random( 2, 8 );
+    force = random( 2, 10 );
 
     particle.vx = sin( theta ) * force;
     particle.vy = cos( theta ) * force;
