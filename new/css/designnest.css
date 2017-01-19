@@ -29,9 +29,9 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
     height:100%;
     width:100%;
     display:block;
-    position: absolute; left: 0; top: 0; z-index:1;
+    position: absolute; left: 0; top: 0; z-index:1; overflow: hidden;
 }
-#container canvas{filter: blur(10px);}
+#container canvas{filter: blur(1px);}
 .intro_contents .logo_content .logo_area {width:60%; margin: auto; text-align: center; border:1px solid #999; padding:30px 20px; border-radius: 5px; position: relative;}
 .intro_contents .logo_content .logo_area .logo{width: 100px; height: 100px; display: inline-block; position: relative; z-index: 10;}
 .intro_contents .logo_content .logo_area .logoText{margin-top:15px; width: 60%; margin-left: auto; margin-right: auto;  position: relative; z-index: 10;}

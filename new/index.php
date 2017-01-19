@@ -33,7 +33,7 @@
         <script src="js/jquery.mousewheel.min.js"></script>
         <script src="js/jquery.inview.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
-<!--        <script src="js/sketch.min.js"></script>-->
+        <script src="js/sketch.min.js"></script>
         <script src="js/ui_common<?= $mobile_path; ?>.js"></script>
     </head>
 
@@ -130,6 +130,6 @@
             ga('send', 'pageview');
 
         </script>
-<!--        <script src="js/index.js"></script>-->
+        <script src="js/index.js"></script>
     </body>
 </html>

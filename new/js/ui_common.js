@@ -20,6 +20,7 @@
                 oldPage = currentPage;
                 $('.menuOpen .stats').text('MENU')
                 $('#intro').fadeOut(1000);
+                Main()
             }
             else
             {
