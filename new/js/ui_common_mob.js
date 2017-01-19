@@ -27,11 +27,13 @@
                 var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
                 $("#ajaxContainer").addClass('fixed')
-                TweenMax.to(outPage, 0.6, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
+                TweenMax.to(outPage, 0, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
                 $("#ajaxContainer").append(page);
 
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
-                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0.6, {x:0, force3D:true,ease:Power2.easeIn});
+//                $("body").scrollTop(0)
+//                $("body").getNiceScroll().resize()
+                TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:0, force3D:true,ease:Power2.easeIn});
 
                 $('.menuOpen .stats').text(url)
 
@@ -83,9 +85,6 @@
                 introText()
                 svgDevice()
                 mobileZoom()
-                scrollbg()
-                lateAxis()
-
             },
             dispos : function ()
             {
@@ -98,9 +97,9 @@
     nest.service = (function (){
         return {
             init : function (){
-                headerMotion()
+//                headerMotion()
                 service()
-                axisCard()
+//                axisCard()
                 console.log('service class start')
             },
             dispos : function ()
@@ -114,7 +113,7 @@
 
         return {
             init : function (){
-                headerMotion()
+//                headerMotion()
                 scroll3d()
                 console.log('portfolio class start')
             },
@@ -129,8 +128,8 @@
 
         return {
             init : function (){
-                headerMotion()
-                develope()
+//                headerMotion()
+//                develope()
                 console.log('developement class start')
             },
             dispos : function ()
@@ -248,28 +247,13 @@ var nest = new nest();
 
 $(document).ready(function() {
     menu();
-    chkAgent()
-
     $('.bottom_quick a.ready').on('click',function(){
         alert('준비중입니다.')
         return false;
     })
 })
 
-function chkAgent(){
-    var agent = navigator.userAgent.toLowerCase();
-    if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
-        var caution = $('.browserCaution');
-        TweenMax.to(caution,0,({display:'block',delay:1, onComplete:function(){
-            TweenMax.to(caution,0.5,({bottom:'0px'}))
-        }}))
-    }
-    $('.browserCaution .close button').on('click',function(){
-        TweenMax.to(caution,0.5,({bottom:'-150px',onComplete:function(){
-            TweenMax.to(caution,0,({display:'none'}))
-        }}))
-    })
-}
+
 function menu(){
     var content = $('#wrapper')
     var menuWrap = $('#menu_wrap')
@@ -320,77 +304,52 @@ function copyToClipboard(element) {
 
 
 $(document).ready(function(){
-    scroll()
+//    scroll()
 })
-
-function scroll(){
-    $("html").niceScroll({
-        cursorcolor: "rgba(0,153,255,0.3)", // change cursor color in hex
-        cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
-        cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
-        cursorwidth: "8px", // cursor width in pixel (you can also write "5px")
-        cursorborder: "none", // css definition for cursor border
-        cursorborderradius: "8px", // border radius in pixel for cursor
-        scrollspeed: 100,
-        mousescrollstep:100,
-        autohidemode: false,
-    });
-}
 
 var timer1;
 var timer2;
-var draw;
-
 var introFlag = true;
 function introText(){
-    var tit = $(".intro_contents");
-    var logoCon = $(".intro_contents .logo_content");
-    var sub_tit = $(".sub_title");
-    var svg = $('#svg_logo').getSVG();
-    var logopath = svg.find('path');
-    var textsvg = $('#svg_text').getSVG();
-    var textpath = textsvg.find("path");
-    var shadow = $(".intro_wrap .shadow");
     if(introFlag == true){
         introFlag = false;
-        $('.logo_area').one('inview', function(event, isInView) {
+        $('.intro_wrap').one('inview', function(event, isInView) {
             var logo = new TimelineLite();
-            logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',onComplete:function(){
+            var tit = $(".intro_contents");
+            var logoCon = $(".intro_contents .logo_content");
+            var sub_tit = $(".sub_title");
+            logo.from(logoCon, 1.0,{opacity:1,force3D:true,onComplete:function(){
                 text_ani()
-//                Main()
             }})
             logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
             logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
             logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
-                axis()
+                mob_gyro()
                 scrollfn()
-
             }})
             logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
 
             var shadow_tween = new TimelineLite();
-            shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true,opacity:0.4})
+            var shadow = $(".intro_wrap .shadow");
+            shadow_tween.from(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(-200px) scale(0.9)',force3D:true})
             shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
             shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
             shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
         })
     }else{
-        TweenMax.to(logoCon, 0,{transform:'translateY(0px)',opacity:1})
-        TweenMax.to(shadow, 0,{transform:'translateY(0px)',opacity:0.4})
+        var svg = $('#svg_logo').getSVG();
+        var logopath = svg.find('path');
+        var textsvg = $('#svg_text').getSVG();
+        var textpath = textsvg.find("path");
         logopath.css({strokeDashoffset:0})
         logopath.eq(4).css({fill:'#0099ff'})
         textpath.css({strokeDashoffset:0})
         textpath.eq(6).css({fill:'#0099ff'})
-        axis()
+        mob_gyro()
         scrollfn()
+    }
+}
 
-    }
-}
-function axis(){
-    if($('.intro_wrap').mouseenter()){
-        $(".intro_wrap").bind("mousemove", moveLogo);
-    }
-}
 function scrollfn(){
     var scrollDown = $(".scrollDown")
     var wheel = $(".scrollDown .ico_scroll");
@@ -399,18 +358,6 @@ function scrollfn(){
     }} );
 }
 
-function moveLogo(e){
-    var pageX = e.pageX - $(".intro_wrap").offset().left;
-    var pageY = e.pageY - $(".intro_wrap").offset().top;
-    pageX = pageX - ($(".intro_wrap").width()/2);
-    pageY = pageY - ($(".intro_wrap").height()/2); //-scrollY
-    var percentX = pageX / ($(".intro_wrap").width()/2);
-    var percentY = pageY / ($(".intro_wrap").height()/2);
-    var xx = 20*percentX;
-    var yy = 20*percentY;
-    TweenMax.to($(".intro_contents"), 0.6, {rotationY:xx, rotationX:-yy, force3D:true});
-    TweenMax.to($(".intro_wrap .shadow"), 0.6, {rotationY:xx*1.2, rotationX:-yy*1.2, y:-yy*5, x:-xx*10, force3D:true});
-}
 function mob_gyro(){
     window.addEventListener('deviceorientation', handleOrientation);
     function handleOrientation(event) {
@@ -448,11 +395,11 @@ function text_ani(){
                 var logo = new TimelineLite();
                 logo.to(self, 1.0,{fill:'#0099ff'})
                 logo.to(self, 1.0,{fill:'#fff',onComplete:function(){
-                    TweenMax.to(logopath.eq(4), 1, {fill:'#0099ff',delay:0.5});
+                    TweenMax.to(logopath.eq(4), 1, {fill:'#0099ff',delay:1});
                 }})
             },i*200)
         })
-    },3200)
+    },5000)
     timer2 = setTimeout(function(){
         textpath.each(function(i){
             var self = this
@@ -471,10 +418,10 @@ function text_ani(){
 }
 function svgDevice(){
     new Vivus('svg_device',{duration:200,type:'oneByOne', forceRender: false},function(){ //,start: 'autostart'
-        TweenMax.to($('#img_device3,.img3'), 0.5, {opacity:1,force3D:true});
-        TweenMax.to($('#svg_device'), 0.5, {opacity:0,force3D:true});
-        TweenMax.to($('.device-pos-2'), 0.3, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:0.5,force3D:true});
-        TweenMax.to($('.device-pos-1'), 0.3, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:0.5,force3D:true, onComplete:function(){
+        TweenMax.to($('#img_device3,.img3'), 0, {opacity:1,force3D:true});
+        TweenMax.to($('#svg_device'), 0, {opacity:0,force3D:true});
+        TweenMax.to($('.device-pos-2'), 0, {marginTop:'-10px',marginLeft:'-80%',opacity:1,delay:0.5,force3D:true});
+        TweenMax.to($('.device-pos-1'), 0, {marginTop:'-30px',marginLeft:'85%',opacity:1, delay:0.5,force3D:true, onComplete:function(){
         }
                                              });
 
@@ -500,58 +447,7 @@ function mobileZoom(){
         }
     })
 }
-function scrollbg(){
-    var controller = new ScrollMagic.Controller();
-    $('.work_content').each(function(){
-        var thisList = this;
-        var itemBg = $(thisList).find('.bg')
-        var info = $(thisList).find('.work_info')
 
-        var bgTween = TweenMax.to(itemBg, 2, {transform:'translateY(15vh)',force3D:'true',filter: 'blur(25px)'})
-        var bgTweenOut = TweenMax.to(itemBg, 2, {transform:'translateY(25vh)',force3D:'true',filter: 'blur(25px)'})
-        var infoTween = TweenMax.from(info, 2, {transform:'translateY(300px)',force3D:'true'})
-
-
-        var bg_scene = new ScrollMagic.Scene({triggerElement:this, offset:'300', duration:350}).setTween(bgTween)
-        var bg_sceneOut = new ScrollMagic.Scene({triggerElement:this, offset:'300', triggerHook: 'onLeave',duration:450}).setTween(bgTweenOut)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:'100', duration:350}).setTween(infoTween)
-        controller.addScene([
-            bg_scene,
-            info_scene,
-            bg_sceneOut
-        ]);
-    })
-}
-
-function lateAxis(){
-    $(".work_content_wrap").each(function(){
-        $(this).bind("mouseenter", function (){
-            $(this).bind("mousemove", lateMoveAxis);
-        });
-        $(this).bind("mouseleave", function (){
-            TweenMax.to($(this).find('[data-role="move-desktop"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-notebook"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-tablet"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-mobile"]'), 1.0, {transform: "translateZ(0)",x:0, y:0,force3D:true});
-            $(this).unbind("mousemove", lateMoveAxis);
-        });
-        function lateMoveAxis(e){
-            var pageX = e.pageX - $(this).offset().left;
-            var pageY = e.pageY - $(this).offset().top;
-            pageX = pageX - ($(this).width()/2);
-            pageY = pageY - ($(this).height()/2);
-            var percentX = pageX / ($(".work_img_area").width()/2);
-            var percentY = pageY / ($(".work_img_area").height()/2);
-            var xx = -10*percentX;
-            var yy = -10*percentY;
-            TweenMax.to($(this).find('[data-role="move-desktop"]'), 1, {x:xx*2,y:yy*1,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-notebook"]'), 1, {x:xx*4,y:yy*2,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-tablet"]'), 1, {x:xx*6,y:yy*3,force3D:true});
-            TweenMax.to($(this).find('[data-role="move-mobile"]'), 1, {x:xx*8,y:yy*4,force3D:true});
-        }
-    })
-
-}
 
 function disposeMain(){
     clearInterval(timer1);
@@ -571,6 +467,7 @@ function headerMotion(){
 
 function scroll3d(){
     var controller = new ScrollMagic.Controller();
+    console.log('!!!!')
     $('.itemList').each(function(){
         var thisList = this;
         var itemInfo = $(thisList).find('.item_info')
@@ -578,22 +475,23 @@ function scroll3d(){
         var itemPc = $(thisList).find('.pc')
         var itemTab = $(thisList).find('.tablet')
 
-        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true,filter:'blur(3px) grayscale(1)'})
+//        var listTween = TweenMax.from(thisList, 2, {transform:'rotateX(-40deg) scale(0.8)', force3D:true})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(0px)', force3D:true})
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(0px)', force3D:true})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(0px)', force3D:true,onComplete:function(){
             $(thisList).addClass('active')
         }})
-        var tabTween = TweenMax.from(itemTab, 2, {transform:'translateY(200px)',force3D:true})
+        var tabTween = TweenMax.to(itemTab, 2, {transform:'translateY(0px)',force3D:true})
 
-        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(listTween)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(infoTween)
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(mobileTween)
-        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(pcTween)
-        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(tabTween)
+//        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onEnter',duration:450}).setTween(listTween)
+        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:250, triggerHook: 'onEnter',duration:300}).setTween(infoTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:250, triggerHook: 'onEnter',duration:300}).setTween(mobileTween)
+        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:250, triggerHook: 'onEnter',duration:300}).setTween(pcTween)
+        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:250, triggerHook: 'onEnter',duration:300}).setTween(tabTween)
 
         controller.addScene([
-            list_scene,info_scene,mobile_scene,pc_scene,tab_scene
+//            list_scene,
+            info_scene,mobile_scene,pc_scene,tab_scene
         ]);
 
     })
@@ -604,20 +502,20 @@ function scroll3d(){
         var itemPc = $(thisList).find('.pc')
         var itemTab = $(thisList).find('.tablet')
 
-        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true,filter:'blur(3px) grayscale(1)'})
-        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-100px)',force3D:true})
+        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true})
+        var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-150px)',force3D:true})
 
-        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-300px)',force3D:true})
+        var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)',force3D:true})
         var pcTween = TweenMax.to(itemPc, 2, {transform:'translateY(-100px)',force3D:true,onStart:function(){
             $(thisList).removeClass('active')
         }})
         var tabTween = TweenMax.to(itemTab, 2, {transform:'translateY(-200px)',force3D:true})
 
-        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(listTween)
-        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:-50, triggerHook: 'onLeave',duration:350}).setTween(infoTween)
-        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:-90, triggerHook: 'onLeave',duration:350}).setTween(mobileTween)
-        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:-30, triggerHook: 'onLeave',duration:350}).setTween(pcTween)
-        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:-60, triggerHook: 'onLeave',duration:350}).setTween(tabTween)
+        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(listTween)
+        var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(infoTween)
+        var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(mobileTween)
+        var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(pcTween)
+        var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(tabTween)
 
         controller.addScene([
             list_scene,info_scene,mobile_scene,pc_scene,tab_scene
@@ -709,7 +607,7 @@ function service(){
 
         var mobileTween = new TimelineMax();
         mobileTween
-            .to(responsive03, 2, {transform:"rotateZ(0deg) translateY(450px) translateX(300px) scale(5)",force3D:true,opacity:1,onStart:function(){
+            .to(responsive03, 2, {transform:"rotateZ(0deg) translateY(500px) translateX(280px) scale(4)",force3D:true,opacity:1,onStart:function(){
                 $('.service_container.overWrap').addClass('over-view')
             }})
             .to(responsive03.find('.mobile02'), 1, {transform:"rotateZ(0deg)  translateY(5px) translateX(-40px) scale(0.9)",force3D:true})
@@ -721,19 +619,19 @@ function service(){
 
         var ui_img = $(thisList).find('.ui_img .ui');
         var ui_text = $(thisList).find('.ui_img .text');
-        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1.2) translateY(-10px) translateX(0px)", opacity:1,force3D:true})
+        var uiTween = TweenMax.to(ui_img, 2, {transform:"scale(1) translateY(-10px) translateX(0px)", opacity:1,force3D:true})
         var uiTextTween = TweenMax.to(ui_text, 2, {transform:"scale(1)", opacity:1,force3D:true})
         var ui_scene = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:400}).setTween(uiTween)
-        var uiText_scene = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:200}).setTween(uiTextTween)
+        var uiText_scene = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:100}).setTween(uiTextTween)
 
 
         var pc_img01 = $(thisList).find('.pc_img .img_con.con01');
         var pc_img02 = $(thisList).find('.pc_img .img_con.con02');
         var pc_img03 = $(thisList).find('.pc_img .img_con.con03');
 
-        var pcTween01 = TweenMax.to(pc_img03, 2, {transform:"scale(1) translateY(-100px) translateX(-200px) scale(1)", opacity:1,force3D:true})
-        var pcTween02 = TweenMax.to(pc_img02, 2, {transform:"scale(1) translateY(-50px) translateX(-100px) scale(1)", opacity:1,force3D:true})
-        var pcTween03 = TweenMax.to(pc_img01, 2, {transform:"scale(1) translateY(-20px) translateX(-50px)", opacity:1,force3D:true})
+        var pcTween01 = TweenMax.to(pc_img03, 2, {transform:"scale(1) translateY(-60px) translateX(-60px) scale(1)", opacity:1,force3D:true})
+        var pcTween02 = TweenMax.to(pc_img02, 2, {transform:"scale(1) translateY(-30px) translateX(-30px) scale(1)", opacity:1,force3D:true})
+        var pcTween03 = TweenMax.to(pc_img01, 2, {transform:"scale(1) translateY(-20px) translateX(-30px) scale(1)", opacity:1,force3D:true})
 
         var pc_scene01 = new ScrollMagic.Scene({triggerElement:this, offset:'400', triggerHook: 'onEnter', duration:300}).setTween(pcTween01)
         var pc_scene02 = new ScrollMagic.Scene({triggerElement:this, offset:'500', triggerHook: 'onEnter', duration:300}).setTween(pcTween02)
