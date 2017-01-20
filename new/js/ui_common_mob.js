@@ -26,9 +26,9 @@
 
                 var outPage = $("#ajaxContents");
                 var arrow = getMotionArrow(url);
-                $("#ajaxContainer").addClass('fixed')
-                TweenMax.to(outPage, 0, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
                 $("#ajaxContainer").append(page);
+                TweenMax.to(outPage, 0, {x:-($(window).width()*0.5), force3D:true,ease:Power2.easeIn, zIndex:1, onComplete:motionEnd});
+
 
                 TweenMax.to($("#ajaxContainer>#ajaxContents").eq(1), 0, {x:($(window).width()),zIndex:10});
 //                $("body").scrollTop(0)
@@ -44,8 +44,6 @@
                     outPage.remove();
                     oldPage = currentPage;
                     if(nest[oldUrl]) nest[oldUrl].dispos();
-                    $("#ajaxContainer").removeClass('fixed')
-
                 }
                 if(url=="home") setTimeout(function (){nest[url].init();}, 100);
 

@@ -20,7 +20,7 @@
                 oldPage = currentPage;
                 $('.menuOpen .stats').text('MENU')
                 $('#intro').fadeOut(1000);
-                Main()
+//                Main()
             }
             else
             {
@@ -352,32 +352,38 @@ function introText(){
     var textsvg = $('#svg_text').getSVG();
     var textpath = textsvg.find("path");
     var shadow = $(".intro_wrap .shadow");
+    var shine = $(".intro_wrap .shine");
     if(introFlag == true){
         introFlag = false;
         $('.logo_area').one('inview', function(event, isInView) {
             var logo = new TimelineLite();
             logo.to(logoCon, 1.0,{opacity:1,force3D:true,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',onComplete:function(){
                 text_ani()
-//                Main()
             }})
             logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-20deg)',force3D:true},1)
             logo.to(tit, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(20deg)',force3D:true},3.5)
             logo.to( tit, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) ',force3D:true,onComplete:function(){
                 axis()
                 scrollfn()
-
             }})
             logo.to(sub_tit, 0.5, {opacity:1,transform:'perspective(1000px) rotateX(0deg) translateY(0px)',force3D:true})
 
+            var shine_tween = new TimelineLite();
+            shine_tween.to(shine, 1,{"background":"linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%)",force3D:true})
+            shine_tween.to(shine, 2.5,{"background":"linear-gradient(225deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%)",force3D:true},2)
+            shine_tween.to(shine, 2.5,{"background":"linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%)",force3D:true},3.5)
+//            shine_tween.to(shine, 1.0,{"background":"linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 60%)",force3D:true})
+
+
             var shadow_tween = new TimelineLite();
-            shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true,opacity:0.4})
+            shadow_tween.to(shadow, 1.0,{transform:'perspective( 1000px ) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
             shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(-30deg) translateY(100px)  translateX(150px) scale(0.9)',force3D:true},1)
             shadow_tween.to(shadow, 2.5,{transform:'perspective(1000px) rotateX(20deg) rotateY(30deg) translateY(100px)  translateX(-150px) scale(0.9)',force3D:true},3.5)
             shadow_tween.to(shadow, 1.0, {transform:'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(0.9)',force3D:true})
         })
     }else{
         TweenMax.to(logoCon, 0,{transform:'translateY(0px)',opacity:1})
-        TweenMax.to(shadow, 0,{transform:'translateY(0px)',opacity:0.4})
+        TweenMax.to(shadow, 0,{transform:'translateY(0px)'})
         logopath.css({strokeDashoffset:0})
         logopath.eq(4).css({fill:'#0099ff'})
         textpath.css({strokeDashoffset:0})
@@ -409,8 +415,12 @@ function moveLogo(e){
     var percentY = pageY / ($(".intro_wrap").height()/2);
     var xx = 20*percentX;
     var yy = 20*percentY;
+    var filterNum = Math.abs( parseInt(5*percentX));
+    var angle = getAngle(0, 0, pageX, -pageY);
     TweenMax.to($(".intro_contents"), 0.6, {rotationY:xx, rotationX:-yy, force3D:true});
     TweenMax.to($(".intro_wrap .shadow"), 0.6, {rotationY:xx*1.2, rotationX:-yy*1.2, y:-yy*5, x:-xx*10, force3D:true});
+    TweenMax.to($(".intro_wrap .bg"), 0.2, {y:-yy*0.5, x:-xx*0.5, force3D:true, filter:'blur('+ filterNum +'px)'});
+    TweenMax.to($(".logo_area .shine"), 0.6, {"background":"linear-gradient("+angle+"deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%)",force3D:true})
 }
 function mob_gyro(){
     window.addEventListener('deviceorientation', handleOrientation);
