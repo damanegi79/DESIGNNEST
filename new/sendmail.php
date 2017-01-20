@@ -7,41 +7,41 @@
   $mail_from = '=?UTF-8?B?'.base64_encode($_GET['email']).'?=';
 
 //메일내용
-  $mail_body = "<table width='600' border='0' cellpadding='0' cellspacing='1' bgcolor='#CCCCCC'>
-        <tr> 
+  $mail_body = "<table width='1000' border='0' cellpadding='0' cellspacing='1' bgcolor='#CCCCCC'>
+        <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>제목</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['title']."</td></tr>".
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['title']."</td></tr>".
 
-        " <tr> 
+        " <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>업체명</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['comuser']."</td></tr>".
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['comuser']."</td></tr>".
 
-       " <tr> 
+       " <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>성함</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['senduser']."</td></tr>".		
-		  
-       " <tr> 
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['senduser']."</td></tr>".
+
+       " <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>연락처</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['phone']."</td></tr>".	
-		  
-       " <tr> 
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['phone']."</td></tr>".
+
+       " <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>이메일</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['email']."</td></tr>".	
- 
-  	   " <tr> 
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['email']."</td></tr>".
+
+         " <tr>
           <td width='100' height='30' align='center' bgcolor='#eeeeee'>내용</td>
-          <td width='400' bgcolor='#FFFFFF'>". $_GET['body']."</td></tr>".	
-		  
+          <td width='900' bgcolor='#FFFFFF'>". $_GET['body']."</td></tr>".
+
       "</table>";
 
- 
+
 //메일 발송처리
 
   $header = "From:$subject\n";
   $header = "Content-Type: text/html;charset=utf-8";
-  $header .= "From : $mail_from <".$mail_from.">\n"; 
+  $header .= "From : $mail_from <".$mail_from.">\n";
 
- 
+
   $email = mail($recipient, $subject, $mail_body, $header);
 
 
