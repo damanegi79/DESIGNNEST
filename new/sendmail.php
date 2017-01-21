@@ -1,6 +1,6 @@
 <?
 //보내는 이
-  $recipient = "damanegi1979@naver.com";
+  $recipient = "master@designnest.net";
 //제목 처리
   $subject = '=?UTF-8?B?'.base64_encode($_GET['title']).'?=';
 //메일주소
