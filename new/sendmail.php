@@ -7,30 +7,30 @@
   $mail_from = '=?UTF-8?B?'.base64_encode($_GET['email']).'?=';
 
 //메일내용
-  $mail_body = "<table width='1000' border='0' cellpadding='0' cellspacing='1' bgcolor='#CCCCCC'>
+  $mail_body = "<table width='100%' border='0' cellpadding='0' cellspacing='1' bgcolor='#CCCCCC'>
         <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>제목</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['title']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>제목</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['title']."</td></tr>".
 
         " <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>업체명</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['comuser']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>업체명</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['comuser']."</td></tr>".
 
        " <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>성함</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['senduser']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>성함</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['senduser']."</td></tr>".
 
        " <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>연락처</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['phone']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>연락처</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['phone']."</td></tr>".
 
        " <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>이메일</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['email']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>이메일</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['email']."</td></tr>".
 
          " <tr>
-          <td width='100' height='30' align='center' bgcolor='#eeeeee'>내용</td>
-          <td width='900' bgcolor='#FFFFFF'>". $_GET['body']."</td></tr>".
+          <td width='10%' height='30' align='center' bgcolor='#eeeeee'>내용</td>
+          <td width='90%' bgcolor='#FFFFFF'>". $_GET['body']."</td></tr>".
 
       "</table>";
 
