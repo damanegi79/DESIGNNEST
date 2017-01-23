@@ -2,15 +2,15 @@
 
 /* reset */
 html, body{
-    font-family:"Malgun Gothic",Arial,sans-serif; 
-    width: 100%; 
-    height: 100%; 
-    font-size: 14px; 
+    font-family:"Malgun Gothic",Arial,sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
     color: #666;
 }
 button,input,textarea,select{
-    font-family:"Malgun Gothic",Arial,sans-serif; 
-    font-size: 14px; 
+    font-family:"Malgun Gothic",Arial,sans-serif;
+    font-size: 14px;
     color: #666;}
 
 /* link */
@@ -18,8 +18,88 @@ a{color:#666;text-decoration:none;}
 a:link, a:visited, a:active{color:#666; text-decoration: none;}
 a:hover{color:#666;}
 
-.contents_box{max-width: 1200px; margin: auto;}
+.contents_box{max-width: 1200px; margin: auto;  position: relative;}
 .contents_box:after{content: ""; display: block; clear: both;}
 
 /* layout */
-#wrapper{max-width: 1200px; margin: auto;}
+header{position:absolute;  display: block; width: 100%; z-index: 10;}
+header .mobile_menu{}
+header .mobile_menu a{display: block; color: #222; font-size: 30px; display: block; width: 40px; height: 40px; text-align: center; line-height: 40px;}
+.header_top{height: 60px; line-height: 60px; border-bottom: 1px solid rgba(255, 255, 255, 0.09); background: rgba(0,0,0,0.5)}
+.logoArea{float: left;}
+.logoArea a.logo{position: relative; display: inline-block;}
+.logoArea a.logo img{height:30px; position: absolute; left: 0; top: 0;}
+.gnb{float: right;}
+.gnb>ul>li{float: left; position: relative;}
+.gnb>ul>li>a{
+    color: #fff;
+    opacity: 0.7;
+    transition: all 0.20s linear 0s;
+    -o-transition: all 0.20s linear 0s;
+    -ms-transition: all 0.20s linear 0s;
+    -moz-transition: all 0.20s linear 0s;
+    -webkit-transition: all 0.20s linear 0s;
+    display: block; text-align: center;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+}
+.gnb>ul>li.submenu>a:after{content: "\f004"; display: inline-block; font-family:'mfg'; margin-left: 5px; font-size: 11px; font-weight: 100;}
+.gnb>ul>li>a:hover{background: rgba(255,255,255,0.1); opacity: 1;}
+.gnb>ul ul {
+    position: absolute; top: 60px; left: 0; width: 100%; display: none;
+}
+.gnb>ul li ul li {
+    background:rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    box-sizing: border-box;
+}
+.gnb>ul li ul li.sub-submenu{padding-right: 20px;}
+.gnb>ul li ul li.sub-submenu > a:after{content: "\f006"; display: inline-block; font-family:'mfg'; font-size: 11px; font-weight: 100; position: absolute; right: 10px;}
+.gnb>ul li ul li:last-child {
+    border-bottom: 0;
+}
+.gnb>ul li ul li a{
+
+    color: rgba(0,0,0, 0.75);
+    display: block;
+    line-height: 40px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.gnb>ul li ul li a:hover{color: rgba(0,0,0,1);}
+
+.gnb>ul li ul li ul{position: absolute; width: 100%; top: 0; left: 100%; display: none;}
+.gnb>ul li ul li ul li{border-bottom: 1px solid rgba(0,0,0,0.1);position: relative;}
+
+#visual{height:  300px; overflow: hidden; position: relative; background-size:cover; z-index: 1; display: table; width: 100%;}
+#visual .visual_contents{display: table-cell; vertical-align: middle;}
+#visual .contents_box{}
+#visual .visual_bg{position: absolute; width: 100%; left: 0; top: 0; z-index: 1;}
+#visual .visual_bg img{ width: 100%;}
+#visual .visual_txt{color:#fff; position: relative; z-index: 10; padding-top: 30px;}
+#visual .visual_txt .contents_box{}
+#visual .visual_txt h2{font-size: 60px;}
+#visual:after{content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;background-color: rgba(0, 0, 0, 0.5);}
+
+#footer{background-color: #222; border-top: 1px solid #666; padding: 40px 0;}
+.bottom_logo {float: left; position: absolute; left: 0; top:50%; margin-top: -15px;}
+.bottom_logo img{height: 30px;}
+.companyInfo{padding-left: 200px;}
+.companyInfo li{float: left; line-height: 140%;}
+.companyInfo li:after{display: inline-block; content: '/'; padding: 0 10px;}
+.companyInfo li:last-child:after{display: none;}
+.copyright{}
+.pc_hidden{ display: none;}
+#location{border-bottom: 1px solid #ccc;  background-color: #fafafa;}
+#location p{text-align: right; font-weight: 100; height:34px; line-height:34px; font-size: 12px; color: #666;}
+#location p i{padding: 0 3px;}
+#location p span.home{color: #222;}
+
