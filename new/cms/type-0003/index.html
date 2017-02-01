@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="웹퍼블리싱, 홈페이지 제작, 웹사이트 제작, 반응형 웹사이트 제작, 스크립트 개발"/>
+    <meta name="keywords" content="웹사이트 개발, 반응형 사이트 개발, 모바일 사이트 개발, 홈페이지 제작, 스크립트 개발, 웹퍼블리싱, 모바일웹 퍼블리싱, 반응형웹 퍼블리싱, 웹디자인"/>
+    <!-- Share -->
+    <meta property="og:title" content="Designnest - Interective Agency" />
+    <meta property="og:description" content="웹퍼블리싱, 홈페이지 제작, 웹사이트 제작, 반응형 웹사이트 제작, 스크립트 개발" />
+    <meta property="og:image" content="http://designnest.net/img/img-site.png" />
+    <meta property="og:url" content="http://www.designnest.net">
+    <meta property="og:image:width" content="660" />
+    <meta property="og:image:height" content="380" />
+    <meta name="naver-site-verification" content="9acc92bdb6ce864da9bfc1320dc639592e26ed32"/>
+    <!-- Share -->
+    <title>Designnest</title>
+    <link rel="canonical" href="http://www.designnest.net/index.html">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- Google Web Font. -->
+    <link href="//fonts.googleapis.com/css?family=Lato:700,300" rel="stylesheet" type="text/css">
+
+    <!-- Normalize v.3.0.0 - makes browsers render all elements more consistently. -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" />
+
+    <!-- Stylesheet - to improve site's load speed, better use the minimized version.
+         The unminified version is also included in package. -->
+    <link rel="stylesheet" href="/cms/app-data/icon/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/cms/app-data/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.lite.css" />
+
+</head>
+
+<body id="parent">
+
+    <!-- All content (menu, main-entry, and footer) goes inside this container. -->
+    <div class="main-container">
+
+        <!-- Logo and menu inside this container. -->
+        <div class="header">
+            <div class="clearfix">
+
+                <!-- Put your site logo here. Recommended size is 165px x 50px. -->
+                <div class="float-left logo">
+                    <h1>
+                        <a href="http://www.designnest.net">
+                            <img src="/cms/app-data/img/img_logo.png" alt="">
+                            <span>Design Preview</span>
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- Top Menu Bar -->
+                <div class="float-right">
+                    <ul id="top-nav" class="slimmenu">
+
+                        <!-- To create menu, type these...
+                             <li>
+                                 <a href="URL" target="open-iframe">Your Menu Item</a>
+                             </li>
+
+                             Note:
+                             There's a fullscreen function in this template. To prevent fullscreen (if enabled) from exiting when user clicked a link,
+                             put the linked web page into an iframe by using ... target="open-iframe" ...
+
+                             The same goes for main-entry.
+                        -->
+                        <li>
+                            <a href="#" target="open-iframe">디자인네스트 메인</a>
+                        </li>
+                        <li>
+                            <a href="http://www.designnest.net/#service">서비스</a>
+                        </li>
+                        <li>
+                            <a href="#" target="open-iframe">포트폴리오</a>
+                        </li>
+                        <li>
+                            <a href="#" target="open-iframe">Contact</a>
+                        </li>
+
+                        <!-- This is the filter menu, to filter and display your works based on class name (usually named after a category) in main-entry.
+                             To create filter, type these...
+                             <a href="#" class="filter-label" data-filter=".cat-1"> (change .cat-1 accordingly)
+                        -->
+                        <li>
+                            <a href="#" class="filter"><span class="fa fa-filter" aria-hidden="true"></span>디자인 타입별 보기</a>
+                            <ul>
+                                <li>
+                                    <a href="#" class="filter-label active">All Category</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-1">Filter Category 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-2">Filter Category 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-3">Filter Category 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="fullscreen tooltip" title="전체화면">
+                                <span class="pictogram">&#xe801;</span>
+                            </a>
+                            <a href="#" class="fullscreenExit tooltip" title="전체화면 종료">
+                                <span class="pictogram">&#xe802;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Main Entry.
+             All posts thumbnails and sliders go inside .main-entry div. All of them are grid based named sizeXX (XX represents number of column and row)
+
+                size11 = 1 column x 1 row
+                size12 = 1 column x 2 rows
+                size21 = 2 columns x 1 row
+                size32 = 3 columns x 2 rows (I use this for inner page to show video or slideshow)
+
+             The basic code are these...
+
+                <div class="brick tint size12 cat-1 cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-fixpos="0-0">
+
+                    // Your image
+                    <img src="URL_to_image" alt="image text alternative" />
+
+                    <div class="overlay">
+                        <h3 class="project-title">Your Project Title</h3>
+                        <p class="project-description">Your project description</p>
+                        <a href="URL" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                    </div>
+
+                </div>
+
+             Legend:
+             * Class:
+                    brick = The grid. Must be included.
+                    tint = To lighten the image. FYI, tint won't work on slideshow images. Optional.
+                    size12 = Size of the grid. You can change this to size11, size21, or size32. Must be included.
+                    cat-1 = For filter. Optional.
+                    cycle-slideshow = To display slideshow. Optional.
+
+             * data-cycle-fx = Slideshow effect.
+             * data-cycle-speed = Slideshow speed.
+             // For more information, visit http://jquery.malsup.com/cycle2/api/
+
+             * data-fixpos = To fixed position grid
+             // For more information, visit http://www.vnjs.net/www/project/freewall/
+
+
+             You can vary them all you want. See examples below for better understanding.
+        -->
+        <div id="freewall" class="free-wall">
+
+            <div class="brick size12 cat-2 slideshow" data-cycle-fx="scrollHorz">
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0002.jpg" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0001.png" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0002.jpg" alt=""></span>
+                <p class="control">
+                    <span class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                    <span class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </p>
+                <div class="overlay">
+                    <h3 class="project-title">Type-0001</h3>
+                    <p class="project-description">오피셜 사이트용 기본 디자인</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">VIEW <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick size11">
+                <!-- For text only, put your heading/paragraph inside div .cover -->
+                <div class="cover">
+                    <div class="coverCon">
+                    <h2><strong>공통 스펙</strong></h2>
+                        <p>최적화 브라우저 :
+                            <i class="fa fa-chrome" aria-hidden="true"></i>,
+                            <i class="fa fa-firefox" aria-hidden="true"></i>,
+                            <i class="fa fa-safari" aria-hidden="true"></i>,
+                            <i class="fa fa-opera" aria-hidden="true"></i>,
+                            <i class="fa fa-internet-explorer" aria-hidden="true"></i> 10+
+                        </p>
+                        <p>적용 템플릿 : AngularJS, Bootstrap</p>
+                        <p>개발 플랫폼 : 자체제작(CI)</p>
+                        <p>개발 언어 : HTML5, CSS3, JQUERY, PHP</p>
+                        <p>레이아웃폼 : 반응형 사이트</p>
+                        <p>ETC : 컨텐츠 제작 툴 제공</p>
+                    </div>
+                </div>
+            </div>
+            <div class="brick size11 cat-2 move-slideshow" data-cycle-fx="scrollHorz">
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0004.jpg" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0004-01.jpg" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0004-02.jpg" alt=""></span>
+                <p class="control">
+                    <span class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                    <span class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </p>
+                <div class="overlay">
+                    <h3 class="project-title">Type-0002</h3>
+                    <p class="project-description">오피셜 사이트용 기본 디자인</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">VIEW <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick size12 cat-2 slideshow" data-cycle-fx="scrollHorz">
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0003.jpg" alt=""></span>
+                <p class="control">
+                    <span class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                    <span class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </p>
+                <div class="overlay">
+                    <h3 class="project-title">Type-0002</h3>
+                    <p class="project-description">오피셜 사이트용 기본 디자인</p>
+                    <p class="project-description">용도 : 회사소개, 사업장 소개 등</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">VIEW <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <div class="brick size11 cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="1000"  data-cycle-slides="> .slide">
+                <span class="slide" style="background-color:#2db551;"></span>
+                <span class="slide" style="background-color:#2d90b5;"></span>
+                <span class="slide" style="background-color:#b5972d;"></span>
+                <span class="slide" style="background-color:#9a2db5;"></span>
+
+                <div class="slideTxt">
+                    <div class="slideTxtCon">
+                        <div class="number"><i class="fa fa-heart " aria-hidden="true"></i></div>
+                        <div class="client-text">We are always doing our best for our customers. </div>
+                        <div class="client-text">
+                                <strong>from. Designnest</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brick size11 cycle-slideshow" data-cycle-fx="fade" data-cycle-speed="900" data-cycle-slides="> div">
+                <div class="cover">
+                    <div class="coverCon">
+                        <h3>"웹쪽은 문외한이라 알아서 해줬으면 좋겠다고 했는데 동종업계 사이트들을 벤치마킹 하시고 디자인 제안을 해주신게 마음에 들어서 좋았습니다."</h3>
+                        <p><sub>- 파티업체 대표</sub></p>
+                    </div>
+                </div>
+                <div class="cover">
+                    <div class="coverCon">
+                        <h3>"어떻게 사이트를 만들지 막막했는데 저희 작업실까지 직접 찾아와 주셔서 큰 도움이 됐습니다."</h3>
+                        <p><sub>- 프리랜서 디자인 그룹</sub></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick size12 cat-3">
+                <img src="/cms/app-data/img_preview/type-0002.jpg" alt="">
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title3</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite2.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <div class="brick tint size12 cat-2 slideshow" data-cycle-fx="scrollHorz">
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0002.jpg" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0001.png" alt=""></span>
+                <span class="slide"><img src="/cms/app-data/img_preview/type-0002.jpg" alt=""></span>
+                <p class="control">
+                    <span class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                    <span class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </p>
+                <div class="overlay">
+                    <h3 class="project-title">Type-0002</h3>
+                    <p class="project-description">오피셜 사이트용 기본 디자인</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">VIEW <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <div class="brick tint size11 cat-2">
+                <img src="images/3084871415_da49ab66ea_o.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title11</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite3.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <!-- This is the slideshow for images -->
+            <div class="brick size12 cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="500">
+                <!-- Your slideshow images -->
+                <img src="images/5226290116_1409794022_b.jpg" alt="" />
+                <img src="images/8098729514_fa1919474d_b.jpg" alt="" />
+                <img src="images/3919137679_dc05b59927.jpg" alt="" />
+            </div>
+
+
+            <div class="brick tint size12 cat-3">
+                <img src="images/4414454672_e91f887d34_o.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <div class="brick tint size11 cat-1">
+                <img src="images/5171071313_e4c110ccb2_b.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite2.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <!-- This is the slideshow for text. Wrap your text inside div .cover -->
+
+
+            <div class="brick tint size11 cat-2">
+                <img src="images/4171682579_91f75f9a6a_o.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-1">
+                <img src="images/1330348274_33c00c4886_o.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite2.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size21 cat-3">
+                <img src="images/4613181397_78853da480_b.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite1.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-1">
+                <img src="images/261980228_495975b20b_o.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="single-page-lite2.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="float-right copyright">
+                <p>&copy;2017
+                    <strong>DESIGNNEST</strong>. All rights reserved.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- All links from this homepage will be opened in this iframe, to prevent fullscreen (if enabled) from exiting if the user clicked on a link. -->
+    <iframe id="open-iframe" name="open-iframe"></iframe>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/freewall.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
+    <script type="text/javascript" src="js/custom-script.js"></script>
+</body>
+
+</html>
