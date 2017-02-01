@@ -7,9 +7,9 @@ $(function() {
     wall.reset({
         selector: '.brick',
         animate: true,
-        cellW: 160,
-        cellH: 160,
-        fixSize: 0,
+        cellW: 360,
+        cellH: 360,
+//        fixSize: 0,
         gutterY:10,
         gutterX: 10,
         onResize: function() {
