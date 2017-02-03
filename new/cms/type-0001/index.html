@@ -2,27 +2,55 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="웹퍼블리싱, 홈페이지 제작, 웹사이트 제작, 반응형 웹사이트 제작, 스크립트 개발"/>
+    <meta name="keywords" content="웹사이트 개발, 반응형 사이트 개발, 모바일 사이트 개발, 홈페이지 제작, 스크립트 개발, 웹퍼블리싱, 모바일웹 퍼블리싱, 반응형웹 퍼블리싱, 웹디자인"/>
+    <!-- Share -->
+    <meta property="og:title" content="Designnest - Interective Agency" />
+    <meta property="og:description" content="웹퍼블리싱, 홈페이지 제작, 웹사이트 제작, 반응형 웹사이트 제작, 스크립트 개발" />
+    <meta property="og:image" content="http://designnest.net/img/img-site.png" />
+    <meta property="og:url" content="http://www.designnest.net">
+    <meta property="og:image:width" content="660" />
+    <meta property="og:image:height" content="380" />
+    <meta name="naver-site-verification" content="9acc92bdb6ce864da9bfc1320dc639592e26ed32"/>
+    <!-- Share -->
     <title>Designnest type-0001</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,400,600|Lato:100,300,400" rel="stylesheet">
     <link rel="stylesheet" href="/cms/app-data/icon/mfg.css">
     <link rel="stylesheet" href="/cms/app-data/icon/font-awesome.min.css">
+
+    <!-- core css -->
     <link rel="stylesheet" href="/cms/app-data/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/cms/app-data/css/reset.css">
+    <link rel="stylesheet" href="/cms/app-data/css/style.css">
+
+    <!-- Plugins -->
+    <link href="/cms/app-data/plugins/magnific-popup/magnific-popup.css" rel="stylesheet"> <!-- 라이트 박스 -->
+    <link href="/cms/app-data/plugins/rs-plugin-5/css/settings.css" rel="stylesheet"> <!-- 슬라이더 -->
+    <link href="/cms/app-data/plugins/rs-plugin-5/css/layers.css" rel="stylesheet"> <!-- 슬라이더 -->
+    <link href="/cms/app-data/plugins/rs-plugin-5/css/navigation.css" rel="stylesheet"> <!-- 슬라이더 -->
+    <link href="/cms/app-data/css/animations.css" rel="stylesheet"> <!-- css 애니메이션 -->
+    <link href="/cms/app-data/plugins/owlcarousel2/assets/owl.carousel.min.css" rel="stylesheet"> <!-- 슬라이더 -->
+    <link href="/cms/app-data/plugins/owlcarousel2/assets/owl.theme.default.min.css" rel="stylesheet"> <!-- 슬라이더 -->
+    <link href="/cms/app-data/plugins/hover/hover-min.css" rel="stylesheet"> <!-- 마우스오버 css -->
+    <link href="/cms/app-data/plugins/morphext/morphext.css" rel="stylesheet"> <!-- js inview 애니메이션 -->
+
+    <!-- template css -->
     <link rel="stylesheet" href="css/layout.css">
-    <script type="text/javascript" src="/cms/app-data/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/cms/app-data/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/cms/app-data/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/template.js"></script>
 </head>
 
 <body>
+
 <div id="wrapper">
    <!-- 헤더 -->
     <header id="header" class="sticky">
         <div class="header_top">
             <div class="contents_box">
-                <div class="logoArea clearfix">
+                <div class="logoArea">
                     <a href="#" class="logo">
                         <!-- Logo White Version -->
                         <img class="logo-01" src="/cms/app-data/img/img_logo_white.png" alt="">
@@ -75,23 +103,157 @@
         </div>
     </header>
     <!-- //헤더 -->
-    <!-- 비쥬얼 -->
-    <div id="index-visual">
-        asdasd
-    </div>
-    <!-- 비쥬얼 -->
-    <div id="location">
-        <div class="contents_box">
-            <p>
-                <span class="home"><i class="fa fa-home pr-10"></i> Home</span>
-                <i class="icon-chevron_right"></i> About
-            </p>
+    <!-- slider -->
+    <div class="rev_slider_wrapper fullscreen-container">
+        <!-- the ID here will be used in the inline JavaScript below to initialize the slider -->
+        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none">
+            <ul>
+                <li data-transition="fade" class="text-right">
+                    <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                    <img src="/cms/type-0001/img/img-home.jpg" alt="Sky" class="rev-slidebg" data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgparallax="10"
+                         data-bgrepeat="no-repeat"
+
+                         >
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-1"
+
+                         data-frames='[{"delay":0,"speed":3000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":3000,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="right"
+                         data-y="center"
+                         data-hoffset="100"
+                         data-voffset="200"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"
+                         >
+                        DESIGNNEST <em>Interective Agency</em>
+                         </div>
+                </li>
+                <li data-transition="fade"  class="text-center">
+                    <img src="/cms/type-0001/img/@img-01.jpg" alt="Sky" class="rev-slidebg" data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+
+                         data-kenburns="on"
+                         data-duration="9000"
+                         data-ease="Linear.easeNone"
+                         data-scalestart="100"
+                         data-scaleend="120"
+                         data-offsetstart="0 0"
+                         data-offsetend="0 0"
+                         data-rotatestart="0"
+                         data-rotateend="0">
+                    <div class="tp-caption tp-resizeme color-white"
+                         data-frames='[{
+
+                                      "delay": 0,
+                                      "speed": 3000,
+                                      "from": "opacity: 0; y:200",
+                                      "to": "opacity: 1; y:0"
+
+                                      }, {
+
+                                      "delay": "wait",
+                                      "speed": 3000,
+                                      "to": "opacity: 0; y:200"
+
+                                      }
+
+                                      ]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"
+                         >
+                        DESIGNNEST <em>Interective Agency</em>
+                    </div>
+                </li>
+                <li data-transition="fade">
+                    <img src="/cms/type-0001/img/header.jpg" alt="Sky" class="rev-slidebg" data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+
+                         data-kenburns="on"
+                         data-duration="9000"
+                         data-ease="Linear.easeNone"
+                         data-scalestart="100"
+                         data-scaleend="120"
+                         data-offsetstart="0 0"
+                         data-offsetend="0 0"
+                         data-rotatestart="0"
+                         data-rotateend="0"
+                         >
+                    <div class="tp-caption tp-resizeme banner03"
+                         data-frames='[{
+
+                                      "delay": 0,
+                                      "speed": 300,
+                                      "from": "opacity: 0;",
+                                      "to": "opacity: 1"
+
+                                      }, {
+
+                                      "delay": "wait",
+                                      "speed": 300,
+                                      "to": "opacity: 0"
+
+                                      }
+
+                                      ]'
+                         data-x="left"
+                         data-y="center"
+                         data-hoffset="100"
+                         data-voffset="0"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"
+                         >
+                        DESIGNNEST <em>Interective Agency</em>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
+    <p class="text-right">asdasdasd</p>
+    <!-- //slider -->
+    <!-- 비쥬얼 -->
+<!--
+    <div id="index-visual">
+        <ul class="banner-slider">
+            <li>
+                <img class="img-responsive" src="/cms/type-0001/img/img-home.jpg" alt="">
+            </li>
+        </ul>
+        <p class="visual-logo">DESIGNNEST <em>Interective Agency</em></p>
+    </div>
+-->
+    <!-- 비쥬얼 -->
     <!-- contents -->
-    <section id="contents">
+    <section id="contents" class="contents-white">
         <div class="contents_box">
-            콘텐츠<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-6 object-non-visible" data-animation-effect="fadeInLeft"  data-effect-delay="0">
+                        <img class="img-responsive" src="/cms/type-0001/img/@img-01.jpg" alt="">
+                    </div>
+                    <div id="js-rotating" class="col-md-6">
+                        <div class="page-header">
+                            <h2>Salon de Designnest</h2>
+                        </div>
+                        <p class="lead">아름다움을 완성시키는 Image making의 전문가들이 모였습니다.</p>
+                        <p class="mT20">섬세함으로 고객님들의 스타일을 만들어 드립니다. <br>
+                            살롱드블러썸을 찾으시는 고객들의 얼굴에 웃음꽃을 드리기 위해 노력합니다. <br>
+                        블러썸이란 사전적 의미로 꽃이 피다. 만발하다. (얼굴,형편이) 피다 라는 뜻이 있습니다.
+                        </p>
+                        <p class="mT20"><a class="btn  btn-default btn-info" href="#" role="button"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i> View Detail</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- //contents -->
@@ -119,7 +281,42 @@
     </footer>
     <!-- //footer -->
 </div>
-<div id="fade"></div>
+<div id="fadeLayer"></div>
+
+    <!-- JavaScript files placed at the end of the document so the pages load faster -->
+    <!-- ================================================== -->
+    <!-- Jquery and Bootstap core js files -->
+    <script type="text/javascript" src="/cms/app-data/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/cms/app-data/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Modernizr javascript -->
+    <script type="text/javascript" src="/cms/app-data/js/modernizr.js"></script>
+    <script type="text/javascript" src="/cms/app-data/plugins/rs-plugin-5/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/cms/app-data/plugins/rs-plugin-5/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- Isotope javascript -->
+    <!--    <script type="text/javascript" src="/cms/app-data/plugins/isotope/isotope.pkgd.min.js"></script>-->
+    <!-- Magnific Popup javascript -->
+    <!--    <script type="text/javascript" src="/cms/app-data/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>-->
+    <!-- Appear javascript -->
+    <!--    <script type="text/javascript" src="/cms/app-data/plugins/waypoints/jquery.waypoints.min.js"></script>-->
+    <!-- Count To javascript -->
+    <!--    <script type="text/javascript" src="/cms/app-data/plugins/jquery.countTo.js"></script>-->
+    <!-- Parallax javascript -->
+    <script src="/cms/app-data/plugins/jquery.parallax-1.1.3.js"></script>
+    <!-- Contact form -->
+    <script src="/cms/app-data/plugins/jquery.validate.js"></script>
+    <!-- Morphext -->
+    <script src="/cms/app-data/plugins/morphext/morphext.min.js"></script>
+    <!-- Background Video -->
+    <!--    <script src="/cms/app-data/plugins/vide/jquery.vide.js"></script>-->
+    <!-- Owl carousel javascript -->
+<!--    <script src="/cms/app-data/plugins/owlcarousel2/owl.carousel.min.js"></script>-->
+    <!-- SmoothScroll javascript -->
+    <script src="/cms/app-data/plugins/jquery.browser.js"></script>
+    <script src="/cms/app-data/plugins/SmoothScroll.js"></script>
+    <!--    <script type="text/javascript" src="/cms/app-data/js/jquery-ui.min.js"></script>-->
+    <script type="text/javascript" src="/cms/app-data/js/template.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+
 </body>
 
 </html>
