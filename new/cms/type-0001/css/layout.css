@@ -29,6 +29,7 @@ a:hover{color:#666;}
 }
 
 /* layout */
+#wrapper{ width: 100%; overflow-x: hidden;}
 #header{position:absolute;  display: block; width: 100%; z-index: 10; left: 0; top: 0;}
 #header .mobile_menu{position: absolute; right: 10px; top: 10px; display: none;}
 #header .mobile_menu a{display: block; color: #222; font-size: 30px; display: block; width: 40px; height: 40px; text-align: center; line-height: 40px; border: 1px solid #c4c4c4; border-radius: 3px;}
@@ -50,7 +51,7 @@ a:hover{color:#666;}
 #header .gnb>ul>li{float: left;}
 #header .gnb>ul>li>a{color:rgba(255,255,255,0.7); transition: all 0.20s linear; display: block; text-align: center; padding: 0 20px; line-height: 60px; cursor: pointer;}
 #header .gnb>ul>li>a:hover{background: rgba(255,255,255,0.1); opacity: 1; color:#fff;}
-#header .gnb>ul ul {position: absolute; top: 60px; display: none;}
+#header .gnb>ul ul {position: absolute; top: 61px; display: none;}
 #header .gnb>ul li ul li {background:rgba(255,255,255,0.8);border-bottom: 1px solid rgba(0,0,0,0.1);position: relative;box-sizing: border-box; min-width: 100%;}
 #header .gnb>ul>li.submenu>a:after{content: "\f004"; display: inline-block; font-family:'mfg'; margin-left: 5px; font-size: 11px; font-weight: 100; line-height: 100%;}
 #header .gnb>ul li ul li.sub-submenu{padding-right: 20px;}
@@ -72,7 +73,7 @@ a:hover{color:#666;}
 #contents{position: relative;}
 .contents-white{background-color: #fff;}
 #location{border-bottom: 1px solid #ccc;  background-color: #fafafa;}
-#location p{text-align: right; font-weight: 100; height:34px; line-height:34px; font-size: 12px; color: #666;  padding: 0 20px;}
+#location p{text-align: right; font-weight: 100; height:34px; line-height:34px; font-size: 12px; color: #666;  padding: 0 20px; font-family: 'Malgun Gothic'}
 #location p i{padding: 0 3px;}
 #location p span.home{color: #222;}
 #footer{background-color: #222; border-top: 1px solid #666; padding: 40px 0; position: relative;}
@@ -133,26 +134,15 @@ h5{font-size: 20px;}
     #location p{text-align: right; font-weight: 100; height:34px; line-height:34px; font-size: 12px; color: #666;  padding: 0 10px;}
     #location p i{padding: 0 3px;}
     #location p span.home{color: #222;}
-
-    #footer{background-color: #222; border-top: 1px solid #666; padding:20px 0;}
-    #footer .bottom_logo {float:none; position:static; left: 0; top:auto; margin-top:0px; text-align: center;}
-    #footer .bottom_logo img{height: 30px;}
-    #footer .companyInfo{padding-left:0px; padding-top: 10px; text-align: center; font-size: 12px;}
-    #footer .companyInfo li{float:none; line-height: 160%;}
-    #footer .companyInfo li:after{display: none;}
-    #footer .companyInfo li:last-child:after{display: none;}
-    #footer .copyright{padding-top: 5px; font-size: 11px;}
-
-
 }
 
 
 /* slider */
 .rev_slider li{}
-.rev_slider .tp-caption {font-family:'Lato'; font-weight: 100; color:deeppink; font-size: 70px; line-height: 100%; letter-spacing: -5px;}
+.rev_slider .tp-caption {font-family:'Lato'; font-weight: 100; font-size: 70px; line-height: 100%;}
 .rev_slider .tp-caption.color-white{color: #fff;}
 .rev_slider .tp-caption em{font-size: 36px; display: block; letter-spacing: 0;}
-.rev_slider .tp-caption.banner03{font-size: 60px; display: block; color:deeppink;}
+.rev_slider .tp-caption.banner03{font-size: 60px; display: block;}
 
 
 /* filter */

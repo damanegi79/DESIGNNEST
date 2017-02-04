@@ -64,7 +64,7 @@ a:hover{color:#666;}
 #header .gnb>ul>li{float: left;}
 #header .gnb>ul>li>a{color:rgba(255,255,255,0.7); transition: all 0.20s linear; display: block; text-align: center; padding: 0 20px; line-height: 60px; cursor: pointer;}
 #header .gnb>ul>li>a:hover{opacity: 1; color:#fff;}
-#header .gnb>ul ul {position: absolute; top: 60px; display: none;}
+#header .gnb>ul ul {position: absolute; top: 61px; display: none;}
 #header .gnb>ul li ul li {position: relative;box-sizing: border-box; min-width: 100%;}
 #header .gnb>ul>li.submenu>a:after{content: "\f004"; display: inline-block; font-family:'mfg'; margin-left: 5px; font-size: 11px; font-weight: 100; line-height: 100%;}
 #header .gnb>ul li ul li.sub-submenu{padding-right: 20px;}

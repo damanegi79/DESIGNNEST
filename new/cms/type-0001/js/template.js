@@ -41,7 +41,46 @@ $(document).ready(function () {
             }
         });
 
+        $('#rev_slider_2').show().revolution({
+//            dottedOverlay: 'twoxtwo',
+//            shadow: 1,
+            /* options are 'auto', 'fullwidth' or 'fullscreen' */
+            gridwidth:'1200',
+            gridheight:[300,300,500,500],
+            sliderType:'standard',
+            sliderLayout: 'auto',
+            autoHeight:'off',
+            delay: 5000,
+            responsiveLevels:[1199,991,767,480],
+            parallax: {
+                type: 'mouse+scroll',
+                origo: 'slidercenter',
+                speed: 500,
+                levels: [5,10,15,20,25,30,35,40,
+                         45,46,47,48,49,50,51,55],
+                disable_onmobile: 'on'
+            },
+            /* basic navigation arrows and bullets */
+            navigation: {
+                onHoverStop: "off",
+                arrows: {
+                    enable:false,
+                    style: 'hesperiden',
+                    hide_onleave: false
+                },
 
+                bullets: {
+                    enable: false,
+                    style: 'hesperiden',
+                    hide_onleave: false,
+                    h_align: 'center',
+                    v_align: 'bottom',
+                    h_offset: 0,
+                    v_offset: 20,
+                    space: 5
+                }
+            }
+        });
     $(window).scroll(function () {
         if ($(this).scrollTop() > 20) {
             $('.sticky').addClass("fixed");
