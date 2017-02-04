@@ -49,6 +49,7 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,
 q:before, q:after {content: ''; content: none;}
 table {border-collapse: collapse; border-spacing: 0;}
+b,strong{font-weight: 700}
 
 .clearfix{zoom:1;}
 .clearfix:after{content:"";display:block; clear:both;}
@@ -62,8 +63,17 @@ table {border-collapse: collapse; border-spacing: 0;}
 @media screen and (max-width: 768px){
     .pc_hidden{ display:block;}
 }
+.non-deco:hover{text-decoration: none;}
+/* font */
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f20{font-size:20px;}
+.f30{font-size:30px;}
+.f40{font-size:40px;}
+.f50{font-size:50px;}
+.f60{font-size:60px;}
 
-/* space */
 /*space*/
 .L1{padding-left:1px;}
 .L2{padding-left:2px;}
