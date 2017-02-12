@@ -60,10 +60,19 @@ b,strong{font-weight: 700}
 .contents_box:after{content: ""; display: block; clear: both;}
 .circle{border-radius: 50%;}
 .pc_hidden{ display: none;}
+hr.dark{border-color: #333;}
+
 @media screen and (max-width: 768px){
     .pc_hidden{ display:block;}
+    .mob_hidden{ display: none;}
 }
 .non-deco:hover{text-decoration: none;}
+.img-full-width{width: 100%;}
+
+.social-links.animated-effect-1 li.kakao a:hover {background-color: #fec82f; border-color:#fec82f;}
+.social-links.animated-effect-1 li.kakao a:after{background-color: #fec82f;}
+
+
 /* columns of same height styles */
 
 .row-height {
@@ -358,24 +367,5 @@ b,strong{font-weight: 700}
 .mR45{margin-right:45px;}
 
 
-/* layout */
-#footer{background-color: #222; border-top: 1px solid #666; padding: 40px 0;}
-#footer .bottom_logo {float: left; position: absolute; left: 0; top:50%; margin-top: -15px;}
-#footer .bottom_logo img{height: 30px;}
-#footer .companyInfo{padding-left: 200px; color: #999;}
-#footer .companyInfo li{float: left; line-height: 140%;}
-#footer .companyInfo li:after{display: inline-block; content: '/'; padding: 0 10px;}
-#footer .companyInfo li:last-child:after{display: none;}
-
-@media screen and (max-width: 768px){
-    #footer{background-color: #222; border-top: 1px solid #666; padding:20px 0;}
-    #footer .bottom_logo {float:none; position:static; left: 0; top:auto; margin-top:0px; text-align: center;}
-    #footer .bottom_logo img{height: 30px; display: inline-block;}
-    #footer .companyInfo{padding-left:0px; padding-top: 10px; text-align: center; font-size: 14px;}
-    #footer .companyInfo li{float:none; line-height: 160%;}
-    #footer .companyInfo li:after{display: none;}
-    #footer .companyInfo li:last-child:after{display: none;}
-    #footer .copyright{padding-top: 5px; font-size: 12px; margin: 0;}
-}
 
 

@@ -76,13 +76,6 @@ a:hover{color:#666;}
 #location p{text-align: right; font-weight: 100; height:34px; line-height:34px; font-size: 12px; color: #666;  padding: 0 20px; font-family: 'Malgun Gothic'}
 #location p i{padding: 0 3px;}
 #location p span.home{color: #222;}
-#footer{background-color: #222; border-top: 1px solid #666; padding: 40px 0; position: relative;}
-#footer .bottom_logo {float: left; position: absolute; left: 0; top:50%; margin-top: -15px;}
-#footer .bottom_logo img{height: 30px;}
-#footer .companyInfo{padding-left: 200px; color: #999;}
-#footer .companyInfo li{float: left; line-height: 140%;}
-#footer .companyInfo li:after{display: inline-block; content: '/'; padding: 0 10px;}
-#footer .companyInfo li:last-child:after{display: none;}
 #fadeLayer{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #fff; z-index: 100;}
 
 h2 *,h3 *,h4 *,h5 *{line-height: 100%;}
@@ -153,3 +146,25 @@ h5{font-size: 20px;}
 .overlay-container .text {padding-top:20px;}
 .overlay-container .text h4{color: #ab6cc6;}
 .overlay-container .text p{margin-top: 10px;}
+
+
+/* footer */
+#footer{background-color: #222; border-top: 1px solid #666; padding: 40px 0;}
+#footer .bottom_logo {float: left; position: absolute; left: 0; top:50%; margin-top: -15px;}
+#footer .bottom_logo img{height: 30px;}
+#footer .companyInfo{padding-left: 200px; color: #999;}
+#footer .companyInfo li{float: left; line-height: 140%;}
+#footer .companyInfo li:after{display: inline-block; content: '/'; padding: 0 10px;}
+#footer .companyInfo li:last-child:after{display: none;}
+
+@media screen and (max-width: 768px){
+    #footer{background-color: #222; border-top: 1px solid #666; padding:20px 0;}
+    #footer .bottom_logo {float:none; position:static; left: 0; top:auto; margin-top:0px; text-align: center;}
+    #footer .bottom_logo img{height: 30px; display: inline-block;}
+    #footer .companyInfo{padding-left:0px; padding-top: 10px; text-align: center; font-size: 14px;}
+    #footer .companyInfo li{float:none; line-height: 160%;}
+    #footer .companyInfo li:after{display: none;}
+    #footer .companyInfo li:last-child:after{display: none;}
+    #footer .copyright{padding-top: 5px; font-size: 12px; margin: 0;}
+}
+

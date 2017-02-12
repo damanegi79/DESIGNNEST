@@ -489,7 +489,8 @@ function scroll3d(){
 
         controller.addScene([
 //            list_scene,
-            info_scene,mobile_scene,pc_scene,tab_scene
+            info_scene,
+            mobile_scene,pc_scene,tab_scene
         ]);
 
     })
@@ -500,7 +501,7 @@ function scroll3d(){
         var itemPc = $(thisList).find('.pc')
         var itemTab = $(thisList).find('.tablet')
 
-        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true})
+//        var listTween = TweenMax.to(this, 2, {transform:'rotateX(40deg) scale(0.7)',force3D:true})
         var infoTween = TweenMax.to(itemInfo, 2, {transform:'translateY(-150px)',force3D:true})
 
         var mobileTween = TweenMax.to(itemMobile, 2, {transform:'translateY(-200px)',force3D:true})
@@ -509,14 +510,16 @@ function scroll3d(){
         }})
         var tabTween = TweenMax.to(itemTab, 2, {transform:'translateY(-200px)',force3D:true})
 
-        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(listTween)
+//        var list_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(listTween)
         var info_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(infoTween)
         var mobile_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(mobileTween)
         var pc_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(pcTween)
         var tab_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave',duration:350}).setTween(tabTween)
 
         controller.addScene([
-            list_scene,info_scene,mobile_scene,pc_scene,tab_scene
+//            list_scene,
+            info_scene,
+            mobile_scene,pc_scene,tab_scene
         ]);
     })
 }

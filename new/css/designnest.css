@@ -14,7 +14,7 @@
 
 
 /* layout */
-html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200; width: 100%; height: 100%; min-width: 1200px;}
+html, body{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200; width: 100%; height: 100%;}
 button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; font-weight: 200; font-size: 16px; color: #999;}
 
 #intro{position: fixed; left: 0; top:0; right: 0; bottom: 0; z-index: 1000; background-color:#fff;}
@@ -388,7 +388,8 @@ button{background: none; border: none; cursor: pointer;}
 .contact_form .con_left{float: left; width: 45%;}
 .contact_form .con_right{float: right; width: 50%; font-size: 14px;}
 .contact_form .con_right h2{margin-bottom: 15px;}
-.contact_form .con_right ul.helpList {margin-bottom:20px;}
+.contact_form ul.helpList {margin-bottom:20px;}
+.contact_form ul.helpList li{line-height: 160%;}
 .contact_form .con_right ul.quick{font-size: 16px;}
 
 .contact_form .con_right ul li{line-height: 160%;}
@@ -439,7 +440,7 @@ button{background: none; border: none; cursor: pointer;}
 .contact_img li.img11{width:15vw; left:-3vw; top: auto; bottom: -8vh}
 
 
-#ajaxContainer{position: relative; width: 100%; height: 100%; min-width: 1200px;}
+#ajaxContainer{position: relative; width: 100%; height: 100%;}
 #ajaxContainer.fixed{overflow: hidden;}
 #ajaxContents{position:absolute;transform: perspective( 1000px ) translateX(0vw); width: 100%;}
 
@@ -622,3 +623,12 @@ button{background: none; border: none; cursor: pointer;}
 .counter>div>div>div{ position: relative !important; display: inline-block;}
 .counter>div:hover>div:before{content: '\E80C'}
 
+.rev_slider_wrapper{height: 100vh !important;}
+.developeSlider{height: 100vh !important}
+.developeSlider > ul{width: 100% !important;}
+.developeSlider .bg-type01{background-color: #f00}
+.developeSlider .tp-caption *{font-size: 14px; line-height: 140%;}
+.developeSlider .tp-caption p{ font-size: 18px; line-height: 140%;}
+.developeSlider .tp-caption h2{font-size: 30px;}
+.developeSlider .tp-caption h3{font-size: 20px; padding-bottom:10px;}
+.developeSlider .tp-caption .summery{font-size:20px;}

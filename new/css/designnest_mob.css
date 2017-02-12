@@ -388,10 +388,10 @@ button{background: none; border: none; cursor: pointer;}
 #contact_wrapper .contact_form{background-color:rgba(0,0,0,0.8); color: #fff; z-index: 30; position: relative; }
 #contact_wrapper .contact_contents .used{text-align: center; color: #222; height: 60px; line-height: 60px; font-size: 12px;}
 .contact_form .con_left{float: none; width:auto;}
-.contact_form .con_right{float:none; width:auto; padding: 40px 0 0px 0;}
-.contact_form .con_right h2{display: block; margin-bottom: 10px;}
-.contact_form .con_right ul.helpList {margin-bottom: 30px;}
-.contact_form .con_right ul li{line-height: 160%; font-size: 14px;}
+.contact_form .con_right{float:none; width:auto; padding: 0px 0 0px 0;}
+.contact_form ul.helpList {margin-bottom: 30px;}
+.contact_form ul.helpList li{line-height: 160%;}
+.contact_form .con_right ul li{line-height: 160%;}
 .contact_form .con_right ul li span{text-decoration: line-through;}
 
 
@@ -407,7 +407,7 @@ button{background: none; border: none; cursor: pointer;}
 
 
 
-.contact_form h2{font-size:16px; margin-bottom: 20px;}
+.contact_form h2{font-size:20px; margin-bottom: 20px;}
 .contact_form h2:after{content: ""; display: block; width: 100%; height: 1px; background: linear-gradient(to right, rgba(102,102,102,1) 0%, rgba(102,102,102,0) 100%); margin-top: 5px;}
 .contact_form .form .confirm{padding-top:5px;}
 .contact_form .form .confirm button{display:block; color: #fff; font-size: 14px; height:50px; line-height:50px; background: rgba(0,0,0,0.5); border: 1px solid #555; width:; border-radius: 3px; width: 100%}
