@@ -1,0 +1,51 @@
+@import url(reset.css);
+
+body{background:#340209;}
+#wrapper{position: relative; z-index: 0;  color: #fff; width: 950px; box-sizing: border-box; padding-bottom: 40px;}
+.content{border-radius: 16px; background-color: rgba(0,0,0,0.7); width: 830px; margin-left: auto; margin-right: auto; position: relative; box-sizing: border-box;}
+.content:after{content: ""; display: block; clear: both;}
+.info{padding: 20px;margin-top: -150px; margin-bottom: 12px;}
+.content h2{font-size: 24px; color: #e83338; font-weight: bold;}
+.info ul{margin-top: 10px;}
+.info li{float: left; width: 50%; font-size: 18px; height: 28px; line-height: 28px; letter-spacing: -2px;}
+
+.content .giftCon{float: left; width: 50%; box-sizing: border-box; font-size: 20px;} 
+.content .giftCon:first-child{border-right: 1px solid #691519;}
+
+.content .giftCon h2{border-bottom: 1px solid #691519; padding: 15px 20px;}
+.content .giftCon .stats{padding:20px; padding-right: 0;}
+.content .giftCon dl{padding-left: 125px; position: relative; min-height: 60px;}
+.content .giftCon dl dt{line-height: 30px; position: absolute; left: 0; top: 0;}
+.content .giftCon dl dt span{ width: 110px; border-radius: 15px; box-sizing: border-box; height: 30px; background-color: #911f23; display: inline-block; text-align: center; line-height: 30px;}
+.content .giftCon dl dd{}
+.content .giftCon dl ul.gift_list li{line-height: 30px;}
+.content .giftCon dl ul.gift_list li:after{content: ""; display: block; clear: both;}
+.content .giftCon dl ul.gift_list li .left{float: left; line-height: 30px; width: 205px; letter-spacing: -1px;}
+.content .giftCon dl ul.gift_list li .right{float:left; color: #e83338; line-height: 30px; width: 40px; text-align: center;}
+.textGift{padding: 40px 0 55px 0;}
+
+.scratch_area{ width: 830px; height: 392px; margin-left: auto; margin-right: auto; position:relative;}
+.gift01{background: url(../images/bg_giftcard01.png) no-repeat;}
+.gift02{background: url(../images/bg_giftcard02.png) no-repeat; margin-top: 60px;}
+.gift01 .option{position: absolute; background: url(../images/bg_giftName.png) no-repeat; right:-36px; top:-27px; width: 176px; height: 175px; text-align: center;}
+.gift01 .option span.tit{padding-top: 65px;}
+.gift01 .option span{display: block; font-size:28px; line-height: 32px; letter-spacing: -1px;}
+.scratch_btn{text-align: center; font-size: 28px; margin-top: 15px; line-height: 56px;}
+.scratch_btn button{height: 54px; width: 162px; display: inline-block; background: url(../images/btn_go.png) no-repeat 0 0; border: none; vertical-align: top; margin-left: 50px;}
+.scratch_btn button:disabled{background-position: 0 -60px;}
+
+.scratcher{ position: relative; width: 488px; height: 203px; margin-left: auto; margin-right: auto;position: relative; top:160px;}
+.giftCon_box{color: #000; width: 488px; height: 203px; margin-left: auto; margin-right: auto; background-color: #fff; border-radius: 15px; position: relative; padding-left: 40px; box-sizing: border-box; letter-spacing: -1px;}
+.giftCon_box h3{font-size: 28px; font-weight: normal; padding: 25px 0 20px 0;}
+.giftCon_box dl.item_stats{font-size: 22px;position: relative; padding-left: 125px;}
+.giftCon_box dl.item_stats dt{color: #ff0000; padding-top:8px;}
+.giftCon_box dl.item_stats dd.itemImg{position: absolute; left: 0; top: 0;}
+.giftCon_box dl.item_stats dd.stats{margin-top: 10px;}
+.giftCon_box dl.item_stats dd.stats li{ width: 150px; float: left; line-height: 28px;}
+.gift-cover{position: absolute; left: 0; top: 0; z-index: 10;}
+
+.gift02 .giftCon_box{padding: 0; text-align: center; }
+
+
+.scratcher canvas{position: absolute; left: 0; top: 0; border-radius:15px; z-index: 10;}
+.scratcher canvas{position: absolute; left: 0; top: 0;}

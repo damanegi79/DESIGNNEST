@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>발렌타인데이 이벤트</title>
+<link rel="stylesheet" href="css/style.css" />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/scratchcard.js"></script>
+<script type="text/javascript">
+	var viewPortWidth = $(window).width();
+    var h = viewPortWidth/950
+    document.getElementsByTagName("meta")[1].content="user-scalable=no, width=device-width, initial-scale=" + h + ", maximum-scale=" + h + ", minimum-scale=" + h;
+</script>
+<script>
+//    $(function(){
+//        var aa = $(window).width();
+//        var h = aa/950
+//        $("#wrapper").css({zoom:h})
+//    })
+</script>   
+</head>
+
+<body>
+<div id="wrapper">
+    <h1><img src="images/bg.jpg" alt=""></h1>
+    <div class="content info">
+        <h2>참여방법</h2>
+        <ul class="clearfix">
+            <li>&bull; 상품권 긁기 기회는 매일 0시에 초기화됩니다.</li>
+            <li>&bull; 상품권 긁기 기회는 각 조건별로 일 1회씩 획득 가능.</li>
+            <li>&bull; 상품권은 일 제한 없이 긁을 수 있습니다.</li>
+            <li>&bull; 상품권 긁기 기회는 3월 2일 점검 전까지 사용 가능.</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="giftCon">
+            <h2>장비상품권</h2>
+            <div class="stats">
+                <dl class="clearfix">
+                    <dt><span>긁기 기회</span></dt>
+                    <dd>
+                        <ul class="gift_list">
+                            <li><span class="left">열쇠 200개 소모 시</span><span class="right">획득</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="clearfix mT15">
+                    <dt><span>긁기 현황</span></dt>
+                    <dd>
+                        <ul class="gift_list">
+                            <li><span class="left">획득한 횟수(누적)</span><span class="right">7회</span></li>
+                            <li><span class="left">긁은 횟수(누적)</span><span class="right">7회</span></li>
+                            <li><span class="left">남은 횟수</span><span class="right">7회</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="giftCon">
+            <h2>기타상품권</h2>
+            <div class="stats">
+                <dl class="clearfix">
+                    <dt><span>긁기 기회</span></dt>
+                    <dd>
+                        <ul class="gift_list">
+                            <li><span class="left">영혼던전 1회 클리어</span><span class="right">-</span></li>
+                            <li><span class="left">강림던전 10회 클리어</span><span class="right">획득</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="clearfix mT15">
+                    <dt><span>긁기 현황</span></dt>
+                    <dd>
+                        <ul class="gift_list">
+                            <li><span class="left">획득한 횟수(누적)</span><span class="right">7회</span></li>
+                            <li><span class="left">긁은 횟수(누적)</span><span class="right">7회</span></li>
+                            <li><span class="left">남은 횟수</span><span class="right">7회</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="textGift"><img src="images/text_giftcard.jpg" alt=""></div>
+    <div class="scratch_area gift01">
+        <div id="scratch-container" class="scratcher">
+            <canvas class="canvas" id="scratch-canvas" width="488" height="203" ></canvas>
+            <div class="giftCon_box winner-box">
+                <h3>장비명 장비명</h3>
+                <dl class="item_stats">
+                    <dt>방어력 53</dt>
+                    <dd class="stats">
+                        <ul class="clearfix">
+                            <li>치명확률 2%</li>
+                            <li>공격력 5%</li>
+                            <li>방어력 4%</li>
+                            <li>어쩌구력 26%</li>
+                        </ul>
+                    </dd>
+                    <dd class="itemImg"><img src="images/@img_item.jpg" alt=""></dd>
+                </dl>
+            </div>
+        </div>
+        
+        <p class="option">
+            <span class="tit">효과적중</span>
+            <span class="per">4%</span>
+        </p>
+    </div>
+    <p class="scratch_btn">
+        남은 횟수 : 0번
+        <button disabled><span class="hide">더 긁기</span></button>
+    </p>
+    <div class="scratch_area gift02">
+        <div id="scratch-container" class="scratcher">
+            <canvas class="canvas" id="scratch-canvas" width="488" height="203" ></canvas>
+            <div class="giftCon_box">
+                <h3>아이템명 어쩌구</h3>
+                <p class="itemImg"><img src="images/@img_item.jpg" alt=""></p>
+<!--                <div class="gift-cover"><img src="images/img_scratch02.png" alt="" class="cover"></div>-->
+            </div>
+        </div>
+    </div>
+    <p class="scratch_btn">
+        남은 횟수 : 0번
+        <button><span class="hide">더 긁기</span></button>
+    </p>
+</div>
+
+</body>
+</html>
