@@ -130,77 +130,77 @@
 
         return {
             init : function (){
-//                headerMotion()
-//                develope()
+                headerMotion()
+                develope()
                 console.log('developement class start')
-                $('#developement01').show().revolution({
-                    delay:500,
-                    sliderType: 'standard',
-                    stopLoop: 'on',
-                    stopAfterLoops:0,
-                    stopAtSlide:1,
-                    sliderLayout: 'auto',
-                    autoHeight:"on",
-                    responsiveLevels:[1199,767,480],
-
-                    /* basic navigation arrows and bullets */
-                    navigation: {
-                        arrows: {
-                            enable:true,
-                            hide_onleave: false,
-                            left: {
-                                h_offset:0,
-                            },
-                            right: {
-                                h_offset:0,
-                            },
-                        },
-
-                        bullets: {
-                            enable:true,
-                            style: 'hesperiden',
-                            hide_onleave: false,
-                            h_align: 'center',
-                            v_align: 'bottom',
-                            h_offset: 0,
-                            v_offset: 20,
-                            space: 5
-                        },
-                    }
-                });
-                $('#developement02').show().revolution({
-                    stopLoop: 'on',
-                    stopAfterLoops: 0,
-                    stopAtSlide: 1,
-                    sliderLayout: 'auto',
-                    fullScreenOffset: '100%',
-                    autoHeight:"on",
-                    responsiveLevels:[1199,767,480],
-                    navigation: {
-                        onHoverStop: "on",
-                        arrows: {
-                            enable:true,
-                            hide_onleave: false,
-                            left: {
-                                h_offset:0,
-                            },
-                            right: {
-                                h_offset:0,
-                            },
-                        },
-
-                        bullets: {
-                            enable:true,
-                            style: 'hesperiden',
-                            hide_onleave: false,
-                            h_align: 'center',
-                            v_align: 'bottom',
-                            h_offset: 0,
-                            v_offset: 20,
-                            space: 5
-                        }
-                    }
-                });
+//                $('#developement01').show().revolution({
+//                    delay:500,
+//                    sliderType: 'standard',
+//                    stopLoop: 'on',
+//                    stopAfterLoops:0,
+//                    stopAtSlide:1,
+//                    sliderLayout: 'auto',
+//                    autoHeight:"on",
+//                    responsiveLevels:[1199,767,480],
+//
+//                    /* basic navigation arrows and bullets */
+//                    navigation: {
+//                        arrows: {
+//                            enable:true,
+//                            hide_onleave: false,
+//                            left: {
+//                                h_offset:0,
+//                            },
+//                            right: {
+//                                h_offset:0,
+//                            },
+//                        },
+//
+//                        bullets: {
+//                            enable:true,
+//                            style: 'hesperiden',
+//                            hide_onleave: false,
+//                            h_align: 'center',
+//                            v_align: 'bottom',
+//                            h_offset: 0,
+//                            v_offset: 20,
+//                            space: 5
+//                        },
+//                    }
+//                });
+//                $('#developement02').show().revolution({
+//                    stopLoop: 'on',
+//                    stopAfterLoops: 0,
+//                    stopAtSlide: 1,
+//                    sliderLayout: 'auto',
+//                    fullScreenOffset: '100%',
+//                    autoHeight:"on",
+//                    responsiveLevels:[1199,767,480],
+//                    navigation: {
+//                        onHoverStop: "on",
+//                        arrows: {
+//                            enable:true,
+//                            hide_onleave: false,
+//                            left: {
+//                                h_offset:0,
+//                            },
+//                            right: {
+//                                h_offset:0,
+//                            },
+//                        },
+//
+//                        bullets: {
+//                            enable:true,
+//                            style: 'hesperiden',
+//                            hide_onleave: false,
+//                            h_align: 'center',
+//                            v_align: 'bottom',
+//                            h_offset: 0,
+//                            v_offset: 20,
+//                            space: 5
+//                        }
+//                    }
+//                });
             },
             dispos : function ()
             {

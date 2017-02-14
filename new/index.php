@@ -22,9 +22,9 @@
         <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" href="/cms/app-data/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="/cms/app-data/css/style.css">
-        <link href="/cms/app-data/plugins/rs-plugin-5/css/settings.css" rel="stylesheet"> <!-- 슬라이더 -->
-        <link href="/cms/app-data/plugins/rs-plugin-5/css/layers.css" rel="stylesheet"> <!-- 슬라이더 -->
-        <link href="/cms/app-data/plugins/rs-plugin-5/css/navigation.css" rel="stylesheet"> <!-- 슬라이더 -->
+        <link href="/cms/app-data/plugins/rs-plugin-5/css/settings.css" rel="stylesheet">
+        <link href="/cms/app-data/plugins/rs-plugin-5/css/layers.css" rel="stylesheet">
+        <link href="/cms/app-data/plugins/rs-plugin-5/css/navigation.css" rel="stylesheet">
         <link rel="stylesheet" href="css/designnest<?= $mobile_path; ?>.css" />
         <script src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="/cms/app-data/bootstrap/js/bootstrap.min.js"></script>
