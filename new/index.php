@@ -43,6 +43,11 @@
         <script type="text/javascript" src="/cms/app-data/js/modernizr.js"></script>
         <script type="text/javascript" src="/cms/app-data/plugins/rs-plugin-5/js/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="/cms/app-data/plugins/rs-plugin-5/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.16/processing.min.js"></script>
+        <script src="js/SpotLightShape.js"></script>
+        <script src="js/WaveShape.js"></script>
+<!--        <script src="js/4_spotlight_and_wave.js"></script>-->
         <script src="js/ui_common<?= $mobile_path; ?>.js"></script>
     </head>
 
@@ -74,7 +79,7 @@
                             <p class="bar"></p>
                             <ul>
                                 <li class="menu01"><a href="#home"><span>HOME/LATEST WORK</span></a></li>
-                                <li class="menu02"><a href="#service"><span>OUR SERVICE</span></a></li>
+                                <li class="menu02"><a href="#service"><span>WEB/UI PUBLISHING</span></a></li>
                                 <li class="menu03"><a href="#portfolio"><span>PORTFOLIO LIST</span></a></li>
                                 <li class="menu04"><a href="#developement"><span>SITE DEVELOPEMENT</span></a></li>
                                 <li class="menu05"><a href="#contact"><span>CONTACT US</span></a></li>

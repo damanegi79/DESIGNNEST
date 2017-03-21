@@ -247,6 +247,7 @@ button{background: none; border: none; cursor: pointer;}
 
 /* service */
 #transition_wrapper{position: relative; overflow-x: hidden;background-color: #000;}
+#transition_wrapper.white-bg{background-color: #fff;}
 #transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; overflow: hidden; position: relative;}
 #transition_wrapper .header h1{font-size: 36px; margin-bottom: 10px; line-height: 100%; color: #000; padding: 0 20px}
 #transition_wrapper .header .summery{ font-size: 12px; font-weight:400; line-height:160%; color: #333; padding: 0 20px}
@@ -341,6 +342,7 @@ button{background: none; border: none; cursor: pointer;}
 .cardArea .card .shine{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);}
 .cardArea .card .txtArea{transform:perspective(1000px); position: relative; width: 100%; height: 100%;}
 .cardArea .shadow{display: none;}
+
 
 .cardArea .card .shadowTxt{transform:perspective(1000px) translateY(0px) translateX(0px); color:rgba(0,0,0,1); position: absolute; left: 0; top: 0; width: 100%; height: 100%;  opacity: 0; filter: blur(0px); }
 .cardArea .card .shadowTxt .logo{width:70px; position:absolute; left: 35px; top:calc(50% - 35px);}
@@ -623,6 +625,29 @@ button{background: none; border: none; cursor: pointer;}
 .counter>div>div>div{ position: relative !important; display: inline-block;}
 .counter>div:hover>div:before{content: '\E80C'}
 
+.rev_slider_wrapper{height: 100vh !important;}
+.developeSlider{height: 100vh !important}
+.developeSlider > ul{width: 100% !important;}
+.developeSlider .bg-type01{background-color: #f00}
+.developeSlider .tp-caption *{font-size: 14px; line-height: 140%;}
+.developeSlider .tp-caption p{ font-size: 14px; line-height: 140%;}
+.developeSlider .tp-caption h2{font-size: 30px;}
+.developeSlider .tp-caption h3{font-size: 20px; padding-bottom:10px;}
+.developeSlider .tp-caption h4{font-size: 16px; padding-bottom:5px;}
+.developeSlider .tp-caption h4 b{font-weight: 800 !important;}
+.developeSlider .tp-caption .summery{font-size:20px;}
+.developeSlider .tp-caption a{color: #09f; text-transform: uppercase;}
+.developeSlider .tp-caption a:hover{text-decoration: underline;}
+.developeSlider .tp-caption a.btn{font-size: 12px; color: #222;}
+.developeSlider .tp-caption a.btn:hover{text-decoration:none;}
+.developeSlider .tp-caption a.btn i{font-size: 11px;}
+.list-icons li p{padding-left: 28px;}
 
-
-
+.tp-caption[data-x="left"]{margin-left: 0 !important}
+.tp-caption[data-x="left"] *{white-space: normal !important}
+.tp-caption[data-x="left"] h3{font-size: 18px; padding-bottom: 0;}
+.tp-caption .list-icons li{position: relative; padding: 0 2px;}
+/*
+.tp-caption .list-icons li>i{position: absolute; left: 0; top: 5px;}
+.tp-caption .list-icons li p{padding-left: 0;}
+*/

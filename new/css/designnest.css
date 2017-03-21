@@ -135,7 +135,7 @@ button,input,textarea,select{font-family: 'Dosis','Noto Sans KR', sans-serif; fo
 .menu_contents .gnb li a span{transition:All 0.5s ease; transform:translateZ(13px); display: block; transform-origin:center bottom; height: 30px;}
 .menu_contents .gnb li a:after{display:inline-block; content:""; position: absolute; left: 0; top: 0; z-index: 0;width: 100%; transform:rotateX(-90deg) translateZ(0px); transform-origin:center bottom; transition:All 0.5s ease;height: 30px; line-height: 32px; color:#0099ff ;}
 .menu_contents .gnb li.menu01 a:after{content: "메인/최근 작업"}
-.menu_contents .gnb li.menu02 a:after{content: "서비스 항목"}
+.menu_contents .gnb li.menu02 a:after{content: "웹퍼블리싱/UI개발"}
 .menu_contents .gnb li.menu03 a:after{content: "포트폴리오"}
 .menu_contents .gnb li.menu04 a:after{content: "웹사이트 제작"}
 .menu_contents .gnb li.menu05 a:after{content: "문의하기"}
@@ -238,9 +238,17 @@ button{background: none; border: none; cursor: pointer;}
 
 
 /* service */
-#transition_wrapper{position: relative; overflow-x: hidden;background-color: #000;}
-#transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; overflow: hidden; position: relative;}
-#transition_wrapper .header h1{font-size: 60px; margin-bottom: 10px; line-height: 100%; color: #000;}
+#transition_wrapper{position: relative; overflow-x: hidden;}
+#transition_wrapper.white-bg{background-color: #fff;}
+#transition_wrapper .header{height:100vh; display: table; width: 100%;  background-color: #fff; overflow: hidden; position: relative; }
+#transition_wrapper .header h1{font-size: 60px; margin-bottom: 10px; line-height: 100%; color: #000;background: linear-gradient(to bottom,hsl(180, 80%, 40%),hsl(240, 80%, 60%),hsl(300, 80%, 40%)); animation: AnimationName 10s ease infinite; -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; background-clip: text;text-fill-color: transparent;}
+@keyframes AnimationName {
+    0% { background-position: 50% 0% }
+    50% { background-position: 50% 100%    }
+    100% { background-position: 50% 0% }
+}
+
 #transition_wrapper .header .summery{ font-size: 16px; font-weight:400; line-height:160%; color: #333;}
 #transition_wrapper .header .header_con{display: table-cell; vertical-align: middle; overflow: hidden; height: 100%; overflow: hidden;}
 #transition_wrapper .header .header_con .contents{max-width: 1200px; margin: auto; transform: perspective( 1000px ); transform-origin:left top; position: relative; z-index: 10;}
@@ -345,7 +353,8 @@ button{background: none; border: none; cursor: pointer;}
 .cardArea .card .shadowTxt .title{font-size:45px; letter-spacing: -1px; position: absolute; left: 123px; top:calc(50% - 42px);}
 .cardArea .card .shadowTxt .subtitle{font-size:16px; text-transform: uppercase; position: absolute; left: 125px; top:calc(50% + 12px);}
 
-
+.cardArea .shadow:before{display: none !important;}
+.cardArea .shadow:after{display: none !important;}
 .cardover{width:100%; position: absolute; right:0;  font-weight: 400; text-align: center; position:absolute; bottom:50px; font-size: 20px;}
 .cardover i{position: absolute; top: 0px; left: 50%; margin-left: -8px; animation: scrollWheel 1.5s infinite;}
 
@@ -370,7 +379,7 @@ button{background: none; border: none; cursor: pointer;}
 .res_device .device03 .mobile01{position: absolute; left: 0; top: 0;}
 .res_device .device03 .mobile02{position: absolute; left: 0; top: 0;}
 
-#footer{text-align: center; height:100px; line-height: 100px; color: #fff;}
+#footer{text-align: center; height:100px; line-height: 100px; color:#09f;}
 
 .pc_work{position: absolute; right: 0; top: 0; height: 100%; width: 50%;}
 .pc_work .img_pc{position: absolute; top:0; right: 20%; transform:perspective( 1000px ) scale(1.2); top: 50%; margin-top: -160px;}
@@ -426,8 +435,8 @@ button{background: none; border: none; cursor: pointer;}
 
 
 .contact_img li{position: absolute; left: 50%; top: 50%;transform: perspective( 1000px );}
-.contact_img li img{width: 100%;}
-.contact_img li img:hover{}
+.contact_img li img{width: 100%; transition: all 1s ease}
+.contact_img li img:hover{filter: blur(3px)}
 .contact_img li.img01{width:35vw; margin-top: -60vh; margin-left: -10vw; transform: rotateZ(15deg); z-index: 10;}
 .contact_img li.img02{width:15vw; margin-top: -60vh; margin-left: 30vw; transform: rotateZ(15deg); z-index: 10;}
 .contact_img li.img03{width:15vw; left: auto; right:10vw; top: auto; bottom: -20vh;}
@@ -624,6 +633,7 @@ button{background: none; border: none; cursor: pointer;}
 .counter>div>div>div{ position: relative !important; display: inline-block;}
 .counter>div:hover>div:before{content: '\E80C'}
 
+.container-fluid{}
 .rev_slider_wrapper{height: 100vh !important;}
 .developeSlider{height: 100vh !important}
 .developeSlider > ul{width: 100% !important;}
@@ -641,3 +651,20 @@ button{background: none; border: none; cursor: pointer;}
 .developeSlider .tp-caption a.btn:hover{text-decoration:none;}
 .developeSlider .tp-caption a.btn i{font-size: 11px;}
 .list-icons li p{padding-left: 28px;}
+
+
+
+
+#canvasOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hard-light;
+}
+
+
+.bg_header{position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; transform: perspective(1000px)}
+.bg_header img{width: 100%; height: auto; filter: blur(3px);}

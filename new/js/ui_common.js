@@ -133,74 +133,74 @@
                 headerMotion()
                 develope()
                 console.log('developement class start')
-//                $('#developement01').show().revolution({
-//                    delay:500,
-//                    sliderType: 'standard',
-//                    stopLoop: 'on',
-//                    stopAfterLoops:0,
-//                    stopAtSlide:1,
-//                    sliderLayout: 'auto',
-//                    autoHeight:"on",
-//                    responsiveLevels:[1199,767,480],
-//
-//                    /* basic navigation arrows and bullets */
-//                    navigation: {
-//                        arrows: {
-//                            enable:true,
-//                            hide_onleave: false,
-//                            left: {
-//                                h_offset:0,
-//                            },
-//                            right: {
-//                                h_offset:0,
-//                            },
-//                        },
-//
-//                        bullets: {
-//                            enable:true,
-//                            style: 'hesperiden',
-//                            hide_onleave: false,
-//                            h_align: 'center',
-//                            v_align: 'bottom',
-//                            h_offset: 0,
-//                            v_offset: 20,
-//                            space: 5
-//                        },
-//                    }
-//                });
-//                $('#developement02').show().revolution({
-//                    stopLoop: 'on',
-//                    stopAfterLoops: 0,
-//                    stopAtSlide: 1,
-//                    sliderLayout: 'auto',
-//                    fullScreenOffset: '100%',
-//                    autoHeight:"on",
-//                    responsiveLevels:[1199,767,480],
-//                    navigation: {
-//                        onHoverStop: "on",
-//                        arrows: {
-//                            enable:true,
-//                            hide_onleave: false,
-//                            left: {
-//                                h_offset:0,
-//                            },
-//                            right: {
-//                                h_offset:0,
-//                            },
-//                        },
-//
-//                        bullets: {
-//                            enable:true,
-//                            style: 'hesperiden',
-//                            hide_onleave: false,
-//                            h_align: 'center',
-//                            v_align: 'bottom',
-//                            h_offset: 0,
-//                            v_offset: 20,
-//                            space: 5
-//                        }
-//                    }
-//                });
+                $('#developement01').show().revolution({
+                    delay:500,
+                    sliderType: 'standard',
+                    stopLoop: 'on',
+                    stopAfterLoops:0,
+                    stopAtSlide:1,
+                    sliderLayout: 'auto',
+                    autoHeight:"on",
+                    responsiveLevels:[1199,767,480],
+
+                    /* basic navigation arrows and bullets */
+                    navigation: {
+                        arrows: {
+                            enable:true,
+                            hide_onleave: false,
+                            left: {
+                                h_offset:0,
+                            },
+                            right: {
+                                h_offset:0,
+                            },
+                        },
+
+                        bullets: {
+                            enable:true,
+                            style: 'hesperiden',
+                            hide_onleave: false,
+                            h_align: 'center',
+                            v_align: 'bottom',
+                            h_offset: 0,
+                            v_offset: 20,
+                            space: 5
+                        },
+                    }
+                });
+                $('#developement02').show().revolution({
+                    stopLoop: 'on',
+                    stopAfterLoops: 0,
+                    stopAtSlide: 1,
+                    sliderLayout: 'auto',
+                    fullScreenOffset: '100%',
+                    autoHeight:"on",
+                    responsiveLevels:[1199,767,480],
+                    navigation: {
+                        onHoverStop: "on",
+                        arrows: {
+                            enable:true,
+                            hide_onleave: false,
+                            left: {
+                                h_offset:0,
+                            },
+                            right: {
+                                h_offset:0,
+                            },
+                        },
+
+                        bullets: {
+                            enable:true,
+                            style: 'hesperiden',
+                            hide_onleave: false,
+                            h_align: 'center',
+                            v_align: 'bottom',
+                            h_offset: 0,
+                            v_offset: 20,
+                            space: 5
+                        }
+                    }
+                });
             },
             dispos : function ()
             {
@@ -394,14 +394,14 @@ $(document).ready(function(){
 
 function scroll(){
     $("html").niceScroll({
-        cursorcolor: "rgba(0,153,255,0.3)", // change cursor color in hex
+        cursorcolor: "rgba(0,0,0,0.3)", // change cursor color in hex
         cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
         cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
         cursorwidth: "8px", // cursor width in pixel (you can also write "5px")
         cursorborder: "none", // css definition for cursor border
         cursorborderradius: "8px", // border radius in pixel for cursor
-        scrollspeed: 100,
-        mousescrollstep:100,
+        scrollspeed: 120,
+        mousescrollstep:120,
         autohidemode: false,
     });
 }
@@ -641,10 +641,14 @@ function disposeMain(){
 function headerMotion(){
     var controller = new ScrollMagic.Controller();
     var header = $('#transition_wrapper .header .contents')
-    var headerTween = TweenMax.to(header, 2, {transform:'translateY(200px) scale(0.8)',force3D:true,opacity:0.5})
-    var header_scene = new ScrollMagic.Scene({triggerElement:this, offset:0, triggerHook: 'onLeave', duration:'100%'}).setTween(headerTween)
+    var header_bg = $('#transition_wrapper .bg_header img')
+    var headerTween = TweenMax.to(header, 2, {transform:'translateY(200px)',force3D:true,opacity:0.5})
+    var headerBgTween = TweenMax.to(header_bg, 2, {transform:'translateY(300px)',force3D:true})
+    var header_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onLeave', duration:'100%'}).setTween(headerTween)
+    var headerBg_scene = new ScrollMagic.Scene({triggerElement:this, offset:50, triggerHook: 'onLeave', duration:'100%'}).setTween(headerBgTween)
     controller.addScene([
-        header_scene
+        header_scene,
+        headerBg_scene
     ]);
 }
 
